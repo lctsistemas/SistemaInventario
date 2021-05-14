@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F5922C69-160F-4081-B084-A3E496DD8AAA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CapaPresentacion</RootNamespace>
+    <AssemblyName>CapaPresentacion</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Guna.UI2">
+      <HintPath>C:\Users\Carlos\Downloads\Hotel Management\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helps\Msg.cs" />
+    <Compile Include="Helps\ValidateError.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vista\Empresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Empresa.Designer.cs">
+      <DependentUpon>Empresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\TipoOperacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\TipoOperacion.Designer.cs">
+      <DependentUpon>TipoOperacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\ClientePro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\ClientePro.Designer.cs">
+      <DependentUpon>ClientePro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubVista\V_Empresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubVista\V_Empresa.Designer.cs">
+      <DependentUpon>V_Empresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Entrada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Entrada.Designer.cs">
+      <DependentUpon>Entrada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Inicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Inicio.Designer.cs">
+      <DependentUpon>Inicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Moneda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Moneda.Designer.cs">
+      <DependentUpon>Moneda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Salida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Salida.Designer.cs">
+      <DependentUpon>Salida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\TipoDocumento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\TipoDocumento.Designer.cs">
+      <DependentUpon>TipoDocumento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\UnidadFisica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\UnidadFisica.Designer.cs">
+      <DependentUpon>UnidadFisica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\UnidadValorizado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\UnidadValorizado.Designer.cs">
+      <DependentUpon>UnidadValorizado.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Vista\Empresa.resx">
+      <DependentUpon>Empresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\TipoOperacion.resx">
+      <DependentUpon>TipoOperacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\ClientePro.resx">
+      <DependentUpon>ClientePro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubVista\V_Empresa.resx">
+      <DependentUpon>V_Empresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Entrada.resx">
+      <DependentUpon>Entrada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Inicio.resx">
+      <DependentUpon>Inicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Moneda.resx">
+      <DependentUpon>Moneda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Salida.resx">
+      <DependentUpon>Salida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\TipoDocumento.resx">
+      <DependentUpon>TipoDocumento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\UnidadFisica.resx">
+      <DependentUpon>UnidadFisica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\UnidadValorizado.resx">
+      <DependentUpon>UnidadValorizado.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaDatos\CapaDatos.csproj">
+      <Project>{b4b43b35-6a81-4c0b-a7ca-aebdd17c0beb}</Project>
+      <Name>CapaDatos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CapaNegocio\CapaNegocio.csproj">
+      <Project>{dd9974e9-0df8-44d8-aa93-2ea9287625cc}</Project>
+      <Name>CapaNegocio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
