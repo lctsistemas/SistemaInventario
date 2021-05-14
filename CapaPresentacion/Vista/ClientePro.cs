@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaPresentacion.SubVista;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,17 @@ namespace CapaPresentacion.Vista
         public FrmClientePro()
         {
             InitializeComponent();
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            using (FrmV_ClienteProv cprov = new FrmV_ClienteProv())
+            {
+                cprov.StartPosition = FormStartPosition.CenterParent;
+                
+                cprov.ShowDialog();
+               // Show_business("ACTIVO");
+            }
         }
     }
 }

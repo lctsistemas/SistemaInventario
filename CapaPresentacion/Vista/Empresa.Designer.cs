@@ -36,12 +36,12 @@ namespace CapaPresentacion.Vista
             this.Panel_empresa = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Dgv_empresa = new System.Windows.Forms.DataGridView();
+            this.dgv_txtdelete = new System.Windows.Forms.DataGridViewImageColumn();
             this.Txtbuscar = new Guna.UI2.WinForms.Guna2TextBox();
             this.Panel_boton = new System.Windows.Forms.Panel();
             this.Btn_eliminar = new Guna.UI2.WinForms.Guna2Button();
             this.Btn_guardar = new Guna.UI2.WinForms.Guna2Button();
             this.btncerrar = new System.Windows.Forms.PictureBox();
-            this.dgv_txtdelete = new System.Windows.Forms.DataGridViewImageColumn();
             this.Panel_empresa.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_empresa)).BeginInit();
@@ -121,6 +121,18 @@ namespace CapaPresentacion.Vista
             this.Dgv_empresa.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.Dgv_empresa.Size = new System.Drawing.Size(778, 484);
             this.Dgv_empresa.TabIndex = 3;
+            // 
+            // dgv_txtdelete
+            // 
+            this.dgv_txtdelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dgv_txtdelete.FillWeight = 40F;
+            this.dgv_txtdelete.Frozen = true;
+            this.dgv_txtdelete.HeaderText = "         ";
+            this.dgv_txtdelete.Image = ((System.Drawing.Image)(resources.GetObject("dgv_txtdelete.Image")));
+            this.dgv_txtdelete.Name = "dgv_txtdelete";
+            this.dgv_txtdelete.ReadOnly = true;
+            this.dgv_txtdelete.ToolTipText = "Eliminar";
+            this.dgv_txtdelete.Width = 47;
             // 
             // Txtbuscar
             // 
@@ -209,18 +221,6 @@ namespace CapaPresentacion.Vista
             this.btncerrar.TabIndex = 100;
             this.btncerrar.TabStop = false;
             this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click);
-            // 
-            // dgv_txtdelete
-            // 
-            this.dgv_txtdelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dgv_txtdelete.FillWeight = 40F;
-            this.dgv_txtdelete.Frozen = true;
-            this.dgv_txtdelete.HeaderText = "         ";
-            this.dgv_txtdelete.Image = ((System.Drawing.Image)(resources.GetObject("dgv_txtdelete.Image")));
-            this.dgv_txtdelete.Name = "dgv_txtdelete";
-            this.dgv_txtdelete.ReadOnly = true;
-            this.dgv_txtdelete.ToolTipText = "Eliminar";
-            this.dgv_txtdelete.Width = 47;
             // 
             // FrmEmpresa
             // 

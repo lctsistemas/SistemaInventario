@@ -20,5 +20,31 @@ namespace CapaDatos.Contracts
     {
     }
 
+    public interface IClienteProv : IGeneral<DClienteProv>
+    {
+
+    }
+
+    public interface ITipoOperacion : IGeneral<DTipoOperacion>
+    {
+
+    }
+
+    public interface IMoneda : IGeneral<DMoneda>
+    {
+
+    }
+
+    public interface ITipoDoc : IGeneral<DTipoDocumento>
+    {
+
+    }
+
+    public interface IUnidMoneda : IGeneral<DUnidadMedida>
+    {
+
+    }
+
+
 
 }

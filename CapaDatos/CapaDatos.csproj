@@ -43,8 +43,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contracts\IGeneral.cs" />
+    <Compile Include="Entities\DClienteProv.cs" />
     <Compile Include="Entities\Dconexion.cs" />
     <Compile Include="Entities\Dempresa.cs" />
+    <Compile Include="Entities\DMoneda.cs" />
+    <Compile Include="Entities\DTipoDocumento.cs" />
+    <Compile Include="Entities\DTipoOperacion.cs" />
+    <Compile Include="Entities\DUnidadMedida.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
