@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaPresentacion.SubVista;
 using CapaPresentacion.Vista;
 
 namespace CapaPresentacion
@@ -18,7 +19,7 @@ namespace CapaPresentacion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmInicio());
+            Application.Run(new V_TipoOperacion());
         }
     }
 }

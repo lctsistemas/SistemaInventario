@@ -50,7 +50,7 @@ namespace CapaPresentacion.SubVista
             // 
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label7.Location = new System.Drawing.Point(108, 88);
+            this.label7.Location = new System.Drawing.Point(72, 87);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(119, 24);
             this.label7.TabIndex = 19;
@@ -61,11 +61,11 @@ namespace CapaPresentacion.SubVista
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label10.Location = new System.Drawing.Point(105, 57);
+            this.label10.Location = new System.Drawing.Point(72, 56);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(134, 16);
+            this.label10.Size = new System.Drawing.Size(142, 16);
             this.label10.TabIndex = 20;
-            this.label10.Text = "Nmbre de proveedor";
+            this.label10.Text = "Nombre de proveedor";
             // 
             // txtnomprov
             // 
@@ -82,7 +82,7 @@ namespace CapaPresentacion.SubVista
             this.txtnomprov.ForeColor = System.Drawing.Color.Black;
             this.txtnomprov.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtnomprov.HoverState.Parent = this.txtnomprov;
-            this.txtnomprov.Location = new System.Drawing.Point(269, 50);
+            this.txtnomprov.Location = new System.Drawing.Point(247, 49);
             this.txtnomprov.Name = "txtnomprov";
             this.txtnomprov.PasswordChar = '\0';
             this.txtnomprov.PlaceholderText = "Ingrese Nombre de proveedor";
@@ -107,21 +107,22 @@ namespace CapaPresentacion.SubVista
             this.txtruc.ForeColor = System.Drawing.Color.Black;
             this.txtruc.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtruc.HoverState.Parent = this.txtruc;
-            this.txtruc.Location = new System.Drawing.Point(269, 84);
+            this.txtruc.Location = new System.Drawing.Point(247, 83);
             this.txtruc.Name = "txtruc";
             this.txtruc.PasswordChar = '\0';
-            this.txtruc.PlaceholderText = "";
+            this.txtruc.PlaceholderText = "Ingrese RUC";
             this.txtruc.SelectedText = "";
             this.txtruc.ShadowDecoration.Parent = this.txtruc;
             this.txtruc.Size = new System.Drawing.Size(300, 28);
             this.txtruc.TabIndex = 18;
+            this.txtruc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(302, 10);
+            this.label1.Location = new System.Drawing.Point(269, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(121, 23);
             this.label1.TabIndex = 21;
@@ -137,7 +138,7 @@ namespace CapaPresentacion.SubVista
             this.guna2Button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(322, 134);
+            this.guna2Button1.Location = new System.Drawing.Point(273, 135);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
             this.guna2Button1.Size = new System.Drawing.Size(89, 45);
@@ -150,7 +151,7 @@ namespace CapaPresentacion.SubVista
             this.btncerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btncerrar.Image = ((System.Drawing.Image)(resources.GetObject("btncerrar.Image")));
-            this.btncerrar.Location = new System.Drawing.Point(784, 0);
+            this.btncerrar.Location = new System.Drawing.Point(664, 0);
             this.btncerrar.Name = "btncerrar";
             this.btncerrar.Size = new System.Drawing.Size(38, 35);
             this.btncerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -165,7 +166,7 @@ namespace CapaPresentacion.SubVista
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(822, 256);
+            this.panel1.Size = new System.Drawing.Size(702, 256);
             this.panel1.TabIndex = 102;
             // 
             // pictureBox1
@@ -173,7 +174,7 @@ namespace CapaPresentacion.SubVista
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(784, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(664, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(38, 35);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -192,14 +193,14 @@ namespace CapaPresentacion.SubVista
             this.panel2.Controls.Add(this.label7);
             this.panel2.Location = new System.Drawing.Point(36, 28);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(737, 199);
+            this.panel2.Size = new System.Drawing.Size(622, 199);
             this.panel2.TabIndex = 0;
             // 
             // FrmV_ClienteProv
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(822, 256);
+            this.ClientSize = new System.Drawing.Size(702, 256);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btncerrar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

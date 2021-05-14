@@ -62,11 +62,29 @@
     <Compile Include="Helps\ValidateError.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SubVista\V_Moneda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubVista\V_Moneda.Designer.cs">
+      <DependentUpon>V_Moneda.cs</DependentUpon>
+    </Compile>
     <Compile Include="SubVista\V_ClienteProv.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SubVista\V_ClienteProv.Designer.cs">
       <DependentUpon>V_ClienteProv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubVista\V_TipoOperacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubVista\V_TipoOperacion.Designer.cs">
+      <DependentUpon>V_TipoOperacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubVista\V_UnidadMedida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubVista\V_UnidadMedida.Designer.cs">
+      <DependentUpon>V_UnidadMedida.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\Empresa.cs">
       <SubType>Form</SubType>
@@ -145,6 +163,15 @@
     </Compile>
     <EmbeddedResource Include="SubVista\V_ClienteProv.resx">
       <DependentUpon>V_ClienteProv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubVista\V_Moneda.resx">
+      <DependentUpon>V_Moneda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubVista\V_TipoOperacion.resx">
+      <DependentUpon>V_TipoOperacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubVista\V_UnidadMedida.resx">
+      <DependentUpon>V_UnidadMedida.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Empresa.resx">
       <DependentUpon>Empresa.cs</DependentUpon>

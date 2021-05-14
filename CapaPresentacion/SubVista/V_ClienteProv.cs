@@ -31,6 +31,8 @@ namespace CapaPresentacion.SubVista
             dClienteProv.Ruc = txtruc.Text.Trim();
 
             result = rClienteProv.Add(dClienteProv);
+
+
             txtnomprov.Text = string.Empty;
             txtruc.Text = string.Empty;
             Msg.M_info(result);

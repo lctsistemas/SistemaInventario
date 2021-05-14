@@ -10,12 +10,11 @@ using System.Threading.Tasks;
 
 namespace CapaNegocio.Repositories
 {
-    public class RClienteProv : IClienteProv
+    public class RTipoDocumento : ITipoDoc
     {
         private SqlCommand cmd;
         private string result = "";
-        private bool estado=true;
-        public string Add(DClienteProv Entity)
+        public string Add(DTipoDocumento Entity)
         {
             using (SqlConnection connect = Dconexion.Getconectar())
             {
@@ -25,11 +24,11 @@ namespace CapaNegocio.Repositories
                     using (cmd = new SqlCommand())
                     {
                         cmd.Connection = connect;
-                        cmd.CommandText = "manto.SP_AddCliProv";
+                        cmd.CommandText = "manto.SP_AddDocumento";
                         cmd.CommandType = CommandType.StoredProcedure;
 
-                        cmd.Parameters.AddWithValue("@nom_prov", Entity.Nom_prov);
-                        cmd.Parameters.AddWithValue("@ruc", Entity.Ruc);
+                        cmd.Parameters.AddWithValue("@codigo", Entity.Codigo);
+                        cmd.Parameters.AddWithValue("@descripcion", Entity.Descripcion);
 
                         result = cmd.ExecuteNonQuery() == 1 ? "Registrado Correctamente!" : "Error al Regsitrar";
 
@@ -41,8 +40,7 @@ namespace CapaNegocio.Repositories
                     SqlException sqlex = ex as SqlException;
                     if (sqlex != null && sqlex.Number == 2627)
                     {
-                        result = "EL RUC INGRESADO YA SE ENCUENTRA REGISTRADO";
-                        
+                        result = "EL CODIGO INGRESADO YA SE ENCUENTRA REGISTRADO";
                     }
                     else
                         result = ex.Message;
@@ -53,17 +51,17 @@ namespace CapaNegocio.Repositories
             return result;
         }
 
-        public string Delete(DClienteProv Entity)
+        public string Delete(DTipoDocumento Entity)
         {
             throw new NotImplementedException();
         }
 
-        public string Edit(DClienteProv Entity)
+        public string Edit(DTipoDocumento Entity)
         {
             throw new NotImplementedException();
         }
 
-        public List<DClienteProv> Getdata(DClienteProv Entity)
+        public List<DTipoDocumento> Getdata(DTipoDocumento Entity)
         {
             throw new NotImplementedException();
         }
