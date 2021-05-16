@@ -1,3 +1,4 @@
+use Dbinventario
 --   PROCEDIMIENTOS PARA EMPRESA
 CREATE PROC manto.SP_AddEmpresa
 @id_empresa int = null,
@@ -20,7 +21,7 @@ VALUES(@id_empresa, @ruc, @razon_social, @nombre_comercial, @direccion, @domicil
 END
 GO
 
-ALTER PROC manto.SP_EditEmpresa
+CREATE PROC manto.SP_EditEmpresa
 @id_empresa int,
 @ruc char(11), 
 @razon_social varchar(100),
@@ -44,6 +45,7 @@ e.domicilio_fiscal, e.regimen FROM manto.Empresa e WHERE e.estado = @estado
 END
 GO
 
+--	PROCEDIMIENTO PARA CLIENTE PROVEEDOR
 CREATE PROC manto.SP_AddCliProv
 @idcliprov int = null,
 @nom_prov varchar(60), 
@@ -60,6 +62,7 @@ VALUES(@idcliprov, @nom_prov, @ruc)
 END
 GO
 
+-- PROCEDIMIENTO PARA TIPO DE OPERACION
 CREATE PROC manto.SP_AddTipoOper
 @idtipOper int = null,
 @codigo char(11), 
@@ -76,6 +79,7 @@ VALUES(@idtipOper, @codigo, @descripcion)
 END
 GO
 
+-- PROCEDIMIENTO PARA MONEDA
 CREATE PROC manto.SP_AddMoneda
 @idmoneda int = null,
 @codigo char(11),
@@ -95,6 +99,8 @@ VALUES(@idmoneda, @codigo, @nom_moneda,@abrev,@simbolo,@descripcion)
 END
 GO
 
+
+-- PROCEDIMIENTO PARA DOCUMENTO
 CREATE PROC manto.SP_AddDocumento
 @iddoc int = null,
 @codigo char(11), 
@@ -111,6 +117,7 @@ VALUES(@iddoc, @codigo, @descripcion)
 END
 GO
 
+-- PROCEDIMIENTO PARA UNIDAD DE MEDIDA
 CREATE PROC manto.sp_AddUnidadMedida
 @idUnidadMedida int = null,
 @codigo char(11), 
@@ -130,3 +137,5 @@ END
 GO
 
 exec manto.SP_AddEmpresa null,'20456578451','fsd','asd','av. asdas','av. dasdda','rus','ACTIVO';
+
+GO

@@ -19,7 +19,7 @@ namespace CapaPresentacion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new V_TipoOperacion());
+            Application.Run(new FrmInicio());
         }
     }
 }

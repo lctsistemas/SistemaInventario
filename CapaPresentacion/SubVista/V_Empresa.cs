@@ -28,8 +28,7 @@ namespace CapaPresentacion.SubVista
             dempresa = new Dempresa();
             rempresa = new Rempresa();
            
-            CargarRegimen();
-            //truc.MaxLength = 11;
+            CargarRegimen();           
             
         }
 

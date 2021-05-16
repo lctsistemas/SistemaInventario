@@ -78,7 +78,7 @@ namespace CapaPresentacion.Vista
 
         private void Btn_eliminar_Click(object sender, EventArgs e)
         {
-            if (Dgv_empresa.Rows.Count < 0)
+            if (Dgv_empresa.Rows.Count <= 0 )
             {
                 Msg.M_warning("Seleccione una Fila para poder modificar");
                 return;
