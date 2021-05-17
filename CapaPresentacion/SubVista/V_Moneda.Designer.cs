@@ -33,15 +33,15 @@ namespace CapaPresentacion.SubVista
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.guna2TextBox4 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtDesc = new Guna.UI2.WinForms.Guna2TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.guna2TextBox3 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtsimbolo = new Guna.UI2.WinForms.Guna2TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtabrev = new Guna.UI2.WinForms.Guna2TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtnomprov = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnguardar = new Guna.UI2.WinForms.Guna2Button();
+            this.txtmoneda = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtcodMon = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -76,15 +76,15 @@ namespace CapaPresentacion.SubVista
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.guna2TextBox4);
+            this.panel2.Controls.Add(this.txtDesc);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.guna2TextBox3);
+            this.panel2.Controls.Add(this.txtsimbolo);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.guna2TextBox2);
+            this.panel2.Controls.Add(this.txtabrev);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.guna2Button1);
-            this.panel2.Controls.Add(this.guna2TextBox1);
-            this.panel2.Controls.Add(this.txtnomprov);
+            this.panel2.Controls.Add(this.btnguardar);
+            this.panel2.Controls.Add(this.txtmoneda);
+            this.panel2.Controls.Add(this.txtcodMon);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label1);
@@ -93,31 +93,31 @@ namespace CapaPresentacion.SubVista
             this.panel2.Size = new System.Drawing.Size(629, 355);
             this.panel2.TabIndex = 0;
             // 
-            // guna2TextBox4
+            // txtDesc
             // 
-            this.guna2TextBox4.AutoScroll = true;
-            this.guna2TextBox4.BorderRadius = 3;
-            this.guna2TextBox4.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox4.DefaultText = "";
-            this.guna2TextBox4.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox4.DisabledState.Parent = this.guna2TextBox4;
-            this.guna2TextBox4.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox4.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox4.FocusedState.Parent = this.guna2TextBox4;
-            this.guna2TextBox4.ForeColor = System.Drawing.Color.Black;
-            this.guna2TextBox4.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox4.HoverState.Parent = this.guna2TextBox4;
-            this.guna2TextBox4.Location = new System.Drawing.Point(301, 216);
-            this.guna2TextBox4.Name = "guna2TextBox4";
-            this.guna2TextBox4.PasswordChar = '\0';
-            this.guna2TextBox4.PlaceholderText = "";
-            this.guna2TextBox4.SelectedText = "";
-            this.guna2TextBox4.ShadowDecoration.Parent = this.guna2TextBox4;
-            this.guna2TextBox4.Size = new System.Drawing.Size(302, 57);
-            this.guna2TextBox4.TabIndex = 39;
-            this.guna2TextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtDesc.AutoScroll = true;
+            this.txtDesc.BorderRadius = 3;
+            this.txtDesc.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDesc.DefaultText = "";
+            this.txtDesc.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtDesc.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtDesc.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDesc.DisabledState.Parent = this.txtDesc;
+            this.txtDesc.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDesc.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDesc.FocusedState.Parent = this.txtDesc;
+            this.txtDesc.ForeColor = System.Drawing.Color.Black;
+            this.txtDesc.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDesc.HoverState.Parent = this.txtDesc;
+            this.txtDesc.Location = new System.Drawing.Point(301, 216);
+            this.txtDesc.Name = "txtDesc";
+            this.txtDesc.PasswordChar = '\0';
+            this.txtDesc.PlaceholderText = "";
+            this.txtDesc.SelectedText = "";
+            this.txtDesc.ShadowDecoration.Parent = this.txtDesc;
+            this.txtDesc.Size = new System.Drawing.Size(302, 57);
+            this.txtDesc.TabIndex = 39;
+            this.txtDesc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label5
             // 
@@ -130,30 +130,30 @@ namespace CapaPresentacion.SubVista
             this.label5.TabIndex = 38;
             this.label5.Text = "Descripcion";
             // 
-            // guna2TextBox3
+            // txtsimbolo
             // 
-            this.guna2TextBox3.BorderRadius = 3;
-            this.guna2TextBox3.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox3.DefaultText = "";
-            this.guna2TextBox3.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox3.DisabledState.Parent = this.guna2TextBox3;
-            this.guna2TextBox3.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox3.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox3.FocusedState.Parent = this.guna2TextBox3;
-            this.guna2TextBox3.ForeColor = System.Drawing.Color.Black;
-            this.guna2TextBox3.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox3.HoverState.Parent = this.guna2TextBox3;
-            this.guna2TextBox3.Location = new System.Drawing.Point(301, 171);
-            this.guna2TextBox3.Name = "guna2TextBox3";
-            this.guna2TextBox3.PasswordChar = '\0';
-            this.guna2TextBox3.PlaceholderText = "Simbolo";
-            this.guna2TextBox3.SelectedText = "";
-            this.guna2TextBox3.ShadowDecoration.Parent = this.guna2TextBox3;
-            this.guna2TextBox3.Size = new System.Drawing.Size(104, 28);
-            this.guna2TextBox3.TabIndex = 37;
-            this.guna2TextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtsimbolo.BorderRadius = 3;
+            this.txtsimbolo.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtsimbolo.DefaultText = "";
+            this.txtsimbolo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtsimbolo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtsimbolo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtsimbolo.DisabledState.Parent = this.txtsimbolo;
+            this.txtsimbolo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtsimbolo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtsimbolo.FocusedState.Parent = this.txtsimbolo;
+            this.txtsimbolo.ForeColor = System.Drawing.Color.Black;
+            this.txtsimbolo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtsimbolo.HoverState.Parent = this.txtsimbolo;
+            this.txtsimbolo.Location = new System.Drawing.Point(301, 171);
+            this.txtsimbolo.Name = "txtsimbolo";
+            this.txtsimbolo.PasswordChar = '\0';
+            this.txtsimbolo.PlaceholderText = "Simbolo";
+            this.txtsimbolo.SelectedText = "";
+            this.txtsimbolo.ShadowDecoration.Parent = this.txtsimbolo;
+            this.txtsimbolo.Size = new System.Drawing.Size(104, 28);
+            this.txtsimbolo.TabIndex = 37;
+            this.txtsimbolo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label4
             // 
@@ -166,30 +166,30 @@ namespace CapaPresentacion.SubVista
             this.label4.TabIndex = 36;
             this.label4.Text = "Simbolo";
             // 
-            // guna2TextBox2
+            // txtabrev
             // 
-            this.guna2TextBox2.BorderRadius = 3;
-            this.guna2TextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox2.DefaultText = "";
-            this.guna2TextBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.DisabledState.Parent = this.guna2TextBox2;
-            this.guna2TextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.FocusedState.Parent = this.guna2TextBox2;
-            this.guna2TextBox2.ForeColor = System.Drawing.Color.Black;
-            this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.HoverState.Parent = this.guna2TextBox2;
-            this.guna2TextBox2.Location = new System.Drawing.Point(301, 128);
-            this.guna2TextBox2.Name = "guna2TextBox2";
-            this.guna2TextBox2.PasswordChar = '\0';
-            this.guna2TextBox2.PlaceholderText = "Ingrese abreviatura";
-            this.guna2TextBox2.SelectedText = "";
-            this.guna2TextBox2.ShadowDecoration.Parent = this.guna2TextBox2;
-            this.guna2TextBox2.Size = new System.Drawing.Size(124, 28);
-            this.guna2TextBox2.TabIndex = 35;
-            this.guna2TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtabrev.BorderRadius = 3;
+            this.txtabrev.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtabrev.DefaultText = "";
+            this.txtabrev.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtabrev.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtabrev.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtabrev.DisabledState.Parent = this.txtabrev;
+            this.txtabrev.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtabrev.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtabrev.FocusedState.Parent = this.txtabrev;
+            this.txtabrev.ForeColor = System.Drawing.Color.Black;
+            this.txtabrev.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtabrev.HoverState.Parent = this.txtabrev;
+            this.txtabrev.Location = new System.Drawing.Point(301, 128);
+            this.txtabrev.Name = "txtabrev";
+            this.txtabrev.PasswordChar = '\0';
+            this.txtabrev.PlaceholderText = "Ingrese abreviatura";
+            this.txtabrev.SelectedText = "";
+            this.txtabrev.ShadowDecoration.Parent = this.txtabrev;
+            this.txtabrev.Size = new System.Drawing.Size(124, 28);
+            this.txtabrev.TabIndex = 35;
+            this.txtabrev.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
             // 
@@ -202,72 +202,73 @@ namespace CapaPresentacion.SubVista
             this.label3.TabIndex = 34;
             this.label3.Text = "Abreviatura";
             // 
-            // guna2Button1
+            // btnguardar
             // 
-            this.guna2Button1.BorderRadius = 3;
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.FillColor = System.Drawing.Color.SteelBlue;
-            this.guna2Button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(280, 292);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(89, 45);
-            this.guna2Button1.TabIndex = 33;
-            this.guna2Button1.Text = "Guardar";
+            this.btnguardar.BorderRadius = 3;
+            this.btnguardar.CheckedState.Parent = this.btnguardar;
+            this.btnguardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnguardar.CustomImages.Parent = this.btnguardar;
+            this.btnguardar.FillColor = System.Drawing.Color.SteelBlue;
+            this.btnguardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.btnguardar.ForeColor = System.Drawing.Color.White;
+            this.btnguardar.HoverState.Parent = this.btnguardar;
+            this.btnguardar.Location = new System.Drawing.Point(280, 292);
+            this.btnguardar.Name = "btnguardar";
+            this.btnguardar.ShadowDecoration.Parent = this.btnguardar;
+            this.btnguardar.Size = new System.Drawing.Size(89, 45);
+            this.btnguardar.TabIndex = 33;
+            this.btnguardar.Text = "Guardar";
+            this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
             // 
-            // guna2TextBox1
+            // txtmoneda
             // 
-            this.guna2TextBox1.BorderRadius = 3;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.FocusedState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.ForeColor = System.Drawing.Color.Black;
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.HoverState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Location = new System.Drawing.Point(301, 87);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderText = "Ingrese moneda";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.ShadowDecoration.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Size = new System.Drawing.Size(191, 28);
-            this.guna2TextBox1.TabIndex = 32;
-            this.guna2TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtmoneda.BorderRadius = 3;
+            this.txtmoneda.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtmoneda.DefaultText = "";
+            this.txtmoneda.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtmoneda.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtmoneda.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtmoneda.DisabledState.Parent = this.txtmoneda;
+            this.txtmoneda.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtmoneda.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtmoneda.FocusedState.Parent = this.txtmoneda;
+            this.txtmoneda.ForeColor = System.Drawing.Color.Black;
+            this.txtmoneda.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtmoneda.HoverState.Parent = this.txtmoneda;
+            this.txtmoneda.Location = new System.Drawing.Point(301, 87);
+            this.txtmoneda.Name = "txtmoneda";
+            this.txtmoneda.PasswordChar = '\0';
+            this.txtmoneda.PlaceholderText = "Ingrese moneda";
+            this.txtmoneda.SelectedText = "";
+            this.txtmoneda.ShadowDecoration.Parent = this.txtmoneda;
+            this.txtmoneda.Size = new System.Drawing.Size(191, 28);
+            this.txtmoneda.TabIndex = 32;
+            this.txtmoneda.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // txtnomprov
+            // txtcodMon
             // 
-            this.txtnomprov.BorderRadius = 3;
-            this.txtnomprov.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtnomprov.DefaultText = "";
-            this.txtnomprov.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtnomprov.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtnomprov.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtnomprov.DisabledState.Parent = this.txtnomprov;
-            this.txtnomprov.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtnomprov.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtnomprov.FocusedState.Parent = this.txtnomprov;
-            this.txtnomprov.ForeColor = System.Drawing.Color.Black;
-            this.txtnomprov.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtnomprov.HoverState.Parent = this.txtnomprov;
-            this.txtnomprov.Location = new System.Drawing.Point(301, 48);
-            this.txtnomprov.Name = "txtnomprov";
-            this.txtnomprov.PasswordChar = '\0';
-            this.txtnomprov.PlaceholderText = "Ingrese codigo";
-            this.txtnomprov.SelectedText = "";
-            this.txtnomprov.ShadowDecoration.Parent = this.txtnomprov;
-            this.txtnomprov.Size = new System.Drawing.Size(191, 28);
-            this.txtnomprov.TabIndex = 31;
-            this.txtnomprov.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtcodMon.BorderRadius = 3;
+            this.txtcodMon.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtcodMon.DefaultText = "";
+            this.txtcodMon.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtcodMon.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtcodMon.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtcodMon.DisabledState.Parent = this.txtcodMon;
+            this.txtcodMon.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtcodMon.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtcodMon.FocusedState.Parent = this.txtcodMon;
+            this.txtcodMon.ForeColor = System.Drawing.Color.Black;
+            this.txtcodMon.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtcodMon.HoverState.Parent = this.txtcodMon;
+            this.txtcodMon.Location = new System.Drawing.Point(301, 48);
+            this.txtcodMon.Name = "txtcodMon";
+            this.txtcodMon.PasswordChar = '\0';
+            this.txtcodMon.PlaceholderText = "Ingrese codigo";
+            this.txtcodMon.SelectedText = "";
+            this.txtcodMon.ShadowDecoration.Parent = this.txtcodMon;
+            this.txtcodMon.Size = new System.Drawing.Size(191, 28);
+            this.txtcodMon.TabIndex = 31;
+            this.txtcodMon.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
             // 
@@ -324,17 +325,17 @@ namespace CapaPresentacion.SubVista
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         public System.Windows.Forms.PictureBox pictureBox1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        public Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
-        public Guna.UI2.WinForms.Guna2TextBox txtnomprov;
+        private Guna.UI2.WinForms.Guna2Button btnguardar;
+        public Guna.UI2.WinForms.Guna2TextBox txtmoneda;
+        public Guna.UI2.WinForms.Guna2TextBox txtcodMon;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label1;
-        public Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
+        public Guna.UI2.WinForms.Guna2TextBox txtabrev;
         private System.Windows.Forms.Label label3;
-        public Guna.UI2.WinForms.Guna2TextBox guna2TextBox3;
+        public Guna.UI2.WinForms.Guna2TextBox txtsimbolo;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        public Guna.UI2.WinForms.Guna2TextBox guna2TextBox4;
+        public Guna.UI2.WinForms.Guna2TextBox txtDesc;
     }
 }

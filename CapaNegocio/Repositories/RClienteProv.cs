@@ -41,7 +41,7 @@ namespace CapaNegocio.Repositories
                     SqlException sqlex = ex as SqlException;
                     if (sqlex != null && sqlex.Number == 2627)
                     {
-                        result = "EL RUC INGRESADO YA SE ENCUENTRA REGISTRADO";
+                        result = "EL RUC "+Entity.Ruc+" INGRESADO YA SE ENCUENTRA REGISTRADO";
                         
                     }
                     else

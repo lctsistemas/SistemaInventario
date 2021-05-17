@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaPresentacion.SubVista;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,17 @@ namespace CapaPresentacion.Vista
         public FrmTipoOperacion()
         {
             InitializeComponent();
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            using (Frm_VTipoOper tipoOper = new Frm_VTipoOper())
+            {
+                tipoOper.StartPosition = FormStartPosition.CenterParent;
+
+                tipoOper.ShowDialog();
+                // Show_business("ACTIVO");
+            }
         }
     }
 }

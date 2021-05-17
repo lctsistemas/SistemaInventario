@@ -9,13 +9,13 @@ namespace CapaDatos.Entities
     public class DMoneda
     {
         private int idmoneda;
-        private int codigo;
+        private string codigo;
         private string nom_moneda;
         private string abrev;
         private string simbolo;
         private string descripcion;
 
-        public DMoneda(int idmoneda, int codigo, string nom_moneda, string abrev, string simbolo, string descripcion)
+        public DMoneda(int idmoneda, string codigo, string nom_moneda, string abrev, string simbolo, string descripcion)
         {
             this.Idmoneda = idmoneda;
             this.Codigo = codigo;
@@ -31,7 +31,7 @@ namespace CapaDatos.Entities
         }
 
         public int Idmoneda { get => idmoneda; set => idmoneda = value; }
-        public int Codigo { get => codigo; set => codigo = value; }
+        public string Codigo { get => codigo; set => codigo = value; }
         public string Nom_moneda { get => nom_moneda; set => nom_moneda = value; }
         public string Abrev { get => abrev; set => abrev = value; }
         public string Simbolo { get => simbolo; set => simbolo = value; }

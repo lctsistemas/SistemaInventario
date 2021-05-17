@@ -31,19 +31,19 @@ namespace CapaPresentacion.SubVista
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(V_UnidadMedida));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtAbrev = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtnomprov = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtDesc = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtcodUM = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -57,14 +57,26 @@ namespace CapaPresentacion.SubVista
             this.panel1.Size = new System.Drawing.Size(687, 332);
             this.panel1.TabIndex = 0;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(649, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(38, 35);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 103;
+            this.pictureBox1.TabStop = false;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.guna2TextBox2);
+            this.panel2.Controls.Add(this.txtAbrev);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.guna2Button1);
-            this.panel2.Controls.Add(this.guna2TextBox1);
-            this.panel2.Controls.Add(this.txtnomprov);
+            this.panel2.Controls.Add(this.txtDesc);
+            this.panel2.Controls.Add(this.txtcodUM);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label1);
@@ -72,6 +84,42 @@ namespace CapaPresentacion.SubVista
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(613, 283);
             this.panel2.TabIndex = 0;
+            // 
+            // txtAbrev
+            // 
+            this.txtAbrev.BorderRadius = 3;
+            this.txtAbrev.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtAbrev.DefaultText = "";
+            this.txtAbrev.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtAbrev.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtAbrev.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtAbrev.DisabledState.Parent = this.txtAbrev;
+            this.txtAbrev.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtAbrev.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtAbrev.FocusedState.Parent = this.txtAbrev;
+            this.txtAbrev.ForeColor = System.Drawing.Color.Black;
+            this.txtAbrev.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtAbrev.HoverState.Parent = this.txtAbrev;
+            this.txtAbrev.Location = new System.Drawing.Point(246, 93);
+            this.txtAbrev.Name = "txtAbrev";
+            this.txtAbrev.PasswordChar = '\0';
+            this.txtAbrev.PlaceholderText = "Ingrese abreviatura";
+            this.txtAbrev.SelectedText = "";
+            this.txtAbrev.ShadowDecoration.Parent = this.txtAbrev;
+            this.txtAbrev.Size = new System.Drawing.Size(124, 28);
+            this.txtAbrev.TabIndex = 37;
+            this.txtAbrev.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label3.Location = new System.Drawing.Point(81, 105);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(77, 16);
+            this.label3.TabIndex = 36;
+            this.label3.Text = "Abreviatura";
             // 
             // guna2Button1
             // 
@@ -89,56 +137,57 @@ namespace CapaPresentacion.SubVista
             this.guna2Button1.Size = new System.Drawing.Size(89, 45);
             this.guna2Button1.TabIndex = 33;
             this.guna2Button1.Text = "Guardar";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
-            // guna2TextBox1
+            // txtDesc
             // 
-            this.guna2TextBox1.AutoScroll = true;
-            this.guna2TextBox1.BorderRadius = 3;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.FocusedState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.ForeColor = System.Drawing.Color.Black;
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.HoverState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Location = new System.Drawing.Point(246, 136);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderText = "";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.ShadowDecoration.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Size = new System.Drawing.Size(302, 57);
-            this.guna2TextBox1.TabIndex = 32;
+            this.txtDesc.AutoScroll = true;
+            this.txtDesc.BorderRadius = 3;
+            this.txtDesc.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDesc.DefaultText = "";
+            this.txtDesc.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtDesc.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtDesc.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDesc.DisabledState.Parent = this.txtDesc;
+            this.txtDesc.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDesc.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDesc.FocusedState.Parent = this.txtDesc;
+            this.txtDesc.ForeColor = System.Drawing.Color.Black;
+            this.txtDesc.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDesc.HoverState.Parent = this.txtDesc;
+            this.txtDesc.Location = new System.Drawing.Point(246, 136);
+            this.txtDesc.Name = "txtDesc";
+            this.txtDesc.PasswordChar = '\0';
+            this.txtDesc.PlaceholderText = "";
+            this.txtDesc.SelectedText = "";
+            this.txtDesc.ShadowDecoration.Parent = this.txtDesc;
+            this.txtDesc.Size = new System.Drawing.Size(302, 57);
+            this.txtDesc.TabIndex = 32;
             // 
-            // txtnomprov
+            // txtcodUM
             // 
-            this.txtnomprov.BorderRadius = 3;
-            this.txtnomprov.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtnomprov.DefaultText = "";
-            this.txtnomprov.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtnomprov.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtnomprov.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtnomprov.DisabledState.Parent = this.txtnomprov;
-            this.txtnomprov.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtnomprov.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtnomprov.FocusedState.Parent = this.txtnomprov;
-            this.txtnomprov.ForeColor = System.Drawing.Color.Black;
-            this.txtnomprov.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtnomprov.HoverState.Parent = this.txtnomprov;
-            this.txtnomprov.Location = new System.Drawing.Point(246, 50);
-            this.txtnomprov.Name = "txtnomprov";
-            this.txtnomprov.PasswordChar = '\0';
-            this.txtnomprov.PlaceholderText = "Ingrese codigo";
-            this.txtnomprov.SelectedText = "";
-            this.txtnomprov.ShadowDecoration.Parent = this.txtnomprov;
-            this.txtnomprov.Size = new System.Drawing.Size(191, 28);
-            this.txtnomprov.TabIndex = 31;
-            this.txtnomprov.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtcodUM.BorderRadius = 3;
+            this.txtcodUM.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtcodUM.DefaultText = "";
+            this.txtcodUM.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtcodUM.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtcodUM.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtcodUM.DisabledState.Parent = this.txtcodUM;
+            this.txtcodUM.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtcodUM.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtcodUM.FocusedState.Parent = this.txtcodUM;
+            this.txtcodUM.ForeColor = System.Drawing.Color.Black;
+            this.txtcodUM.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtcodUM.HoverState.Parent = this.txtcodUM;
+            this.txtcodUM.Location = new System.Drawing.Point(246, 50);
+            this.txtcodUM.Name = "txtcodUM";
+            this.txtcodUM.PasswordChar = '\0';
+            this.txtcodUM.PlaceholderText = "Ingrese codigo";
+            this.txtcodUM.SelectedText = "";
+            this.txtcodUM.ShadowDecoration.Parent = this.txtcodUM;
+            this.txtcodUM.Size = new System.Drawing.Size(191, 28);
+            this.txtcodUM.TabIndex = 31;
+            this.txtcodUM.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
             // 
@@ -173,54 +222,6 @@ namespace CapaPresentacion.SubVista
             this.label1.TabIndex = 28;
             this.label1.Text = "UNIDAD DE MEDIDA";
             // 
-            // guna2TextBox2
-            // 
-            this.guna2TextBox2.BorderRadius = 3;
-            this.guna2TextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox2.DefaultText = "";
-            this.guna2TextBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.DisabledState.Parent = this.guna2TextBox2;
-            this.guna2TextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.FocusedState.Parent = this.guna2TextBox2;
-            this.guna2TextBox2.ForeColor = System.Drawing.Color.Black;
-            this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.HoverState.Parent = this.guna2TextBox2;
-            this.guna2TextBox2.Location = new System.Drawing.Point(246, 93);
-            this.guna2TextBox2.Name = "guna2TextBox2";
-            this.guna2TextBox2.PasswordChar = '\0';
-            this.guna2TextBox2.PlaceholderText = "Ingrese abreviatura";
-            this.guna2TextBox2.SelectedText = "";
-            this.guna2TextBox2.ShadowDecoration.Parent = this.guna2TextBox2;
-            this.guna2TextBox2.Size = new System.Drawing.Size(124, 28);
-            this.guna2TextBox2.TabIndex = 37;
-            this.guna2TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(81, 105);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 16);
-            this.label3.TabIndex = 36;
-            this.label3.Text = "Abreviatura";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(649, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(38, 35);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 103;
-            this.pictureBox1.TabStop = false;
-            // 
             // V_UnidadMedida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -231,9 +232,9 @@ namespace CapaPresentacion.SubVista
             this.Name = "V_UnidadMedida";
             this.Text = "V_UnidadMedida";
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -243,12 +244,12 @@ namespace CapaPresentacion.SubVista
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        public Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
-        public Guna.UI2.WinForms.Guna2TextBox txtnomprov;
+        public Guna.UI2.WinForms.Guna2TextBox txtDesc;
+        public Guna.UI2.WinForms.Guna2TextBox txtcodUM;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label1;
-        public Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
+        public Guna.UI2.WinForms.Guna2TextBox txtAbrev;
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.PictureBox pictureBox1;
     }

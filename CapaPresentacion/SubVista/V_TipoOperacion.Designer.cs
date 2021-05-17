@@ -1,7 +1,7 @@
 ﻿
 namespace CapaPresentacion.SubVista
 {
-    partial class V_TipoOperacion
+    partial class Frm_VTipoOper
     {
         /// <summary>
         /// Required designer variable.
@@ -29,13 +29,13 @@ namespace CapaPresentacion.SubVista
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(V_TipoOperacion));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_VTipoOper));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtnomprov = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnguardar = new Guna.UI2.WinForms.Guna2Button();
+            this.txtDesc = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtcodOper = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -70,9 +70,9 @@ namespace CapaPresentacion.SubVista
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.guna2Button1);
-            this.panel2.Controls.Add(this.guna2TextBox1);
-            this.panel2.Controls.Add(this.txtnomprov);
+            this.panel2.Controls.Add(this.btnguardar);
+            this.panel2.Controls.Add(this.txtDesc);
+            this.panel2.Controls.Add(this.txtcodOper);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label1);
@@ -81,72 +81,73 @@ namespace CapaPresentacion.SubVista
             this.panel2.Size = new System.Drawing.Size(629, 235);
             this.panel2.TabIndex = 0;
             // 
-            // guna2Button1
+            // btnguardar
             // 
-            this.guna2Button1.BorderRadius = 3;
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.FillColor = System.Drawing.Color.CadetBlue;
-            this.guna2Button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(264, 178);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(89, 45);
-            this.guna2Button1.TabIndex = 27;
-            this.guna2Button1.Text = "Guardar";
+            this.btnguardar.BorderRadius = 3;
+            this.btnguardar.CheckedState.Parent = this.btnguardar;
+            this.btnguardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnguardar.CustomImages.Parent = this.btnguardar;
+            this.btnguardar.FillColor = System.Drawing.Color.CadetBlue;
+            this.btnguardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.btnguardar.ForeColor = System.Drawing.Color.White;
+            this.btnguardar.HoverState.Parent = this.btnguardar;
+            this.btnguardar.Location = new System.Drawing.Point(264, 178);
+            this.btnguardar.Name = "btnguardar";
+            this.btnguardar.ShadowDecoration.Parent = this.btnguardar;
+            this.btnguardar.Size = new System.Drawing.Size(89, 45);
+            this.btnguardar.TabIndex = 27;
+            this.btnguardar.Text = "Guardar";
+            this.btnguardar.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
-            // guna2TextBox1
+            // txtDesc
             // 
-            this.guna2TextBox1.AutoScroll = true;
-            this.guna2TextBox1.BorderRadius = 3;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.FocusedState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.ForeColor = System.Drawing.Color.Black;
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.HoverState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Location = new System.Drawing.Point(276, 102);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderText = "";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.ShadowDecoration.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Size = new System.Drawing.Size(302, 57);
-            this.guna2TextBox1.TabIndex = 26;
+            this.txtDesc.AutoScroll = true;
+            this.txtDesc.BorderRadius = 3;
+            this.txtDesc.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDesc.DefaultText = "";
+            this.txtDesc.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtDesc.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtDesc.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDesc.DisabledState.Parent = this.txtDesc;
+            this.txtDesc.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDesc.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDesc.FocusedState.Parent = this.txtDesc;
+            this.txtDesc.ForeColor = System.Drawing.Color.Black;
+            this.txtDesc.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDesc.HoverState.Parent = this.txtDesc;
+            this.txtDesc.Location = new System.Drawing.Point(276, 102);
+            this.txtDesc.Name = "txtDesc";
+            this.txtDesc.PasswordChar = '\0';
+            this.txtDesc.PlaceholderText = "";
+            this.txtDesc.SelectedText = "";
+            this.txtDesc.ShadowDecoration.Parent = this.txtDesc;
+            this.txtDesc.Size = new System.Drawing.Size(302, 57);
+            this.txtDesc.TabIndex = 26;
             // 
-            // txtnomprov
+            // txtcodOper
             // 
-            this.txtnomprov.BorderRadius = 3;
-            this.txtnomprov.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtnomprov.DefaultText = "";
-            this.txtnomprov.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtnomprov.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtnomprov.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtnomprov.DisabledState.Parent = this.txtnomprov;
-            this.txtnomprov.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtnomprov.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtnomprov.FocusedState.Parent = this.txtnomprov;
-            this.txtnomprov.ForeColor = System.Drawing.Color.Black;
-            this.txtnomprov.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtnomprov.HoverState.Parent = this.txtnomprov;
-            this.txtnomprov.Location = new System.Drawing.Point(276, 51);
-            this.txtnomprov.Name = "txtnomprov";
-            this.txtnomprov.PasswordChar = '\0';
-            this.txtnomprov.PlaceholderText = "Ingrese codigo de operacion";
-            this.txtnomprov.SelectedText = "";
-            this.txtnomprov.ShadowDecoration.Parent = this.txtnomprov;
-            this.txtnomprov.Size = new System.Drawing.Size(191, 28);
-            this.txtnomprov.TabIndex = 25;
-            this.txtnomprov.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtcodOper.BorderRadius = 3;
+            this.txtcodOper.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtcodOper.DefaultText = "";
+            this.txtcodOper.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtcodOper.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtcodOper.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtcodOper.DisabledState.Parent = this.txtcodOper;
+            this.txtcodOper.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtcodOper.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtcodOper.FocusedState.Parent = this.txtcodOper;
+            this.txtcodOper.ForeColor = System.Drawing.Color.Black;
+            this.txtcodOper.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtcodOper.HoverState.Parent = this.txtcodOper;
+            this.txtcodOper.Location = new System.Drawing.Point(276, 51);
+            this.txtcodOper.Name = "txtcodOper";
+            this.txtcodOper.PasswordChar = '\0';
+            this.txtcodOper.PlaceholderText = "Ingrese codigo de operacion";
+            this.txtcodOper.SelectedText = "";
+            this.txtcodOper.ShadowDecoration.Parent = this.txtcodOper;
+            this.txtcodOper.Size = new System.Drawing.Size(191, 28);
+            this.txtcodOper.TabIndex = 25;
+            this.txtcodOper.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
             // 
@@ -181,14 +182,14 @@ namespace CapaPresentacion.SubVista
             this.label1.TabIndex = 22;
             this.label1.Text = "TIPO DE OPERACION";
             // 
-            // V_TipoOperacion
+            // Frm_VTipoOper
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(702, 289);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "V_TipoOperacion";
+            this.Name = "Frm_VTipoOper";
             this.Text = "V_TipoOperacion";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -205,9 +206,9 @@ namespace CapaPresentacion.SubVista
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label2;
-        public Guna.UI2.WinForms.Guna2TextBox txtnomprov;
-        public Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        public Guna.UI2.WinForms.Guna2TextBox txtcodOper;
+        public Guna.UI2.WinForms.Guna2TextBox txtDesc;
+        private Guna.UI2.WinForms.Guna2Button btnguardar;
         public System.Windows.Forms.PictureBox pictureBox1;
     }
 }
