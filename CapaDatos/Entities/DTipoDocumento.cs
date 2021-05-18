@@ -9,7 +9,7 @@ namespace CapaDatos.Entities
     public class DTipoDocumento
     {
         private int iddocumento;
-        private int codigo;
+        private string codigo;
         private string descripcion;
 
         public DTipoDocumento(int iddocumento, int codigo, string descripcion)
@@ -25,7 +25,7 @@ namespace CapaDatos.Entities
         }
 
         public int Iddocumento { get => iddocumento; set => iddocumento = value; }
-        public int Codigo { get => codigo; set => codigo = value; }
+        public string Codigo { get => codigo; set => codigo = value; }
         public string Descripcion { get => descripcion; set => descripcion = value; }
     }
 }

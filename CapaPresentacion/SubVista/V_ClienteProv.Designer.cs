@@ -35,15 +35,19 @@ namespace CapaPresentacion.SubVista
             this.txtnomprov = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtruc = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnguardar = new Guna.UI2.WinForms.Guna2Button();
             this.btncerrar = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelregistro = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnmodificar = new Guna.UI2.WinForms.Guna2Button();
+            this.Txt_idprov = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel2.SuspendLayout();
+            this.panelregistro.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label7
@@ -128,23 +132,23 @@ namespace CapaPresentacion.SubVista
             this.label1.TabIndex = 21;
             this.label1.Text = "PROVEEDOR";
             // 
-            // guna2Button1
+            // btnguardar
             // 
-            this.guna2Button1.BorderRadius = 3;
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.FillColor = System.Drawing.Color.DarkSeaGreen;
-            this.guna2Button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(273, 135);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(89, 45);
-            this.guna2Button1.TabIndex = 22;
-            this.guna2Button1.Text = "Guardar";
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            this.btnguardar.BorderRadius = 3;
+            this.btnguardar.CheckedState.Parent = this.btnguardar;
+            this.btnguardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnguardar.CustomImages.Parent = this.btnguardar;
+            this.btnguardar.FillColor = System.Drawing.Color.DarkSeaGreen;
+            this.btnguardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.btnguardar.ForeColor = System.Drawing.Color.White;
+            this.btnguardar.HoverState.Parent = this.btnguardar;
+            this.btnguardar.Location = new System.Drawing.Point(47, 0);
+            this.btnguardar.Name = "btnguardar";
+            this.btnguardar.ShadowDecoration.Parent = this.btnguardar;
+            this.btnguardar.Size = new System.Drawing.Size(101, 45);
+            this.btnguardar.TabIndex = 22;
+            this.btnguardar.Text = "Guardar";
+            this.btnguardar.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // btncerrar
             // 
@@ -162,7 +166,7 @@ namespace CapaPresentacion.SubVista
             // 
             this.panel1.BackColor = System.Drawing.Color.Gray;
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.panelregistro);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -182,19 +186,55 @@ namespace CapaPresentacion.SubVista
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // panel2
+            // panelregistro
             // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.txtruc);
-            this.panel2.Controls.Add(this.guna2Button1);
-            this.panel2.Controls.Add(this.txtnomprov);
-            this.panel2.Controls.Add(this.label10);
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Location = new System.Drawing.Point(36, 28);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(622, 199);
-            this.panel2.TabIndex = 0;
+            this.panelregistro.BackColor = System.Drawing.Color.White;
+            this.panelregistro.Controls.Add(this.Txt_idprov);
+            this.panelregistro.Controls.Add(this.panel3);
+            this.panelregistro.Controls.Add(this.label1);
+            this.panelregistro.Controls.Add(this.txtruc);
+            this.panelregistro.Controls.Add(this.txtnomprov);
+            this.panelregistro.Controls.Add(this.label10);
+            this.panelregistro.Controls.Add(this.label7);
+            this.panelregistro.Location = new System.Drawing.Point(36, 28);
+            this.panelregistro.Name = "panelregistro";
+            this.panelregistro.Size = new System.Drawing.Size(622, 199);
+            this.panelregistro.TabIndex = 0;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.btnmodificar);
+            this.panel3.Controls.Add(this.btnguardar);
+            this.panel3.Location = new System.Drawing.Point(232, 133);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(197, 51);
+            this.panel3.TabIndex = 23;
+            // 
+            // btnmodificar
+            // 
+            this.btnmodificar.BorderRadius = 3;
+            this.btnmodificar.CheckedState.Parent = this.btnmodificar;
+            this.btnmodificar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnmodificar.CustomImages.Parent = this.btnmodificar;
+            this.btnmodificar.FillColor = System.Drawing.Color.DarkRed;
+            this.btnmodificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.btnmodificar.ForeColor = System.Drawing.Color.White;
+            this.btnmodificar.HoverState.Parent = this.btnmodificar;
+            this.btnmodificar.Location = new System.Drawing.Point(47, 0);
+            this.btnmodificar.Name = "btnmodificar";
+            this.btnmodificar.ShadowDecoration.Parent = this.btnmodificar;
+            this.btnmodificar.Size = new System.Drawing.Size(101, 45);
+            this.btnmodificar.TabIndex = 24;
+            this.btnmodificar.Text = "Modificar";
+            this.btnmodificar.Click += new System.EventHandler(this.btnmodificar_Click);
+            // 
+            // Txt_idprov
+            // 
+            this.Txt_idprov.Location = new System.Drawing.Point(157, 14);
+            this.Txt_idprov.Name = "Txt_idprov";
+            this.Txt_idprov.Size = new System.Drawing.Size(57, 20);
+            this.Txt_idprov.TabIndex = 103;
+            this.Txt_idprov.Visible = false;
             // 
             // FrmV_ClienteProv
             // 
@@ -209,8 +249,9 @@ namespace CapaPresentacion.SubVista
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.panelregistro.ResumeLayout(false);
+            this.panelregistro.PerformLayout();
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -222,10 +263,13 @@ namespace CapaPresentacion.SubVista
         public Guna.UI2.WinForms.Guna2TextBox txtnomprov;
         public Guna.UI2.WinForms.Guna2TextBox txtruc;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
         public System.Windows.Forms.PictureBox btncerrar;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panelregistro;
         public System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel3;
+        public Guna.UI2.WinForms.Guna2Button btnmodificar;
+        public Guna.UI2.WinForms.Guna2Button btnguardar;
+        public System.Windows.Forms.TextBox Txt_idprov;
     }
 }

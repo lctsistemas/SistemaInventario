@@ -23,7 +23,8 @@ namespace CapaPresentacion.Vista
             using (FrmV_ClienteProv cprov = new FrmV_ClienteProv())
             {
                 cprov.StartPosition = FormStartPosition.CenterParent;
-                
+                cprov.btnguardar.Visible = true;
+                cprov.btnmodificar.Visible = false;
                 cprov.ShowDialog();
                // Show_business("ACTIVO");
             }

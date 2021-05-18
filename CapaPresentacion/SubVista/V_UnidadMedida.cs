@@ -39,5 +39,47 @@ namespace CapaPresentacion.SubVista
 
             Msg.M_info(result);
         }
+
+        private void btnmodificar_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtcodUM.Text) || string.IsNullOrWhiteSpace(txtAbrev.Text) || 
+                string.IsNullOrWhiteSpace(txtDesc.Text))
+            {
+                ValidateChildren();
+                return;
+            }
+
+            string result = "";
+            dUnidadMedida.IdUnidadMedida = int.Parse(txtidUnidMed.Text.Trim());
+            dUnidadMedida.Codigo = txtcodUM.Text.Trim();
+            dUnidadMedida.Abrev = txtAbrev.Text.Trim();
+            dUnidadMedida.Descripcion = txtDesc.Text.Trim();
+
+
+
+            result = rUnidadMedida.Edit(dUnidadMedida);
+            if (result.Contains("Se Modifico"))
+                Msg.M_info(result);
+            else
+                Msg.M_error(result);
+
+            Limpiar();
+        }
+
+        private void Limpiar()
+        {
+            //Control x;
+
+            foreach (dynamic item in this.panelregistro.Controls)
+            {
+                if (item is Guna.UI2.WinForms.Guna2TextBox || item is ComboBox)
+                {
+                    item.Text = null;
+                }
+
+            }
+            txtcodUM.Focus();
+
+        }
     }
 }

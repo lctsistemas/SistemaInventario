@@ -13,11 +13,11 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion.SubVista
 {
-    public partial class V_Moneda : Form
+    public partial class FrmV_Moneda : Form
     {
         readonly DMoneda dMoneda;
         readonly RMoneda rMoneda;
-        public V_Moneda()
+        public FrmV_Moneda()
         {
             InitializeComponent();
             dMoneda = new DMoneda();
@@ -42,6 +42,56 @@ namespace CapaPresentacion.SubVista
             txtsimbolo.Text = string.Empty;
             txtDesc.Text = string.Empty;
             Msg.M_info(result);
+        }
+
+        private void btnmodificar_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtcodMon.Text) || string.IsNullOrWhiteSpace(txtmoneda.Text) || 
+                string.IsNullOrWhiteSpace(txtabrev.Text) || string.IsNullOrWhiteSpace(txtsimbolo.Text) ||
+                string.IsNullOrWhiteSpace(txtDesc.Text))
+
+            {
+                ValidateChildren();
+                return;
+            }
+
+            string result = "";
+            dMoneda.Idmoneda = int.Parse(Txt_idmon.Text.Trim());
+            dMoneda.Codigo = txtcodMon.Text.Trim();
+            dMoneda.Nom_moneda = txtmoneda.Text.Trim();
+            dMoneda.Abrev = txtabrev.Text.Trim();
+            dMoneda.Descripcion = txtDesc.Text.Trim();
+            
+
+
+            result = rMoneda.Edit(dMoneda);
+            if (result.Contains("Se Modifico"))
+                Msg.M_info(result);
+            else
+                Msg.M_error(result);
+
+            Limpiar();
+        }
+
+        private void Limpiar()
+        {
+            //Control x;
+
+            foreach (dynamic item in this.panelregistro.Controls)
+            {
+                if (item is Guna.UI2.WinForms.Guna2TextBox || item is ComboBox)
+                {
+                    item.Text = null;
+                }
+
+            }
+            txtcodMon.Focus();
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

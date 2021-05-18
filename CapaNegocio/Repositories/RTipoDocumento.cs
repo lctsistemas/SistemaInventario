@@ -58,7 +58,34 @@ namespace CapaNegocio.Repositories
 
         public string Edit(DTipoDocumento Entity)
         {
-            throw new NotImplementedException();
+            result = "";
+            using (SqlConnection connect = Dconexion.Getconectar())
+            {
+                connect.Open();
+                try
+                {
+                    using (cmd = new SqlCommand())
+                    {
+                        cmd.Connection = connect;
+                        cmd.CommandText = "manto.SP_EditDocumento";
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.AddWithValue("@iddoc", Entity.Iddocumento);
+                        cmd.Parameters.AddWithValue("@codigo", Entity.Codigo);
+                        cmd.Parameters.AddWithValue("@descripcion", Entity.Descripcion);
+
+
+                        result = cmd.ExecuteNonQuery() == 1 ? "Se Modifico Correctamente!" : "Error al Modificar";
+
+                        cmd.Parameters.Clear();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    result = ex.Message;
+                }
+            }
+            return result;
         }
 
         public List<DTipoDocumento> Getdata(DTipoDocumento Entity)

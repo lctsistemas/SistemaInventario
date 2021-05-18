@@ -32,9 +32,10 @@ namespace CapaPresentacion.SubVista
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmV_Empresa));
             this.Panel_registro = new System.Windows.Forms.Panel();
+            this.Txt_idempresa = new System.Windows.Forms.TextBox();
             this.Panel_boton = new System.Windows.Forms.Panel();
+            this.Btn_modificar = new Guna.UI2.WinForms.Guna2Button();
             this.Btn_guardar = new Guna.UI2.WinForms.Guna2Button();
-            this.btncerrar = new System.Windows.Forms.PictureBox();
             this.Cboregimen = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -47,9 +48,8 @@ namespace CapaPresentacion.SubVista
             this.Txtnombre_comercial = new Guna.UI2.WinForms.Guna2TextBox();
             this.Txtruc = new Guna.UI2.WinForms.Guna2TextBox();
             this.Txtrazon = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btncerrar = new System.Windows.Forms.PictureBox();
             this.Panel_empresa = new System.Windows.Forms.Panel();
-            this.Btn_modificar = new Guna.UI2.WinForms.Guna2Button();
-            this.Txt_idempresa = new System.Windows.Forms.TextBox();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.Panel_registro.SuspendLayout();
             this.Panel_boton.SuspendLayout();
@@ -79,6 +79,14 @@ namespace CapaPresentacion.SubVista
             this.Panel_registro.Size = new System.Drawing.Size(908, 375);
             this.Panel_registro.TabIndex = 1;
             // 
+            // Txt_idempresa
+            // 
+            this.Txt_idempresa.Location = new System.Drawing.Point(199, 15);
+            this.Txt_idempresa.Name = "Txt_idempresa";
+            this.Txt_idempresa.Size = new System.Drawing.Size(57, 20);
+            this.Txt_idempresa.TabIndex = 102;
+            this.Txt_idempresa.Visible = false;
+            // 
             // Panel_boton
             // 
             this.Panel_boton.Controls.Add(this.Btn_modificar);
@@ -87,6 +95,24 @@ namespace CapaPresentacion.SubVista
             this.Panel_boton.Name = "Panel_boton";
             this.Panel_boton.Size = new System.Drawing.Size(399, 79);
             this.Panel_boton.TabIndex = 101;
+            // 
+            // Btn_modificar
+            // 
+            this.Btn_modificar.BorderRadius = 3;
+            this.Btn_modificar.CheckedState.Parent = this.Btn_modificar;
+            this.Btn_modificar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_modificar.CustomImages.Parent = this.Btn_modificar;
+            this.Btn_modificar.FillColor = System.Drawing.Color.DarkRed;
+            this.Btn_modificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.Btn_modificar.ForeColor = System.Drawing.Color.White;
+            this.Btn_modificar.HoverState.Parent = this.Btn_modificar;
+            this.Btn_modificar.Location = new System.Drawing.Point(0, 0);
+            this.Btn_modificar.Name = "Btn_modificar";
+            this.Btn_modificar.ShadowDecoration.Parent = this.Btn_modificar;
+            this.Btn_modificar.Size = new System.Drawing.Size(399, 45);
+            this.Btn_modificar.TabIndex = 8;
+            this.Btn_modificar.Text = "Modificar";
+            this.Btn_modificar.Click += new System.EventHandler(this.Btn_modificar_Click);
             // 
             // Btn_guardar
             // 
@@ -106,19 +132,6 @@ namespace CapaPresentacion.SubVista
             this.Btn_guardar.TabIndex = 7;
             this.Btn_guardar.Text = "Guardar";
             this.Btn_guardar.Click += new System.EventHandler(this.Btn_guardar_Click);
-            // 
-            // btncerrar
-            // 
-            this.btncerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btncerrar.Image = ((System.Drawing.Image)(resources.GetObject("btncerrar.Image")));
-            this.btncerrar.Location = new System.Drawing.Point(973, 0);
-            this.btncerrar.Name = "btncerrar";
-            this.btncerrar.Size = new System.Drawing.Size(38, 35);
-            this.btncerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.btncerrar.TabIndex = 100;
-            this.btncerrar.TabStop = false;
-            this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click);
             // 
             // Cboregimen
             // 
@@ -330,6 +343,19 @@ namespace CapaPresentacion.SubVista
             this.Txtrazon.TabIndex = 2;
             this.Txtrazon.Validating += new System.ComponentModel.CancelEventHandler(this.Txtrazon_Validating);
             // 
+            // btncerrar
+            // 
+            this.btncerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btncerrar.Image = ((System.Drawing.Image)(resources.GetObject("btncerrar.Image")));
+            this.btncerrar.Location = new System.Drawing.Point(973, 0);
+            this.btncerrar.Name = "btncerrar";
+            this.btncerrar.Size = new System.Drawing.Size(38, 35);
+            this.btncerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btncerrar.TabIndex = 100;
+            this.btncerrar.TabStop = false;
+            this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click);
+            // 
             // Panel_empresa
             // 
             this.Panel_empresa.BackColor = System.Drawing.Color.Gray;
@@ -340,32 +366,6 @@ namespace CapaPresentacion.SubVista
             this.Panel_empresa.Name = "Panel_empresa";
             this.Panel_empresa.Size = new System.Drawing.Size(1012, 522);
             this.Panel_empresa.TabIndex = 2;
-            // 
-            // Btn_modificar
-            // 
-            this.Btn_modificar.BorderRadius = 3;
-            this.Btn_modificar.CheckedState.Parent = this.Btn_modificar;
-            this.Btn_modificar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Btn_modificar.CustomImages.Parent = this.Btn_modificar;
-            this.Btn_modificar.FillColor = System.Drawing.Color.DarkRed;
-            this.Btn_modificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.Btn_modificar.ForeColor = System.Drawing.Color.White;
-            this.Btn_modificar.HoverState.Parent = this.Btn_modificar;
-            this.Btn_modificar.Location = new System.Drawing.Point(0, 0);
-            this.Btn_modificar.Name = "Btn_modificar";
-            this.Btn_modificar.ShadowDecoration.Parent = this.Btn_modificar;
-            this.Btn_modificar.Size = new System.Drawing.Size(399, 45);
-            this.Btn_modificar.TabIndex = 8;
-            this.Btn_modificar.Text = "Modificar";
-            this.Btn_modificar.Click += new System.EventHandler(this.Btn_modificar_Click);
-            // 
-            // Txt_idempresa
-            // 
-            this.Txt_idempresa.Location = new System.Drawing.Point(199, 15);
-            this.Txt_idempresa.Name = "Txt_idempresa";
-            this.Txt_idempresa.Size = new System.Drawing.Size(57, 20);
-            this.Txt_idempresa.TabIndex = 102;
-            this.Txt_idempresa.Visible = false;
             // 
             // guna2Elipse1
             // 

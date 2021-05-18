@@ -61,7 +61,36 @@ namespace CapaNegocio.Repositories
 
         public string Edit(DMoneda Entity)
         {
-            throw new NotImplementedException();
+            result = "";
+            using (SqlConnection connect = Dconexion.Getconectar())
+            {
+                connect.Open();
+                try
+                {
+                    using (cmd = new SqlCommand())
+                    {
+                        cmd.Connection = connect;
+                        cmd.CommandText = "manto.SP_EditMoneda";
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.AddWithValue("@idmoneda", Entity.Idmoneda);
+                        cmd.Parameters.AddWithValue("@codigo", Entity.Nom_moneda);
+                        cmd.Parameters.AddWithValue("@nom_moneda", Entity.Abrev);
+                        cmd.Parameters.AddWithValue("@simbolo", Entity.Simbolo);
+                        cmd.Parameters.AddWithValue("@descripcion", Entity.Descripcion);
+
+
+                        result = cmd.ExecuteNonQuery() == 1 ? "Se Modifico Correctamente!" : "Error al Modificar";
+
+                        cmd.Parameters.Clear();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    result = ex.Message;
+                }
+            }
+            return result;
         }
 
         public List<DMoneda> Getdata(DMoneda Entity)

@@ -69,11 +69,12 @@ namespace CapaNegocio.Repositories
                     using (cmd = new SqlCommand())
                     {
                         cmd.Connection = connect;
-                        cmd.CommandText = "manto.SP_EditEmpresa";
+                        cmd.CommandText = "manto.SP_EditCliProv";
                         cmd.CommandType = CommandType.StoredProcedure;
 
-                        cmd.Parameters.AddWithValue("@id_empresa", Entity.Id_empresa);
-                        
+                        cmd.Parameters.AddWithValue("@idcliprov", Entity.Idprov);
+                        cmd.Parameters.AddWithValue("@nom_prov", Entity.Nom_prov);
+                        cmd.Parameters.AddWithValue("@ruc", Entity.Ruc);
 
 
                         result = cmd.ExecuteNonQuery() == 1 ? "Se Modifico Correctamente!" : "Error al Modificar";

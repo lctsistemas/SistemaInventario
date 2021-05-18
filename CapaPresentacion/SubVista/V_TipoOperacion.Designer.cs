@@ -30,7 +30,7 @@ namespace CapaPresentacion.SubVista
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_VTipoOper));
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelregistro = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnguardar = new Guna.UI2.WinForms.Guna2Button();
@@ -39,21 +39,25 @@ namespace CapaPresentacion.SubVista
             this.label2 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnmodificar = new Guna.UI2.WinForms.Guna2Button();
+            this.txtidTipoOper = new System.Windows.Forms.TextBox();
+            this.panelregistro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // panelregistro
             // 
-            this.panel1.BackColor = System.Drawing.Color.CadetBlue;
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(702, 289);
-            this.panel1.TabIndex = 0;
+            this.panelregistro.BackColor = System.Drawing.Color.CadetBlue;
+            this.panelregistro.Controls.Add(this.pictureBox1);
+            this.panelregistro.Controls.Add(this.panel2);
+            this.panelregistro.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelregistro.Location = new System.Drawing.Point(0, 0);
+            this.panelregistro.Name = "panelregistro";
+            this.panelregistro.Size = new System.Drawing.Size(702, 289);
+            this.panelregistro.TabIndex = 0;
             // 
             // pictureBox1
             // 
@@ -70,7 +74,8 @@ namespace CapaPresentacion.SubVista
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.btnguardar);
+            this.panel2.Controls.Add(this.txtidTipoOper);
+            this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.txtDesc);
             this.panel2.Controls.Add(this.txtcodOper);
             this.panel2.Controls.Add(this.label2);
@@ -91,7 +96,7 @@ namespace CapaPresentacion.SubVista
             this.btnguardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.btnguardar.ForeColor = System.Drawing.Color.White;
             this.btnguardar.HoverState.Parent = this.btnguardar;
-            this.btnguardar.Location = new System.Drawing.Point(264, 178);
+            this.btnguardar.Location = new System.Drawing.Point(55, 3);
             this.btnguardar.Name = "btnguardar";
             this.btnguardar.ShadowDecoration.Parent = this.btnguardar;
             this.btnguardar.Size = new System.Drawing.Size(89, 45);
@@ -182,26 +187,62 @@ namespace CapaPresentacion.SubVista
             this.label1.TabIndex = 22;
             this.label1.Text = "TIPO DE OPERACION";
             // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.btnmodificar);
+            this.panel3.Controls.Add(this.btnguardar);
+            this.panel3.Location = new System.Drawing.Point(210, 165);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(200, 59);
+            this.panel3.TabIndex = 28;
+            // 
+            // btnmodificar
+            // 
+            this.btnmodificar.BorderRadius = 3;
+            this.btnmodificar.CheckedState.Parent = this.btnmodificar;
+            this.btnmodificar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnmodificar.CustomImages.Parent = this.btnmodificar;
+            this.btnmodificar.FillColor = System.Drawing.Color.RoyalBlue;
+            this.btnmodificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.btnmodificar.ForeColor = System.Drawing.Color.White;
+            this.btnmodificar.HoverState.Parent = this.btnmodificar;
+            this.btnmodificar.Location = new System.Drawing.Point(55, 3);
+            this.btnmodificar.Name = "btnmodificar";
+            this.btnmodificar.ShadowDecoration.Parent = this.btnmodificar;
+            this.btnmodificar.Size = new System.Drawing.Size(89, 45);
+            this.btnmodificar.TabIndex = 29;
+            this.btnmodificar.Text = "Modificar";
+            this.btnmodificar.Click += new System.EventHandler(this.btnmodificar_Click);
+            // 
+            // txtidTipoOper
+            // 
+            this.txtidTipoOper.Location = new System.Drawing.Point(106, 16);
+            this.txtidTipoOper.Name = "txtidTipoOper";
+            this.txtidTipoOper.Size = new System.Drawing.Size(57, 20);
+            this.txtidTipoOper.TabIndex = 105;
+            this.txtidTipoOper.Visible = false;
+            // 
             // Frm_VTipoOper
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(702, 289);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelregistro);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frm_VTipoOper";
             this.Text = "V_TipoOperacion";
-            this.panel1.ResumeLayout(false);
+            this.panelregistro.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelregistro;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label10;
@@ -210,5 +251,8 @@ namespace CapaPresentacion.SubVista
         public Guna.UI2.WinForms.Guna2TextBox txtDesc;
         private Guna.UI2.WinForms.Guna2Button btnguardar;
         public System.Windows.Forms.PictureBox pictureBox1;
+        private Guna.UI2.WinForms.Guna2Button btnmodificar;
+        private System.Windows.Forms.Panel panel3;
+        public System.Windows.Forms.TextBox txtidTipoOper;
     }
 }

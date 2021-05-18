@@ -38,14 +38,17 @@ namespace CapaPresentacion.SubVista
             this.label10 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnmodificar = new Guna.UI2.WinForms.Guna2Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.btnguardar);
+            this.panel2.Controls.Add(this.panel1);
             this.panel2.Controls.Add(this.txtDescDoc);
             this.panel2.Controls.Add(this.txtcodDoc);
             this.panel2.Controls.Add(this.label2);
@@ -66,7 +69,7 @@ namespace CapaPresentacion.SubVista
             this.btnguardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.btnguardar.ForeColor = System.Drawing.Color.White;
             this.btnguardar.HoverState.Parent = this.btnguardar;
-            this.btnguardar.Location = new System.Drawing.Point(264, 178);
+            this.btnguardar.Location = new System.Drawing.Point(57, 3);
             this.btnguardar.Name = "btnguardar";
             this.btnguardar.ShadowDecoration.Parent = this.btnguardar;
             this.btnguardar.Size = new System.Drawing.Size(89, 45);
@@ -169,6 +172,33 @@ namespace CapaPresentacion.SubVista
             this.pictureBox1.TabIndex = 103;
             this.pictureBox1.TabStop = false;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnmodificar);
+            this.panel1.Controls.Add(this.btnguardar);
+            this.panel1.Location = new System.Drawing.Point(211, 180);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 52);
+            this.panel1.TabIndex = 28;
+            // 
+            // btnmodificar
+            // 
+            this.btnmodificar.BorderRadius = 3;
+            this.btnmodificar.CheckedState.Parent = this.btnmodificar;
+            this.btnmodificar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnmodificar.CustomImages.Parent = this.btnmodificar;
+            this.btnmodificar.FillColor = System.Drawing.Color.Tomato;
+            this.btnmodificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.btnmodificar.ForeColor = System.Drawing.Color.White;
+            this.btnmodificar.HoverState.Parent = this.btnmodificar;
+            this.btnmodificar.Location = new System.Drawing.Point(57, 3);
+            this.btnmodificar.Name = "btnmodificar";
+            this.btnmodificar.ShadowDecoration.Parent = this.btnmodificar;
+            this.btnmodificar.Size = new System.Drawing.Size(89, 45);
+            this.btnmodificar.TabIndex = 29;
+            this.btnmodificar.Text = "Modificar";
+            this.btnmodificar.Click += new System.EventHandler(this.btnmodificar_Click);
+            // 
             // VTipo_Documento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -182,6 +212,7 @@ namespace CapaPresentacion.SubVista
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -196,5 +227,7 @@ namespace CapaPresentacion.SubVista
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel1;
+        private Guna.UI2.WinForms.Guna2Button btnmodificar;
     }
 }

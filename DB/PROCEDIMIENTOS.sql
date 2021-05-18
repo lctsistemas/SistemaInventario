@@ -1,6 +1,6 @@
 use Dbinventario
 --   PROCEDIMIENTOS PARA EMPRESA
-CREATE PROC manto.SP_AddEmpresa
+alter PROC manto.SP_AddEmpresa
 @id_empresa int = null,
 @ruc char(11), 
 @razon_social varchar(100),
@@ -184,13 +184,14 @@ END
 GO
 
 --PROCEDIMIENTO PARA EDITAR DOCUMENTO
-CREATE PROC manto.SP_EditDocumento
-@iddoc int,
+CREATE PROC manto.SP_EditUnidMedida
+@idUnidadMedida int,
 @codigo char(11), 
-@descripcion varchar(100)
+@abrev varchar(5),
+@descripcion varchar(60)
 AS BEGIN
-UPDATE manto.TipoDocumento SET codigo=@codigo, descripcion=@descripcion
-WHERE idTipoDoc=@iddoc
+UPDATE manto.UnidadMedida SET codigo=@codigo, abrev=@abrev, descripcion=@descripcion
+WHERE idUnidadMedida=@idUnidadMedida
 END
 GO
 

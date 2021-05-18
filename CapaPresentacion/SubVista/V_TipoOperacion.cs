@@ -38,5 +38,45 @@ namespace CapaPresentacion.SubVista
             txtDesc.Text = string.Empty;
             Msg.M_info(result);
         }
+
+        private void btnmodificar_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtcodOper.Text) || string.IsNullOrWhiteSpace(txtDesc.Text)) 
+            {
+                ValidateChildren();
+                return;
+            }
+
+            string result = "";
+            dTipoOperacion.IdTipo_Oper = int.Parse(txtidTipoOper.Text.Trim());
+            dTipoOperacion.Codigo = txtcodOper.Text.Trim();
+            dTipoOperacion.Descripcion = txtDesc.Text.Trim();
+        
+
+
+            result = rTipoOperacion.Edit(dTipoOperacion);
+            if (result.Contains("Se Modifico"))
+                Msg.M_info(result);
+            else
+                Msg.M_error(result);
+
+            Limpiar();
+        }
+
+        private void Limpiar()
+        {
+            //Control x;
+
+            foreach (dynamic item in this.panelregistro.Controls)
+            {
+                if (item is Guna.UI2.WinForms.Guna2TextBox || item is ComboBox)
+                {
+                    item.Text = null;
+                }
+
+            }
+            txtcodOper.Focus();
+
+        }
     }
 }

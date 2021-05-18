@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaPresentacion.SubVista;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,18 @@ namespace CapaPresentacion.Vista
         public FrmMoneda()
         {
             InitializeComponent();
+        }
+
+        private void btnnuevo_Click(object sender, EventArgs e)
+        {
+            using (FrmV_Moneda vmon = new FrmV_Moneda())
+            {
+                vmon.StartPosition = FormStartPosition.CenterParent;
+                vmon.btnmodificar.Visible = false;
+                vmon.btnguardar.Visible = true;
+                vmon.ShowDialog();
+                //Show_business("ACTIVO");
+            }
         }
     }
 }
