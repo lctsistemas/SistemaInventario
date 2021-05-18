@@ -62,6 +62,17 @@ VALUES(@idcliprov, @nom_prov, @ruc)
 END
 GO
 
+--PROCEDIMIENTO PARA EDITAR PROVEEDOR
+CREATE PROC manto.SP_EditCliProv
+@idcliprov int,
+@nom_prov varchar(60), 
+@ruc char(11)
+AS BEGIN
+UPDATE manto.clienteProv SET nom_prov=@nom_prov, ruc=@ruc
+WHERE idcliprov = @idcliprov
+END
+GO
+
 -- PROCEDIMIENTO PARA TIPO DE OPERACION
 CREATE PROC manto.SP_AddTipoOper
 @idtipOper int = null,
@@ -76,6 +87,17 @@ AS BEGIN
 
 INSERT INTO manto.TipoOperacion(idTipoOper, codigo, descripcion)
 VALUES(@idtipOper, @codigo, @descripcion)
+END
+GO
+
+--PROCEDIMIENTO PARA EDITAR TIPO OPERACION
+CREATE PROC manto.SP_EditTipoOper
+@idtipOper int,
+@codigo char(11), 
+@descripcion varchar(100)
+AS BEGIN
+UPDATE manto.TipoOperacion SET codigo=@codigo, descripcion=@descripcion
+WHERE idTipoOper = @idtipOper
 END
 GO
 
@@ -99,6 +121,20 @@ VALUES(@idmoneda, @codigo, @nom_moneda,@abrev,@simbolo,@descripcion)
 END
 GO
 
+--PROCEDIMIENTO PARA EDITAR MONEDA
+CREATE PROC manto.SP_EditMoneda
+@idmoneda int,
+@codigo char(11), 
+@nom_moneda varchar(10),
+@abrev varchar(5),
+@simbolo varchar(3),
+@descripcion varchar(100)
+AS BEGIN
+UPDATE manto.Moneda SET codigo=@codigo, nom_moneda=@nom_moneda,abrev=@abrev,simbolo=@simbolo,descripcion=@descripcion
+WHERE idMoneda=@idmoneda
+END
+GO
+
 
 -- PROCEDIMIENTO PARA DOCUMENTO
 CREATE PROC manto.SP_AddDocumento
@@ -114,6 +150,17 @@ AS BEGIN
 
 INSERT INTO manto.TipoDocumento(idTipoDoc, codigo, descripcion)
 VALUES(@iddoc, @codigo, @descripcion)
+END
+GO
+
+--PROCEDIMIENTO PARA EDITAR DOCUMENTO
+CREATE PROC manto.SP_EditDocumento
+@iddoc int,
+@codigo char(11), 
+@descripcion varchar(100)
+AS BEGIN
+UPDATE manto.TipoDocumento SET codigo=@codigo, descripcion=@descripcion
+WHERE idTipoDoc=@iddoc
 END
 GO
 
@@ -134,6 +181,17 @@ INSERT INTO manto.UnidadMedida(idUnidadMedida, codigo, abrev, descripcion)
 VALUES(@idUnidadMedida, @codigo, @abrev, @descripcion)
 END
 
+GO
+
+--PROCEDIMIENTO PARA EDITAR DOCUMENTO
+CREATE PROC manto.SP_EditDocumento
+@iddoc int,
+@codigo char(11), 
+@descripcion varchar(100)
+AS BEGIN
+UPDATE manto.TipoDocumento SET codigo=@codigo, descripcion=@descripcion
+WHERE idTipoDoc=@iddoc
+END
 GO
 
 exec manto.SP_AddEmpresa null,'20456578451','fsd','asd','av. asdas','av. dasdda','rus','ACTIVO';

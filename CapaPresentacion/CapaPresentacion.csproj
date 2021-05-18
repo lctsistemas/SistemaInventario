@@ -170,6 +170,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SubVista\VTipo_Documento.resx">
+      <DependentUpon>VTipo_Documento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SubVista\V_ClienteProv.resx">
       <DependentUpon>V_ClienteProv.cs</DependentUpon>
     </EmbeddedResource>

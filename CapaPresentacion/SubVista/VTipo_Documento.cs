@@ -12,9 +12,15 @@ namespace CapaPresentacion.SubVista
 {
     public partial class VTipo_Documento : Form
     {
+
         public VTipo_Documento()
         {
             InitializeComponent();
+        }
+
+        private void btnguardar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
