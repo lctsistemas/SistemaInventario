@@ -33,6 +33,7 @@ namespace CapaPresentacion.SubVista
             this.panelregistro = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.Txt_idmon = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnmodificar = new Guna.UI2.WinForms.Guna2Button();
             this.btnguardar = new Guna.UI2.WinForms.Guna2Button();
@@ -47,7 +48,6 @@ namespace CapaPresentacion.SubVista
             this.label2 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.Txt_idmon = new System.Windows.Forms.TextBox();
             this.panelregistro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -98,6 +98,14 @@ namespace CapaPresentacion.SubVista
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(629, 355);
             this.panel2.TabIndex = 0;
+            // 
+            // Txt_idmon
+            // 
+            this.Txt_idmon.Location = new System.Drawing.Point(139, 11);
+            this.Txt_idmon.Name = "Txt_idmon";
+            this.Txt_idmon.Size = new System.Drawing.Size(57, 20);
+            this.Txt_idmon.TabIndex = 104;
+            this.Txt_idmon.Visible = false;
             // 
             // panel3
             // 
@@ -335,14 +343,6 @@ namespace CapaPresentacion.SubVista
             this.label1.Size = new System.Drawing.Size(94, 23);
             this.label1.TabIndex = 28;
             this.label1.Text = "MONEDA";
-            // 
-            // Txt_idmon
-            // 
-            this.Txt_idmon.Location = new System.Drawing.Point(139, 11);
-            this.Txt_idmon.Name = "Txt_idmon";
-            this.Txt_idmon.Size = new System.Drawing.Size(57, 20);
-            this.Txt_idmon.TabIndex = 104;
-            this.Txt_idmon.Visible = false;
             // 
             // FrmV_Moneda
             // 

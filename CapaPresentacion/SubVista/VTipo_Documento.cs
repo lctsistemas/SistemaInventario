@@ -40,17 +40,18 @@ namespace CapaPresentacion.SubVista
             Msg.M_info(result);
         }
 
-        private void btnmodificar_Click(object sender, EventArgs e)
+        /*private void btnmodificar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtcodDoc.Text) || string.IsNullOrWhiteSpace(txtDescDoc.Text) )
                 ValidateChildren();
                 return;
-            }
+        }
         
             string result = "";
-             //TipoDocumento
+             //TipoDocumento*/
             
 
         }
-    }
+    
+    
 }

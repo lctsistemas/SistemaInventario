@@ -40,9 +40,9 @@ namespace CapaPresentacion.SubVista
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelregistro = new System.Windows.Forms.Panel();
+            this.Txt_idprov = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnmodificar = new Guna.UI2.WinForms.Guna2Button();
-            this.Txt_idprov = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -201,6 +201,14 @@ namespace CapaPresentacion.SubVista
             this.panelregistro.Size = new System.Drawing.Size(622, 199);
             this.panelregistro.TabIndex = 0;
             // 
+            // Txt_idprov
+            // 
+            this.Txt_idprov.Location = new System.Drawing.Point(157, 14);
+            this.Txt_idprov.Name = "Txt_idprov";
+            this.Txt_idprov.Size = new System.Drawing.Size(57, 20);
+            this.Txt_idprov.TabIndex = 103;
+            this.Txt_idprov.Visible = false;
+            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.btnmodificar);
@@ -227,14 +235,6 @@ namespace CapaPresentacion.SubVista
             this.btnmodificar.TabIndex = 24;
             this.btnmodificar.Text = "Modificar";
             this.btnmodificar.Click += new System.EventHandler(this.btnmodificar_Click);
-            // 
-            // Txt_idprov
-            // 
-            this.Txt_idprov.Location = new System.Drawing.Point(157, 14);
-            this.Txt_idprov.Name = "Txt_idprov";
-            this.Txt_idprov.Size = new System.Drawing.Size(57, 20);
-            this.Txt_idprov.TabIndex = 103;
-            this.Txt_idprov.Visible = false;
             // 
             // FrmV_ClienteProv
             // 

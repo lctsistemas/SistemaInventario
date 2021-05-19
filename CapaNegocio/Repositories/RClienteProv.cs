@@ -14,7 +14,8 @@ namespace CapaNegocio.Repositories
     {
         private SqlCommand cmd;
         private string result = "";
-        private bool estado=true;
+        //private bool estado=true;
+        private List<DClienteProv> listclienteprov;
         public string Add(DClienteProv Entity)
         {
             using (SqlConnection connect = Dconexion.Getconectar())
@@ -92,7 +93,44 @@ namespace CapaNegocio.Repositories
 
         public List<DClienteProv> Getdata(DClienteProv Entity)
         {
-            throw new NotImplementedException();
+            using (SqlConnection connect = Dconexion.Getconectar())
+            {
+                connect.Open();
+                using (cmd = new SqlCommand())
+                {
+                    cmd.Connection = connect;
+                    cmd.CommandText = "manto.SP_ShowCliProv";
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    SqlDataReader dtr = cmd.ExecuteReader();
+                    using (DataTable dt = new DataTable())
+                    {
+                        dt.Load(dtr);
+                        dtr.Dispose();
+
+                        listclienteprov = new List<DClienteProv>();
+                        foreach (DataRow item in dt.Rows)
+                        {
+                            listclienteprov.Add(new DClienteProv()
+                            {
+                                Idprov = Convert.ToInt32(item[0]),
+                                Nom_prov = item[1].ToString(),
+                                Ruc = item[2].ToString()
+                            });
+                        }
+                    }
+                }
+
+
+            }
+
+            return listclienteprov;
+        }
+
+        //BUSCAR Cliente Proveedor
+        public IEnumerable<DClienteProv> Search(string filter)
+        {
+            return listclienteprov.FindAll(e => e.Nom_prov.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0 || e.Ruc.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0);
         }
     }
 }

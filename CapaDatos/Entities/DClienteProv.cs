@@ -9,39 +9,22 @@ namespace CapaDatos.Entities
     public class DClienteProv
     {
         private int idprov;
-        private string ruc;
         private string nom_prov;
+        private string ruc;
 
-        public DClienteProv(int idprov, string ruc, string nom_prov)
+        public DClienteProv(int idprov, string nom_prov, string ruc)
         {
-            this.Idprov = idprov;
-            this.Ruc = ruc;
-            this.Nom_prov = nom_prov;
+            this.idprov = idprov;
+            this.nom_prov = nom_prov;
+            this.ruc = ruc;
         }
 
         public DClienteProv()
         {
-
         }
 
-        public string mensaje { get; set; }
-
-        public int Idprov
-        {
-            get { return idprov; }
-            set { idprov = value; }
-        }
-
-        public string Ruc
-        {
-            get { return ruc; }
-            set { ruc = value; }
-        }
-
-        public string Nom_prov
-        {
-            get { return nom_prov; }
-            set { nom_prov = value; }
-        }
+        public int Idprov { get => idprov; set => idprov = value; }
+        public string Nom_prov { get => nom_prov; set => nom_prov = value; }
+        public string Ruc { get => ruc; set => ruc = value; }
     }
 }

@@ -73,6 +73,14 @@ WHERE idcliprov = @idcliprov
 END
 GO
 
+ALTER PROC manto.SP_ShowCliProv
+AS BEGIN
+SELECT  c.idcliprov, c.nom_prov, c.ruc FROM manto.clienteProv c
+END
+GO
+
+exec manto.SP_ShowCliProv
+
 -- PROCEDIMIENTO PARA TIPO DE OPERACION
 CREATE PROC manto.SP_AddTipoOper
 @idtipOper int = null,
@@ -98,6 +106,12 @@ CREATE PROC manto.SP_EditTipoOper
 AS BEGIN
 UPDATE manto.TipoOperacion SET codigo=@codigo, descripcion=@descripcion
 WHERE idTipoOper = @idtipOper
+END
+GO
+
+CREATE PROC manto.SP_ShowTipoOper
+AS BEGIN
+SELECT  t.idTipoOper, t.codigo, t.descripcion FROM manto.TipoOperacion t
 END
 GO
 
@@ -135,6 +149,12 @@ WHERE idMoneda=@idmoneda
 END
 GO
 
+--PROCEDIMIENTO PARA MOSTRAR MONEDA
+CREATE PROC manto.SP_ShowMon
+AS BEGIN
+SELECT  m.idMoneda, m.codigo, m.abrev,m.simbolo,m.descripcion FROM manto.Moneda m
+END
+GO
 
 -- PROCEDIMIENTO PARA DOCUMENTO
 CREATE PROC manto.SP_AddDocumento

@@ -78,5 +78,10 @@ namespace CapaPresentacion.SubVista
             txtcodOper.Focus();
 
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -197,7 +197,6 @@ namespace CapaPresentacion.SubVista
             this.btnmodificar.Size = new System.Drawing.Size(89, 45);
             this.btnmodificar.TabIndex = 29;
             this.btnmodificar.Text = "Modificar";
-            this.btnmodificar.Click += new System.EventHandler(this.btnmodificar_Click);
             // 
             // VTipo_Documento
             // 
