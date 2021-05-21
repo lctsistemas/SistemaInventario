@@ -1,7 +1,7 @@
 ﻿
 namespace CapaPresentacion.SubVista
 {
-    partial class VTipo_Documento
+    partial class FrmVTipo_Doc
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace CapaPresentacion.SubVista
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VTipo_Documento));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVTipo_Doc));
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnmodificar = new Guna.UI2.WinForms.Guna2Button();
@@ -40,6 +40,7 @@ namespace CapaPresentacion.SubVista
             this.label10 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtidTipoDoc = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -48,6 +49,7 @@ namespace CapaPresentacion.SubVista
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.txtidTipoDoc);
             this.panel2.Controls.Add(this.panel1);
             this.panel2.Controls.Add(this.txtDescDoc);
             this.panel2.Controls.Add(this.txtcodDoc);
@@ -78,7 +80,7 @@ namespace CapaPresentacion.SubVista
             this.btnmodificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.btnmodificar.ForeColor = System.Drawing.Color.White;
             this.btnmodificar.HoverState.Parent = this.btnmodificar;
-            this.btnmodificar.Location = new System.Drawing.Point(57, 3);
+            this.btnmodificar.Location = new System.Drawing.Point(57, 4);
             this.btnmodificar.Name = "btnmodificar";
             this.btnmodificar.ShadowDecoration.Parent = this.btnmodificar;
             this.btnmodificar.Size = new System.Drawing.Size(89, 45);
@@ -197,7 +199,15 @@ namespace CapaPresentacion.SubVista
             this.pictureBox1.TabIndex = 103;
             this.pictureBox1.TabStop = false;
             // 
-            // VTipo_Documento
+            // txtidTipoDoc
+            // 
+            this.txtidTipoDoc.Location = new System.Drawing.Point(114, 18);
+            this.txtidTipoDoc.Name = "txtidTipoDoc";
+            this.txtidTipoDoc.Size = new System.Drawing.Size(57, 20);
+            this.txtidTipoDoc.TabIndex = 107;
+            this.txtidTipoDoc.Visible = false;
+            // 
+            // FrmVTipo_Doc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -205,7 +215,7 @@ namespace CapaPresentacion.SubVista
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "VTipo_Documento";
+            this.Name = "FrmVTipo_Doc";
             this.Text = "VTipo_Documento";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -218,7 +228,6 @@ namespace CapaPresentacion.SubVista
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private Guna.UI2.WinForms.Guna2Button btnguardar;
         public Guna.UI2.WinForms.Guna2TextBox txtDescDoc;
         public Guna.UI2.WinForms.Guna2TextBox txtcodDoc;
         private System.Windows.Forms.Label label2;
@@ -226,6 +235,8 @@ namespace CapaPresentacion.SubVista
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
-        private Guna.UI2.WinForms.Guna2Button btnmodificar;
+        public System.Windows.Forms.TextBox txtidTipoDoc;
+        public Guna.UI2.WinForms.Guna2Button btnguardar;
+        public Guna.UI2.WinForms.Guna2Button btnmodificar;
     }
 }

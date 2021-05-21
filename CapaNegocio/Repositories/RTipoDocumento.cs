@@ -14,6 +14,7 @@ namespace CapaNegocio.Repositories
     {
         private SqlCommand cmd;
         private string result = "";
+        private List<DTipoDocumento> listTipoDoc;
         public string Add(DTipoDocumento Entity)
         {
             using (SqlConnection connect = Dconexion.Getconectar())
@@ -91,6 +92,11 @@ namespace CapaNegocio.Repositories
         public List<DTipoDocumento> Getdata(DTipoDocumento Entity)
         {
             throw new NotImplementedException();
+        }
+
+        public IEnumerable<DTipoDocumento> Search(string filter)
+        {
+            return listTipoDoc.FindAll(e => e.Codigo.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0);
         }
     }
 }

@@ -13,12 +13,12 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion.SubVista
 {
-    public partial class VTipo_Documento : Form
+    public partial class FrmVTipo_Doc : Form
     {
         readonly DTipoDocumento dTipoDocumento;
         readonly RTipoDocumento rTipoDoc;
 
-        public VTipo_Documento()
+        public FrmVTipo_Doc()
         {
             InitializeComponent();
             dTipoDocumento = new DTipoDocumento();
@@ -40,18 +40,10 @@ namespace CapaPresentacion.SubVista
             Msg.M_info(result);
         }
 
-        /*private void btnmodificar_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtcodDoc.Text) || string.IsNullOrWhiteSpace(txtDescDoc.Text) )
-                ValidateChildren();
-                return;
-        }
-        
-            string result = "";
-             //TipoDocumento*/
-            
+       
 
-        }
+       
+    }
     
     
 }
