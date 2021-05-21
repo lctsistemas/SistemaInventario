@@ -129,5 +129,10 @@ namespace CapaNegocio.Repositories
             }
             return listmoneda;
         }
+
+        public IEnumerable<DMoneda> Search(string filter)
+        {
+            return listmoneda.FindAll(e => e.Nom_moneda.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0 || e.Abrev.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0);
+        }
     }
 }

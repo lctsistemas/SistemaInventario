@@ -80,5 +80,10 @@ namespace CapaPresentacion.Vista
         {
             this.Close();
         }
+
+        private void txtbuscar_TextChanged(object sender, EventArgs e)
+        {
+            Dgv_tipoOper.DataSource = rtipoOper.Search(txtbuscar.Text.Trim());
+        }
     }
 }

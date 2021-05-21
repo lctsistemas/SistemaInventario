@@ -124,5 +124,10 @@ namespace CapaNegocio.Repositories
 
             return listTipoOper;
         }
+
+        public IEnumerable<DTipoOperacion> Search(string filter)
+        {
+            return listTipoOper.FindAll(e => e.Codigo.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0);
+        }
     }
 }

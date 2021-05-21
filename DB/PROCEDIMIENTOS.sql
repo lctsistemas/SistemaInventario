@@ -184,6 +184,13 @@ WHERE idTipoDoc=@iddoc
 END
 GO
 
+--PROCEDIMIENTO PARA MOSTRAR DOCUMENTO
+CREATE PROC manto.SP_ShowDoc
+AS BEGIN
+SELECT  t.idTipoDoc, t.codigo, t.descripcion FROM manto.TipoDocumento t
+END
+GO
+
 -- PROCEDIMIENTO PARA UNIDAD DE MEDIDA
 CREATE PROC manto.sp_AddUnidadMedida
 @idUnidadMedida int = null,
@@ -203,7 +210,7 @@ END
 
 GO
 
---PROCEDIMIENTO PARA EDITAR DOCUMENTO
+--PROCEDIMIENTO PARA EDITAR UNIDAD MEDIDA
 CREATE PROC manto.SP_EditUnidMedida
 @idUnidadMedida int,
 @codigo char(11), 
@@ -212,6 +219,13 @@ CREATE PROC manto.SP_EditUnidMedida
 AS BEGIN
 UPDATE manto.UnidadMedida SET codigo=@codigo, abrev=@abrev, descripcion=@descripcion
 WHERE idUnidadMedida=@idUnidadMedida
+END
+GO
+
+--PROCEDIMIENTO PARA MOSTRAR UNIDAD MEDIDA
+CREATE PROC manto.SP_ShowUnidadMed
+AS BEGIN
+SELECT  u.idUnidadMedida,u.codigo,u.abrev,u.descripcion FROM manto.UnidadMedida u
 END
 GO
 
