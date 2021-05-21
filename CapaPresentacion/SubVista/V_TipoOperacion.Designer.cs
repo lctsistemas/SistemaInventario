@@ -183,10 +183,10 @@ namespace CapaPresentacion.SubVista
             this.txtcodOper.Location = new System.Drawing.Point(276, 51);
             this.txtcodOper.Name = "txtcodOper";
             this.txtcodOper.PasswordChar = '\0';
-            this.txtcodOper.PlaceholderText = "Ingrese codigo de operacion";
+            this.txtcodOper.PlaceholderText = "Codigo";
             this.txtcodOper.SelectedText = "";
             this.txtcodOper.ShadowDecoration.Parent = this.txtcodOper;
-            this.txtcodOper.Size = new System.Drawing.Size(191, 28);
+            this.txtcodOper.Size = new System.Drawing.Size(62, 28);
             this.txtcodOper.TabIndex = 25;
             // 
             // label2

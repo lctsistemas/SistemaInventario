@@ -150,9 +150,9 @@ END
 GO
 
 --PROCEDIMIENTO PARA MOSTRAR MONEDA
-CREATE PROC manto.SP_ShowMon
+ALTER PROC manto.SP_ShowMon
 AS BEGIN
-SELECT  m.idMoneda, m.codigo, m.abrev,m.simbolo,m.descripcion FROM manto.Moneda m
+SELECT  m.idMoneda, m.codigo,m.nom_moneda, m.abrev,m.simbolo,m.descripcion FROM manto.Moneda m
 END
 GO
 

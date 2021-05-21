@@ -42,7 +42,7 @@ namespace CapaPresentacion.Vista
         private void Show_TipoOper()
         {
             Dgv_tipoOper.DataSource = rtipoOper.Getdata(dtipoOper);
-
+            
         }
 
         //TABLA
@@ -71,7 +71,9 @@ namespace CapaPresentacion.Vista
 
                 tipoOper.btnmodificar.Visible = true;
                 tipoOper.btnguardar.Visible = false;
+                tipoOper.txtDesc.Focus();
                 tipoOper.ShowDialog();
+                
                 Show_TipoOper();
             }
         }

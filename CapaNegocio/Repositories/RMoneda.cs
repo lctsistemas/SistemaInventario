@@ -118,9 +118,10 @@ namespace CapaNegocio.Repositories
                             {
                                 Idmoneda = Convert.ToInt32(item[0]),
                                 Codigo = item[1].ToString(),
-                                Abrev = item[2].ToString(),
-                                Simbolo = item[3].ToString(),
-                                Descripcion = item[4].ToString()
+                                Nom_moneda = item[2].ToString(),
+                                Abrev = item[3].ToString(),
+                                Simbolo = item[4].ToString(),
+                                Descripcion = item[5].ToString()
 
                             });
                         }

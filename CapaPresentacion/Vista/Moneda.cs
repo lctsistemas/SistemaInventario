@@ -69,10 +69,11 @@ namespace CapaPresentacion.Vista
             {
                 mon.StartPosition = FormStartPosition.CenterParent;
                 mon.Txt_idmon.Text = Dgv_moneda.CurrentRow.Cells[0].Value.ToString();
-                mon.txtmoneda.Text = Dgv_moneda.CurrentRow.Cells[1].Value.ToString();
-                mon.txtabrev.Text = Dgv_moneda.CurrentRow.Cells[2].Value.ToString();
-                mon.txtsimbolo.Text = Dgv_moneda.CurrentRow.Cells[3].Value.ToString();
-                mon.txtDesc.Text = Dgv_moneda.CurrentRow.Cells[4].Value.ToString();
+                mon.txtcodMon.Text= Dgv_moneda.CurrentRow.Cells[1].Value.ToString();
+                mon.txtmoneda.Text = Dgv_moneda.CurrentRow.Cells[2].Value.ToString();
+                mon.txtabrev.Text = Dgv_moneda.CurrentRow.Cells[3].Value.ToString();
+                mon.txtsimbolo.Text = Dgv_moneda.CurrentRow.Cells[4].Value.ToString();
+                mon.txtDesc.Text = Dgv_moneda.CurrentRow.Cells[5].Value.ToString();
 
                 mon.btnmodificar.Visible = true;
                 mon.btnguardar.Visible = false;

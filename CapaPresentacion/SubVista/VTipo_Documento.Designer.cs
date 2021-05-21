@@ -31,6 +31,8 @@ namespace CapaPresentacion.SubVista
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VTipo_Documento));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnmodificar = new Guna.UI2.WinForms.Guna2Button();
             this.btnguardar = new Guna.UI2.WinForms.Guna2Button();
             this.txtDescDoc = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtcodDoc = new Guna.UI2.WinForms.Guna2TextBox();
@@ -38,11 +40,9 @@ namespace CapaPresentacion.SubVista
             this.label10 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnmodificar = new Guna.UI2.WinForms.Guna2Button();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -58,6 +58,32 @@ namespace CapaPresentacion.SubVista
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(629, 235);
             this.panel2.TabIndex = 1;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnmodificar);
+            this.panel1.Controls.Add(this.btnguardar);
+            this.panel1.Location = new System.Drawing.Point(211, 180);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 52);
+            this.panel1.TabIndex = 28;
+            // 
+            // btnmodificar
+            // 
+            this.btnmodificar.BorderRadius = 3;
+            this.btnmodificar.CheckedState.Parent = this.btnmodificar;
+            this.btnmodificar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnmodificar.CustomImages.Parent = this.btnmodificar;
+            this.btnmodificar.FillColor = System.Drawing.Color.Tomato;
+            this.btnmodificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.btnmodificar.ForeColor = System.Drawing.Color.White;
+            this.btnmodificar.HoverState.Parent = this.btnmodificar;
+            this.btnmodificar.Location = new System.Drawing.Point(57, 3);
+            this.btnmodificar.Name = "btnmodificar";
+            this.btnmodificar.ShadowDecoration.Parent = this.btnmodificar;
+            this.btnmodificar.Size = new System.Drawing.Size(89, 45);
+            this.btnmodificar.TabIndex = 29;
+            this.btnmodificar.Text = "Modificar";
             // 
             // btnguardar
             // 
@@ -120,12 +146,11 @@ namespace CapaPresentacion.SubVista
             this.txtcodDoc.Location = new System.Drawing.Point(276, 51);
             this.txtcodDoc.Name = "txtcodDoc";
             this.txtcodDoc.PasswordChar = '\0';
-            this.txtcodDoc.PlaceholderText = "Ingrese codigo de documento";
+            this.txtcodDoc.PlaceholderText = "Codigo";
             this.txtcodDoc.SelectedText = "";
             this.txtcodDoc.ShadowDecoration.Parent = this.txtcodDoc;
-            this.txtcodDoc.Size = new System.Drawing.Size(191, 28);
+            this.txtcodDoc.Size = new System.Drawing.Size(71, 28);
             this.txtcodDoc.TabIndex = 25;
-            this.txtcodDoc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
             // 
@@ -172,32 +197,6 @@ namespace CapaPresentacion.SubVista
             this.pictureBox1.TabIndex = 103;
             this.pictureBox1.TabStop = false;
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnmodificar);
-            this.panel1.Controls.Add(this.btnguardar);
-            this.panel1.Location = new System.Drawing.Point(211, 180);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 52);
-            this.panel1.TabIndex = 28;
-            // 
-            // btnmodificar
-            // 
-            this.btnmodificar.BorderRadius = 3;
-            this.btnmodificar.CheckedState.Parent = this.btnmodificar;
-            this.btnmodificar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnmodificar.CustomImages.Parent = this.btnmodificar;
-            this.btnmodificar.FillColor = System.Drawing.Color.Tomato;
-            this.btnmodificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.btnmodificar.ForeColor = System.Drawing.Color.White;
-            this.btnmodificar.HoverState.Parent = this.btnmodificar;
-            this.btnmodificar.Location = new System.Drawing.Point(57, 3);
-            this.btnmodificar.Name = "btnmodificar";
-            this.btnmodificar.ShadowDecoration.Parent = this.btnmodificar;
-            this.btnmodificar.Size = new System.Drawing.Size(89, 45);
-            this.btnmodificar.TabIndex = 29;
-            this.btnmodificar.Text = "Modificar";
-            // 
             // VTipo_Documento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -210,8 +209,8 @@ namespace CapaPresentacion.SubVista
             this.Text = "VTipo_Documento";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -210,9 +210,8 @@ namespace CapaPresentacion.SubVista
             this.txtsimbolo.PlaceholderText = "Simbolo";
             this.txtsimbolo.SelectedText = "";
             this.txtsimbolo.ShadowDecoration.Parent = this.txtsimbolo;
-            this.txtsimbolo.Size = new System.Drawing.Size(104, 28);
+            this.txtsimbolo.Size = new System.Drawing.Size(68, 28);
             this.txtsimbolo.TabIndex = 37;
-            this.txtsimbolo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label4
             // 
@@ -248,7 +247,6 @@ namespace CapaPresentacion.SubVista
             this.txtabrev.ShadowDecoration.Parent = this.txtabrev;
             this.txtabrev.Size = new System.Drawing.Size(124, 28);
             this.txtabrev.TabIndex = 35;
-            this.txtabrev.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
             // 
@@ -282,9 +280,8 @@ namespace CapaPresentacion.SubVista
             this.txtmoneda.PlaceholderText = "Ingrese moneda";
             this.txtmoneda.SelectedText = "";
             this.txtmoneda.ShadowDecoration.Parent = this.txtmoneda;
-            this.txtmoneda.Size = new System.Drawing.Size(191, 28);
+            this.txtmoneda.Size = new System.Drawing.Size(171, 28);
             this.txtmoneda.TabIndex = 32;
-            this.txtmoneda.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtcodMon
             // 
@@ -304,12 +301,11 @@ namespace CapaPresentacion.SubVista
             this.txtcodMon.Location = new System.Drawing.Point(301, 48);
             this.txtcodMon.Name = "txtcodMon";
             this.txtcodMon.PasswordChar = '\0';
-            this.txtcodMon.PlaceholderText = "Ingrese codigo";
+            this.txtcodMon.PlaceholderText = "Codigo";
             this.txtcodMon.SelectedText = "";
             this.txtcodMon.ShadowDecoration.Parent = this.txtcodMon;
-            this.txtcodMon.Size = new System.Drawing.Size(191, 28);
+            this.txtcodMon.Size = new System.Drawing.Size(68, 28);
             this.txtcodMon.TabIndex = 31;
-            this.txtcodMon.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
             // 

@@ -92,7 +92,7 @@ namespace CapaPresentacion.SubVista
             this.txtnomprov.PlaceholderText = "Ingrese Nombre de proveedor";
             this.txtnomprov.SelectedText = "";
             this.txtnomprov.ShadowDecoration.Parent = this.txtnomprov;
-            this.txtnomprov.Size = new System.Drawing.Size(191, 28);
+            this.txtnomprov.Size = new System.Drawing.Size(242, 28);
             this.txtnomprov.TabIndex = 17;
             this.txtnomprov.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -117,7 +117,7 @@ namespace CapaPresentacion.SubVista
             this.txtruc.PlaceholderText = "Ingrese RUC";
             this.txtruc.SelectedText = "";
             this.txtruc.ShadowDecoration.Parent = this.txtruc;
-            this.txtruc.Size = new System.Drawing.Size(300, 28);
+            this.txtruc.Size = new System.Drawing.Size(242, 28);
             this.txtruc.TabIndex = 18;
             this.txtruc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
