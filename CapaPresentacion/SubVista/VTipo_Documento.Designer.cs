@@ -30,7 +30,7 @@ namespace CapaPresentacion.SubVista
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVTipo_Doc));
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelregistro = new System.Windows.Forms.Panel();
             this.txtidTipoDoc = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnmodificar = new Guna.UI2.WinForms.Guna2Button();
@@ -41,25 +41,25 @@ namespace CapaPresentacion.SubVista
             this.label10 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel2.SuspendLayout();
+            this.panelregistro.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel2
+            // panelregistro
             // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.txtidTipoDoc);
-            this.panel2.Controls.Add(this.panel1);
-            this.panel2.Controls.Add(this.txtDescDoc);
-            this.panel2.Controls.Add(this.txtcodDoc);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.label10);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(35, 27);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(629, 235);
-            this.panel2.TabIndex = 1;
+            this.panelregistro.BackColor = System.Drawing.Color.White;
+            this.panelregistro.Controls.Add(this.txtidTipoDoc);
+            this.panelregistro.Controls.Add(this.panel1);
+            this.panelregistro.Controls.Add(this.txtDescDoc);
+            this.panelregistro.Controls.Add(this.txtcodDoc);
+            this.panelregistro.Controls.Add(this.label2);
+            this.panelregistro.Controls.Add(this.label10);
+            this.panelregistro.Controls.Add(this.label1);
+            this.panelregistro.Location = new System.Drawing.Point(35, 27);
+            this.panelregistro.Name = "panelregistro";
+            this.panelregistro.Size = new System.Drawing.Size(629, 235);
+            this.panelregistro.TabIndex = 1;
             // 
             // txtidTipoDoc
             // 
@@ -94,6 +94,7 @@ namespace CapaPresentacion.SubVista
             this.btnmodificar.Size = new System.Drawing.Size(89, 45);
             this.btnmodificar.TabIndex = 29;
             this.btnmodificar.Text = "Modificar";
+            this.btnmodificar.Click += new System.EventHandler(this.btnmodificar_Click);
             // 
             // btnguardar
             // 
@@ -214,12 +215,12 @@ namespace CapaPresentacion.SubVista
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(702, 289);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panelregistro);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmVTipo_Doc";
             this.Text = "VTipo_Documento";
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.panelregistro.ResumeLayout(false);
+            this.panelregistro.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -228,7 +229,7 @@ namespace CapaPresentacion.SubVista
 
         #endregion
 
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panelregistro;
         public Guna.UI2.WinForms.Guna2TextBox txtDescDoc;
         public Guna.UI2.WinForms.Guna2TextBox txtcodDoc;
         private System.Windows.Forms.Label label2;

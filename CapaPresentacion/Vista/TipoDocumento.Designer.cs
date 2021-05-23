@@ -30,21 +30,24 @@ namespace CapaPresentacion.Vista
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTipoDocumento));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Panel_documento = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtbuscar = new Guna.UI2.WinForms.Guna2TextBox();
-            this.dgvTipoDoc = new System.Windows.Forms.DataGridView();
             this.Panel_boton = new System.Windows.Forms.Panel();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.btneliminar = new Guna.UI2.WinForms.Guna2Button();
             this.btneditar = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.btncerrar = new System.Windows.Forms.PictureBox();
+            this.dgvTipoDoc = new System.Windows.Forms.DataGridView();
             this.Panel_documento.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTipoDoc)).BeginInit();
             this.Panel_boton.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTipoDoc)).BeginInit();
             this.SuspendLayout();
             // 
             // Panel_documento
@@ -60,8 +63,8 @@ namespace CapaPresentacion.Vista
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.txtbuscar);
             this.panel2.Controls.Add(this.dgvTipoDoc);
+            this.panel2.Controls.Add(this.txtbuscar);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -92,17 +95,6 @@ namespace CapaPresentacion.Vista
             this.txtbuscar.Size = new System.Drawing.Size(606, 28);
             this.txtbuscar.TabIndex = 1;
             this.txtbuscar.TextChanged += new System.EventHandler(this.txtbuscar_TextChanged);
-            // 
-            // dgvTipoDoc
-            // 
-            this.dgvTipoDoc.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.dgvTipoDoc.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvTipoDoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTipoDoc.GridColor = System.Drawing.Color.Silver;
-            this.dgvTipoDoc.Location = new System.Drawing.Point(3, 77);
-            this.dgvTipoDoc.Name = "dgvTipoDoc";
-            this.dgvTipoDoc.Size = new System.Drawing.Size(629, 411);
-            this.dgvTipoDoc.TabIndex = 0;
             // 
             // Panel_boton
             // 
@@ -203,6 +195,53 @@ namespace CapaPresentacion.Vista
             this.btncerrar.TabStop = false;
             this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click);
             // 
+            // dgvTipoDoc
+            // 
+            this.dgvTipoDoc.AllowUserToAddRows = false;
+            this.dgvTipoDoc.AllowUserToDeleteRows = false;
+            this.dgvTipoDoc.AllowUserToResizeColumns = false;
+            this.dgvTipoDoc.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.dgvTipoDoc.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvTipoDoc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvTipoDoc.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvTipoDoc.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
+            this.dgvTipoDoc.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.dgvTipoDoc.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvTipoDoc.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvTipoDoc.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTipoDoc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvTipoDoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 1, 0, 1);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTipoDoc.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvTipoDoc.EnableHeadersVisualStyles = false;
+            this.dgvTipoDoc.GridColor = System.Drawing.Color.Silver;
+            this.dgvTipoDoc.Location = new System.Drawing.Point(6, 94);
+            this.dgvTipoDoc.Name = "dgvTipoDoc";
+            this.dgvTipoDoc.ReadOnly = true;
+            this.dgvTipoDoc.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvTipoDoc.RowHeadersWidth = 25;
+            this.dgvTipoDoc.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvTipoDoc.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dgvTipoDoc.Size = new System.Drawing.Size(629, 411);
+            this.dgvTipoDoc.TabIndex = 4;
+            // 
             // FrmTipoDocumento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -213,9 +252,9 @@ namespace CapaPresentacion.Vista
             this.Text = "TipoDocumento";
             this.Panel_documento.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTipoDoc)).EndInit();
             this.Panel_boton.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTipoDoc)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -231,6 +270,6 @@ namespace CapaPresentacion.Vista
         private Guna.UI2.WinForms.Guna2Button btneditar;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         public System.Windows.Forms.PictureBox btncerrar;
-        public System.Windows.Forms.DataGridView dgvTipoDoc;
+        private System.Windows.Forms.DataGridView dgvTipoDoc;
     }
 }
