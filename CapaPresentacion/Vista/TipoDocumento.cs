@@ -36,7 +36,14 @@ namespace CapaPresentacion.Vista
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-
+            using (FrmVTipo_Doc TipoDoc = new FrmVTipo_Doc())
+            {
+                TipoDoc.StartPosition = FormStartPosition.CenterParent;
+                TipoDoc.btnguardar.Visible = true;
+                TipoDoc.btnmodificar.Visible = false;
+                TipoDoc.ShowDialog();
+                Show_Documento();
+            }
         }
 
         private void Tabla()
@@ -44,6 +51,12 @@ namespace CapaPresentacion.Vista
             dgvTipoDoc.Columns[0].Visible = false;
             dgvTipoDoc.Columns[1].HeaderText = "CODIGO";
             dgvTipoDoc.Columns[2].HeaderText = "DESCRIPCION";
+        }
+
+        private void Show_Documento()
+        {
+            dgvTipoDoc.DataSource = rtipoDoc.Getdata(dtipoDoc);
+
         }
 
         private void txtbuscar_TextChanged(object sender, EventArgs e)
@@ -72,6 +85,11 @@ namespace CapaPresentacion.Vista
                 TipoDoc.ShowDialog();
                 Show_TipoDoc();
             }
+        }
+
+        private void btncerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

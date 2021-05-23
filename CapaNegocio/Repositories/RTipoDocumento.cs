@@ -91,9 +91,36 @@ namespace CapaNegocio.Repositories
 
         public List<DTipoDocumento> Getdata(DTipoDocumento Entity)
         {
-            throw new NotImplementedException();
-        }
+            using (SqlConnection connect = Dconexion.Getconectar())
+            {
+                connect.Open();
+                using (cmd = new SqlCommand())
+                {
+                    cmd.Connection = connect;
+                    cmd.CommandText = "manto.SP_ShowDoc";
+                    cmd.CommandType = CommandType.StoredProcedure;
 
+                    SqlDataReader dtr = cmd.ExecuteReader();
+                    using (DataTable dt = new DataTable())
+                    {
+                        dt.Load(dtr);
+                        dtr.Dispose();
+
+                        listTipoDoc = new List<DTipoDocumento>();
+                        foreach (DataRow item in dt.Rows)
+                        {
+                            listTipoDoc.Add(new DTipoDocumento()
+                            {
+                                Iddocumento = Convert.ToInt32(item[0]),
+                                Codigo = item[1].ToString(),
+                                Descripcion = item[2].ToString()
+                            });
+                        }
+                    }
+                }
+            }
+            return listTipoDoc;
+        }
         public IEnumerable<DTipoDocumento> Search(string filter)
         {
             return listTipoDoc.FindAll(e => e.Codigo.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0);

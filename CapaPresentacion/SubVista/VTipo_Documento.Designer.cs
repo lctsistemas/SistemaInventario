@@ -31,6 +31,7 @@ namespace CapaPresentacion.SubVista
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVTipo_Doc));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtidTipoDoc = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnmodificar = new Guna.UI2.WinForms.Guna2Button();
             this.btnguardar = new Guna.UI2.WinForms.Guna2Button();
@@ -40,7 +41,6 @@ namespace CapaPresentacion.SubVista
             this.label10 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txtidTipoDoc = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -60,6 +60,14 @@ namespace CapaPresentacion.SubVista
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(629, 235);
             this.panel2.TabIndex = 1;
+            // 
+            // txtidTipoDoc
+            // 
+            this.txtidTipoDoc.Location = new System.Drawing.Point(114, 18);
+            this.txtidTipoDoc.Name = "txtidTipoDoc";
+            this.txtidTipoDoc.Size = new System.Drawing.Size(57, 20);
+            this.txtidTipoDoc.TabIndex = 107;
+            this.txtidTipoDoc.Visible = false;
             // 
             // panel1
             // 
@@ -198,14 +206,7 @@ namespace CapaPresentacion.SubVista
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 103;
             this.pictureBox1.TabStop = false;
-            // 
-            // txtidTipoDoc
-            // 
-            this.txtidTipoDoc.Location = new System.Drawing.Point(114, 18);
-            this.txtidTipoDoc.Name = "txtidTipoDoc";
-            this.txtidTipoDoc.Size = new System.Drawing.Size(57, 20);
-            this.txtidTipoDoc.TabIndex = 107;
-            this.txtidTipoDoc.Visible = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // FrmVTipo_Doc
             // 

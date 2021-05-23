@@ -40,9 +40,10 @@ namespace CapaPresentacion.SubVista
             Msg.M_info(result);
         }
 
-       
-
-       
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
     
     
