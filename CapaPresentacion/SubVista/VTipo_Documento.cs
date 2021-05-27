@@ -42,7 +42,7 @@ namespace CapaPresentacion.SubVista
 
         private void btnmodificar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtcodDoc.Text) || string.IsNullOrWhiteSpace(txtDescDoc.Text) )
+            if (string.IsNullOrWhiteSpace(txtcodDoc.Text) || string.IsNullOrWhiteSpace(txtDescDoc.Text)) { 
                 ValidateChildren();
                 return;
             }
@@ -50,7 +50,8 @@ namespace CapaPresentacion.SubVista
             string result = "";
              //TipoDocumento
             
-
         }
+
+
     }
 }

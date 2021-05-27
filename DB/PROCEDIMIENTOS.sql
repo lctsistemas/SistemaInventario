@@ -195,6 +195,6 @@ WHERE idUnidadMedida=@idUnidadMedida
 END
 GO
 
-exec manto.SP_AddEmpresa null,'20456578451','fsd','asd','av. asdas','av. dasdda','rus','ACTIVO';
+--exec manto.SP_AddEmpresa null,'20456578451','fsd','asd','av. asdas','av. dasdda','rus','ACTIVO';
 
 GO

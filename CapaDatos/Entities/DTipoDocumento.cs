@@ -12,7 +12,7 @@ namespace CapaDatos.Entities
         private string codigo;
         private string descripcion;
 
-        public DTipoDocumento(int iddocumento, int codigo, string descripcion)
+        public DTipoDocumento(int iddocumento, string codigo, string descripcion)
         {
             this.Iddocumento = iddocumento;
             this.Codigo = codigo;
