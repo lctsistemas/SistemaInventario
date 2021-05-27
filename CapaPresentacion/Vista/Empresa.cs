@@ -102,5 +102,33 @@ namespace CapaPresentacion.Vista
                 Show_business("ACTIVO");
             }
         }
+
+        private void Dgv_empresa_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string result = "";
+            if (e.RowIndex > -1)
+            {
+                if (e.ColumnIndex == this.Dgv_empresa.Columns["dgv_txtdelete"].Index)
+                {
+                    if (Msg.M_question("¿Desea Anular la Empresa?") == DialogResult.Yes)
+                    {                      
+
+                        dempresa.Id_empresa = Convert.ToInt32(Dgv_empresa.CurrentRow.Cells[1].Value);
+                        dempresa.Estado = "ANULADO";
+                        result = rempresa.Delete(dempresa);
+
+                        if (result.Contains("¡Se Anulo"))
+                        {
+                            Msg.M_info(result);
+                            Show_business("ACTIVO");
+                        }                           
+                        else
+                            Msg.M_error(result);
+
+                    }
+                }
+
+            }
+        }
     }
 }

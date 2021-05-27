@@ -13,10 +13,17 @@ namespace CapaPresentacion.Vista
     public partial class FrmInicio : Form
     {
         Form formulario = null;
+        private static FrmInicio instancia;
         public FrmInicio()
         {
             InitializeComponent();
         
+        }
+
+        public static FrmInicio GetInstancia(){
+            if (instancia == null)
+                instancia = new FrmInicio();
+            return instancia;                    
         }
 
         private void Btn_entrada_Click(object sender, EventArgs e)
@@ -99,6 +106,9 @@ namespace CapaPresentacion.Vista
             OpenFormFill<FrmMoneda>();
         }
 
-
+        private void FrmInicio_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            instancia = null;
+        }
     }
 }

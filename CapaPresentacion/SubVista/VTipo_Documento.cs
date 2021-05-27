@@ -47,22 +47,17 @@ namespace CapaPresentacion.SubVista
 
         private void btnmodificar_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-            if (string.IsNullOrWhiteSpace(txtcodDoc.Text) || string.IsNullOrWhiteSpace(txtDescDoc.Text)) { 
-=======
+
             if (string.IsNullOrWhiteSpace(txtcodDoc.Text) || string.IsNullOrWhiteSpace(txtDescDoc.Text))
 
             {
->>>>>>> c5bd5a6738a2107235a58859811aaf46d55b9afe
+
                 ValidateChildren();
                 return;
             }
 
             string result = "";
-<<<<<<< HEAD
-             //TipoDocumento
-            
-=======
+
             dTipoDocumento.Iddocumento = int.Parse(txtidTipoDoc.Text.Trim());
             dTipoDocumento.Codigo = txtcodDoc.Text.Trim();
             dTipoDocumento.Descripcion = txtDescDoc.Text.Trim();
@@ -90,7 +85,7 @@ namespace CapaPresentacion.SubVista
             }
             txtcodDoc.Focus();
 
->>>>>>> c5bd5a6738a2107235a58859811aaf46d55b9afe
+
         }
 
 
