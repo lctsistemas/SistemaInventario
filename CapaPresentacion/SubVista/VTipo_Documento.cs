@@ -47,14 +47,17 @@ namespace CapaPresentacion.SubVista
 
         private void btnmodificar_Click(object sender, EventArgs e)
         {
+
             if (string.IsNullOrWhiteSpace(txtcodDoc.Text) || string.IsNullOrWhiteSpace(txtDescDoc.Text))
 
             {
+
                 ValidateChildren();
                 return;
             }
 
             string result = "";
+
             dTipoDocumento.Iddocumento = int.Parse(txtidTipoDoc.Text.Trim());
             dTipoDocumento.Codigo = txtcodDoc.Text.Trim();
             dTipoDocumento.Descripcion = txtDescDoc.Text.Trim();
@@ -82,7 +85,10 @@ namespace CapaPresentacion.SubVista
             }
             txtcodDoc.Focus();
 
+
         }
+
+
     }
     
     

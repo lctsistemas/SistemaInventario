@@ -37,6 +37,16 @@ WHERE id_empresa = @id_empresa
 END
 GO
 
+<<<<<<< HEAD
+=======
+CREATE PROC manto.SP_DelteEmpresa
+@id_empresa int,
+@estado varchar(15)
+AS BEGIN
+UPDATE manto.Empresa SET estado = @estado
+END
+GO
+>>>>>>> 0254b8cf8c3243f119d8f0c4b62adcd1afd5c866
 
 CREATE PROC manto.SP_ShowEmpresa
 @estado varchar(15)
@@ -74,6 +84,7 @@ WHERE idcliprov = @idcliprov
 END
 GO
 
+<<<<<<< HEAD
 CREATE PROC manto.SP_DeleteCliProv
 @idcliprov int,
 @nom_prov varchar(60), 
@@ -84,12 +95,14 @@ END
 go
 
 ALTER PROC manto.SP_ShowCliProv
+=======
+CREATE PROC manto.SP_ShowCliProv
+>>>>>>> 0254b8cf8c3243f119d8f0c4b62adcd1afd5c866
 AS BEGIN
 SELECT  c.idcliprov, c.nom_prov, c.ruc FROM manto.clienteProv c
 END
 GO
 
-exec manto.SP_ShowCliProv
 
 -- PROCEDIMIENTO PARA TIPO DE OPERACION
 CREATE PROC manto.SP_AddTipoOper
@@ -160,7 +173,7 @@ END
 GO
 
 --PROCEDIMIENTO PARA MOSTRAR MONEDA
-ALTER PROC manto.SP_ShowMon
+CREATE PROC manto.SP_ShowMon
 AS BEGIN
 SELECT  m.idMoneda, m.codigo,m.nom_moneda, m.abrev,m.simbolo,m.descripcion FROM manto.Moneda m
 END
@@ -232,6 +245,9 @@ WHERE idUnidadMedida=@idUnidadMedida
 END
 GO
 
+
+--exec manto.SP_AddEmpresa null,'20456578451','fsd','asd','av. asdas','av. dasdda','rus','ACTIVO';
+
 --PROCEDIMIENTO PARA MOSTRAR UNIDAD MEDIDA
 CREATE PROC manto.SP_ShowUnidadMed
 AS BEGIN
@@ -239,6 +255,5 @@ SELECT  u.idUnidadMedida,u.codigo,u.abrev,u.descripcion FROM manto.UnidadMedida 
 END
 GO
 
-exec manto.SP_AddEmpresa null,'20456578451','fsd','asd','av. asdas','av. dasdda','rus','ACTIVO';
 
-GO
+

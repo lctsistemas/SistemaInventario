@@ -1,11 +1,11 @@
 --schemas inventario
 --schemas mantenimiento
-create database Dbinventario
+--create database Dbinventario
 use Dbinventario
 go
-create schema manto authorization dbo
+--create schema manto authorization dbo
 go
-create schema invent authorization dbo
+--create schema invent authorization dbo
 go
 
 -- TABLA EMPRESA

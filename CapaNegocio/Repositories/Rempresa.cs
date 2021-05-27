@@ -38,7 +38,7 @@ namespace CapaNegocio.Repositories
                         cmd.Parameters.AddWithValue("@regimen", Entity.Regimen);
                         cmd.Parameters.AddWithValue("@estado", Entity.Estado);
 
-                        result = cmd.ExecuteNonQuery() == 1 ? "Se Registro Correctamente!" : "Error al Registrar";
+                        result = cmd.ExecuteNonQuery() == 1 ? "¡Se Registro Correctamente!" : "Error al Registrar";
 
                         cmd.Parameters.Clear();
                     }
@@ -49,17 +49,43 @@ namespace CapaNegocio.Repositories
                     if (sqlex != null && sqlex.Number == 2627)
                         result = "El Número de RUC ya se encuentra Registrado. \n Por favor Ingrese Nuevo Número";
                     else
-                        result = ex.Message;
-                    
+                        result = ex.Message;                    
                 }
             }
             return result;
         }
 
+        //ELIMINAR ANULAR
         public string Delete(Dempresa Entity)
         {
-             throw new NotImplementedException();
+            result = "";
+            using (SqlConnection connect = Dconexion.Getconectar())
+            {
+                connect.Open();
+                try
+                {
+                    using (cmd = new SqlCommand())
+                    {
+                        cmd.Connection = connect;
+                        cmd.CommandText = "manto.SP_DelteEmpresa";
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.AddWithValue("@id_empresa", Entity.Id_empresa);
+                        cmd.Parameters.AddWithValue("@estado", Entity.Estado);
+                    
+                        result = cmd.ExecuteNonQuery() == 1 ? "¡Se Anulo Correctamente!" : "Error al Anular Empresa";
+
+                        cmd.Parameters.Clear();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    result = ex.Message;
+                }
+            }
+            return result;
         }
+
 
         public string Edit(Dempresa Entity)
         {

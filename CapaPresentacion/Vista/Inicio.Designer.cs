@@ -338,6 +338,7 @@ namespace CapaPresentacion.Vista
             this.Name = "FrmInicio";
             this.Text = "Inicio";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmInicio_FormClosing);
             this.PanelMenu.ResumeLayout(false);
             this.Panel_contenedor.ResumeLayout(false);
             this.Panel_contenedor.PerformLayout();
