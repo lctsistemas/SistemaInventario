@@ -84,32 +84,7 @@ namespace CapaPresentacion.Vista
 
         private void btneliminar_Click(object sender, EventArgs e)
         {
-            if (Dgv_cliente.Rows.Count <= 0)
-            {
-                Msg.M_warning("Seleccione una Fila para poder eliminar");
-                return;
-            }
-
-            using (FrmV_ClienteProv cliprov = new FrmV_ClienteProv())
-            {
-                DialogResult result = Msg.M_question("¿Está seguro de eliminar  " + cliprov.txtnomprov.Text + "?");
-                if (result == DialogResult.Yes)
-                {
-                    cliprov.Txt_idprov.Text = Dgv_cliente.CurrentRow.Cells[0].Value.ToString();
-
-                    mensaje = nb.GuardarCambios();
-                    if (mensaje.Contains("esta  asignado."))
-                    {
-                        Messages.M_error(mensaje);
-                    }
-                    else
-                    {
-                        Messages.M_info(mensaje);
-                        Fill_Banco();
-                    }
-                    nb.state = EntityState.Guardar;
-                }
-            }
+            
 
         }
     }
