@@ -14,6 +14,7 @@ namespace CapaNegocio.Repositories
     {
         private SqlCommand cmd;
         private string result = "";
+        private List<DTipoOperacion> listTipoOper;
         public string Add(DTipoOperacion Entity)
         {
             using (SqlConnection connect = Dconexion.Getconectar())
@@ -90,7 +91,43 @@ namespace CapaNegocio.Repositories
 
         public List<DTipoOperacion> Getdata(DTipoOperacion Entity)
         {
-            throw new NotImplementedException();
+            using (SqlConnection connect = Dconexion.Getconectar())
+            {
+                connect.Open();
+                using (cmd = new SqlCommand())
+                {
+                    cmd.Connection = connect;
+                    cmd.CommandText = "manto.SP_ShowTipoOper";
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    SqlDataReader dtr = cmd.ExecuteReader();
+                    using (DataTable dt = new DataTable())
+                    {
+                        dt.Load(dtr);
+                        dtr.Dispose();
+
+                        listTipoOper = new List<DTipoOperacion>();
+                        foreach (DataRow item in dt.Rows)
+                        {
+                            listTipoOper.Add(new DTipoOperacion()
+                            {
+                                IdTipo_Oper = Convert.ToInt32(item[0]),
+                                Codigo = item[1].ToString(),
+                                Descripcion = item[2].ToString()
+                            });
+                        }
+                    }
+                }
+
+
+            }
+
+            return listTipoOper;
+        }
+
+        public IEnumerable<DTipoOperacion> Search(string filter)
+        {
+            return listTipoOper.FindAll(e => e.Codigo.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0);
         }
     }
 }

@@ -33,15 +33,15 @@ namespace CapaPresentacion.SubVista
             this.panelregistro = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtidTipoOper = new System.Windows.Forms.TextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnmodificar = new Guna.UI2.WinForms.Guna2Button();
             this.btnguardar = new Guna.UI2.WinForms.Guna2Button();
             this.txtDesc = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtcodOper = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.btnmodificar = new Guna.UI2.WinForms.Guna2Button();
-            this.txtidTipoOper = new System.Windows.Forms.TextBox();
             this.panelregistro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -70,6 +70,7 @@ namespace CapaPresentacion.SubVista
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 102;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // panel2
             // 
@@ -85,6 +86,41 @@ namespace CapaPresentacion.SubVista
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(629, 235);
             this.panel2.TabIndex = 0;
+            // 
+            // txtidTipoOper
+            // 
+            this.txtidTipoOper.Location = new System.Drawing.Point(106, 16);
+            this.txtidTipoOper.Name = "txtidTipoOper";
+            this.txtidTipoOper.Size = new System.Drawing.Size(57, 20);
+            this.txtidTipoOper.TabIndex = 105;
+            this.txtidTipoOper.Visible = false;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.btnmodificar);
+            this.panel3.Controls.Add(this.btnguardar);
+            this.panel3.Location = new System.Drawing.Point(210, 165);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(200, 59);
+            this.panel3.TabIndex = 28;
+            // 
+            // btnmodificar
+            // 
+            this.btnmodificar.BorderRadius = 3;
+            this.btnmodificar.CheckedState.Parent = this.btnmodificar;
+            this.btnmodificar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnmodificar.CustomImages.Parent = this.btnmodificar;
+            this.btnmodificar.FillColor = System.Drawing.Color.RoyalBlue;
+            this.btnmodificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.btnmodificar.ForeColor = System.Drawing.Color.White;
+            this.btnmodificar.HoverState.Parent = this.btnmodificar;
+            this.btnmodificar.Location = new System.Drawing.Point(55, 3);
+            this.btnmodificar.Name = "btnmodificar";
+            this.btnmodificar.ShadowDecoration.Parent = this.btnmodificar;
+            this.btnmodificar.Size = new System.Drawing.Size(89, 45);
+            this.btnmodificar.TabIndex = 29;
+            this.btnmodificar.Text = "Modificar";
+            this.btnmodificar.Click += new System.EventHandler(this.btnmodificar_Click);
             // 
             // btnguardar
             // 
@@ -147,12 +183,11 @@ namespace CapaPresentacion.SubVista
             this.txtcodOper.Location = new System.Drawing.Point(276, 51);
             this.txtcodOper.Name = "txtcodOper";
             this.txtcodOper.PasswordChar = '\0';
-            this.txtcodOper.PlaceholderText = "Ingrese codigo de operacion";
+            this.txtcodOper.PlaceholderText = "Codigo";
             this.txtcodOper.SelectedText = "";
             this.txtcodOper.ShadowDecoration.Parent = this.txtcodOper;
-            this.txtcodOper.Size = new System.Drawing.Size(191, 28);
+            this.txtcodOper.Size = new System.Drawing.Size(62, 28);
             this.txtcodOper.TabIndex = 25;
-            this.txtcodOper.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
             // 
@@ -187,41 +222,6 @@ namespace CapaPresentacion.SubVista
             this.label1.TabIndex = 22;
             this.label1.Text = "TIPO DE OPERACION";
             // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.btnmodificar);
-            this.panel3.Controls.Add(this.btnguardar);
-            this.panel3.Location = new System.Drawing.Point(210, 165);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(200, 59);
-            this.panel3.TabIndex = 28;
-            // 
-            // btnmodificar
-            // 
-            this.btnmodificar.BorderRadius = 3;
-            this.btnmodificar.CheckedState.Parent = this.btnmodificar;
-            this.btnmodificar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnmodificar.CustomImages.Parent = this.btnmodificar;
-            this.btnmodificar.FillColor = System.Drawing.Color.RoyalBlue;
-            this.btnmodificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.btnmodificar.ForeColor = System.Drawing.Color.White;
-            this.btnmodificar.HoverState.Parent = this.btnmodificar;
-            this.btnmodificar.Location = new System.Drawing.Point(55, 3);
-            this.btnmodificar.Name = "btnmodificar";
-            this.btnmodificar.ShadowDecoration.Parent = this.btnmodificar;
-            this.btnmodificar.Size = new System.Drawing.Size(89, 45);
-            this.btnmodificar.TabIndex = 29;
-            this.btnmodificar.Text = "Modificar";
-            this.btnmodificar.Click += new System.EventHandler(this.btnmodificar_Click);
-            // 
-            // txtidTipoOper
-            // 
-            this.txtidTipoOper.Location = new System.Drawing.Point(106, 16);
-            this.txtidTipoOper.Name = "txtidTipoOper";
-            this.txtidTipoOper.Size = new System.Drawing.Size(57, 20);
-            this.txtidTipoOper.TabIndex = 105;
-            this.txtidTipoOper.Visible = false;
-            // 
             // Frm_VTipoOper
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -249,10 +249,10 @@ namespace CapaPresentacion.SubVista
         private System.Windows.Forms.Label label2;
         public Guna.UI2.WinForms.Guna2TextBox txtcodOper;
         public Guna.UI2.WinForms.Guna2TextBox txtDesc;
-        private Guna.UI2.WinForms.Guna2Button btnguardar;
         public System.Windows.Forms.PictureBox pictureBox1;
-        private Guna.UI2.WinForms.Guna2Button btnmodificar;
         private System.Windows.Forms.Panel panel3;
         public System.Windows.Forms.TextBox txtidTipoOper;
+        public Guna.UI2.WinForms.Guna2Button btnguardar;
+        public Guna.UI2.WinForms.Guna2Button btnmodificar;
     }
 }

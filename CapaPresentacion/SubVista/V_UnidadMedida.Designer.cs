@@ -33,17 +33,17 @@ namespace CapaPresentacion.SubVista
             this.panelregistro = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtidUnidMed = new System.Windows.Forms.TextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnmodificar = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.txtAbrev = new Guna.UI2.WinForms.Guna2TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.txtDesc = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtcodUM = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.btnmodificar = new Guna.UI2.WinForms.Guna2Button();
-            this.txtidUnidMed = new System.Windows.Forms.TextBox();
             this.panelregistro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -90,41 +90,40 @@ namespace CapaPresentacion.SubVista
             this.panel2.Size = new System.Drawing.Size(613, 283);
             this.panel2.TabIndex = 0;
             // 
-            // txtAbrev
+            // txtidUnidMed
             // 
-            this.txtAbrev.BorderRadius = 3;
-            this.txtAbrev.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtAbrev.DefaultText = "";
-            this.txtAbrev.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtAbrev.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtAbrev.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtAbrev.DisabledState.Parent = this.txtAbrev;
-            this.txtAbrev.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtAbrev.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtAbrev.FocusedState.Parent = this.txtAbrev;
-            this.txtAbrev.ForeColor = System.Drawing.Color.Black;
-            this.txtAbrev.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtAbrev.HoverState.Parent = this.txtAbrev;
-            this.txtAbrev.Location = new System.Drawing.Point(246, 93);
-            this.txtAbrev.Name = "txtAbrev";
-            this.txtAbrev.PasswordChar = '\0';
-            this.txtAbrev.PlaceholderText = "Ingrese abreviatura";
-            this.txtAbrev.SelectedText = "";
-            this.txtAbrev.ShadowDecoration.Parent = this.txtAbrev;
-            this.txtAbrev.Size = new System.Drawing.Size(124, 28);
-            this.txtAbrev.TabIndex = 37;
-            this.txtAbrev.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtidUnidMed.Location = new System.Drawing.Point(84, 17);
+            this.txtidUnidMed.Name = "txtidUnidMed";
+            this.txtidUnidMed.Size = new System.Drawing.Size(57, 20);
+            this.txtidUnidMed.TabIndex = 106;
+            this.txtidUnidMed.Visible = false;
             // 
-            // label3
+            // panel3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(81, 105);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 16);
-            this.label3.TabIndex = 36;
-            this.label3.Text = "Abreviatura";
+            this.panel3.Controls.Add(this.btnmodificar);
+            this.panel3.Controls.Add(this.guna2Button1);
+            this.panel3.Location = new System.Drawing.Point(230, 214);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(151, 54);
+            this.panel3.TabIndex = 38;
+            // 
+            // btnmodificar
+            // 
+            this.btnmodificar.BorderRadius = 3;
+            this.btnmodificar.CheckedState.Parent = this.btnmodificar;
+            this.btnmodificar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnmodificar.CustomImages.Parent = this.btnmodificar;
+            this.btnmodificar.FillColor = System.Drawing.Color.CadetBlue;
+            this.btnmodificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.btnmodificar.ForeColor = System.Drawing.Color.White;
+            this.btnmodificar.HoverState.Parent = this.btnmodificar;
+            this.btnmodificar.Location = new System.Drawing.Point(27, 3);
+            this.btnmodificar.Name = "btnmodificar";
+            this.btnmodificar.ShadowDecoration.Parent = this.btnmodificar;
+            this.btnmodificar.Size = new System.Drawing.Size(89, 45);
+            this.btnmodificar.TabIndex = 39;
+            this.btnmodificar.Text = "Modificar";
+            this.btnmodificar.Click += new System.EventHandler(this.btnmodificar_Click);
             // 
             // guna2Button1
             // 
@@ -143,6 +142,41 @@ namespace CapaPresentacion.SubVista
             this.guna2Button1.TabIndex = 33;
             this.guna2Button1.Text = "Guardar";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            // 
+            // txtAbrev
+            // 
+            this.txtAbrev.BorderRadius = 3;
+            this.txtAbrev.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtAbrev.DefaultText = "";
+            this.txtAbrev.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtAbrev.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtAbrev.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtAbrev.DisabledState.Parent = this.txtAbrev;
+            this.txtAbrev.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtAbrev.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtAbrev.FocusedState.Parent = this.txtAbrev;
+            this.txtAbrev.ForeColor = System.Drawing.Color.Black;
+            this.txtAbrev.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtAbrev.HoverState.Parent = this.txtAbrev;
+            this.txtAbrev.Location = new System.Drawing.Point(246, 93);
+            this.txtAbrev.Name = "txtAbrev";
+            this.txtAbrev.PasswordChar = '\0';
+            this.txtAbrev.PlaceholderText = "Abreviatura";
+            this.txtAbrev.SelectedText = "";
+            this.txtAbrev.ShadowDecoration.Parent = this.txtAbrev;
+            this.txtAbrev.Size = new System.Drawing.Size(79, 28);
+            this.txtAbrev.TabIndex = 37;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label3.Location = new System.Drawing.Point(81, 105);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(77, 16);
+            this.label3.TabIndex = 36;
+            this.label3.Text = "Abreviatura";
             // 
             // txtDesc
             // 
@@ -187,12 +221,11 @@ namespace CapaPresentacion.SubVista
             this.txtcodUM.Location = new System.Drawing.Point(246, 50);
             this.txtcodUM.Name = "txtcodUM";
             this.txtcodUM.PasswordChar = '\0';
-            this.txtcodUM.PlaceholderText = "Ingrese codigo";
+            this.txtcodUM.PlaceholderText = "Codigo";
             this.txtcodUM.SelectedText = "";
             this.txtcodUM.ShadowDecoration.Parent = this.txtcodUM;
-            this.txtcodUM.Size = new System.Drawing.Size(191, 28);
+            this.txtcodUM.Size = new System.Drawing.Size(79, 28);
             this.txtcodUM.TabIndex = 31;
-            this.txtcodUM.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
             // 
@@ -226,41 +259,6 @@ namespace CapaPresentacion.SubVista
             this.label1.Size = new System.Drawing.Size(187, 23);
             this.label1.TabIndex = 28;
             this.label1.Text = "UNIDAD DE MEDIDA";
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.btnmodificar);
-            this.panel3.Controls.Add(this.guna2Button1);
-            this.panel3.Location = new System.Drawing.Point(230, 214);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(151, 54);
-            this.panel3.TabIndex = 38;
-            // 
-            // btnmodificar
-            // 
-            this.btnmodificar.BorderRadius = 3;
-            this.btnmodificar.CheckedState.Parent = this.btnmodificar;
-            this.btnmodificar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnmodificar.CustomImages.Parent = this.btnmodificar;
-            this.btnmodificar.FillColor = System.Drawing.Color.CadetBlue;
-            this.btnmodificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.btnmodificar.ForeColor = System.Drawing.Color.White;
-            this.btnmodificar.HoverState.Parent = this.btnmodificar;
-            this.btnmodificar.Location = new System.Drawing.Point(27, 3);
-            this.btnmodificar.Name = "btnmodificar";
-            this.btnmodificar.ShadowDecoration.Parent = this.btnmodificar;
-            this.btnmodificar.Size = new System.Drawing.Size(89, 45);
-            this.btnmodificar.TabIndex = 39;
-            this.btnmodificar.Text = "Modificar";
-            this.btnmodificar.Click += new System.EventHandler(this.btnmodificar_Click);
-            // 
-            // txtidUnidMed
-            // 
-            this.txtidUnidMed.Location = new System.Drawing.Point(84, 17);
-            this.txtidUnidMed.Name = "txtidUnidMed";
-            this.txtidUnidMed.Size = new System.Drawing.Size(57, 20);
-            this.txtidUnidMed.TabIndex = 106;
-            this.txtidUnidMed.Visible = false;
             // 
             // V_UnidadMedida
             // 

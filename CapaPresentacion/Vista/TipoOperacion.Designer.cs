@@ -30,27 +30,31 @@ namespace CapaPresentacion.Vista
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTipoOperacion));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Panel_operacion = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.Dgv_cliente = new System.Windows.Forms.DataGridView();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.Dgv_tipoOper = new System.Windows.Forms.DataGridView();
+            this.txtbuscar = new Guna.UI2.WinForms.Guna2TextBox();
             this.Panel_boton = new System.Windows.Forms.Panel();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.btneliminar = new Guna.UI2.WinForms.Guna2Button();
+            this.btneditar = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.btncerrar = new System.Windows.Forms.PictureBox();
             this.Panel_operacion.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Dgv_cliente)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_tipoOper)).BeginInit();
             this.Panel_boton.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).BeginInit();
             this.SuspendLayout();
             // 
             // Panel_operacion
             // 
+            this.Panel_operacion.Controls.Add(this.pictureBox1);
             this.Panel_operacion.Controls.Add(this.panel2);
             this.Panel_operacion.Controls.Add(this.Panel_boton);
             this.Panel_operacion.Controls.Add(this.btncerrar);
@@ -60,67 +64,103 @@ namespace CapaPresentacion.Vista
             this.Panel_operacion.Size = new System.Drawing.Size(758, 508);
             this.Panel_operacion.TabIndex = 1;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(641, 25);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(36, 21);
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Controls.Add(this.guna2TextBox2);
-            this.panel2.Controls.Add(this.Dgv_cliente);
+            this.panel2.Controls.Add(this.Dgv_tipoOper);
+            this.panel2.Controls.Add(this.txtbuscar);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(635, 508);
             this.panel2.TabIndex = 108;
             // 
-            // pictureBox1
+            // Dgv_tipoOper
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(3, 77);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(629, 428);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.Dgv_tipoOper.AllowUserToAddRows = false;
+            this.Dgv_tipoOper.AllowUserToDeleteRows = false;
+            this.Dgv_tipoOper.AllowUserToResizeColumns = false;
+            this.Dgv_tipoOper.AllowUserToResizeRows = false;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.Dgv_tipoOper.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.Dgv_tipoOper.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Dgv_tipoOper.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.Dgv_tipoOper.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
+            this.Dgv_tipoOper.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.Dgv_tipoOper.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Dgv_tipoOper.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.Dgv_tipoOper.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_tipoOper.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.Dgv_tipoOper.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(0, 1, 0, 1);
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_tipoOper.DefaultCellStyle = dataGridViewCellStyle6;
+            this.Dgv_tipoOper.EnableHeadersVisualStyles = false;
+            this.Dgv_tipoOper.GridColor = System.Drawing.Color.Silver;
+            this.Dgv_tipoOper.Location = new System.Drawing.Point(6, 94);
+            this.Dgv_tipoOper.Name = "Dgv_tipoOper";
+            this.Dgv_tipoOper.ReadOnly = true;
+            this.Dgv_tipoOper.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.Dgv_tipoOper.RowHeadersWidth = 25;
+            this.Dgv_tipoOper.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.Dgv_tipoOper.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.Dgv_tipoOper.Size = new System.Drawing.Size(629, 411);
+            this.Dgv_tipoOper.TabIndex = 4;
             // 
-            // guna2TextBox2
+            // txtbuscar
             // 
-            this.guna2TextBox2.BorderRadius = 3;
-            this.guna2TextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox2.DefaultText = "";
-            this.guna2TextBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.DisabledState.Parent = this.guna2TextBox2;
-            this.guna2TextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.FocusedState.Parent = this.guna2TextBox2;
-            this.guna2TextBox2.ForeColor = System.Drawing.Color.Black;
-            this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.HoverState.Parent = this.guna2TextBox2;
-            this.guna2TextBox2.Location = new System.Drawing.Point(12, 43);
-            this.guna2TextBox2.Name = "guna2TextBox2";
-            this.guna2TextBox2.PasswordChar = '\0';
-            this.guna2TextBox2.PlaceholderText = "Buscar";
-            this.guna2TextBox2.SelectedText = "";
-            this.guna2TextBox2.ShadowDecoration.Parent = this.guna2TextBox2;
-            this.guna2TextBox2.Size = new System.Drawing.Size(606, 28);
-            this.guna2TextBox2.TabIndex = 1;
-            // 
-            // Dgv_cliente
-            // 
-            this.Dgv_cliente.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.Dgv_cliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Dgv_cliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Dgv_cliente.GridColor = System.Drawing.Color.Silver;
-            this.Dgv_cliente.Location = new System.Drawing.Point(3, 77);
-            this.Dgv_cliente.Name = "Dgv_cliente";
-            this.Dgv_cliente.Size = new System.Drawing.Size(629, 411);
-            this.Dgv_cliente.TabIndex = 0;
+            this.txtbuscar.BorderRadius = 3;
+            this.txtbuscar.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtbuscar.DefaultText = "";
+            this.txtbuscar.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtbuscar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtbuscar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtbuscar.DisabledState.Parent = this.txtbuscar;
+            this.txtbuscar.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtbuscar.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtbuscar.FocusedState.Parent = this.txtbuscar;
+            this.txtbuscar.ForeColor = System.Drawing.Color.Black;
+            this.txtbuscar.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtbuscar.HoverState.Parent = this.txtbuscar;
+            this.txtbuscar.Location = new System.Drawing.Point(12, 43);
+            this.txtbuscar.Name = "txtbuscar";
+            this.txtbuscar.PasswordChar = '\0';
+            this.txtbuscar.PlaceholderText = "Buscar";
+            this.txtbuscar.SelectedText = "";
+            this.txtbuscar.ShadowDecoration.Parent = this.txtbuscar;
+            this.txtbuscar.Size = new System.Drawing.Size(606, 28);
+            this.txtbuscar.TabIndex = 1;
+            this.txtbuscar.TextChanged += new System.EventHandler(this.txtbuscar_TextChanged);
             // 
             // Panel_boton
             // 
             this.Panel_boton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Panel_boton.Controls.Add(this.guna2Button4);
-            this.Panel_boton.Controls.Add(this.guna2Button3);
-            this.Panel_boton.Controls.Add(this.guna2Button2);
+            this.Panel_boton.Controls.Add(this.btneliminar);
+            this.Panel_boton.Controls.Add(this.btneditar);
             this.Panel_boton.Controls.Add(this.guna2Button1);
             this.Panel_boton.Location = new System.Drawing.Point(668, 115);
             this.Panel_boton.Name = "Panel_boton";
@@ -145,41 +185,42 @@ namespace CapaPresentacion.Vista
             this.guna2Button4.TabIndex = 1;
             this.guna2Button4.Text = "Otros";
             // 
-            // guna2Button3
+            // btneliminar
             // 
-            this.guna2Button3.BorderRadius = 3;
-            this.guna2Button3.CheckedState.Parent = this.guna2Button3;
-            this.guna2Button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Button3.CustomImages.Parent = this.guna2Button3;
-            this.guna2Button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Button3.FillColor = System.Drawing.Color.LightGray;
-            this.guna2Button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.guna2Button3.ForeColor = System.Drawing.Color.White;
-            this.guna2Button3.HoverState.Parent = this.guna2Button3;
-            this.guna2Button3.Location = new System.Drawing.Point(0, 90);
-            this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.ShadowDecoration.Parent = this.guna2Button3;
-            this.guna2Button3.Size = new System.Drawing.Size(89, 45);
-            this.guna2Button3.TabIndex = 0;
-            this.guna2Button3.Text = "Editar";
+            this.btneliminar.BorderRadius = 3;
+            this.btneliminar.CheckedState.Parent = this.btneliminar;
+            this.btneliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btneliminar.CustomImages.Parent = this.btneliminar;
+            this.btneliminar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btneliminar.FillColor = System.Drawing.Color.LightGray;
+            this.btneliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.btneliminar.ForeColor = System.Drawing.Color.White;
+            this.btneliminar.HoverState.Parent = this.btneliminar;
+            this.btneliminar.Location = new System.Drawing.Point(0, 90);
+            this.btneliminar.Name = "btneliminar";
+            this.btneliminar.ShadowDecoration.Parent = this.btneliminar;
+            this.btneliminar.Size = new System.Drawing.Size(89, 45);
+            this.btneliminar.TabIndex = 0;
+            this.btneliminar.Text = "Eliminar";
             // 
-            // guna2Button2
+            // btneditar
             // 
-            this.guna2Button2.BorderRadius = 3;
-            this.guna2Button2.CheckedState.Parent = this.guna2Button2;
-            this.guna2Button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Button2.CustomImages.Parent = this.guna2Button2;
-            this.guna2Button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Button2.FillColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.HoverState.Parent = this.guna2Button2;
-            this.guna2Button2.Location = new System.Drawing.Point(0, 45);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
-            this.guna2Button2.Size = new System.Drawing.Size(89, 45);
-            this.guna2Button2.TabIndex = 0;
-            this.guna2Button2.Text = "Eliminar";
+            this.btneditar.BorderRadius = 3;
+            this.btneditar.CheckedState.Parent = this.btneditar;
+            this.btneditar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btneditar.CustomImages.Parent = this.btneditar;
+            this.btneditar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btneditar.FillColor = System.Drawing.Color.DarkGray;
+            this.btneditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.btneditar.ForeColor = System.Drawing.Color.White;
+            this.btneditar.HoverState.Parent = this.btneditar;
+            this.btneditar.Location = new System.Drawing.Point(0, 45);
+            this.btneditar.Name = "btneditar";
+            this.btneditar.ShadowDecoration.Parent = this.btneditar;
+            this.btneditar.Size = new System.Drawing.Size(89, 45);
+            this.btneditar.TabIndex = 0;
+            this.btneditar.Text = "Editar";
+            this.btneditar.Click += new System.EventHandler(this.btneditar_Click);
             // 
             // guna2Button1
             // 
@@ -211,6 +252,7 @@ namespace CapaPresentacion.Vista
             this.btncerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.btncerrar.TabIndex = 106;
             this.btncerrar.TabStop = false;
+            this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click);
             // 
             // FrmTipoOperacion
             // 
@@ -221,9 +263,9 @@ namespace CapaPresentacion.Vista
             this.Name = "FrmTipoOperacion";
             this.Text = "TipoOperacion";
             this.Panel_operacion.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Dgv_cliente)).EndInit();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_tipoOper)).EndInit();
             this.Panel_boton.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).EndInit();
             this.ResumeLayout(false);
@@ -235,13 +277,13 @@ namespace CapaPresentacion.Vista
         private System.Windows.Forms.Panel Panel_operacion;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
-        private System.Windows.Forms.DataGridView Dgv_cliente;
+        private Guna.UI2.WinForms.Guna2TextBox txtbuscar;
         private System.Windows.Forms.Panel Panel_boton;
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
-        private Guna.UI2.WinForms.Guna2Button guna2Button3;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button btneliminar;
+        private Guna.UI2.WinForms.Guna2Button btneditar;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         public System.Windows.Forms.PictureBox btncerrar;
+        private System.Windows.Forms.DataGridView Dgv_tipoOper;
     }
 }

@@ -13,12 +13,12 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion.SubVista
 {
-    public partial class VTipo_Documento : Form
+    public partial class FrmVTipo_Doc : Form
     {
         readonly DTipoDocumento dTipoDocumento;
         readonly RTipoDocumento rTipoDoc;
 
-        public VTipo_Documento()
+        public FrmVTipo_Doc()
         {
             InitializeComponent();
             dTipoDocumento = new DTipoDocumento();
@@ -40,18 +40,61 @@ namespace CapaPresentacion.SubVista
             Msg.M_info(result);
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void btnmodificar_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             if (string.IsNullOrWhiteSpace(txtcodDoc.Text) || string.IsNullOrWhiteSpace(txtDescDoc.Text)) { 
+=======
+            if (string.IsNullOrWhiteSpace(txtcodDoc.Text) || string.IsNullOrWhiteSpace(txtDescDoc.Text))
+
+            {
+>>>>>>> c5bd5a6738a2107235a58859811aaf46d55b9afe
                 ValidateChildren();
                 return;
             }
-        
+
             string result = "";
+<<<<<<< HEAD
              //TipoDocumento
             
+=======
+            dTipoDocumento.Iddocumento = int.Parse(txtidTipoDoc.Text.Trim());
+            dTipoDocumento.Codigo = txtcodDoc.Text.Trim();
+            dTipoDocumento.Descripcion = txtDescDoc.Text.Trim();
+
+
+            result = rTipoDoc.Edit(dTipoDocumento);
+            if (result.Contains("Se Modifico"))
+                Msg.M_info(result);
+            else
+                Msg.M_error(result);
+
+            Limpiar();
+        }
+
+        private void Limpiar()
+        {
+
+            foreach (dynamic item in this.panelregistro.Controls)
+            {
+                if (item is Guna.UI2.WinForms.Guna2TextBox || item is ComboBox)
+                {
+                    item.Text = null;
+                }
+
+            }
+            txtcodDoc.Focus();
+
+>>>>>>> c5bd5a6738a2107235a58859811aaf46d55b9afe
         }
 
 
     }
+    
+    
 }

@@ -73,6 +73,14 @@ WHERE idcliprov = @idcliprov
 END
 GO
 
+ALTER PROC manto.SP_ShowCliProv
+AS BEGIN
+SELECT  c.idcliprov, c.nom_prov, c.ruc FROM manto.clienteProv c
+END
+GO
+
+exec manto.SP_ShowCliProv
+
 -- PROCEDIMIENTO PARA TIPO DE OPERACION
 CREATE PROC manto.SP_AddTipoOper
 @idtipOper int = null,
@@ -98,6 +106,12 @@ CREATE PROC manto.SP_EditTipoOper
 AS BEGIN
 UPDATE manto.TipoOperacion SET codigo=@codigo, descripcion=@descripcion
 WHERE idTipoOper = @idtipOper
+END
+GO
+
+CREATE PROC manto.SP_ShowTipoOper
+AS BEGIN
+SELECT  t.idTipoOper, t.codigo, t.descripcion FROM manto.TipoOperacion t
 END
 GO
 
@@ -135,6 +149,12 @@ WHERE idMoneda=@idmoneda
 END
 GO
 
+--PROCEDIMIENTO PARA MOSTRAR MONEDA
+ALTER PROC manto.SP_ShowMon
+AS BEGIN
+SELECT  m.idMoneda, m.codigo,m.nom_moneda, m.abrev,m.simbolo,m.descripcion FROM manto.Moneda m
+END
+GO
 
 -- PROCEDIMIENTO PARA DOCUMENTO
 CREATE PROC manto.SP_AddDocumento
@@ -164,6 +184,13 @@ WHERE idTipoDoc=@iddoc
 END
 GO
 
+--PROCEDIMIENTO PARA MOSTRAR DOCUMENTO
+CREATE PROC manto.SP_ShowDoc
+AS BEGIN
+SELECT  t.idTipoDoc, t.codigo, t.descripcion FROM manto.TipoDocumento t
+END
+GO
+
 -- PROCEDIMIENTO PARA UNIDAD DE MEDIDA
 CREATE PROC manto.sp_AddUnidadMedida
 @idUnidadMedida int = null,
@@ -183,7 +210,7 @@ END
 
 GO
 
---PROCEDIMIENTO PARA EDITAR DOCUMENTO
+--PROCEDIMIENTO PARA EDITAR UNIDAD MEDIDA
 CREATE PROC manto.SP_EditUnidMedida
 @idUnidadMedida int,
 @codigo char(11), 
@@ -195,6 +222,17 @@ WHERE idUnidadMedida=@idUnidadMedida
 END
 GO
 
+<<<<<<< HEAD
 --exec manto.SP_AddEmpresa null,'20456578451','fsd','asd','av. asdas','av. dasdda','rus','ACTIVO';
+=======
+--PROCEDIMIENTO PARA MOSTRAR UNIDAD MEDIDA
+CREATE PROC manto.SP_ShowUnidadMed
+AS BEGIN
+SELECT  u.idUnidadMedida,u.codigo,u.abrev,u.descripcion FROM manto.UnidadMedida u
+END
+GO
+
+exec manto.SP_AddEmpresa null,'20456578451','fsd','asd','av. asdas','av. dasdda','rus','ACTIVO';
+>>>>>>> c5bd5a6738a2107235a58859811aaf46d55b9afe
 
 GO
