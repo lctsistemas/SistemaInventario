@@ -56,7 +56,28 @@ namespace CapaNegocio.Repositories
 
         public string Delete(DClienteProv Entity)
         {
-            throw new NotImplementedException();
+           
+            using (SqlConnection conn = Dconexion.Getconectar())
+            {
+                conn.Open();
+                cmd = null;
+                using (cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = "manto.SP_DeleteCliProv";
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@idcliprov", Entity.Idprov);
+                    cmd.Parameters.AddWithValue("@nom_prov", Entity.Nom_prov);
+                    cmd.Parameters.AddWithValue("@ruc", Entity.Ruc);
+
+                    result = cmd.ExecuteNonQuery() == 1 ? "Se Modifico Correctamente!" : "Error al Modificar";
+
+                    cmd.Parameters.Clear();
+
+                }
+            }
+            return result;
         }
 
         public string Edit(DClienteProv Entity)

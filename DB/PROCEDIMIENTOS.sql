@@ -37,6 +37,7 @@ WHERE id_empresa = @id_empresa
 END
 GO
 
+
 CREATE PROC manto.SP_ShowEmpresa
 @estado varchar(15)
 AS BEGIN
@@ -72,6 +73,15 @@ UPDATE manto.clienteProv SET nom_prov=@nom_prov, ruc=@ruc
 WHERE idcliprov = @idcliprov
 END
 GO
+
+CREATE PROC manto.SP_DeleteCliProv
+@idcliprov int,
+@nom_prov varchar(60), 
+@ruc char(11)
+AS BEGIN
+	DELETE from clienteProv where idcliprov=@idcliprov
+END
+go
 
 ALTER PROC manto.SP_ShowCliProv
 AS BEGIN
