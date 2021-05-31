@@ -166,6 +166,7 @@ namespace CapaPresentacion.SubVista
             this.txtAbrev.ShadowDecoration.Parent = this.txtAbrev;
             this.txtAbrev.Size = new System.Drawing.Size(79, 28);
             this.txtAbrev.TabIndex = 37;
+            this.txtAbrev.Validating += new System.ComponentModel.CancelEventHandler(this.txtAbrev_Validating);
             // 
             // label3
             // 
@@ -202,6 +203,7 @@ namespace CapaPresentacion.SubVista
             this.txtDesc.ShadowDecoration.Parent = this.txtDesc;
             this.txtDesc.Size = new System.Drawing.Size(302, 57);
             this.txtDesc.TabIndex = 32;
+            this.txtDesc.Validating += new System.ComponentModel.CancelEventHandler(this.txtDesc_Validating);
             // 
             // txtcodUM
             // 
@@ -226,6 +228,7 @@ namespace CapaPresentacion.SubVista
             this.txtcodUM.ShadowDecoration.Parent = this.txtcodUM;
             this.txtcodUM.Size = new System.Drawing.Size(79, 28);
             this.txtcodUM.TabIndex = 31;
+            this.txtcodUM.Validating += new System.ComponentModel.CancelEventHandler(this.txtcodUM_Validating);
             // 
             // label2
             // 

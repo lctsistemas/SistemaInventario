@@ -43,7 +43,7 @@ namespace CapaPresentacion.Vista
             this.panel2 = new System.Windows.Forms.Panel();
             this.Txtbuscar = new Guna.UI2.WinForms.Guna2TextBox();
             this.Dgv_cliente = new System.Windows.Forms.DataGridView();
-            this.beliminar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dgv_txtdelete = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             this.Panel_boton.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).BeginInit();
@@ -224,7 +224,7 @@ namespace CapaPresentacion.Vista
             this.Dgv_cliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.Dgv_cliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Dgv_cliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.beliminar});
+            this.dgv_txtdelete});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -240,22 +240,25 @@ namespace CapaPresentacion.Vista
             this.Dgv_cliente.Name = "Dgv_cliente";
             this.Dgv_cliente.ReadOnly = true;
             this.Dgv_cliente.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.Dgv_cliente.RowHeadersVisible = false;
             this.Dgv_cliente.RowHeadersWidth = 25;
             this.Dgv_cliente.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.Dgv_cliente.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.Dgv_cliente.Size = new System.Drawing.Size(629, 411);
             this.Dgv_cliente.TabIndex = 3;
+            this.Dgv_cliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_cliente_CellContentClick);
             // 
-            // beliminar
+            // dgv_txtdelete
             // 
-            this.beliminar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.beliminar.FillWeight = 40F;
-            this.beliminar.Frozen = true;
-            this.beliminar.HeaderText = "";
-            this.beliminar.Image = ((System.Drawing.Image)(resources.GetObject("beliminar.Image")));
-            this.beliminar.Name = "beliminar";
-            this.beliminar.ReadOnly = true;
-            this.beliminar.Width = 5;
+            this.dgv_txtdelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dgv_txtdelete.FillWeight = 40F;
+            this.dgv_txtdelete.Frozen = true;
+            this.dgv_txtdelete.HeaderText = "            ";
+            this.dgv_txtdelete.Image = ((System.Drawing.Image)(resources.GetObject("dgv_txtdelete.Image")));
+            this.dgv_txtdelete.Name = "dgv_txtdelete";
+            this.dgv_txtdelete.ReadOnly = true;
+            this.dgv_txtdelete.ToolTipText = "Eliminar";
+            this.dgv_txtdelete.Width = 59;
             // 
             // FrmClientePro
             // 
@@ -286,6 +289,6 @@ namespace CapaPresentacion.Vista
         private System.Windows.Forms.Panel panel2;
         private Guna.UI2.WinForms.Guna2TextBox Txtbuscar;
         private System.Windows.Forms.DataGridView Dgv_cliente;
-        private System.Windows.Forms.DataGridViewImageColumn beliminar;
+        private System.Windows.Forms.DataGridViewImageColumn dgv_txtdelete;
     }
 }

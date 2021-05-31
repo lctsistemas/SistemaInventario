@@ -83,5 +83,15 @@ namespace CapaPresentacion.SubVista
             txtnomprov.Focus();
 
         }
+
+        private void txtnomprov_Validating(object sender, CancelEventArgs e)
+        {
+            ValidateError.Validate_text(txtnomprov, "¡Campo Requerido!");
+        }
+
+        private void txtruc_Validating(object sender, CancelEventArgs e)
+        {
+            ValidateError.Validate_text(txtruc, "¡Campo Requerido!");
+        }
     }
 }

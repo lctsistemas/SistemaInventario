@@ -57,7 +57,26 @@ namespace CapaNegocio.Repositories
 
         public string Delete(DMoneda Entity)
         {
-            throw new NotImplementedException();
+            using (SqlConnection conn = Dconexion.Getconectar())
+            {
+                conn.Open();
+                cmd = null;
+                using (cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = "manto.SP_DeleteMoneda";
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@idmoneda", Entity.Idmoneda);
+
+
+                    result = cmd.ExecuteNonQuery() == 1 ? "Se Elimino Correctamente!" : "Error al Eliminar";
+
+                    cmd.Parameters.Clear();
+
+                }
+            }
+            return result;
         }
 
         public string Edit(DMoneda Entity)

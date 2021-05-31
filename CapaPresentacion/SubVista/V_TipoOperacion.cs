@@ -83,5 +83,15 @@ namespace CapaPresentacion.SubVista
         {
             this.Close();
         }
+
+        private void txtcodOper_Validating(object sender, CancelEventArgs e)
+        {
+            ValidateError.Validate_text(txtcodOper, "¡Campo Requerido!");
+        }
+
+        private void txtDesc_Validating(object sender, CancelEventArgs e)
+        {
+            ValidateError.Validate_text(txtDesc, "¡Campo Requerido!");
+        }
     }
 }

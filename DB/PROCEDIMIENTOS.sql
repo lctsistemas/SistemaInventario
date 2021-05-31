@@ -83,10 +83,17 @@ WHERE idcliprov = @idcliprov
 END
 GO
 
+<<<<<<< HEAD
 CREATE PROC manto.SP_DeleteCliProv
 @idcliprov int,
 @nom_prov varchar(60), 
 @ruc char(11)
+=======
+<<<<<<< HEAD
+ALTER PROC manto.SP_DeleteCliProv
+@idcliprov int
+
+>>>>>>> 4d12cb3e99cb493884358d5b60d24fa65dca3cc3
 AS BEGIN
 	DELETE from clienteProv where idcliprov=@idcliprov
 END
@@ -127,6 +134,14 @@ WHERE idTipoOper = @idtipOper
 END
 GO
 
+ALTER PROC manto.SP_DeleteTipoOpera
+@idtipOper int
+
+AS BEGIN
+	DELETE from TipoOperacion where idTipoOper=@idtipOper
+END
+go
+
 CREATE PROC manto.SP_ShowTipoOper
 AS BEGIN
 SELECT  t.idTipoOper, t.codigo, t.descripcion FROM manto.TipoOperacion t
@@ -166,6 +181,14 @@ UPDATE manto.Moneda SET codigo=@codigo, nom_moneda=@nom_moneda,abrev=@abrev,simb
 WHERE idMoneda=@idmoneda
 END
 GO
+
+--PROCEDIMIENTO PARA ELIMINAR MONEDA
+CREATE PROC manto.SP_DeleteMoneda
+@idmoneda int
+AS BEGIN
+	DELETE from Moneda where idMoneda=@idmoneda
+END
+go
 
 --PROCEDIMIENTO PARA MOSTRAR MONEDA
 CREATE PROC manto.SP_ShowMon

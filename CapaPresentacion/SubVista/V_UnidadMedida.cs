@@ -81,5 +81,20 @@ namespace CapaPresentacion.SubVista
             txtcodUM.Focus();
 
         }
+
+        private void txtcodUM_Validating(object sender, CancelEventArgs e)
+        {
+            ValidateError.Validate_text(txtcodUM, "¡Campo Requerido!");
+        }
+
+        private void txtAbrev_Validating(object sender, CancelEventArgs e)
+        {
+            ValidateError.Validate_text(txtAbrev, "¡Campo Requerido!");
+        }
+
+        private void txtDesc_Validating(object sender, CancelEventArgs e)
+        {
+            ValidateError.Validate_text(txtDesc, "¡Campo Requerido!");
+        }
     }
 }

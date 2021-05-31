@@ -95,6 +95,7 @@ namespace CapaPresentacion.SubVista
             this.txtnomprov.Size = new System.Drawing.Size(242, 28);
             this.txtnomprov.TabIndex = 17;
             this.txtnomprov.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtnomprov.Validating += new System.ComponentModel.CancelEventHandler(this.txtnomprov_Validating);
             // 
             // txtruc
             // 
@@ -120,6 +121,7 @@ namespace CapaPresentacion.SubVista
             this.txtruc.Size = new System.Drawing.Size(242, 28);
             this.txtruc.TabIndex = 18;
             this.txtruc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtruc.Validating += new System.ComponentModel.CancelEventHandler(this.txtruc_Validating);
             // 
             // label1
             // 

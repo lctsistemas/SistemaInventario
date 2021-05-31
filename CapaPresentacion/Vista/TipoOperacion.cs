@@ -48,7 +48,7 @@ namespace CapaPresentacion.Vista
         //TABLA
         private void Tabla()
         {
-            Dgv_tipoOper.Columns[0].Visible = false;
+            Dgv_tipoOper.Columns[0].Visible = true;
             Dgv_tipoOper.Columns[1].HeaderText = "CODIGO";
             Dgv_tipoOper.Columns[2].HeaderText = "DESCRIPCION";
         }
@@ -86,6 +86,35 @@ namespace CapaPresentacion.Vista
         private void txtbuscar_TextChanged(object sender, EventArgs e)
         {
             Dgv_tipoOper.DataSource = rtipoOper.Search(txtbuscar.Text.Trim());
+        }
+
+        private void Dgv_tipoOper_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string result = "";
+            if (e.RowIndex > -1)
+            {
+                if (e.ColumnIndex == this.Dgv_tipoOper.Columns["dgv_txtdelete"].Index)
+                {
+                    if (Msg.M_question("¿Desea Eliminar la Operacion?") == DialogResult.Yes)
+                    {
+
+                        dtipoOper.IdTipo_Oper = Convert.ToInt32(Dgv_tipoOper.CurrentRow.Cells[1].Value);
+                        dtipoOper.Codigo = Dgv_tipoOper.CurrentRow.Cells[2].Value.ToString();
+                        dtipoOper.Descripcion = Dgv_tipoOper.CurrentRow.Cells[3].Value.ToString();
+                        result = rtipoOper.Delete(dtipoOper);
+
+                        if (result.Contains("¡Se Eliminar"))
+                        {
+                            Msg.M_info(result);
+                            Show_TipoOper();
+                        }
+                        else
+                            Msg.M_error(result);
+
+                    }
+                }
+
+            }
         }
     }
 }

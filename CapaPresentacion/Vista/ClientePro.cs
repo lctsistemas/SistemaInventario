@@ -49,7 +49,7 @@ namespace CapaPresentacion.Vista
         //TABLA
         private void Tabla()
         {
-            Dgv_cliente.Columns[0].Visible = false;
+            Dgv_cliente.Columns[0].Visible = true; //bton eliminar
             Dgv_cliente.Columns[1].HeaderText = "PROVEEDOR";
             Dgv_cliente.Columns[2].HeaderText = "RUC";
         }
@@ -86,6 +86,34 @@ namespace CapaPresentacion.Vista
         {
             
 
+        }
+
+        private void Dgv_cliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string result = "";
+            if (e.RowIndex > -1)
+            {
+                if (e.ColumnIndex == this.Dgv_cliente.Columns["dgv_txtdelete"].Index)
+                {
+                    if (Msg.M_question("¿Desea Eliminar el proveedor?") == DialogResult.Yes)
+                    {
+
+                        dclienteprov.Idprov = Convert.ToInt32(Dgv_cliente.CurrentRow.Cells[1].Value);
+                        dclienteprov.Nom_prov = Dgv_cliente.CurrentRow.Cells[2].Value.ToString();
+                        result = rclienteprov.Delete(dclienteprov);
+
+                        if (result.Contains("¡Se Eliminar"))
+                        {
+                            Msg.M_info(result);
+                            Show_business();
+                        }
+                        else
+                            Msg.M_error(result);
+
+                    }
+                }
+
+            }
         }
     }
 }
