@@ -37,11 +37,17 @@ namespace CapaPresentacion.Vista
             this.Cbo_empresa = new Guna.UI2.WinForms.Guna2ComboBox();
             this.Btn_entrar = new Guna.UI2.WinForms.Guna2Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.panelinicio = new System.Windows.Forms.Panel();
+            this.panel_boton = new System.Windows.Forms.Panel();
             this.lblcerrar = new System.Windows.Forms.PictureBox();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
-            this.panelinicio.SuspendLayout();
+            this.panel_boton.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lblcerrar)).BeginInit();
+            this.guna2Panel1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Elipse1
@@ -52,13 +58,13 @@ namespace CapaPresentacion.Vista
             // guna2PictureBox1
             // 
             this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.guna2PictureBox1.BorderRadius = 5;
             this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
-            this.guna2PictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(54, 74);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
-            this.guna2PictureBox1.Size = new System.Drawing.Size(462, 512);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox1.Size = new System.Drawing.Size(342, 362);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.guna2PictureBox1.TabIndex = 1;
             this.guna2PictureBox1.TabStop = false;
             this.guna2PictureBox1.UseTransparentBackground = true;
@@ -85,7 +91,7 @@ namespace CapaPresentacion.Vista
             this.Txt_acceso.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Txt_acceso.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Txt_acceso.HoverState.Parent = this.Txt_acceso;
-            this.Txt_acceso.Location = new System.Drawing.Point(491, 262);
+            this.Txt_acceso.Location = new System.Drawing.Point(35, 230);
             this.Txt_acceso.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Txt_acceso.Name = "Txt_acceso";
             this.Txt_acceso.PasswordChar = '\0';
@@ -113,7 +119,7 @@ namespace CapaPresentacion.Vista
             this.Cbo_empresa.IntegralHeight = false;
             this.Cbo_empresa.ItemHeight = 30;
             this.Cbo_empresa.ItemsAppearance.Parent = this.Cbo_empresa;
-            this.Cbo_empresa.Location = new System.Drawing.Point(491, 173);
+            this.Cbo_empresa.Location = new System.Drawing.Point(35, 136);
             this.Cbo_empresa.Name = "Cbo_empresa";
             this.Cbo_empresa.ShadowDecoration.Parent = this.Cbo_empresa;
             this.Cbo_empresa.Size = new System.Drawing.Size(387, 36);
@@ -129,7 +135,7 @@ namespace CapaPresentacion.Vista
             this.Btn_entrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_entrar.ForeColor = System.Drawing.Color.White;
             this.Btn_entrar.HoverState.Parent = this.Btn_entrar;
-            this.Btn_entrar.Location = new System.Drawing.Point(565, 374);
+            this.Btn_entrar.Location = new System.Drawing.Point(114, 343);
             this.Btn_entrar.Name = "Btn_entrar";
             this.Btn_entrar.ShadowDecoration.Parent = this.Btn_entrar;
             this.Btn_entrar.Size = new System.Drawing.Size(239, 45);
@@ -142,33 +148,71 @@ namespace CapaPresentacion.Vista
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(542, 82);
+            this.label3.Location = new System.Drawing.Point(83, 74);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(285, 33);
             this.label3.TabIndex = 13;
             this.label3.Text = "INICIO DE SESION";
             // 
-            // panelinicio
+            // panel_boton
             // 
-            this.panelinicio.Controls.Add(this.lblcerrar);
-            this.panelinicio.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelinicio.Location = new System.Drawing.Point(462, 0);
-            this.panelinicio.Name = "panelinicio";
-            this.panelinicio.Size = new System.Drawing.Size(438, 25);
-            this.panelinicio.TabIndex = 25;
+            this.panel_boton.Controls.Add(this.lblcerrar);
+            this.panel_boton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel_boton.Location = new System.Drawing.Point(0, 0);
+            this.panel_boton.Name = "panel_boton";
+            this.panel_boton.Size = new System.Drawing.Size(450, 28);
+            this.panel_boton.TabIndex = 15;
             // 
             // lblcerrar
             // 
             this.lblcerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblcerrar.Dock = System.Windows.Forms.DockStyle.Right;
             this.lblcerrar.Image = ((System.Drawing.Image)(resources.GetObject("lblcerrar.Image")));
-            this.lblcerrar.Location = new System.Drawing.Point(413, 0);
+            this.lblcerrar.Location = new System.Drawing.Point(425, 0);
             this.lblcerrar.Name = "lblcerrar";
-            this.lblcerrar.Size = new System.Drawing.Size(25, 25);
+            this.lblcerrar.Size = new System.Drawing.Size(25, 28);
             this.lblcerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.lblcerrar.TabIndex = 12;
             this.lblcerrar.TabStop = false;
             this.lblcerrar.Click += new System.EventHandler(this.lblcerrar_Click);
+            // 
+            // guna2Panel1
+            // 
+            this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.guna2Panel1.BorderRadius = 2;
+            this.guna2Panel1.BorderThickness = 1;
+            this.guna2Panel1.Controls.Add(this.panel2);
+            this.guna2Panel1.Controls.Add(this.panel1);
+            this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.ShadowDecoration.BorderRadius = 3;
+            this.guna2Panel1.ShadowDecoration.Depth = 5;
+            this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
+            this.guna2Panel1.Size = new System.Drawing.Size(899, 511);
+            this.guna2Panel1.TabIndex = 16;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.panel_boton);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.Cbo_empresa);
+            this.panel1.Controls.Add(this.Btn_entrar);
+            this.panel1.Controls.Add(this.Txt_acceso);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(449, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(450, 511);
+            this.panel1.TabIndex = 16;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.guna2PictureBox1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(450, 511);
+            this.panel2.TabIndex = 17;
             // 
             // FrmLogin
             // 
@@ -176,22 +220,21 @@ namespace CapaPresentacion.Vista
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(900, 512);
-            this.Controls.Add(this.panelinicio);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.Btn_entrar);
-            this.Controls.Add(this.Cbo_empresa);
-            this.Controls.Add(this.Txt_acceso);
-            this.Controls.Add(this.guna2PictureBox1);
+            this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
-            this.panelinicio.ResumeLayout(false);
+            this.panel_boton.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lblcerrar)).EndInit();
+            this.guna2Panel1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -203,7 +246,10 @@ namespace CapaPresentacion.Vista
         private Guna.UI2.WinForms.Guna2Button Btn_entrar;
         private Guna.UI2.WinForms.Guna2ComboBox Cbo_empresa;
         private Guna.UI2.WinForms.Guna2TextBox Txt_acceso;
-        private System.Windows.Forms.Panel panelinicio;
+        private System.Windows.Forms.Panel panel_boton;
         private System.Windows.Forms.PictureBox lblcerrar;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel1;
     }
 }

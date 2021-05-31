@@ -1,4 +1,5 @@
 use Dbinventario
+GO
 --   PROCEDIMIENTOS PARA EMPRESA
 alter PROC manto.SP_AddEmpresa
 @id_empresa int = null,
@@ -37,8 +38,6 @@ WHERE id_empresa = @id_empresa
 END
 GO
 
-<<<<<<< HEAD
-=======
 CREATE PROC manto.SP_DelteEmpresa
 @id_empresa int,
 @estado varchar(15)
@@ -46,7 +45,7 @@ AS BEGIN
 UPDATE manto.Empresa SET estado = @estado
 END
 GO
->>>>>>> 0254b8cf8c3243f119d8f0c4b62adcd1afd5c866
+
 
 CREATE PROC manto.SP_ShowEmpresa
 @estado varchar(15)
@@ -84,7 +83,6 @@ WHERE idcliprov = @idcliprov
 END
 GO
 
-<<<<<<< HEAD
 CREATE PROC manto.SP_DeleteCliProv
 @idcliprov int,
 @nom_prov varchar(60), 
@@ -94,10 +92,7 @@ AS BEGIN
 END
 go
 
-ALTER PROC manto.SP_ShowCliProv
-=======
 CREATE PROC manto.SP_ShowCliProv
->>>>>>> 0254b8cf8c3243f119d8f0c4b62adcd1afd5c866
 AS BEGIN
 SELECT  c.idcliprov, c.nom_prov, c.ruc FROM manto.clienteProv c
 END
