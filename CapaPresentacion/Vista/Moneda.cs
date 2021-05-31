@@ -48,7 +48,7 @@ namespace CapaPresentacion.Vista
         //TABLA
         private void Tabla()
         {
-            Dgv_moneda.Columns[0].Visible = false;
+            Dgv_moneda.Columns[0].Visible = true;
             Dgv_moneda.Columns[1].HeaderText = "CODIGO";
             Dgv_moneda.Columns[2].HeaderText = "MONEDA";
             Dgv_moneda.Columns[3].HeaderText = "ABREVIATURA";
@@ -85,6 +85,29 @@ namespace CapaPresentacion.Vista
         private void guna2TextBox2_TextChanged(object sender, EventArgs e)
         {
             Dgv_moneda.DataSource = rMoneda.Search(txtbuscar.Text.Trim());
+        }
+
+        private void Dgv_moneda_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string result = "";
+            if (e.RowIndex > -1)
+            {
+                if (e.ColumnIndex == this.Dgv_moneda.Columns["dgvtxteliminar"].Index)
+                {
+                    if (Msg.M_question("¿Desea Eliminar la moneda?") == DialogResult.Yes)
+                    {
+
+                        dMoneda.Idmoneda = Convert.ToInt32(Dgv_moneda.CurrentRow.Cells[1].Value);
+                        result = rMoneda.Delete(dMoneda);
+
+                       
+                            Msg.M_info(result);
+                            Show_moneda();
+
+                    }
+                }
+
+            }
         }
     }
 }

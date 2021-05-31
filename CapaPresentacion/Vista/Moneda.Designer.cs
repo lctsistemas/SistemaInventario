@@ -43,6 +43,7 @@ namespace CapaPresentacion.Vista
             this.btneditar = new Guna.UI2.WinForms.Guna2Button();
             this.btnnuevo = new Guna.UI2.WinForms.Guna2Button();
             this.btncerrar = new System.Windows.Forms.PictureBox();
+            this.dgvtxteliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_moneda)).BeginInit();
@@ -94,6 +95,8 @@ namespace CapaPresentacion.Vista
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.Dgv_moneda.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.Dgv_moneda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Dgv_moneda.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvtxteliminar});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -112,6 +115,7 @@ namespace CapaPresentacion.Vista
             this.Dgv_moneda.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.Dgv_moneda.Size = new System.Drawing.Size(629, 442);
             this.Dgv_moneda.TabIndex = 2;
+            this.Dgv_moneda.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_moneda_CellContentClick);
             // 
             // txtbuscar
             // 
@@ -236,6 +240,15 @@ namespace CapaPresentacion.Vista
             this.btncerrar.TabIndex = 112;
             this.btncerrar.TabStop = false;
             // 
+            // dgvtxteliminar
+            // 
+            this.dgvtxteliminar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dgvtxteliminar.HeaderText = "     ";
+            this.dgvtxteliminar.Image = ((System.Drawing.Image)(resources.GetObject("dgvtxteliminar.Image")));
+            this.dgvtxteliminar.Name = "dgvtxteliminar";
+            this.dgvtxteliminar.ReadOnly = true;
+            this.dgvtxteliminar.Width = 31;
+            // 
             // FrmMoneda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -265,5 +278,6 @@ namespace CapaPresentacion.Vista
         private Guna.UI2.WinForms.Guna2Button btneditar;
         private Guna.UI2.WinForms.Guna2Button btnnuevo;
         public System.Windows.Forms.PictureBox btncerrar;
+        private System.Windows.Forms.DataGridViewImageColumn dgvtxteliminar;
     }
 }

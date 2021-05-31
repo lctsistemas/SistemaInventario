@@ -164,6 +164,7 @@ namespace CapaPresentacion.SubVista
             this.txtDesc.ShadowDecoration.Parent = this.txtDesc;
             this.txtDesc.Size = new System.Drawing.Size(302, 57);
             this.txtDesc.TabIndex = 26;
+            this.txtDesc.Validating += new System.ComponentModel.CancelEventHandler(this.txtDesc_Validating);
             // 
             // txtcodOper
             // 
@@ -188,6 +189,7 @@ namespace CapaPresentacion.SubVista
             this.txtcodOper.ShadowDecoration.Parent = this.txtcodOper;
             this.txtcodOper.Size = new System.Drawing.Size(62, 28);
             this.txtcodOper.TabIndex = 25;
+            this.txtcodOper.Validating += new System.ComponentModel.CancelEventHandler(this.txtcodOper_Validating);
             // 
             // label2
             // 
