@@ -47,6 +47,7 @@
     <Compile Include="Entities\DClienteProv.cs" />
     <Compile Include="Entities\Dconexion.cs" />
     <Compile Include="Entities\Dempresa.cs" />
+    <Compile Include="Entities\DEntrada.cs" />
     <Compile Include="Entities\DMoneda.cs" />
     <Compile Include="Entities\DTipoDocumento.cs" />
     <Compile Include="Entities\DTipoOperacion.cs" />

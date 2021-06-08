@@ -40,12 +40,7 @@ namespace CapaPresentacion.Vista
             this.Btn_importExcel = new Guna.UI2.WinForms.Guna2Button();
             this.Dgv_Importar = new System.Windows.Forms.DataGridView();
             this.Dgv_txtid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.Cbo_pagina = new System.Windows.Forms.ComboBox();
-            this.Txtnumero = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.Txt_de = new System.Windows.Forms.TextBox();
+            this.Lbl_cantidad = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Importar)).BeginInit();
@@ -59,7 +54,7 @@ namespace CapaPresentacion.Vista
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(941, 483);
+            this.panel1.Size = new System.Drawing.Size(960, 497);
             this.panel1.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -67,7 +62,7 @@ namespace CapaPresentacion.Vista
             this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(882, 117);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(901, 117);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
@@ -82,18 +77,13 @@ namespace CapaPresentacion.Vista
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(233)))), ((int)(((byte)(236)))));
-            this.panel2.Controls.Add(this.Txt_de);
-            this.panel2.Controls.Add(this.Txtnumero);
-            this.panel2.Controls.Add(this.Cbo_pagina);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.Lbl_cantidad);
             this.panel2.Controls.Add(this.Lblruta);
             this.panel2.Controls.Add(this.Btn_importExcel);
             this.panel2.Controls.Add(this.Dgv_Importar);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(829, 483);
+            this.panel2.Size = new System.Drawing.Size(848, 497);
             this.panel2.TabIndex = 0;
             // 
             // Lblruta
@@ -117,7 +107,7 @@ namespace CapaPresentacion.Vista
             this.Btn_importExcel.HoverState.Parent = this.Btn_importExcel;
             this.Btn_importExcel.Image = ((System.Drawing.Image)(resources.GetObject("Btn_importExcel.Image")));
             this.Btn_importExcel.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.Btn_importExcel.Location = new System.Drawing.Point(589, 8);
+            this.Btn_importExcel.Location = new System.Drawing.Point(608, 8);
             this.Btn_importExcel.Name = "Btn_importExcel";
             this.Btn_importExcel.ShadowDecoration.Parent = this.Btn_importExcel;
             this.Btn_importExcel.Size = new System.Drawing.Size(223, 30);
@@ -174,7 +164,7 @@ namespace CapaPresentacion.Vista
             this.Dgv_Importar.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.Dgv_Importar.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.Dgv_Importar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Dgv_Importar.Size = new System.Drawing.Size(824, 379);
+            this.Dgv_Importar.Size = new System.Drawing.Size(843, 393);
             this.Dgv_Importar.TabIndex = 4;
             // 
             // Dgv_txtid
@@ -186,60 +176,21 @@ namespace CapaPresentacion.Vista
             this.Dgv_txtid.ReadOnly = true;
             this.Dgv_txtid.Width = 83;
             // 
-            // label1
+            // Lbl_cantidad
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(58, 443);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(27, 13);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Nro.";
-            // 
-            // Cbo_pagina
-            // 
-            this.Cbo_pagina.FormattingEnabled = true;
-            this.Cbo_pagina.Location = new System.Drawing.Point(272, 440);
-            this.Cbo_pagina.Name = "Cbo_pagina";
-            this.Cbo_pagina.Size = new System.Drawing.Size(121, 21);
-            this.Cbo_pagina.TabIndex = 8;
-            // 
-            // Txtnumero
-            // 
-            this.Txtnumero.Location = new System.Drawing.Point(91, 440);
-            this.Txtnumero.Name = "Txtnumero";
-            this.Txtnumero.Size = new System.Drawing.Size(100, 20);
-            this.Txtnumero.TabIndex = 9;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(206, 444);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Paginacion";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(407, 444);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(21, 13);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "De";
-            // 
-            // Txt_de
-            // 
-            this.Txt_de.Location = new System.Drawing.Point(434, 440);
-            this.Txt_de.Name = "Txt_de";
-            this.Txt_de.Size = new System.Drawing.Size(100, 20);
-            this.Txt_de.TabIndex = 9;
+            this.Lbl_cantidad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.Lbl_cantidad.AutoSize = true;
+            this.Lbl_cantidad.Location = new System.Drawing.Point(58, 457);
+            this.Lbl_cantidad.Name = "Lbl_cantidad";
+            this.Lbl_cantidad.Size = new System.Drawing.Size(27, 13);
+            this.Lbl_cantidad.TabIndex = 7;
+            this.Lbl_cantidad.Text = "Nro.";
             // 
             // FrmEntradaImpotacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(941, 483);
+            this.ClientSize = new System.Drawing.Size(960, 497);
             this.Controls.Add(this.panel1);
             this.Name = "FrmEntradaImpotacion";
             this.Text = "EntradaImpotacion";
@@ -260,11 +211,6 @@ namespace CapaPresentacion.Vista
         private System.Windows.Forms.Label Lblruta;
         private Guna.UI2.WinForms.Guna2Button Btn_importExcel;
         private System.Windows.Forms.DataGridViewTextBoxColumn Dgv_txtid;
-        private System.Windows.Forms.TextBox Txt_de;
-        private System.Windows.Forms.TextBox Txtnumero;
-        private System.Windows.Forms.ComboBox Cbo_pagina;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label Lbl_cantidad;
     }
 }

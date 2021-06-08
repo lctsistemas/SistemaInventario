@@ -30,8 +30,9 @@ namespace CapaPresentacion.Vista
             {
                 Lblruta.Text = dialog.FileName;
                 Dgv_Importar.DataSource = ImportarAchivoExcel(dialog.FileName);
-               // Dgv_Importar.Columns[0].HeaderText = "CODIGO";
+                // Dgv_Importar.Columns[0].HeaderText = "CODIGO";
                 //ImportarAchivoExcel(dialog.FileName);
+                Lbl_cantidad.Text = Dgv_Importar.RowCount.ToString();
             }
           
         }
@@ -40,44 +41,32 @@ namespace CapaPresentacion.Vista
         {
             //CREAR CONEXION
             string conexion = string.Format("Provider=Microsoft.Jet.OLEDB.4.0;Data Source= {0};" +
-                " Extended Properties = 'Excel 8.0;HDR=Yes;IMEX=1;MAXSCANROWS=0'", ruta); // cuando esta abierto el archivo
+                " Extended Properties = 'Excel 8.0;HDR=Yes;IMEX=1;MAXSCANROWS=0'", ruta);
 
-            /*string conexion = string.Format("Provider=Microsoft.ACE.OLEDB.12.0;Data Source= {0};" +
-                " Extended Properties = 'Excel 12.0;'", ruta);*/
+            DataTable dt = null;
 
-            OleDbConnection conector = default(OleDbConnection);
-            conector = new OleDbConnection(conexion);
-
-            //Abrir conexion
-            conector.Open();
-            /*if (conector.State == ConnectionState.Open)
+            using (OleDbConnection conector = new OleDbConnection(conexion))
             {
-                Msg.M_info("conexion exitosa");
+                conector.Open();
+                using (OleDbCommand cmd = new OleDbCommand())
+                {
+                    cmd.Connection = conector;
+                    cmd.CommandText = "select * from [Usuarios$]";
+
+                    OleDbDataAdapter da = new OleDbDataAdapter();
+                    da.SelectCommand = cmd;
+                    using (dt =new DataTable())
+                    {
+                        da.Fill(dt);
+                        da.Dispose();
+                    }
+                }
             }
-            else
-                Msg.M_error("Error al conectar");*/
 
-            //crar consulta
-            OleDbCommand cmd = default(OleDbCommand);
-            cmd = new OleDbCommand("select * from [Usuarios$]", conector);
-
-            //crear dataptador
-            OleDbDataAdapter da = new OleDbDataAdapter();
-            da.SelectCommand = cmd;
-
-            //creamos Dataset
-            DataSet ds = new DataSet();
-
-            //Llenamos Adaptador
-            da.Fill(ds);
-            da.Dispose();
-
-            //Cerrar conexion
-            conector.Close();
-
-            return ds.Tables[0].DefaultView;
-
+            return dt.DefaultView;
         }
+
+
 
     }
 }

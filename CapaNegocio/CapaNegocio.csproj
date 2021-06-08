@@ -44,6 +44,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\RClienteProv.cs" />
     <Compile Include="Repositories\Rempresa.cs" />
+    <Compile Include="Repositories\REntrada.cs" />
     <Compile Include="Repositories\RLogin.cs" />
     <Compile Include="Repositories\RMoneda.cs" />
     <Compile Include="Repositories\RTipoDocumento.cs" />
