@@ -83,28 +83,19 @@ WHERE idcliprov = @idcliprov
 END
 GO
 
-<<<<<<< HEAD
-CREATE PROC manto.SP_DeleteCliProv
-@idcliprov int,
-@nom_prov varchar(60), 
-@ruc char(11)
-=======
-<<<<<<< HEAD
 ALTER PROC manto.SP_DeleteCliProv
 @idcliprov int
-
->>>>>>> 4d12cb3e99cb493884358d5b60d24fa65dca3cc3
 AS BEGIN
 	DELETE from clienteProv where idcliprov=@idcliprov
 END
-go
+GO
+
 
 CREATE PROC manto.SP_ShowCliProv
 AS BEGIN
 SELECT  c.idcliprov, c.nom_prov, c.ruc FROM manto.clienteProv c
 END
 GO
-
 
 -- PROCEDIMIENTO PARA TIPO DE OPERACION
 CREATE PROC manto.SP_AddTipoOper
@@ -136,7 +127,6 @@ GO
 
 ALTER PROC manto.SP_DeleteTipoOpera
 @idtipOper int
-
 AS BEGIN
 	DELETE from TipoOperacion where idTipoOper=@idtipOper
 END
@@ -263,9 +253,6 @@ WHERE idUnidadMedida=@idUnidadMedida
 END
 GO
 
-
---exec manto.SP_AddEmpresa null,'20456578451','fsd','asd','av. asdas','av. dasdda','rus','ACTIVO';
-
 --PROCEDIMIENTO PARA MOSTRAR UNIDAD MEDIDA
 CREATE PROC manto.SP_ShowUnidadMed
 AS BEGIN
@@ -274,4 +261,14 @@ END
 GO
 
 
+/*  PROCEDIMIENTO DE INICIO DE SESION  */
+
+/*   SCRIP PARA PERIODO       */
+CREATE PROC manto.ShowPeriodo
+@periodo int,
+@idperiodo int output
+AS BEGIN	
+	SET @idperiodo=(SELECT p.idperiodo FROM manto.Periodo p WHERE p.desc_periodo=@periodo)			
+END
+GO
 

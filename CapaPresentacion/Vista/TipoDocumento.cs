@@ -31,7 +31,6 @@ namespace CapaPresentacion.Vista
         private void Show_TipoDoc()
         {
             dgvTipoDoc.DataSource = rtipoDoc.Getdata(dtipoDoc);
-
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -56,12 +55,11 @@ namespace CapaPresentacion.Vista
         private void Show_Documento()
         {
             dgvTipoDoc.DataSource = rtipoDoc.Getdata(dtipoDoc);
-
         }
 
-        private void txtbuscar_TextChanged(object sender, EventArgs e)
+        private void Txtbuscar_TextChanged(object sender, EventArgs e)
         {
-            dgvTipoDoc.DataSource = rtipoDoc.Search(txtbuscar.Text.Trim());
+            dgvTipoDoc.DataSource = rtipoDoc.Search(Txtbuscar.Text.Trim());
         }
 
         private void btneditar_Click(object sender, EventArgs e)

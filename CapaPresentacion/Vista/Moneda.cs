@@ -82,11 +82,7 @@ namespace CapaPresentacion.Vista
             }
         }
 
-        private void guna2TextBox2_TextChanged(object sender, EventArgs e)
-        {
-            Dgv_moneda.DataSource = rMoneda.Search(txtbuscar.Text.Trim());
-        }
-
+       
         private void Dgv_moneda_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             string result = "";
@@ -108,6 +104,11 @@ namespace CapaPresentacion.Vista
                 }
 
             }
+        }
+
+        private void Txtbuscar_TextChanged(object sender, EventArgs e)
+        {
+            Dgv_moneda.DataSource = rMoneda.Search(Txtbuscar.Text.Trim());
         }
     }
 }

@@ -29,11 +29,15 @@ namespace CapaPresentacion.Vista
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmInicio));
             this.PanelMenu = new System.Windows.Forms.Panel();
             this.Panel_contenedor = new System.Windows.Forms.Panel();
+            this.Lbl_idperiodo = new System.Windows.Forms.Label();
+            this.Lbl_idempresa = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tlblhora = new System.Windows.Forms.ToolStripStatusLabel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -50,9 +54,11 @@ namespace CapaPresentacion.Vista
             this.Btn_tipooperacion = new System.Windows.Forms.Button();
             this.Btn_moneda = new System.Windows.Forms.Button();
             this.Btn_tipdocumento = new System.Windows.Forms.Button();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.Panel_titulo = new System.Windows.Forms.Panel();
+            this.lbluser = new System.Windows.Forms.Label();
+            this.Lblempresa = new System.Windows.Forms.Label();
+            this.Picture_user = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.PanelMenu.SuspendLayout();
             this.Panel_contenedor.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -61,13 +67,16 @@ namespace CapaPresentacion.Vista
             this.tableLayoutPanel1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.Panel_titulo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Picture_user)).BeginInit();
             this.SuspendLayout();
             // 
             // PanelMenu
             // 
-            this.PanelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.PanelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(233)))), ((int)(((byte)(236)))));
             this.PanelMenu.Controls.Add(this.Panel_contenedor);
             this.PanelMenu.Controls.Add(this.tabControl1);
+            this.PanelMenu.Controls.Add(this.Panel_titulo);
             this.PanelMenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelMenu.Location = new System.Drawing.Point(0, 0);
             this.PanelMenu.Name = "PanelMenu";
@@ -77,24 +86,43 @@ namespace CapaPresentacion.Vista
             // Panel_contenedor
             // 
             this.Panel_contenedor.AutoScroll = true;
-            this.Panel_contenedor.Controls.Add(this.guna2TextBox1);
-            this.Panel_contenedor.Controls.Add(this.textBox1);
-            this.Panel_contenedor.Controls.Add(this.guna2Button1);
+            this.Panel_contenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(233)))), ((int)(((byte)(236)))));
+            this.Panel_contenedor.Controls.Add(this.Lbl_idperiodo);
+            this.Panel_contenedor.Controls.Add(this.Lbl_idempresa);
             this.Panel_contenedor.Controls.Add(this.statusStrip1);
             this.Panel_contenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Panel_contenedor.Location = new System.Drawing.Point(0, 118);
+            this.Panel_contenedor.Location = new System.Drawing.Point(0, 147);
             this.Panel_contenedor.Name = "Panel_contenedor";
-            this.Panel_contenedor.Size = new System.Drawing.Size(912, 440);
-            this.Panel_contenedor.TabIndex = 1;
+            this.Panel_contenedor.Size = new System.Drawing.Size(912, 411);
+            this.Panel_contenedor.TabIndex = 3;
+            // 
+            // Lbl_idperiodo
+            // 
+            this.Lbl_idperiodo.AutoSize = true;
+            this.Lbl_idperiodo.Location = new System.Drawing.Point(24, 45);
+            this.Lbl_idperiodo.Name = "Lbl_idperiodo";
+            this.Lbl_idperiodo.Size = new System.Drawing.Size(53, 13);
+            this.Lbl_idperiodo.TabIndex = 1;
+            this.Lbl_idperiodo.Text = "id periodo";
+            // 
+            // Lbl_idempresa
+            // 
+            this.Lbl_idempresa.AutoSize = true;
+            this.Lbl_idempresa.Location = new System.Drawing.Point(24, 22);
+            this.Lbl_idempresa.Name = "Lbl_idempresa";
+            this.Lbl_idempresa.Size = new System.Drawing.Size(58, 13);
+            this.Lbl_idempresa.TabIndex = 1;
+            this.Lbl_idempresa.Text = "id empresa";
             // 
             // statusStrip1
             // 
             this.statusStrip1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 418);
+            this.toolStripStatusLabel1,
+            this.tlblhora});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 387);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(912, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(912, 24);
             this.statusStrip1.SizingGrip = false;
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
@@ -102,8 +130,17 @@ namespace CapaPresentacion.Vista
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(128, 17);
-            this.toolStripStatusLabel1.Text = "  Tecnología 2050 S.A.C";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(131, 19);
+            this.toolStripStatusLabel1.Text = "  Tecnología 2050 S.A.C ";
+            // 
+            // tlblhora
+            // 
+            this.tlblhora.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
+            this.tlblhora.Name = "tlblhora";
+            this.tlblhora.Size = new System.Drawing.Size(766, 19);
+            this.tlblhora.Spring = true;
+            this.tlblhora.Text = "HORA";
+            this.tlblhora.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // tabControl1
             // 
@@ -112,21 +149,21 @@ namespace CapaPresentacion.Vista
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.ItemSize = new System.Drawing.Size(115, 28);
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Location = new System.Drawing.Point(0, 35);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.Padding = new System.Drawing.Point(15, 3);
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(912, 118);
-            this.tabControl1.TabIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(912, 112);
+            this.tabControl1.TabIndex = 2;
             // 
             // tabPage1
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(249)))), ((int)(((byte)(253)))));
+            this.tabPage1.BackColor = System.Drawing.Color.White;
             this.tabPage1.Controls.Add(this.tableLayoutPanel1);
             this.tabPage1.Location = new System.Drawing.Point(4, 32);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(904, 82);
+            this.tabPage1.Size = new System.Drawing.Size(904, 76);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Control de Inventarios";
             // 
@@ -140,17 +177,17 @@ namespace CapaPresentacion.Vista
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66543F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.67286F));
             this.tableLayoutPanel1.Controls.Add(this.Btn_entrada, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.button6, 5, 0);
             this.tableLayoutPanel1.Controls.Add(this.Btn_salida, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.Btn_iv_fisico, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.Btn_iv_valorizado, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.button5, 4, 0);
-            this.tableLayoutPanel1.Controls.Add(this.button6, 5, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(470, 76);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(470, 70);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // Btn_entrada
@@ -162,7 +199,7 @@ namespace CapaPresentacion.Vista
             this.Btn_entrada.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Btn_entrada.Location = new System.Drawing.Point(3, 3);
             this.Btn_entrada.Name = "Btn_entrada";
-            this.Btn_entrada.Size = new System.Drawing.Size(72, 70);
+            this.Btn_entrada.Size = new System.Drawing.Size(72, 64);
             this.Btn_entrada.TabIndex = 1;
             this.Btn_entrada.Text = "Entrada";
             this.Btn_entrada.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -179,7 +216,7 @@ namespace CapaPresentacion.Vista
             this.Btn_salida.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Btn_salida.Location = new System.Drawing.Point(81, 3);
             this.Btn_salida.Name = "Btn_salida";
-            this.Btn_salida.Size = new System.Drawing.Size(72, 70);
+            this.Btn_salida.Size = new System.Drawing.Size(72, 64);
             this.Btn_salida.TabIndex = 2;
             this.Btn_salida.Text = "Salida";
             this.Btn_salida.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -194,7 +231,7 @@ namespace CapaPresentacion.Vista
             this.Btn_iv_fisico.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_iv_fisico.Location = new System.Drawing.Point(159, 3);
             this.Btn_iv_fisico.Name = "Btn_iv_fisico";
-            this.Btn_iv_fisico.Size = new System.Drawing.Size(72, 70);
+            this.Btn_iv_fisico.Size = new System.Drawing.Size(72, 64);
             this.Btn_iv_fisico.TabIndex = 2;
             this.Btn_iv_fisico.Text = "Inv. Unidades Fisica";
             this.Btn_iv_fisico.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -208,7 +245,7 @@ namespace CapaPresentacion.Vista
             this.Btn_iv_valorizado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_iv_valorizado.Location = new System.Drawing.Point(237, 3);
             this.Btn_iv_valorizado.Name = "Btn_iv_valorizado";
-            this.Btn_iv_valorizado.Size = new System.Drawing.Size(72, 70);
+            this.Btn_iv_valorizado.Size = new System.Drawing.Size(72, 64);
             this.Btn_iv_valorizado.TabIndex = 2;
             this.Btn_iv_valorizado.Text = "Inv. Unidades Permanetes";
             this.Btn_iv_valorizado.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -221,7 +258,7 @@ namespace CapaPresentacion.Vista
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.Location = new System.Drawing.Point(315, 3);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(72, 70);
+            this.button5.Size = new System.Drawing.Size(72, 64);
             this.button5.TabIndex = 3;
             this.button5.Text = "Stock Final a Fecha";
             this.button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -232,7 +269,7 @@ namespace CapaPresentacion.Vista
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.Location = new System.Drawing.Point(393, 3);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(72, 70);
+            this.button6.Size = new System.Drawing.Size(74, 64);
             this.button6.TabIndex = 4;
             this.button6.Text = "Costo de Venta";
             this.button6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -240,12 +277,12 @@ namespace CapaPresentacion.Vista
             // 
             // tabPage2
             // 
-            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(249)))), ((int)(((byte)(253)))));
+            this.tabPage2.BackColor = System.Drawing.Color.White;
             this.tabPage2.Controls.Add(this.tableLayoutPanel2);
             this.tabPage2.Location = new System.Drawing.Point(4, 32);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(904, 82);
+            this.tabPage2.Size = new System.Drawing.Size(904, 76);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Mantenimiento";
             // 
@@ -267,7 +304,7 @@ namespace CapaPresentacion.Vista
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(390, 76);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(390, 70);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // Btn_empresa
@@ -276,7 +313,7 @@ namespace CapaPresentacion.Vista
             this.Btn_empresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_empresa.Location = new System.Drawing.Point(3, 3);
             this.Btn_empresa.Name = "Btn_empresa";
-            this.Btn_empresa.Size = new System.Drawing.Size(72, 70);
+            this.Btn_empresa.Size = new System.Drawing.Size(72, 64);
             this.Btn_empresa.TabIndex = 2;
             this.Btn_empresa.Text = "Empresa";
             this.Btn_empresa.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -289,7 +326,7 @@ namespace CapaPresentacion.Vista
             this.Btn_cliente_pro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_cliente_pro.Location = new System.Drawing.Point(81, 3);
             this.Btn_cliente_pro.Name = "Btn_cliente_pro";
-            this.Btn_cliente_pro.Size = new System.Drawing.Size(72, 70);
+            this.Btn_cliente_pro.Size = new System.Drawing.Size(72, 64);
             this.Btn_cliente_pro.TabIndex = 2;
             this.Btn_cliente_pro.Text = "Cliente y Proveedor";
             this.Btn_cliente_pro.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -302,7 +339,7 @@ namespace CapaPresentacion.Vista
             this.Btn_tipooperacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_tipooperacion.Location = new System.Drawing.Point(159, 3);
             this.Btn_tipooperacion.Name = "Btn_tipooperacion";
-            this.Btn_tipooperacion.Size = new System.Drawing.Size(72, 70);
+            this.Btn_tipooperacion.Size = new System.Drawing.Size(72, 64);
             this.Btn_tipooperacion.TabIndex = 2;
             this.Btn_tipooperacion.Text = "Tipo de Operación";
             this.Btn_tipooperacion.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -315,7 +352,7 @@ namespace CapaPresentacion.Vista
             this.Btn_moneda.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_moneda.Location = new System.Drawing.Point(237, 3);
             this.Btn_moneda.Name = "Btn_moneda";
-            this.Btn_moneda.Size = new System.Drawing.Size(72, 70);
+            this.Btn_moneda.Size = new System.Drawing.Size(72, 64);
             this.Btn_moneda.TabIndex = 2;
             this.Btn_moneda.Text = "Moneda";
             this.Btn_moneda.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -328,66 +365,75 @@ namespace CapaPresentacion.Vista
             this.Btn_tipdocumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_tipdocumento.Location = new System.Drawing.Point(315, 3);
             this.Btn_tipdocumento.Name = "Btn_tipdocumento";
-            this.Btn_tipdocumento.Size = new System.Drawing.Size(72, 70);
+            this.Btn_tipdocumento.Size = new System.Drawing.Size(72, 64);
             this.Btn_tipdocumento.TabIndex = 2;
             this.Btn_tipdocumento.Text = "Tipo Documento";
             this.Btn_tipdocumento.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_tipdocumento.UseVisualStyleBackColor = true;
             this.Btn_tipdocumento.Click += new System.EventHandler(this.Btn_tipdocumento_Click);
             // 
-            // guna2Button1
+            // Panel_titulo
             // 
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(158, 45);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(180, 45);
-            this.guna2Button1.TabIndex = 1;
-            this.guna2Button1.Text = "guna2Button1";
+            this.Panel_titulo.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Panel_titulo.Controls.Add(this.lbluser);
+            this.Panel_titulo.Controls.Add(this.Lblempresa);
+            this.Panel_titulo.Controls.Add(this.Picture_user);
+            this.Panel_titulo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Panel_titulo.Location = new System.Drawing.Point(0, 0);
+            this.Panel_titulo.Name = "Panel_titulo";
+            this.Panel_titulo.Size = new System.Drawing.Size(912, 35);
+            this.Panel_titulo.TabIndex = 0;
             // 
-            // textBox1
+            // lbluser
             // 
-            this.textBox1.Location = new System.Drawing.Point(195, 121);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 2;
+            this.lbluser.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lbluser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbluser.Location = new System.Drawing.Point(753, 0);
+            this.lbluser.Name = "lbluser";
+            this.lbluser.Size = new System.Drawing.Size(114, 35);
+            this.lbluser.TabIndex = 2;
+            this.lbluser.Text = "ADMINISTRADOR ";
+            this.lbluser.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // guna2TextBox1
+            // Lblempresa
             // 
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.FocusedState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.HoverState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Location = new System.Drawing.Point(391, 54);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderText = "";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.ShadowDecoration.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Size = new System.Drawing.Size(200, 36);
-            this.guna2TextBox1.TabIndex = 3;
+            this.Lblempresa.Dock = System.Windows.Forms.DockStyle.Left;
+            this.Lblempresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lblempresa.Location = new System.Drawing.Point(0, 0);
+            this.Lblempresa.Name = "Lblempresa";
+            this.Lblempresa.Size = new System.Drawing.Size(646, 35);
+            this.Lblempresa.TabIndex = 1;
+            this.Lblempresa.Text = "  2021 ::   20473859314     INVERSIONES DBPROYECT S.A.C";
+            this.Lblempresa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // Picture_user
+            // 
+            this.Picture_user.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Picture_user.Image = ((System.Drawing.Image)(resources.GetObject("Picture_user.Image")));
+            this.Picture_user.Location = new System.Drawing.Point(867, 0);
+            this.Picture_user.Name = "Picture_user";
+            this.Picture_user.Size = new System.Drawing.Size(45, 35);
+            this.Picture_user.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.Picture_user.TabIndex = 0;
+            this.Picture_user.TabStop = false;
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // FrmInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(912, 558);
             this.Controls.Add(this.PanelMenu);
             this.Name = "FrmInicio";
-            this.Text = "Inicio";
+            this.ShowIcon = false;
+            this.Text = "  Sistema Inventario v1.0.0";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmInicio_FormClosing);
+            this.Load += new System.EventHandler(this.FrmInicio_Load);
             this.PanelMenu.ResumeLayout(false);
             this.Panel_contenedor.ResumeLayout(false);
             this.Panel_contenedor.PerformLayout();
@@ -398,6 +444,8 @@ namespace CapaPresentacion.Vista
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
+            this.Panel_titulo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Picture_user)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -406,6 +454,7 @@ namespace CapaPresentacion.Vista
 
         private System.Windows.Forms.Panel PanelMenu;
         private System.Windows.Forms.Panel Panel_contenedor;
+        private System.Windows.Forms.Label Lbl_idempresa;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.TabControl tabControl1;
@@ -424,8 +473,12 @@ namespace CapaPresentacion.Vista
         private System.Windows.Forms.Button Btn_tipooperacion;
         private System.Windows.Forms.Button Btn_moneda;
         private System.Windows.Forms.Button Btn_tipdocumento;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private System.Windows.Forms.Panel Panel_titulo;
+        private System.Windows.Forms.Label lbluser;
+        private System.Windows.Forms.Label Lblempresa;
+        private System.Windows.Forms.PictureBox Picture_user;
+        private System.Windows.Forms.Label Lbl_idperiodo;
+        private System.Windows.Forms.ToolStripStatusLabel tlblhora;
+        private System.Windows.Forms.Timer timer1;
     }
 }

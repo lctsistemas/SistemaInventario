@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 
 namespace CapaNegocio.Repositories
 {
-    public class Rempresa : IEmpresa
+    public class Rempresa : IEmpresa,IDisposable
     {
         string result;
         private SqlCommand cmd;
@@ -85,8 +85,7 @@ namespace CapaNegocio.Repositories
             }
             return result;
         }
-
-
+      
         public string Edit(Dempresa Entity)
         {
             result = "";
@@ -172,6 +171,12 @@ namespace CapaNegocio.Repositories
         public IEnumerable<Dempresa> Search(string filter)
         {
             return listemp.FindAll(e => e.Razon_social.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0);
+        }
+
+
+        public void Dispose()
+        {
+            //throw new NotImplementedException();
         }
 
 

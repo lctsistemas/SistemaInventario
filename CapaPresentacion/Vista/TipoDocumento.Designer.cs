@@ -29,13 +29,12 @@ namespace CapaPresentacion.Vista
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTipoDocumento));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Panel_documento = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtbuscar = new Guna.UI2.WinForms.Guna2TextBox();
             this.Panel_boton = new System.Windows.Forms.Panel();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.btneliminar = new Guna.UI2.WinForms.Guna2Button();
@@ -43,6 +42,8 @@ namespace CapaPresentacion.Vista
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.btncerrar = new System.Windows.Forms.PictureBox();
             this.dgvTipoDoc = new System.Windows.Forms.DataGridView();
+            this.dgv_txtdelete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Txtbuscar = new Guna.UI2.WinForms.Guna2TextBox();
             this.Panel_documento.SuspendLayout();
             this.panel2.SuspendLayout();
             this.Panel_boton.SuspendLayout();
@@ -64,37 +65,12 @@ namespace CapaPresentacion.Vista
             // panel2
             // 
             this.panel2.Controls.Add(this.dgvTipoDoc);
-            this.panel2.Controls.Add(this.txtbuscar);
+            this.panel2.Controls.Add(this.Txtbuscar);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(635, 505);
             this.panel2.TabIndex = 111;
-            // 
-            // txtbuscar
-            // 
-            this.txtbuscar.BorderRadius = 3;
-            this.txtbuscar.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtbuscar.DefaultText = "";
-            this.txtbuscar.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtbuscar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtbuscar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtbuscar.DisabledState.Parent = this.txtbuscar;
-            this.txtbuscar.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtbuscar.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbuscar.FocusedState.Parent = this.txtbuscar;
-            this.txtbuscar.ForeColor = System.Drawing.Color.Black;
-            this.txtbuscar.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbuscar.HoverState.Parent = this.txtbuscar;
-            this.txtbuscar.Location = new System.Drawing.Point(12, 43);
-            this.txtbuscar.Name = "txtbuscar";
-            this.txtbuscar.PasswordChar = '\0';
-            this.txtbuscar.PlaceholderText = "Buscar";
-            this.txtbuscar.SelectedText = "";
-            this.txtbuscar.ShadowDecoration.Parent = this.txtbuscar;
-            this.txtbuscar.Size = new System.Drawing.Size(606, 28);
-            this.txtbuscar.TabIndex = 1;
-            this.txtbuscar.TextChanged += new System.EventHandler(this.txtbuscar_TextChanged);
             // 
             // Panel_boton
             // 
@@ -201,46 +177,92 @@ namespace CapaPresentacion.Vista
             this.dgvTipoDoc.AllowUserToDeleteRows = false;
             this.dgvTipoDoc.AllowUserToResizeColumns = false;
             this.dgvTipoDoc.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.dgvTipoDoc.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.dgvTipoDoc.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvTipoDoc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvTipoDoc.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTipoDoc.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
-            this.dgvTipoDoc.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.dgvTipoDoc.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(233)))), ((int)(((byte)(236)))));
             this.dgvTipoDoc.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvTipoDoc.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvTipoDoc.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTipoDoc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTipoDoc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvTipoDoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 1, 0, 1);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTipoDoc.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvTipoDoc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgv_txtdelete});
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(0, 1, 0, 1);
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTipoDoc.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvTipoDoc.EnableHeadersVisualStyles = false;
             this.dgvTipoDoc.GridColor = System.Drawing.Color.Silver;
-            this.dgvTipoDoc.Location = new System.Drawing.Point(6, 94);
+            this.dgvTipoDoc.Location = new System.Drawing.Point(3, 56);
+            this.dgvTipoDoc.MultiSelect = false;
             this.dgvTipoDoc.Name = "dgvTipoDoc";
             this.dgvTipoDoc.ReadOnly = true;
             this.dgvTipoDoc.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvTipoDoc.RowHeadersVisible = false;
             this.dgvTipoDoc.RowHeadersWidth = 25;
             this.dgvTipoDoc.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvTipoDoc.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dgvTipoDoc.Size = new System.Drawing.Size(629, 411);
-            this.dgvTipoDoc.TabIndex = 4;
+            this.dgvTipoDoc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvTipoDoc.Size = new System.Drawing.Size(619, 437);
+            this.dgvTipoDoc.TabIndex = 7;
+            // 
+            // dgv_txtdelete
+            // 
+            this.dgv_txtdelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dgv_txtdelete.FillWeight = 40F;
+            this.dgv_txtdelete.Frozen = true;
+            this.dgv_txtdelete.HeaderText = "             ";
+            this.dgv_txtdelete.Image = ((System.Drawing.Image)(resources.GetObject("dgv_txtdelete.Image")));
+            this.dgv_txtdelete.Name = "dgv_txtdelete";
+            this.dgv_txtdelete.ReadOnly = true;
+            this.dgv_txtdelete.ToolTipText = "Eliminar";
+            this.dgv_txtdelete.Width = 63;
+            // 
+            // Txtbuscar
+            // 
+            this.Txtbuscar.Animated = true;
+            this.Txtbuscar.BorderColor = System.Drawing.Color.Silver;
+            this.Txtbuscar.BorderRadius = 3;
+            this.Txtbuscar.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Txtbuscar.DefaultText = "";
+            this.Txtbuscar.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.Txtbuscar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.Txtbuscar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Txtbuscar.DisabledState.Parent = this.Txtbuscar;
+            this.Txtbuscar.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Txtbuscar.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Txtbuscar.FocusedState.Parent = this.Txtbuscar;
+            this.Txtbuscar.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.Txtbuscar.ForeColor = System.Drawing.Color.Black;
+            this.Txtbuscar.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Txtbuscar.HoverState.Parent = this.Txtbuscar;
+            this.Txtbuscar.Location = new System.Drawing.Point(12, 20);
+            this.Txtbuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Txtbuscar.Name = "Txtbuscar";
+            this.Txtbuscar.PasswordChar = '\0';
+            this.Txtbuscar.PlaceholderText = "Buscar";
+            this.Txtbuscar.SelectedText = "";
+            this.Txtbuscar.ShadowDecoration.Parent = this.Txtbuscar;
+            this.Txtbuscar.Size = new System.Drawing.Size(578, 28);
+            this.Txtbuscar.TabIndex = 6;
+            this.Txtbuscar.TextChanged += new System.EventHandler(this.Txtbuscar_TextChanged);
             // 
             // FrmTipoDocumento
             // 
@@ -263,7 +285,6 @@ namespace CapaPresentacion.Vista
 
         private System.Windows.Forms.Panel Panel_documento;
         private System.Windows.Forms.Panel panel2;
-        private Guna.UI2.WinForms.Guna2TextBox txtbuscar;
         private System.Windows.Forms.Panel Panel_boton;
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
         private Guna.UI2.WinForms.Guna2Button btneliminar;
@@ -271,5 +292,7 @@ namespace CapaPresentacion.Vista
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         public System.Windows.Forms.PictureBox btncerrar;
         private System.Windows.Forms.DataGridView dgvTipoDoc;
+        private System.Windows.Forms.DataGridViewImageColumn dgv_txtdelete;
+        private Guna.UI2.WinForms.Guna2TextBox Txtbuscar;
     }
 }

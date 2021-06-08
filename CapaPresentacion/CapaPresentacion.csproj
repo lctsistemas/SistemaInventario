@@ -98,6 +98,12 @@
     <Compile Include="Vista\Empresa.Designer.cs">
       <DependentUpon>Empresa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\EntradaImpotacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\EntradaImpotacion.Designer.cs">
+      <DependentUpon>EntradaImpotacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Empresa.resx">
       <DependentUpon>Empresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\EntradaImpotacion.resx">
+      <DependentUpon>EntradaImpotacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

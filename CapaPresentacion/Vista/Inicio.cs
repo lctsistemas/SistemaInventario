@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using CapaDatos.Cache;
+
 namespace CapaPresentacion.Vista
 {
     public partial class FrmInicio : Form
@@ -27,19 +29,8 @@ namespace CapaPresentacion.Vista
         }
 
         private void Btn_entrada_Click(object sender, EventArgs e)
-        {
-            /*  if (entrada == null)
-              {
-                  entrada = new Cfrmentrada();
-                  this.Panel_contenedor.Controls.Clear();
-                  this.Panel_contenedor.Controls.Add(entrada);
-              }
-              else
-              {
-                  this.Panel_contenedor.Controls.Clear();
-                  this.Panel_contenedor.Controls.Add(entrada);
-              }*/
-            OpenFormFill<FrmEntrada>();
+        {             
+            OpenFormFill<FrmEntradaImpotacion>();
         }
 
         private void Btn_salida_Click(object sender, EventArgs e)
@@ -109,6 +100,22 @@ namespace CapaPresentacion.Vista
         private void FrmInicio_FormClosing(object sender, FormClosingEventArgs e)
         {
             instancia = null;
+        }
+
+        private void FrmInicio_Load(object sender, EventArgs e)
+        {
+            this.timer1.Start();
+            Lblempresa.Text = "  "+ UserCache.C_periodo+" ::   "+ UserCache.C_ruc+"    "+ UserCache.C_razonSocial;
+            lbluser.Text = UserCache.C_usuario;
+            Lbl_idempresa.Text = "id empresa " + UserCache.C_idempresa.ToString();
+            Lbl_idperiodo.Text = "id periodo " + UserCache.C_idperiodo.ToString();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            string fecha = DateTime.Now.ToLongDateString();
+            string hora = DateTime.Now.ToLongTimeString();
+            tlblhora.Text = fecha + "   |   " + hora;
         }
     }
 }

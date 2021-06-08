@@ -83,9 +83,9 @@ namespace CapaPresentacion.Vista
             this.Close();
         }
 
-        private void txtbuscar_TextChanged(object sender, EventArgs e)
+        private void Txtbuscar_TextChanged(object sender, EventArgs e)
         {
-            Dgv_tipoOper.DataSource = rtipoOper.Search(txtbuscar.Text.Trim());
+            Dgv_tipoOper.DataSource = rtipoOper.Search(Txtbuscar.Text.Trim());
         }
 
         private void Dgv_tipoOper_CellContentClick(object sender, DataGridViewCellEventArgs e)

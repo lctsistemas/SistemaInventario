@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cache\UserCache.cs" />
     <Compile Include="Contracts\IGeneral.cs" />
     <Compile Include="Entities\DClienteProv.cs" />
     <Compile Include="Entities\Dconexion.cs" />

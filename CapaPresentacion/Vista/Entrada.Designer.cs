@@ -100,7 +100,7 @@ namespace CapaPresentacion.Vista
             // PanelEntrada
             // 
             this.PanelEntrada.AutoScroll = true;
-            this.PanelEntrada.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.PanelEntrada.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(233)))), ((int)(((byte)(236)))));
             this.PanelEntrada.Controls.Add(this.panel1);
             this.PanelEntrada.Controls.Add(this.btncerrar);
             this.PanelEntrada.Controls.Add(this.guna2Button3);
