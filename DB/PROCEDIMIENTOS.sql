@@ -272,3 +272,10 @@ AS BEGIN
 END
 GO
 
+/* MES */
+
+CREATE PROC manto.sp_showMes
+as begin
+select idmes, nombre_mes from manto.Mes
+end
+go

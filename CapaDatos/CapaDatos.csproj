@@ -46,6 +46,7 @@
     <Compile Include="Contracts\IGeneral.cs" />
     <Compile Include="Entities\DClienteProv.cs" />
     <Compile Include="Entities\Dconexion.cs" />
+    <Compile Include="Entities\DconexionOffice.cs" />
     <Compile Include="Entities\Dempresa.cs" />
     <Compile Include="Entities\DEntrada.cs" />
     <Compile Include="Entities\DMoneda.cs" />

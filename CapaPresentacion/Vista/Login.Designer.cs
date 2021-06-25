@@ -38,7 +38,7 @@ namespace CapaPresentacion.Vista
             this.label3 = new System.Windows.Forms.Label();
             this.panel_boton = new System.Windows.Forms.Panel();
             this.lblcerrar = new System.Windows.Forms.PictureBox();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.Panel_contenedor = new Guna.UI2.WinForms.Guna2Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Lbl_mensaje = new System.Windows.Forms.Label();
@@ -54,7 +54,7 @@ namespace CapaPresentacion.Vista
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.panel_boton.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lblcerrar)).BeginInit();
-            this.guna2Panel1.SuspendLayout();
+            this.Panel_contenedor.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Num_periodo)).BeginInit();
@@ -62,7 +62,7 @@ namespace CapaPresentacion.Vista
             // 
             // guna2Elipse1
             // 
-            this.guna2Elipse1.BorderRadius = 3;
+            this.guna2Elipse1.BorderRadius = 4;
             this.guna2Elipse1.TargetControl = this;
             // 
             // guna2PictureBox1
@@ -148,6 +148,7 @@ namespace CapaPresentacion.Vista
             this.panel_boton.Name = "panel_boton";
             this.panel_boton.Size = new System.Drawing.Size(450, 28);
             this.panel_boton.TabIndex = 15;
+            this.panel_boton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel_boton_MouseDown);
             // 
             // lblcerrar
             // 
@@ -162,21 +163,21 @@ namespace CapaPresentacion.Vista
             this.lblcerrar.TabStop = false;
             this.lblcerrar.Click += new System.EventHandler(this.lblcerrar_Click);
             // 
-            // guna2Panel1
+            // Panel_contenedor
             // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Panel1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.guna2Panel1.BorderRadius = 2;
-            this.guna2Panel1.BorderThickness = 1;
-            this.guna2Panel1.Controls.Add(this.panel2);
-            this.guna2Panel1.Controls.Add(this.panel1);
-            this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.ShadowDecoration.BorderRadius = 3;
-            this.guna2Panel1.ShadowDecoration.Depth = 5;
-            this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
-            this.guna2Panel1.Size = new System.Drawing.Size(899, 511);
-            this.guna2Panel1.TabIndex = 16;
+            this.Panel_contenedor.BackColor = System.Drawing.Color.Transparent;
+            this.Panel_contenedor.BorderColor = System.Drawing.Color.DarkGray;
+            this.Panel_contenedor.BorderRadius = 2;
+            this.Panel_contenedor.BorderThickness = 1;
+            this.Panel_contenedor.Controls.Add(this.panel2);
+            this.Panel_contenedor.Controls.Add(this.panel1);
+            this.Panel_contenedor.Location = new System.Drawing.Point(0, 0);
+            this.Panel_contenedor.Name = "Panel_contenedor";
+            this.Panel_contenedor.ShadowDecoration.BorderRadius = 3;
+            this.Panel_contenedor.ShadowDecoration.Depth = 5;
+            this.Panel_contenedor.ShadowDecoration.Parent = this.Panel_contenedor;
+            this.Panel_contenedor.Size = new System.Drawing.Size(899, 511);
+            this.Panel_contenedor.TabIndex = 16;
             // 
             // panel2
             // 
@@ -208,6 +209,7 @@ namespace CapaPresentacion.Vista
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(450, 511);
             this.panel1.TabIndex = 16;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
             // Lbl_mensaje
             // 
@@ -271,13 +273,13 @@ namespace CapaPresentacion.Vista
             this.Cbo_user.BackColor = System.Drawing.Color.White;
             this.Cbo_user.Cursor = System.Windows.Forms.Cursors.Default;
             this.Cbo_user.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Cbo_user.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cbo_user.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cbo_user.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(221)))), ((int)(((byte)(226)))));
             this.Cbo_user.FormattingEnabled = true;
-            this.Cbo_user.ItemHeight = 20;
+            this.Cbo_user.ItemHeight = 18;
             this.Cbo_user.Location = new System.Drawing.Point(31, 147);
             this.Cbo_user.Name = "Cbo_user";
-            this.Cbo_user.Size = new System.Drawing.Size(391, 28);
+            this.Cbo_user.Size = new System.Drawing.Size(391, 26);
             this.Cbo_user.TabIndex = 1;
             this.Cbo_user.Text = "USUARIO";
             this.Cbo_user.Enter += new System.EventHandler(this.Cbo_user_Enter);
@@ -344,7 +346,7 @@ namespace CapaPresentacion.Vista
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(900, 512);
-            this.Controls.Add(this.guna2Panel1);
+            this.Controls.Add(this.Panel_contenedor);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -353,7 +355,7 @@ namespace CapaPresentacion.Vista
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.panel_boton.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lblcerrar)).EndInit();
-            this.guna2Panel1.ResumeLayout(false);
+            this.Panel_contenedor.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -372,7 +374,7 @@ namespace CapaPresentacion.Vista
         private Guna.UI2.WinForms.Guna2TextBox Txt_acceso;
         private System.Windows.Forms.Panel panel_boton;
         private System.Windows.Forms.PictureBox lblcerrar;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2Panel Panel_contenedor;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel Panelcombo2;

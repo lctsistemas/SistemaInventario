@@ -36,7 +36,11 @@
     <Reference Include="Guna.UI2">
       <HintPath>..\..\..\..\Downloads\Hotel Management\Guna.UI2.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
@@ -58,15 +62,35 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helps\ExtensionMethods.cs" />
     <Compile Include="Helps\Msg.cs" />
     <Compile Include="Helps\ValidateError.cs" />
+    <Compile Include="Helps\WindowsMove.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SubVista\ProcesoWait.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubVista\ProcesoWait.Designer.cs">
+      <DependentUpon>ProcesoWait.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubVista\UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SubVista\UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
     <Compile Include="SubVista\VTipo_Documento.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SubVista\VTipo_Documento.Designer.cs">
       <DependentUpon>VTipo_Documento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubVista\V_Cargar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubVista\V_Cargar.Designer.cs">
+      <DependentUpon>V_Cargar.cs</DependentUpon>
     </Compile>
     <Compile Include="SubVista\V_Moneda.cs">
       <SubType>Form</SubType>
@@ -79,6 +103,12 @@
     </Compile>
     <Compile Include="SubVista\V_ClienteProv.Designer.cs">
       <DependentUpon>V_ClienteProv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubVista\V_RegistroInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubVista\V_RegistroInventario.Designer.cs">
+      <DependentUpon>V_RegistroInventario.cs</DependentUpon>
     </Compile>
     <Compile Include="SubVista\V_TipoOperacion.cs">
       <SubType>Form</SubType>
@@ -182,14 +212,26 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SubVista\ProcesoWait.resx">
+      <DependentUpon>ProcesoWait.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubVista\UserControl1.resx">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SubVista\VTipo_Documento.resx">
       <DependentUpon>VTipo_Documento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubVista\V_Cargar.resx">
+      <DependentUpon>V_Cargar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SubVista\V_ClienteProv.resx">
       <DependentUpon>V_ClienteProv.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SubVista\V_Moneda.resx">
       <DependentUpon>V_Moneda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubVista\V_RegistroInventario.resx">
+      <DependentUpon>V_RegistroInventario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SubVista\V_TipoOperacion.resx">
       <DependentUpon>V_TipoOperacion.cs</DependentUpon>

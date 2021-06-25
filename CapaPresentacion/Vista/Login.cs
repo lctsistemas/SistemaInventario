@@ -12,6 +12,7 @@ using CapaDatos.Entities;
 using CapaNegocio.Repositories;
 using CapaDatos.Cache;
 using System.Threading;
+using CapaPresentacion.Helps;
 
 namespace CapaPresentacion.Vista
 {
@@ -38,7 +39,7 @@ namespace CapaPresentacion.Vista
         private void Login_Load(object sender, EventArgs e)
         {
             Cbo_user.Items.Add("ADMINISTRADOR");
-            Cbo_user.Items.Add("AUXILIAR");
+            Cbo_user.Items.Add("AUXILIAR");          
 
         }
 
@@ -260,6 +261,23 @@ namespace CapaPresentacion.Vista
                 UserCache.C_periodo = Num_periodo.Value.ToString();
             }
                
+        }
+
+        //METODO PARA MOVER VENTANA
+        private void MoverVentana()
+        {
+            WindowsMove.ReleaseCapture();
+            WindowsMove.Move(this.Handle);
+        }
+
+        private void panel_boton_MouseDown(object sender, MouseEventArgs e)
+        {
+            MoverVentana();
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            MoverVentana();
         }
     }
 }

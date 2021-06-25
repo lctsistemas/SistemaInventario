@@ -10,7 +10,7 @@ go
 
 -- TABLA EMPRESA
 CREATE TABLE manto.Empresa(
-id_empresa int not null,
+id_empresa int not null,0
 ruc char(11) not null CONSTRAINT UNQ_ruc UNIQUE,
 razon_social varchar(100) not null,
 nombre_comercial varchar(50) null,
@@ -89,4 +89,20 @@ INSERT INTO manto.Mes(nombre_mes) VALUES
 ('JULIO'),('AGOSTO'),('SETIEMBRE'),
 ('OCTUBRE'),('NOVIEMBRE'),('DICIEMBRE')
 GO
-select * from manto.Mes, manto.Periodo
+select * from manto.Periodo
+GO
+
+CREATE TABLE manto.Inventario
+cod_catalogo	
+tipo_existencia	
+cod_existencia
+fecha_emision	
+tipo_documento	
+serie	
+num_documento	
+tipo_operacion	
+existencia	
+unida_medida	
+entradas	
+salidas
+
