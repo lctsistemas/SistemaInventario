@@ -44,6 +44,8 @@ namespace CapaPresentacion.Vista
         {
             Dgv_empresa.Columns[1].Visible = false; // idempresa
             Dgv_empresa.Columns[2].HeaderText = "RUC";
+            Dgv_empresa.Columns[2].Width = 50;
+
             Dgv_empresa.Columns[3].HeaderText = "RAZON SOCIAL";
             Dgv_empresa.Columns[4].HeaderText = "NOMBRE COMERCIAL";
             Dgv_empresa.Columns[5].HeaderText = "DIRECCION";

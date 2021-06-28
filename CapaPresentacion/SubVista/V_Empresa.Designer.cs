@@ -31,11 +31,10 @@ namespace CapaPresentacion.SubVista
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmV_Empresa));
-            this.Panel_registro = new System.Windows.Forms.Panel();
             this.Txt_idempresa = new System.Windows.Forms.TextBox();
             this.Panel_boton = new System.Windows.Forms.Panel();
-            this.Btn_modificar = new Guna.UI2.WinForms.Guna2Button();
             this.Btn_guardar = new Guna.UI2.WinForms.Guna2Button();
+            this.Btn_modificar = new Guna.UI2.WinForms.Guna2Button();
             this.Cboregimen = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -50,38 +49,17 @@ namespace CapaPresentacion.SubVista
             this.Txtrazon = new Guna.UI2.WinForms.Guna2TextBox();
             this.btncerrar = new System.Windows.Forms.PictureBox();
             this.Panel_empresa = new System.Windows.Forms.Panel();
+            this.Panel_registro = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.Panel_registro.SuspendLayout();
             this.Panel_boton.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).BeginInit();
             this.Panel_empresa.SuspendLayout();
+            this.Panel_registro.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // Panel_registro
-            // 
-            this.Panel_registro.BackColor = System.Drawing.Color.White;
-            this.Panel_registro.Controls.Add(this.Txt_idempresa);
-            this.Panel_registro.Controls.Add(this.Panel_boton);
-            this.Panel_registro.Controls.Add(this.Cboregimen);
-            this.Panel_registro.Controls.Add(this.label9);
-            this.Panel_registro.Controls.Add(this.label7);
-            this.Panel_registro.Controls.Add(this.label5);
-            this.Panel_registro.Controls.Add(this.label6);
-            this.Panel_registro.Controls.Add(this.label8);
-            this.Panel_registro.Controls.Add(this.label10);
-            this.Panel_registro.Controls.Add(this.Txtfiscal);
-            this.Panel_registro.Controls.Add(this.Txtdireccion);
-            this.Panel_registro.Controls.Add(this.Txtnombre_comercial);
-            this.Panel_registro.Controls.Add(this.Txtruc);
-            this.Panel_registro.Controls.Add(this.Txtrazon);
-            this.Panel_registro.Location = new System.Drawing.Point(52, 74);
-            this.Panel_registro.Name = "Panel_registro";
-            this.Panel_registro.Size = new System.Drawing.Size(908, 375);
-            this.Panel_registro.TabIndex = 1;
             // 
             // Txt_idempresa
             // 
-            this.Txt_idempresa.Location = new System.Drawing.Point(199, 15);
+            this.Txt_idempresa.Location = new System.Drawing.Point(205, 19);
             this.Txt_idempresa.Name = "Txt_idempresa";
             this.Txt_idempresa.Size = new System.Drawing.Size(57, 20);
             this.Txt_idempresa.TabIndex = 102;
@@ -89,12 +67,32 @@ namespace CapaPresentacion.SubVista
             // 
             // Panel_boton
             // 
+            this.Panel_boton.BackColor = System.Drawing.Color.Transparent;
             this.Panel_boton.Controls.Add(this.Btn_modificar);
             this.Panel_boton.Controls.Add(this.Btn_guardar);
-            this.Panel_boton.Location = new System.Drawing.Point(199, 277);
+            this.Panel_boton.Location = new System.Drawing.Point(205, 281);
             this.Panel_boton.Name = "Panel_boton";
-            this.Panel_boton.Size = new System.Drawing.Size(399, 79);
+            this.Panel_boton.Size = new System.Drawing.Size(399, 73);
             this.Panel_boton.TabIndex = 101;
+            // 
+            // Btn_guardar
+            // 
+            this.Btn_guardar.BorderRadius = 3;
+            this.Btn_guardar.CheckedState.Parent = this.Btn_guardar;
+            this.Btn_guardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_guardar.CustomImages.Parent = this.Btn_guardar;
+            this.Btn_guardar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Btn_guardar.FillColor = System.Drawing.Color.SteelBlue;
+            this.Btn_guardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_guardar.ForeColor = System.Drawing.Color.White;
+            this.Btn_guardar.HoverState.Parent = this.Btn_guardar;
+            this.Btn_guardar.Location = new System.Drawing.Point(0, 0);
+            this.Btn_guardar.Name = "Btn_guardar";
+            this.Btn_guardar.ShadowDecoration.Parent = this.Btn_guardar;
+            this.Btn_guardar.Size = new System.Drawing.Size(399, 45);
+            this.Btn_guardar.TabIndex = 7;
+            this.Btn_guardar.Text = "Guardar";
+            this.Btn_guardar.Click += new System.EventHandler(this.Btn_guardar_Click);
             // 
             // Btn_modificar
             // 
@@ -114,25 +112,6 @@ namespace CapaPresentacion.SubVista
             this.Btn_modificar.Text = "Modificar";
             this.Btn_modificar.Click += new System.EventHandler(this.Btn_modificar_Click);
             // 
-            // Btn_guardar
-            // 
-            this.Btn_guardar.BorderRadius = 3;
-            this.Btn_guardar.CheckedState.Parent = this.Btn_guardar;
-            this.Btn_guardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Btn_guardar.CustomImages.Parent = this.Btn_guardar;
-            this.Btn_guardar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Btn_guardar.FillColor = System.Drawing.Color.Coral;
-            this.Btn_guardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_guardar.ForeColor = System.Drawing.Color.White;
-            this.Btn_guardar.HoverState.Parent = this.Btn_guardar;
-            this.Btn_guardar.Location = new System.Drawing.Point(0, 0);
-            this.Btn_guardar.Name = "Btn_guardar";
-            this.Btn_guardar.ShadowDecoration.Parent = this.Btn_guardar;
-            this.Btn_guardar.Size = new System.Drawing.Size(399, 45);
-            this.Btn_guardar.TabIndex = 7;
-            this.Btn_guardar.Text = "Guardar";
-            this.Btn_guardar.Click += new System.EventHandler(this.Btn_guardar_Click);
-            // 
             // Cboregimen
             // 
             this.Cboregimen.BackColor = System.Drawing.Color.Transparent;
@@ -147,7 +126,7 @@ namespace CapaPresentacion.SubVista
             this.Cboregimen.HoverState.Parent = this.Cboregimen;
             this.Cboregimen.ItemHeight = 24;
             this.Cboregimen.ItemsAppearance.Parent = this.Cboregimen;
-            this.Cboregimen.Location = new System.Drawing.Point(199, 211);
+            this.Cboregimen.Location = new System.Drawing.Point(205, 215);
             this.Cboregimen.Name = "Cboregimen";
             this.Cboregimen.ShadowDecoration.Parent = this.Cboregimen;
             this.Cboregimen.Size = new System.Drawing.Size(399, 30);
@@ -157,65 +136,65 @@ namespace CapaPresentacion.SubVista
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label9.Location = new System.Drawing.Point(35, 117);
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(41, 121);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(147, 16);
+            this.label9.Size = new System.Drawing.Size(163, 16);
             this.label9.TabIndex = 11;
             this.label9.Text = "NOMBRE COMERCIAL";
             // 
             // label7
             // 
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label7.Location = new System.Drawing.Point(35, 79);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(41, 83);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(122, 43);
+            this.label7.Size = new System.Drawing.Size(158, 38);
             this.label7.TabIndex = 12;
             this.label7.Text = "RAZON SOCIAL O DENOMINACION";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label5.Location = new System.Drawing.Point(35, 150);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(41, 154);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(81, 16);
+            this.label5.Size = new System.Drawing.Size(90, 16);
             this.label5.TabIndex = 13;
             this.label5.Text = "DIRECCION";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label6.Location = new System.Drawing.Point(35, 217);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(41, 221);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(70, 16);
+            this.label6.Size = new System.Drawing.Size(77, 16);
             this.label6.TabIndex = 14;
             this.label6.Text = "REGIMEN";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label8.Location = new System.Drawing.Point(35, 184);
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(41, 188);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(122, 16);
+            this.label8.Size = new System.Drawing.Size(138, 16);
             this.label8.TabIndex = 15;
             this.label8.Text = "DOMICILIO FISCAL";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label10.Location = new System.Drawing.Point(35, 48);
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(41, 52);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(37, 16);
+            this.label10.Size = new System.Drawing.Size(40, 16);
             this.label10.TabIndex = 16;
             this.label10.Text = "RUC";
             // 
@@ -234,7 +213,7 @@ namespace CapaPresentacion.SubVista
             this.Txtfiscal.ForeColor = System.Drawing.Color.Black;
             this.Txtfiscal.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Txtfiscal.HoverState.Parent = this.Txtfiscal;
-            this.Txtfiscal.Location = new System.Drawing.Point(199, 177);
+            this.Txtfiscal.Location = new System.Drawing.Point(205, 181);
             this.Txtfiscal.Name = "Txtfiscal";
             this.Txtfiscal.PasswordChar = '\0';
             this.Txtfiscal.PlaceholderText = "";
@@ -258,7 +237,7 @@ namespace CapaPresentacion.SubVista
             this.Txtdireccion.ForeColor = System.Drawing.Color.Black;
             this.Txtdireccion.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Txtdireccion.HoverState.Parent = this.Txtdireccion;
-            this.Txtdireccion.Location = new System.Drawing.Point(199, 143);
+            this.Txtdireccion.Location = new System.Drawing.Point(205, 147);
             this.Txtdireccion.Name = "Txtdireccion";
             this.Txtdireccion.PasswordChar = '\0';
             this.Txtdireccion.PlaceholderText = "";
@@ -283,7 +262,7 @@ namespace CapaPresentacion.SubVista
             this.Txtnombre_comercial.ForeColor = System.Drawing.Color.Black;
             this.Txtnombre_comercial.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Txtnombre_comercial.HoverState.Parent = this.Txtnombre_comercial;
-            this.Txtnombre_comercial.Location = new System.Drawing.Point(199, 109);
+            this.Txtnombre_comercial.Location = new System.Drawing.Point(205, 113);
             this.Txtnombre_comercial.Name = "Txtnombre_comercial";
             this.Txtnombre_comercial.PasswordChar = '\0';
             this.Txtnombre_comercial.PlaceholderText = "";
@@ -307,7 +286,7 @@ namespace CapaPresentacion.SubVista
             this.Txtruc.ForeColor = System.Drawing.Color.Black;
             this.Txtruc.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Txtruc.HoverState.Parent = this.Txtruc;
-            this.Txtruc.Location = new System.Drawing.Point(199, 41);
+            this.Txtruc.Location = new System.Drawing.Point(205, 45);
             this.Txtruc.Name = "Txtruc";
             this.Txtruc.PasswordChar = '\0';
             this.Txtruc.PlaceholderText = "INGRESE RUC";
@@ -333,7 +312,7 @@ namespace CapaPresentacion.SubVista
             this.Txtrazon.ForeColor = System.Drawing.Color.Black;
             this.Txtrazon.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Txtrazon.HoverState.Parent = this.Txtrazon;
-            this.Txtrazon.Location = new System.Drawing.Point(199, 75);
+            this.Txtrazon.Location = new System.Drawing.Point(205, 79);
             this.Txtrazon.Name = "Txtrazon";
             this.Txtrazon.PasswordChar = '\0';
             this.Txtrazon.PlaceholderText = "";
@@ -348,7 +327,7 @@ namespace CapaPresentacion.SubVista
             this.btncerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btncerrar.Image = ((System.Drawing.Image)(resources.GetObject("btncerrar.Image")));
-            this.btncerrar.Location = new System.Drawing.Point(973, 0);
+            this.btncerrar.Location = new System.Drawing.Point(956, 0);
             this.btncerrar.Name = "btncerrar";
             this.btncerrar.Size = new System.Drawing.Size(38, 35);
             this.btncerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -358,14 +337,39 @@ namespace CapaPresentacion.SubVista
             // 
             // Panel_empresa
             // 
-            this.Panel_empresa.BackColor = System.Drawing.Color.Gray;
+            this.Panel_empresa.BackColor = System.Drawing.Color.DimGray;
             this.Panel_empresa.Controls.Add(this.Panel_registro);
             this.Panel_empresa.Controls.Add(this.btncerrar);
             this.Panel_empresa.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Panel_empresa.Location = new System.Drawing.Point(0, 0);
             this.Panel_empresa.Name = "Panel_empresa";
-            this.Panel_empresa.Size = new System.Drawing.Size(1012, 522);
+            this.Panel_empresa.Size = new System.Drawing.Size(995, 454);
             this.Panel_empresa.TabIndex = 2;
+            // 
+            // Panel_registro
+            // 
+            this.Panel_registro.BorderColor = System.Drawing.Color.Red;
+            this.Panel_registro.BorderRadius = 5;
+            this.Panel_registro.Controls.Add(this.Txt_idempresa);
+            this.Panel_registro.Controls.Add(this.label10);
+            this.Panel_registro.Controls.Add(this.Panel_boton);
+            this.Panel_registro.Controls.Add(this.Txtrazon);
+            this.Panel_registro.Controls.Add(this.Cboregimen);
+            this.Panel_registro.Controls.Add(this.Txtruc);
+            this.Panel_registro.Controls.Add(this.label9);
+            this.Panel_registro.Controls.Add(this.Txtnombre_comercial);
+            this.Panel_registro.Controls.Add(this.label7);
+            this.Panel_registro.Controls.Add(this.Txtdireccion);
+            this.Panel_registro.Controls.Add(this.label5);
+            this.Panel_registro.Controls.Add(this.Txtfiscal);
+            this.Panel_registro.Controls.Add(this.label6);
+            this.Panel_registro.Controls.Add(this.label8);
+            this.Panel_registro.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(113)))), ((int)(((byte)(113)))));
+            this.Panel_registro.Location = new System.Drawing.Point(35, 42);
+            this.Panel_registro.Name = "Panel_registro";
+            this.Panel_registro.ShadowDecoration.Parent = this.Panel_registro;
+            this.Panel_registro.Size = new System.Drawing.Size(925, 371);
+            this.Panel_registro.TabIndex = 101;
             // 
             // guna2Elipse1
             // 
@@ -376,24 +380,23 @@ namespace CapaPresentacion.SubVista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1012, 522);
+            this.ClientSize = new System.Drawing.Size(995, 454);
             this.Controls.Add(this.Panel_empresa);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmV_Empresa";
+            this.Opacity = 0.9D;
             this.Text = "Empresa";
             this.Load += new System.EventHandler(this.FrmEmpresa_Load);
-            this.Panel_registro.ResumeLayout(false);
-            this.Panel_registro.PerformLayout();
             this.Panel_boton.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).EndInit();
             this.Panel_empresa.ResumeLayout(false);
+            this.Panel_registro.ResumeLayout(false);
+            this.Panel_registro.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel Panel_registro;
         private System.Windows.Forms.Panel Panel_boton;
         public System.Windows.Forms.PictureBox btncerrar;
         private System.Windows.Forms.Label label9;
@@ -413,5 +416,6 @@ namespace CapaPresentacion.SubVista
         public Guna.UI2.WinForms.Guna2TextBox Txtruc;
         public System.Windows.Forms.TextBox Txt_idempresa;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
+        private Guna.UI2.WinForms.Guna2Panel Panel_registro;
     }
 }

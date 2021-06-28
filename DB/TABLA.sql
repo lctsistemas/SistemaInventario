@@ -89,20 +89,25 @@ INSERT INTO manto.Mes(nombre_mes) VALUES
 ('JULIO'),('AGOSTO'),('SETIEMBRE'),
 ('OCTUBRE'),('NOVIEMBRE'),('DICIEMBRE')
 GO
-select * from manto.Periodo
+select * from manto.mes
 GO
 
-CREATE TABLE manto.Inventario
-cod_catalogo	
-tipo_existencia	
-cod_existencia
-fecha_emision	
-tipo_documento	
-serie	
-num_documento	
-tipo_operacion	
-existencia	
-unida_medida	
-entradas	
-salidas
-
+CREATE TABLE manto.Inventario(
+id_inventario bigint not null,
+cod_catalogo varchar(2), --1 dig
+tipo_existencia varchar(4), -- 2 dig
+cod_existencia varchar(30), --hasta 24 dig
+fecha_emision date not null,
+tipo_documento char(2) not null,
+serie varchar(30) not null, --hasta 20 dig
+num_documento varchar(30) not null, -- hasta 20 dig
+tipo_operacion char(2) not null,
+existencia varchar(100) not null, -- hasta 80 dig
+unida_medida varchar(4) not null, -- hasta 3 dig
+entradas decimal(14,2)not null,
+salidas decimal (14,2)not null,
+id_empresa int not null,
+idperiodo int not null,
+idmes int not null
+)
+select * from manto.Inventario

@@ -24,17 +24,17 @@ namespace CapaPresentacion.Vista
     public partial class FrmEntradaImpotacion : Form
     {
         readonly REntrada rentra;
-        private List<DEntrada> lista_en;
+        //private List<DEntrada> lista_en;
         System.Data.DataTable dt;
 
         public FrmEntradaImpotacion()
         {
             InitializeComponent();
-            rentra = new REntrada();          
+            rentra = new REntrada();
             Lbl_cantidad.Text = "";
             this.Dgv_Importar.DoubleBuffered(true);
             ShowMes();
-            //ColumnasTabla();
+
         }
 
         private void ShowMes()
@@ -54,6 +54,13 @@ namespace CapaPresentacion.Vista
         {
             int mact = DateTime.Now.Month;
             Cbomes.SelectedIndex = (mact - 1);
+        }
+
+        //LIMPIAR CAJAS
+        private void LimpiarCajas(){
+            Txt_entradas.Text = "0.00";
+            Txt_salidas.Text = "0.00";
+            Txt_invFinal.Text = "0.00";
         }
 
         private void Btn_importExcel_Click(object sender, EventArgs e)
@@ -103,37 +110,7 @@ namespace CapaPresentacion.Vista
         {
             Lbl_cantidad.Text = "Total Registro : " + (Dgv_Importar.RowCount ).ToString("N0");
         }
-
-        //COLUMNAS DE TABLA
-
-        private void ColumnasTabla()
-        {
-            using (dt = new System.Data.DataTable())
-            {
-                dt.Columns.Add("1", typeof(string));
-                dt.Columns.Add("2", typeof(string));
-                dt.Columns.Add("3", typeof(string));
-                dt.Columns.Add("4", typeof(string));
-                dt.Columns.Add("5", typeof(string));
-                dt.Columns.Add("6", typeof(string));
-                dt.Columns.Add("7", typeof(string));
-                dt.Columns.Add("8", typeof(string));
-                dt.Columns.Add("9", typeof(string));
-                dt.Columns.Add("10", typeof(DateTime));
-                dt.Columns.Add("11", typeof(string));
-                dt.Columns.Add("12", typeof(string));
-                dt.Columns.Add("13", typeof(string));
-                dt.Columns.Add("14", typeof(string));
-                dt.Columns.Add("15", typeof(string));
-                dt.Columns.Add("16", typeof(string));
-                dt.Columns.Add("17", typeof(double));
-                dt.Columns.Add("18", typeof(double));
-                //dt.Columns.Add("19", typeof(string));
-                Dgv_Importar.DataSource = dt;
-                Tabla();
-            }
-        }
-
+       
         private void Tabla()
         {
             /*Dgv_Importar.Columns[0].HeaderText = "PERIODO";
@@ -173,7 +150,7 @@ namespace CapaPresentacion.Vista
             Dgv_Importar.Columns[13].HeaderText = "TIPO OPERACION";            
             
             Dgv_Importar.Columns[14].HeaderText = "EXISTENCIA";
-            Dgv_Importar.Columns[14].Width = 250;
+            Dgv_Importar.Columns[14].Width = 270;
             
             Dgv_Importar.Columns[15].HeaderText = "UNIDAD MEDIDA";
             
@@ -197,26 +174,32 @@ namespace CapaPresentacion.Vista
 
         private void Btn_procesaEntrada_Click(object sender, EventArgs e)
         {
-            List<DEntrada> result = (from item in lista_en
+            /*List<DEntrada> result = (from item in lista_en
                                      where item.entradas  >=0.01 select item).ToList();
-            Dgv_Importar.DataSource = result;
+            Dgv_Importar.DataSource = result;*/
             TotalRegistro();
-         
         }
 
         private void Btn_procesaSalida_Click(object sender, EventArgs e)
         {
-           List<DEntrada> result = (from item in lista_en
+           /*List<DEntrada> result = (from item in lista_en
                                      where item.salidas < 0.00
                                      select item).ToList();
-            Dgv_Importar.DataSource = result;
-            TotalRegistro();
-           
+            Dgv_Importar.DataSource = result;*/
+            TotalRegistro();           
         }
 
-        private void guna2Button3_Click(object sender, EventArgs e)
+        private void Btn_limpiar_Click(object sender, EventArgs e)
         {
-            ExportarExcel3();
+            if (Dgv_Importar.Rows.Count > 0)
+            {
+                dt.Rows.Clear();
+                TotalRegistro();
+                LimpiarCajas();                   
+            }
+                
+            
+            //ExportarExcel3();
         }
         private void ExportarExcel3()
         {
@@ -329,13 +312,14 @@ namespace CapaPresentacion.Vista
                 frmpro.StartPosition = FormStartPosition.CenterParent;
                 frmpro.ShowDialog(this);
                 Dgv_Importar.DataSource = dt;
-                Tabla();
+               
                 TotalRegistro();
                 SumaEntradas();
                 SumaSalidas();
                 InventarioFinal();
                 Txt_ruta.Text = "";
                 lbl_idmes.Text = Cbomes.SelectedValue.ToString();
+                Lbl_correlativo.Visible = true;
             }           
           
         }
@@ -345,24 +329,24 @@ namespace CapaPresentacion.Vista
             using (dt = new System.Data.DataTable())
             {
 
-                dt.Columns.Add("1", typeof(string));
-                dt.Columns.Add("2", typeof(string));
-                dt.Columns.Add("3", typeof(string));
-                dt.Columns.Add("4", typeof(string));
-                dt.Columns.Add("5", typeof(string));
-                dt.Columns.Add("6", typeof(string));
-                dt.Columns.Add("7", typeof(string));
-                dt.Columns.Add("8", typeof(string));
-                dt.Columns.Add("9", typeof(string));
-                dt.Columns.Add("10", typeof(DateTime));
-                dt.Columns.Add("11", typeof(string));
-                dt.Columns.Add("12", typeof(string));
-                dt.Columns.Add("13", typeof(string));
-                dt.Columns.Add("14", typeof(string));
-                dt.Columns.Add("15", typeof(string));
-                dt.Columns.Add("16", typeof(string));
-                dt.Columns.Add("17", typeof(double));
-                dt.Columns.Add("18", typeof(double));
+                dt.Columns.Add("invt_1", typeof(string));
+                dt.Columns.Add("invt_2", typeof(string));
+                dt.Columns.Add("invt_3", typeof(string));
+                dt.Columns.Add("invt_4", typeof(string));
+                dt.Columns.Add("invt_5", typeof(string));
+                dt.Columns.Add("invt_6", typeof(string));
+                dt.Columns.Add("invt_7", typeof(string));
+                dt.Columns.Add("invt_8", typeof(string));
+                dt.Columns.Add("invt_9", typeof(string));
+                dt.Columns.Add("invt_10", typeof(DateTime));
+                dt.Columns.Add("invt_11", typeof(string));
+                dt.Columns.Add("invt_12", typeof(string));
+                dt.Columns.Add("invt_13", typeof(string));
+                dt.Columns.Add("invt_14", typeof(string));
+                dt.Columns.Add("invt_15", typeof(string));
+                dt.Columns.Add("invt_16", typeof(string));
+                dt.Columns.Add("invt_17", typeof(double));
+                dt.Columns.Add("invt_18", typeof(double));
 
                 string[] lines = File.ReadAllLines(Txt_ruta.Text.Trim());
                 string[] data;
@@ -392,9 +376,19 @@ namespace CapaPresentacion.Vista
         private void FrmEntradaImpotacion_Load(object sender, EventArgs e)
         {
             Mes_actual();
+            Tabla();
            
             this.toolTip1.SetToolTip(BtnExaminar,"Examinar archivos .TXT");
 
         }
+
+        private void Dgv_Importar_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            using (SolidBrush b = new SolidBrush(Dgv_Importar.RowHeadersDefaultCellStyle.ForeColor))
+            {
+                e.Graphics.DrawString((e.RowIndex + 1).ToString(), e.InheritedRowStyle.Font, b, e.RowBounds.Location.X + 1, e.RowBounds.Location.Y + 3);
+            }
+        }
+
     }
 }
