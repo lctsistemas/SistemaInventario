@@ -30,5 +30,6 @@ namespace CapaDatos.Entities
         public string Codigo { get => codigo; set => codigo = value; }
         public string Abrev { get => abrev; set => abrev = value; }
         public string Descripcion { get => descripcion; set => descripcion = value; }
+
     }
 }

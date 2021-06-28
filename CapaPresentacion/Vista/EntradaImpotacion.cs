@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using System.Data;
-using System.Data.OleDb;
 using CapaPresentacion.Helps;
 using CapaDatos.Entities;
 using CapaDatos.Cache;
@@ -18,7 +17,7 @@ using CapaPresentacion.SubVista;
 
 using Microsoft.Office.Interop.Excel; // PARA CREAR EXCEL
 using objExcel = Microsoft.Office.Interop.Excel;
-
+using System.IO;
 
 namespace CapaPresentacion.Vista
 {
@@ -26,7 +25,8 @@ namespace CapaPresentacion.Vista
     {
         readonly REntrada rentra;
         private List<DEntrada> lista_en;
-      
+        System.Data.DataTable dt;
+
         public FrmEntradaImpotacion()
         {
             InitializeComponent();
@@ -34,7 +34,7 @@ namespace CapaPresentacion.Vista
             Lbl_cantidad.Text = "";
             this.Dgv_Importar.DoubleBuffered(true);
             ShowMes();
-            ColumnasTabla();
+            //ColumnasTabla();
         }
 
         private void ShowMes()
@@ -49,9 +49,17 @@ namespace CapaPresentacion.Vista
             Num_periodo.Value = Convert.ToInt32(UserCache.C_periodo);
         }
 
+        //MOSTRAR MES DE MAQUINA ACTUAL AL INICIAR PLANILLA
+        private void Mes_actual()
+        {
+            int mact = DateTime.Now.Month;
+            Cbomes.SelectedIndex = (mact - 1);
+        }
+
         private void Btn_importExcel_Click(object sender, EventArgs e)
         {
-            this.Panel_excel.Visible = true;                    
+            this.Panel_excel.Visible = true;
+            this.Panel_excel.BringToFront();
         }
 
         //SUMA DE ENTRADAS Y SALIDAS DE DATAGRIDVIEW
@@ -61,7 +69,7 @@ namespace CapaPresentacion.Vista
             for (int i = 0; i < Dgv_Importar.RowCount ; i++)
             {
                 //if (Dgv_Importar.CurrentRow.Cells["entradas"].Value != null)
-                sumaEntrada += Convert.ToDouble(Dgv_Importar.Rows[i].Cells["entradas"].Value);
+                sumaEntrada += Convert.ToDouble(Dgv_Importar.Rows[i].Cells[16].Value);
             }
             Txt_entradas.Text = sumaEntrada.ToString("N2");
 
@@ -73,7 +81,7 @@ namespace CapaPresentacion.Vista
             for (int i = 0; i < Dgv_Importar.RowCount ; i++)
             {
                 //if (row.Cells["salidas"].Value != null)
-                    sumaSalida += Convert.ToDouble(Dgv_Importar.Rows[i].Cells["salidas"].Value);
+                    sumaSalida += Convert.ToDouble(Dgv_Importar.Rows[i].Cells[17].Value);
             }
             Txt_salidas.Text = sumaSalida.ToString("N2");
         }
@@ -100,7 +108,7 @@ namespace CapaPresentacion.Vista
 
         private void ColumnasTabla()
         {
-            using (System.Data.DataTable dt = new System.Data.DataTable())
+            using (dt = new System.Data.DataTable())
             {
                 dt.Columns.Add("1", typeof(string));
                 dt.Columns.Add("2", typeof(string));
@@ -111,7 +119,7 @@ namespace CapaPresentacion.Vista
                 dt.Columns.Add("7", typeof(string));
                 dt.Columns.Add("8", typeof(string));
                 dt.Columns.Add("9", typeof(string));
-                dt.Columns.Add("10", typeof(string));
+                dt.Columns.Add("10", typeof(DateTime));
                 dt.Columns.Add("11", typeof(string));
                 dt.Columns.Add("12", typeof(string));
                 dt.Columns.Add("13", typeof(string));
@@ -120,7 +128,7 @@ namespace CapaPresentacion.Vista
                 dt.Columns.Add("16", typeof(string));
                 dt.Columns.Add("17", typeof(double));
                 dt.Columns.Add("18", typeof(double));
-                dt.Columns.Add("19", typeof(string));
+                //dt.Columns.Add("19", typeof(string));
                 Dgv_Importar.DataSource = dt;
                 Tabla();
             }
@@ -128,17 +136,19 @@ namespace CapaPresentacion.Vista
 
         private void Tabla()
         {
-            Dgv_Importar.Columns[0].HeaderText = "PERIODO";
-            Dgv_Importar.Columns[0].Width = 150;
+            /*Dgv_Importar.Columns[0].HeaderText = "PERIODO";
+            Dgv_Importar.Columns[0].Width = 150;*/
+            Dgv_Importar.Columns[0].Visible = false;
 
-            Dgv_Importar.Columns[1].HeaderText = "COU";
-            Dgv_Importar.Columns[1].Width = 300;
+            /*Dgv_Importar.Columns[1].HeaderText = "COU";
+            Dgv_Importar.Columns[1].Width = 300;*/
+            Dgv_Importar.Columns[1].Visible = false;
 
-            Dgv_Importar.Columns[2].HeaderText = "NUM ASIENTO";
-            Dgv_Importar.Columns[2].HeaderText = "NUM ASIENTO";
+            //Dgv_Importar.Columns[2].HeaderText = "NUM ASIENTO";
+            Dgv_Importar.Columns[2].Visible = false;
 
-            Dgv_Importar.Columns[3].HeaderText = "COD. ANEXO";
-            Dgv_Importar.Columns[3].HeaderText = "COD. ANEXO";
+            //Dgv_Importar.Columns[3].HeaderText = "COD. ANEXO";
+            Dgv_Importar.Columns[3].Visible = false;
 
             Dgv_Importar.Columns[4].HeaderText = "COD. CATALOGO";
             
@@ -146,10 +156,11 @@ namespace CapaPresentacion.Vista
             
             Dgv_Importar.Columns[6].HeaderText = "COD. EXISTENCIA";
 
-            Dgv_Importar.Columns[7].HeaderText = "COD CTL";
+            //Dgv_Importar.Columns[7].HeaderText = "COD CTL";
+            Dgv_Importar.Columns[7].Visible = false;
 
-            Dgv_Importar.Columns[8].HeaderText = "COD. EXITENCIA CTL";
-            //Dgv_Importar.Columns[8].Width = 150;
+            //Dgv_Importar.Columns[8].HeaderText = "COD. EXITENCIA CTL";
+            Dgv_Importar.Columns[8].Visible = false;
 
             Dgv_Importar.Columns[9].HeaderText = "FECHA EMISION";
             
@@ -266,14 +277,15 @@ namespace CapaPresentacion.Vista
 
         }
 
+        #region Metodos y enventos: para importar TXT
         private void BtnExaminar_Click(object sender, EventArgs e)
         {
             string url;         
             OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Filter = "Excel Files | *.txt;";
+            dialog.Filter = "TXT Files | *.txt;";
             //dialog.Filter = "Excel Files | *.xls;*.xlsx;*.xlsm;";
             //dialog.Title = "Importar Excel";
-            dialog.Title = "Importar Txt";
+            dialog.Title = "Importar TXT";
 
             if (dialog.ShowDialog() == DialogResult.OK)
             {
@@ -291,11 +303,12 @@ namespace CapaPresentacion.Vista
         }
 
         private void Btn_entrar_Click(object sender, EventArgs e)
-        {
+        {            
             if (string.IsNullOrEmpty(Txt_ruta.Text.Trim()))
                 return;
 
-            lista_en = new List<DEntrada>();
+            #region export excel
+            /*lista_en = new List<DEntrada>();
 
             void CargarData()
             {
@@ -308,15 +321,80 @@ namespace CapaPresentacion.Vista
                 frmpro.ShowDialog(this);
                 Dgv_Importar.DataSource = lista_en;
                 Tabla();
-            }
-
-            TotalRegistro();
-            SumaEntradas();
-            SumaSalidas();
-            InventarioFinal();
-            
+            }*/
+            #endregion
+            this.Panel_excel.Visible = false;
+            using (var frmpro = new FrmProcesoWait(ImportarTxt, "Procesando..."))
+            {
+                frmpro.StartPosition = FormStartPosition.CenterParent;
+                frmpro.ShowDialog(this);
+                Dgv_Importar.DataSource = dt;
+                Tabla();
+                TotalRegistro();
+                SumaEntradas();
+                SumaSalidas();
+                InventarioFinal();
+                Txt_ruta.Text = "";
+                lbl_idmes.Text = Cbomes.SelectedValue.ToString();
+            }           
+          
         }
 
+        private void ImportarTxt()
+        {
+            using (dt = new System.Data.DataTable())
+            {
 
+                dt.Columns.Add("1", typeof(string));
+                dt.Columns.Add("2", typeof(string));
+                dt.Columns.Add("3", typeof(string));
+                dt.Columns.Add("4", typeof(string));
+                dt.Columns.Add("5", typeof(string));
+                dt.Columns.Add("6", typeof(string));
+                dt.Columns.Add("7", typeof(string));
+                dt.Columns.Add("8", typeof(string));
+                dt.Columns.Add("9", typeof(string));
+                dt.Columns.Add("10", typeof(DateTime));
+                dt.Columns.Add("11", typeof(string));
+                dt.Columns.Add("12", typeof(string));
+                dt.Columns.Add("13", typeof(string));
+                dt.Columns.Add("14", typeof(string));
+                dt.Columns.Add("15", typeof(string));
+                dt.Columns.Add("16", typeof(string));
+                dt.Columns.Add("17", typeof(double));
+                dt.Columns.Add("18", typeof(double));
+
+                string[] lines = File.ReadAllLines(Txt_ruta.Text.Trim());
+                string[] data;
+                // MessageBox.Show("LINES " + lines.Length); // muestra cantidad de lineas en filas.
+                for (int i = 0; i < lines.Length; i++)
+                {
+                    data = lines[i].ToString().Split('|');
+                    string[] row = new string[data.Length - 2]; // MENOS 2 COLUMAS DEL FINAL 
+
+                    for (int j = 0; j < data.Length - 2; j++) // j=1 ignoro la fila 1
+                    {
+                        row[j] = data[j].Trim();
+                        if (row[j].Contains("-"))
+                        {
+                            //MessageBox.Show("nega " + row[j]);
+                            row[j] = row[j].Replace("-", "+");
+                        }
+                    }
+                    //MessageBox.Show("data " + data.Length);
+                    dt.Rows.Add(row);
+                }
+            }
+        }
+
+        #endregion
+
+        private void FrmEntradaImpotacion_Load(object sender, EventArgs e)
+        {
+            Mes_actual();
+           
+            this.toolTip1.SetToolTip(BtnExaminar,"Examinar archivos .TXT");
+
+        }
     }
 }

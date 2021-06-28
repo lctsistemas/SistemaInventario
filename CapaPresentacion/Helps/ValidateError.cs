@@ -17,7 +17,6 @@ namespace CapaPresentacion.Helps
         public static void Validate_text(Guna.UI2.WinForms.Guna2TextBox txt, string m)
         {
 
-            //validate.Icon = Properties.Resources.java2;
             //validate.BlinkStyle = ErrorBlinkStyle.NeverBlink;
             // validate.BlinkRate = 250 velocidad en milesegundos en que parpadea
             if (String.IsNullOrWhiteSpace(txt.Text))
@@ -41,6 +40,7 @@ namespace CapaPresentacion.Helps
 
         #region VALIDACION CON CANCELACION 
         //VALIDAR COMBO
+
         public static void Validate_combo(CancelEventArgs e, ComboBox cbo, string m)
         {
             if (String.IsNullOrWhiteSpace(cbo.Text))

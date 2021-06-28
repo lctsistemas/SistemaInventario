@@ -649,4 +649,17 @@
         vw9fnvkXflQbAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="Pict_minimizar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAD4SURBVEhLY6A7SImOlkmKilIiB4P0Qo3BBCkxMbbJUVH3gfgREN8lE4P03kuKjLSBGosAQIkH
+        QBdYQLlkA6DhlkCz7kO5EBAXFycMsh3KpRgAzXoMMhPKZWBIDA0VBfkAyqUYgMwCmQnljlqACUYtIAhG
+        LSAICFqQlpbGCiyXuoBiq4jCkZGdDQ4OLFDthC0AFVjA4vcUELsQiU+B9EC1E7YgISpKFch/nRIVtZsY
+        DFKbFh6uDNVOXBwkREQoADUbE4OBeuWh2sAAwwKaF9cgALKVGhUOyAygWagVDgiAqjmQBBC/oxBjrzJh
+        IDMqSpASDDWGXoCBAQD/SjZLx4Mw5QAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>141, 17</value>
+  </metadata>
 </root>

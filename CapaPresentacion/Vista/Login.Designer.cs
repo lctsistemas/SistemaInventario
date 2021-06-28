@@ -51,6 +51,8 @@ namespace CapaPresentacion.Vista
             this.Num_periodo = new System.Windows.Forms.NumericUpDown();
             this.Panel_lineaEmpresa = new System.Windows.Forms.Panel();
             this.Cboempresa = new System.Windows.Forms.ComboBox();
+            this.Pict_minimizar = new System.Windows.Forms.PictureBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.panel_boton.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lblcerrar)).BeginInit();
@@ -58,6 +60,7 @@ namespace CapaPresentacion.Vista
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Num_periodo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pict_minimizar)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Elipse1
@@ -114,10 +117,12 @@ namespace CapaPresentacion.Vista
             // 
             // Btn_entrar
             // 
-            this.Btn_entrar.BorderRadius = 5;
+            this.Btn_entrar.BorderColor = System.Drawing.Color.SlateGray;
+            this.Btn_entrar.BorderRadius = 4;
+            this.Btn_entrar.BorderThickness = 1;
             this.Btn_entrar.CheckedState.Parent = this.Btn_entrar;
             this.Btn_entrar.CustomImages.Parent = this.Btn_entrar;
-            this.Btn_entrar.FillColor = System.Drawing.Color.LightSkyBlue;
+            this.Btn_entrar.FillColor = System.Drawing.Color.SkyBlue;
             this.Btn_entrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_entrar.ForeColor = System.Drawing.Color.White;
             this.Btn_entrar.HoverState.Parent = this.Btn_entrar;
@@ -142,6 +147,7 @@ namespace CapaPresentacion.Vista
             // 
             // panel_boton
             // 
+            this.panel_boton.Controls.Add(this.Pict_minimizar);
             this.panel_boton.Controls.Add(this.lblcerrar);
             this.panel_boton.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_boton.Location = new System.Drawing.Point(0, 0);
@@ -340,6 +346,19 @@ namespace CapaPresentacion.Vista
             this.Cboempresa.Leave += new System.EventHandler(this.Cboempresa_Leave);
             this.Cboempresa.Validating += new System.ComponentModel.CancelEventHandler(this.Cboempresa_Validating);
             // 
+            // Pict_minimizar
+            // 
+            this.Pict_minimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Pict_minimizar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Pict_minimizar.Image = ((System.Drawing.Image)(resources.GetObject("Pict_minimizar.Image")));
+            this.Pict_minimizar.Location = new System.Drawing.Point(400, 0);
+            this.Pict_minimizar.Name = "Pict_minimizar";
+            this.Pict_minimizar.Size = new System.Drawing.Size(25, 28);
+            this.Pict_minimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.Pict_minimizar.TabIndex = 13;
+            this.Pict_minimizar.TabStop = false;
+            this.Pict_minimizar.Click += new System.EventHandler(this.Pict_minimizar_Click);
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -361,6 +380,7 @@ namespace CapaPresentacion.Vista
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Num_periodo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pict_minimizar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -387,5 +407,7 @@ namespace CapaPresentacion.Vista
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label Lbl_mensaje;
+        private System.Windows.Forms.PictureBox Pict_minimizar;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

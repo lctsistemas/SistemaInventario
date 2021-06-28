@@ -33,6 +33,8 @@ namespace CapaPresentacion.Vista
             CargarEmpresas();
             Cboempresa.Text = null;
             Cboempresa.Text = "EMPRESA";
+            this.toolTip1.SetToolTip(Pict_minimizar,"Minimize");
+            this.toolTip1.SetToolTip(lblcerrar,"Close");
 
         }
 
@@ -278,6 +280,11 @@ namespace CapaPresentacion.Vista
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
             MoverVentana();
+        }
+
+        private void Pict_minimizar_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
         }
     }
 }

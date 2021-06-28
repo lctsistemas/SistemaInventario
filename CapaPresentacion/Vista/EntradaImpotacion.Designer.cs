@@ -29,16 +29,18 @@ namespace CapaPresentacion.Vista
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEntradaImpotacion));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Btnprueba = new System.Windows.Forms.Button();
             this.tableLayout_botones = new System.Windows.Forms.TableLayoutPanel();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.Btn_procesaSalida = new Guna.UI2.WinForms.Guna2Button();
             this.Btn_procesaEntrada = new Guna.UI2.WinForms.Guna2Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lbl_idmes = new System.Windows.Forms.Label();
             this.Panel_excel = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.Btn_entrar = new Guna.UI2.WinForms.Guna2Button();
@@ -62,6 +64,7 @@ namespace CapaPresentacion.Vista
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tableLayout_botones.SuspendLayout();
             this.panel2.SuspendLayout();
             this.Panel_excel.SuspendLayout();
@@ -172,15 +175,25 @@ namespace CapaPresentacion.Vista
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(233)))), ((int)(((byte)(236)))));
+            this.panel2.Controls.Add(this.Dgv_Importar);
+            this.panel2.Controls.Add(this.lbl_idmes);
             this.panel2.Controls.Add(this.Panel_excel);
             this.panel2.Controls.Add(this.Lbl_cantidad);
             this.panel2.Controls.Add(this.Btn_importExcel);
-            this.panel2.Controls.Add(this.Dgv_Importar);
             this.panel2.Controls.Add(this.Group_calculo);
             this.panel2.Location = new System.Drawing.Point(1, 1);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(837, 450);
             this.panel2.TabIndex = 0;
+            // 
+            // lbl_idmes
+            // 
+            this.lbl_idmes.AutoSize = true;
+            this.lbl_idmes.Location = new System.Drawing.Point(156, 11);
+            this.lbl_idmes.Name = "lbl_idmes";
+            this.lbl_idmes.Size = new System.Drawing.Size(37, 13);
+            this.lbl_idmes.TabIndex = 9;
+            this.lbl_idmes.Text = "id mes";
             // 
             // Panel_excel
             // 
@@ -282,28 +295,28 @@ namespace CapaPresentacion.Vista
             // 
             this.Txt_ruta.BackColor = System.Drawing.Color.White;
             this.Txt_ruta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Txt_ruta.Location = new System.Drawing.Point(70, 108);
+            this.Txt_ruta.Location = new System.Drawing.Point(69, 110);
             this.Txt_ruta.Name = "Txt_ruta";
             this.Txt_ruta.ReadOnly = true;
-            this.Txt_ruta.Size = new System.Drawing.Size(443, 20);
+            this.Txt_ruta.Size = new System.Drawing.Size(464, 20);
             this.Txt_ruta.TabIndex = 18;
             // 
             // BtnExaminar
             // 
-            this.BtnExaminar.BorderColor = System.Drawing.Color.Green;
+            this.BtnExaminar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.BtnExaminar.BorderRadius = 3;
             this.BtnExaminar.BorderThickness = 1;
             this.BtnExaminar.CheckedState.Parent = this.BtnExaminar;
             this.BtnExaminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnExaminar.CustomImages.Parent = this.BtnExaminar;
-            this.BtnExaminar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(190)))), ((int)(((byte)(128)))));
+            this.BtnExaminar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
             this.BtnExaminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.BtnExaminar.ForeColor = System.Drawing.Color.White;
             this.BtnExaminar.HoverState.Parent = this.BtnExaminar;
             this.BtnExaminar.Image = ((System.Drawing.Image)(resources.GetObject("BtnExaminar.Image")));
             this.BtnExaminar.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.BtnExaminar.ImageSize = new System.Drawing.Size(21, 21);
-            this.BtnExaminar.Location = new System.Drawing.Point(527, 113);
+            this.BtnExaminar.Location = new System.Drawing.Point(539, 103);
             this.BtnExaminar.Name = "BtnExaminar";
             this.BtnExaminar.ShadowDecoration.Parent = this.BtnExaminar;
             this.BtnExaminar.Size = new System.Drawing.Size(35, 27);
@@ -315,7 +328,7 @@ namespace CapaPresentacion.Vista
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(35, 119);
+            this.label4.Location = new System.Drawing.Point(38, 111);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(29, 15);
             this.label4.TabIndex = 14;
@@ -325,7 +338,7 @@ namespace CapaPresentacion.Vista
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(39, 36);
+            this.label5.Location = new System.Drawing.Point(38, 36);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(59, 15);
             this.label5.TabIndex = 15;
@@ -335,7 +348,7 @@ namespace CapaPresentacion.Vista
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(39, 71);
+            this.label6.Location = new System.Drawing.Point(38, 72);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(110, 15);
             this.label6.TabIndex = 16;
@@ -346,7 +359,7 @@ namespace CapaPresentacion.Vista
             this.Cbomes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Cbomes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cbomes.FormattingEnabled = true;
-            this.Cbomes.Location = new System.Drawing.Point(155, 68);
+            this.Cbomes.Location = new System.Drawing.Point(155, 69);
             this.Cbomes.Name = "Cbomes";
             this.Cbomes.Size = new System.Drawing.Size(127, 23);
             this.Cbomes.TabIndex = 13;
@@ -365,13 +378,13 @@ namespace CapaPresentacion.Vista
             // 
             // Btn_importExcel
             // 
-            this.Btn_importExcel.BorderColor = System.Drawing.Color.Green;
+            this.Btn_importExcel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.Btn_importExcel.BorderRadius = 3;
             this.Btn_importExcel.BorderThickness = 1;
             this.Btn_importExcel.CheckedState.Parent = this.Btn_importExcel;
             this.Btn_importExcel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_importExcel.CustomImages.Parent = this.Btn_importExcel;
-            this.Btn_importExcel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(190)))), ((int)(((byte)(128)))));
+            this.Btn_importExcel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
             this.Btn_importExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.Btn_importExcel.ForeColor = System.Drawing.Color.White;
             this.Btn_importExcel.HoverState.Parent = this.Btn_importExcel;
@@ -382,7 +395,7 @@ namespace CapaPresentacion.Vista
             this.Btn_importExcel.ShadowDecoration.Parent = this.Btn_importExcel;
             this.Btn_importExcel.Size = new System.Drawing.Size(134, 27);
             this.Btn_importExcel.TabIndex = 5;
-            this.Btn_importExcel.Text = "Importar Excel";
+            this.Btn_importExcel.Text = "Importar TXT";
             this.Btn_importExcel.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.Btn_importExcel.Click += new System.EventHandler(this.Btn_importExcel_Click);
             // 
@@ -392,8 +405,8 @@ namespace CapaPresentacion.Vista
             this.Dgv_Importar.AllowUserToDeleteRows = false;
             this.Dgv_Importar.AllowUserToResizeColumns = false;
             this.Dgv_Importar.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.Dgv_Importar.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.Dgv_Importar.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.Dgv_Importar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -402,24 +415,24 @@ namespace CapaPresentacion.Vista
             this.Dgv_Importar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Dgv_Importar.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.Dgv_Importar.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Dgv_Importar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_Importar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.Dgv_Importar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(0, 1, 0, 1);
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Dgv_Importar.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 1, 0, 1);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_Importar.DefaultCellStyle = dataGridViewCellStyle3;
             this.Dgv_Importar.EnableHeadersVisualStyles = false;
             this.Dgv_Importar.GridColor = System.Drawing.Color.Silver;
             this.Dgv_Importar.Location = new System.Drawing.Point(3, 69);
@@ -567,6 +580,7 @@ namespace CapaPresentacion.Vista
             this.Controls.Add(this.guna2Panel1);
             this.Name = "FrmEntradaImpotacion";
             this.Text = "EntradaImpotacion";
+            this.Load += new System.EventHandler(this.FrmEntradaImpotacion_Load);
             this.tableLayout_botones.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -611,5 +625,7 @@ namespace CapaPresentacion.Vista
         private System.Windows.Forms.NumericUpDown Num_periodo;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2Button Btn_entrar;
+        private System.Windows.Forms.Label lbl_idmes;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
