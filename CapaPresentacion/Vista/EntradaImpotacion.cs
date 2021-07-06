@@ -26,15 +26,21 @@ namespace CapaPresentacion.Vista
         readonly REntrada rentra;
         //private List<DEntrada> lista_en;
         System.Data.DataTable dt;
+        string result = "";
+        List<DEntrada> lst;
+        readonly REntrada ren;
+        readonly DEntrada den;
 
         public FrmEntradaImpotacion()
         {
-            InitializeComponent();
+            InitializeComponent();            
+            ren = new REntrada();
+            den = new DEntrada();
+
             rentra = new REntrada();
             Lbl_cantidad.Text = "";
             this.Dgv_Importar.DoubleBuffered(true);
             ShowMes();
-
         }
 
         private void ShowMes()
@@ -45,7 +51,6 @@ namespace CapaPresentacion.Vista
                 Cbomes.DisplayMember = "nombre_mes";
                 Cbomes.ValueMember = "idmes";
             }
-
             Num_periodo.Value = Convert.ToInt32(UserCache.C_periodo);
         }
 
@@ -72,14 +77,13 @@ namespace CapaPresentacion.Vista
         //SUMA DE ENTRADAS Y SALIDAS DE DATAGRIDVIEW
         private void SumaEntradas()
         {
-            double sumaEntrada = 0;                       
+            double sumaEntrada = 0;
             for (int i = 0; i < Dgv_Importar.RowCount ; i++)
             {
                 //if (Dgv_Importar.CurrentRow.Cells["entradas"].Value != null)
                 sumaEntrada += Convert.ToDouble(Dgv_Importar.Rows[i].Cells[16].Value);
             }
             Txt_entradas.Text = sumaEntrada.ToString("N2");
-
         }
 
         private void SumaSalidas()
@@ -87,8 +91,8 @@ namespace CapaPresentacion.Vista
             double sumaSalida = 0;
             for (int i = 0; i < Dgv_Importar.RowCount ; i++)
             {
-                //if (row.Cells["salidas"].Value != null)
                     sumaSalida += Convert.ToDouble(Dgv_Importar.Rows[i].Cells[17].Value);
+                //if (row.Cells["salidas"].Value != null)
             }
             Txt_salidas.Text = sumaSalida.ToString("N2");
         }
@@ -162,30 +166,59 @@ namespace CapaPresentacion.Vista
             this.Dgv_Importar.Rows[Dgv_Importar.Rows.Count - 1].DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9, FontStyle.Bold);*/
 
         }
+        
 
-        private void Btnprueba_Click(object sender, EventArgs e)
-        {
-            /*lista_en = rentra.ImportarAchivoExcel(Lblruta.Text.Trim());
-            Dgv_Importar.DataSource = lista_en.OrderBy(d => d.Id).Skip(20).Take(20).ToList();*/
-
-            /*Msg.M_info("lista en from :  " + lista_en.Count);
-            Msg.M_info("lista en back :  " + rentra.list_entrada.Count);*/
-        }
-
+        //GUARDAR INVENTARIO.
         private void Btn_procesaEntrada_Click(object sender, EventArgs e)
         {
-            /*List<DEntrada> result = (from item in lista_en
-                                     where item.entradas  >=0.01 select item).ToList();
-            Dgv_Importar.DataSource = result;*/
-            TotalRegistro();
+            if (!(this.Dgv_Importar.RowCount > 0))
+                return;
+
+            string men = string.Format("Registrando {0} Filas...", Dgv_Importar.RowCount.ToString("N0"));
+            using (var frmpro = new FrmProcesoWait(SetInventario, men))
+            {
+                frmpro.StartPosition = FormStartPosition.CenterParent;
+                frmpro.ShowDialog(this);
+                
+                if (result.Contains("El Registro"))
+                    Msg.M_info(result);
+                else
+                    Msg.M_error(result);
+            }                
+               
         }
 
-        private void Btn_procesaSalida_Click(object sender, EventArgs e)
+        private void SetInventario()
         {
-           /*List<DEntrada> result = (from item in lista_en
-                                     where item.salidas < 0.00
-                                     select item).ToList();
-            Dgv_Importar.DataSource = result;*/
+            lst = new List<DEntrada>();
+            foreach (DataGridViewRow item in Dgv_Importar.Rows)
+            {
+                lst.Add(new DEntrada()
+                {
+                    cod_catalogo = item.Cells["inv_5"].Value.ToString(),
+                    tipo_existencia = item.Cells["inv_6"].Value.ToString(),
+                    cod_existencia = item.Cells["inv_7"].Value.ToString(),
+                    fecha_emision = Convert.ToDateTime(item.Cells["inv_10"].Value),
+                    tipo_documento = item.Cells["inv_11"].Value.ToString(),
+                    serie = item.Cells["inv_12"].Value.ToString(),
+                    num_documento = item.Cells["inv_13"].Value.ToString(),
+                    tipo_operacion = item.Cells["inv_14"].Value.ToString(),
+                    existencia = item.Cells["inv_15"].Value.ToString(),
+                    unida_medida = item.Cells["inv_16"].Value.ToString(),
+                    entradas = Convert.ToDouble(item.Cells["inv_17"].Value),
+                    salidas = Convert.ToDouble(item.Cells["inv_18"].Value),
+                    Id_empresa = UserCache.C_idempresa,
+                    Id_periodo = UserCache.C_idperiodo,
+                    Id_mes = Convert.ToInt32(lbl_idmes.Text.Trim())
+
+                });
+            }
+            result = ren.Add_Multiple(lst);
+        }
+
+
+        private void Btn_procesaSalida_Click(object sender, EventArgs e)
+        {           
             TotalRegistro();           
         }
 
@@ -197,9 +230,7 @@ namespace CapaPresentacion.Vista
                 TotalRegistro();
                 LimpiarCajas();                   
             }
-                
-            
-            //ExportarExcel3();
+                                       
         }
         private void ExportarExcel3()
         {
@@ -260,31 +291,115 @@ namespace CapaPresentacion.Vista
 
         }
 
+
+        // PARA TXT
         #region Metodos y enventos: para importar TXT
         private void BtnExaminar_Click(object sender, EventArgs e)
         {
-            string url;         
+            string url, extension;
             OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Filter = "TXT Files | *.txt;";
-            //dialog.Filter = "Excel Files | *.xls;*.xlsx;*.xlsm;";
-            //dialog.Title = "Importar Excel";
+            dialog.Filter = "TXT Files | *.txt;";            
             dialog.Title = "Importar TXT";
 
             if (dialog.ShowDialog() == DialogResult.OK)
             {
+                LimpiarError();
                 url = dialog.FileName;
-
+                Lbl_nombrefile.Text = dialog.SafeFileName;         
                 Txt_ruta.Text = url.Trim();
+                
+                if (Lbl_nombrefile.Text.Length >= 33 && Lbl_nombrefile.Text.Length < 38)
+                {
+                    extension = Lbl_nombrefile.Text.Trim().Substring(Lbl_nombrefile.Text.Length - 4, 4);
+                    //Msg.M_info(extension);
+                    if (extension == ".txt")
+                    {
+                        Lbl_ruc.Text = Lbl_nombrefile.Text.Trim().Substring(2, 11);
+                        Lbl_ano.Text = Lbl_nombrefile.Text.Trim().Substring(13, 4);
+                        Lbl_mes.Text = Lbl_nombrefile.Text.Trim().Substring(17, 2);
+
+                        if (ValidarImportacionTXT())
+                        {
+                            Boton_image(true, false);
+                            Btn_entrar.Enabled = true;
+                        }
+                        else
+                        {
+                            Boton_image(false, true);
+                            Btn_entrar.Enabled = false;
+                        } 
+                    }else
+                        Lbl_menUno.Text = "Formato Incorrecto";
+                }
+                else
+                    Lbl_menUno.Text = "Formato Incorrecto";
+                
             }
             dialog.Dispose();
         }
+        
+        private void Boton_image(bool che, bool err)
+        {
+            this.Pict_check.Visible = che;
+            this.Pict_error.Visible = err;
+        }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
+        private void Mensaje(string msg)
+        {
+            Lbl_menUno.Text = msg;
+            Lbl_menDos.Text = msg;
+            Lbl_menTres.Text = msg;
+        }
+
+        private bool ValidarImportacionTXT()
+        {
+            bool result = true;
+            //validar si existe inventario registrado en el mes.
+            den.Id_empresa = UserCache.C_idempresa;
+            den.Id_mes = Convert.ToInt32(Cbomes.SelectedValue);
+            den.Id_periodo = UserCache.C_idperiodo;
+
+            if (!(Lbl_ruc.Text == UserCache.C_ruc))
+            {
+                result = false;
+                Lbl_menUno.Text = "► Archivo TXT no Corresponde a la Empresa, Seleccione otro Archivo.";
+            }            
+
+            Int16 x = Convert.ToInt16(Lbl_mes.Text);
+            if (!(Lbl_ano.Text == UserCache.C_periodo && x == Convert.ToInt16(Cbomes.SelectedValue)))
+            {
+                result = false;
+                Lbl_menDos.Text = "► El Periodo no Corresponden al Archivo TXT";
+            }           
+
+            if (ren.ValidarInventario(den) == false)
+            {
+                result = false;
+                Lbl_menTres.Text = string.Format("► Ya existe Registro en {0}, Seleccione otro Mes", Cbomes.Text);
+            }
+
+            return result;
+        }
+
+        private void LimpiarError()
+        {
+            Lbl_menUno.Text = "";
+            Lbl_menDos.Text = "";
+            Lbl_menTres.Text = "";
+        }
+
+        //boton cancelar
+        private void Btn_cancelar_Click(object sender, EventArgs e)
         {
             this.Panel_excel.Visible = false;
             Txt_ruta.Text = string.Empty;
+            Lbl_nombrefile.Text = string.Empty;
+            LimpiarError();
+            Boton_image(false, false);
+            Mes_actual();
         }
 
+        //METODO IMPORTAR TXT
         private void Btn_entrar_Click(object sender, EventArgs e)
         {            
             if (string.IsNullOrEmpty(Txt_ruta.Text.Trim()))
@@ -307,7 +422,7 @@ namespace CapaPresentacion.Vista
             }*/
             #endregion
             this.Panel_excel.Visible = false;
-            using (var frmpro = new FrmProcesoWait(ImportarTxt, "Procesando..."))
+            using (var frmpro = new FrmProcesoWait(ImportarTxt, "Importando TXT..."))
             {
                 frmpro.StartPosition = FormStartPosition.CenterParent;
                 frmpro.ShowDialog(this);
@@ -319,6 +434,7 @@ namespace CapaPresentacion.Vista
                 InventarioFinal();
                 Txt_ruta.Text = "";
                 lbl_idmes.Text = Cbomes.SelectedValue.ToString();
+                Boton_image(false, false);
                 Lbl_correlativo.Visible = true;
             }           
           
@@ -377,7 +493,7 @@ namespace CapaPresentacion.Vista
         {
             Mes_actual();
             Tabla();
-           
+            Mensaje("");
             this.toolTip1.SetToolTip(BtnExaminar,"Examinar archivos .TXT");
 
         }
@@ -390,5 +506,22 @@ namespace CapaPresentacion.Vista
             }
         }
 
+        private void Cbomes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!(string.IsNullOrEmpty(Txt_ruta.Text.Trim()))){
+                LimpiarError();
+                if (ValidarImportacionTXT())
+                {
+                    Boton_image(true, false);
+                    Btn_entrar.Enabled = true;
+                }
+                else
+                {
+                    Boton_image(false, true);
+                    Btn_entrar.Enabled = false;
+                }
+            }
+            
+        }
     }
 }

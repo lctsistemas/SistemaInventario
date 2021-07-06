@@ -44,24 +44,25 @@ namespace CapaPresentacion.SubVista
             // 
             // Pict_carga
             // 
+            this.Pict_carga.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.Pict_carga.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Pict_carga.Image = ((System.Drawing.Image)(resources.GetObject("Pict_carga.Image")));
             this.Pict_carga.Location = new System.Drawing.Point(0, 0);
             this.Pict_carga.Name = "Pict_carga";
-            this.Pict_carga.Size = new System.Drawing.Size(120, 79);
+            this.Pict_carga.Size = new System.Drawing.Size(191, 79);
             this.Pict_carga.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Pict_carga.TabIndex = 0;
             this.Pict_carga.TabStop = false;
             // 
             // Lbl_descrip
             // 
-            this.Lbl_descrip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.Lbl_descrip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.Lbl_descrip.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.Lbl_descrip.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_descrip.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_descrip.ForeColor = System.Drawing.Color.White;
             this.Lbl_descrip.Location = new System.Drawing.Point(0, 61);
             this.Lbl_descrip.Name = "Lbl_descrip";
-            this.Lbl_descrip.Size = new System.Drawing.Size(120, 18);
+            this.Lbl_descrip.Size = new System.Drawing.Size(191, 18);
             this.Lbl_descrip.TabIndex = 2;
             this.Lbl_descrip.Text = "En proceso...";
             this.Lbl_descrip.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -71,7 +72,7 @@ namespace CapaPresentacion.SubVista
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.ClientSize = new System.Drawing.Size(120, 79);
+            this.ClientSize = new System.Drawing.Size(191, 79);
             this.Controls.Add(this.Lbl_descrip);
             this.Controls.Add(this.Pict_carga);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

@@ -13,6 +13,7 @@ using CapaNegocio.Repositories;
 using CapaDatos.Cache;
 using System.Threading;
 using CapaPresentacion.Helps;
+using CapaPresentacion.SubVista;
 
 namespace CapaPresentacion.Vista
 {
@@ -286,5 +287,7 @@ namespace CapaPresentacion.Vista
         {
             WindowState = FormWindowState.Minimized;
         }
+
+       
     }
 }

@@ -13,6 +13,7 @@ namespace CapaPresentacion.SubVista
     public partial class FrmProcesoWait : Form
     {
         private Action Proceso { get; set; }
+       
         public FrmProcesoWait(Action process, string descrip)
         {
             InitializeComponent();
@@ -20,7 +21,6 @@ namespace CapaPresentacion.SubVista
             Proceso = process;
         }
 
-              
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);

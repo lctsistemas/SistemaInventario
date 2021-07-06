@@ -26,7 +26,9 @@ namespace CapaDatos.Entities
         public string unida_medida { get; set; } //16
         public double entradas { get; set; } //17
         public double salidas { get; set; } //18
-
+        public int Id_empresa { get; set; }
+        public int Id_periodo { get; set; }
+        public int Id_mes { get; set; }
 
     }
 }

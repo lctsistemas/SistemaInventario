@@ -10,7 +10,7 @@ go
 
 -- TABLA EMPRESA
 CREATE TABLE manto.Empresa(
-id_empresa int not null,0
+id_empresa int not null,
 ruc char(11) not null CONSTRAINT UNQ_ruc UNIQUE,
 razon_social varchar(100) not null,
 nombre_comercial varchar(50) null,
@@ -72,16 +72,6 @@ desc_periodo int
 )
 GO
 
---PRIMARY KEY
-ALTER TABLE manto.Empresa ADD CONSTRAINT PK_idempresa PRIMARY KEY(id_empresa)
-ALTER TABLE manto.clienteProv ADD CONSTRAINT PK_idclipro PRIMARY KEY(idcliprov)
-ALTER TABLE manto.Moneda ADD CONSTRAINT PK_idmoneda PRIMARY KEY(idMoneda)
-ALTER TABLE manto.TipoDocumento ADD CONSTRAINT PK_idtipodoc PRIMARY KEY(idTipoDoc)
-ALTER TABLE manto.TipoOperacion ADD CONSTRAINT PK_idtipooper PRIMARY KEY(idTipoOper)
-ALTER TABLE manto.UnidadMedida ADD CONSTRAINT PK_iduni_med PRIMARY KEY(idUnidadMedida)
-ALTER TABLE manto.Mes ADD CONSTRAINT PK_idmes PRIMARY KEY(idmes)
-GO
-
 --INSERTAR
 INSERT INTO manto.Mes(nombre_mes) VALUES
 ('ENERO'),('FEBRERO'),('MARZO'),
@@ -89,10 +79,8 @@ INSERT INTO manto.Mes(nombre_mes) VALUES
 ('JULIO'),('AGOSTO'),('SETIEMBRE'),
 ('OCTUBRE'),('NOVIEMBRE'),('DICIEMBRE')
 GO
-select * from manto.mes
-GO
 
-CREATE TABLE manto.Inventario(
+CREATE TABLE invent.Inventario(
 id_inventario bigint not null,
 cod_catalogo varchar(2), --1 dig
 tipo_existencia varchar(4), -- 2 dig
@@ -107,7 +95,25 @@ unida_medida varchar(4) not null, -- hasta 3 dig
 entradas decimal(14,2)not null,
 salidas decimal (14,2)not null,
 id_empresa int not null,
-idperiodo int not null,
-idmes int not null
+idperiodo smallint not null,
+idmes tinyint not null
 )
-select * from manto.Inventario
+GO
+
+--PRIMARY KEY
+ALTER TABLE manto.Empresa ADD CONSTRAINT PK_idempresa PRIMARY KEY(id_empresa)
+ALTER TABLE manto.clienteProv ADD CONSTRAINT PK_idclipro PRIMARY KEY(idcliprov)
+ALTER TABLE manto.Moneda ADD CONSTRAINT PK_idmoneda PRIMARY KEY(idMoneda)
+ALTER TABLE manto.TipoDocumento ADD CONSTRAINT PK_idtipodoc PRIMARY KEY(idTipoDoc)
+ALTER TABLE manto.TipoOperacion ADD CONSTRAINT PK_idtipooper PRIMARY KEY(idTipoOper)
+ALTER TABLE manto.UnidadMedida ADD CONSTRAINT PK_iduni_med PRIMARY KEY(idUnidadMedida)
+ALTER TABLE manto.Mes ADD CONSTRAINT PK_idmes PRIMARY KEY(idmes)
+ALTER TABLE manto.Periodo ADD CONSTRAINT PK_idperiodo PRIMARY KEY(idperiodo)
+ALTER TABLE invent.Inventario ADD CONSTRAINT PK_idinvent PRIMARY KEY(id_inventario)
+GO
+
+--FOREIGN KEY
+ALTER TABLE invent.Inventario ADD CONSTRAINT FK_idmes FOREIGN KEY(idmes)REFERENCES manto.Mes(idmes)
+ALTER TABLE invent.Inventario ADD CONSTRAINT FK_idperiodo FOREIGN KEY(idperiodo)REFERENCES manto.Periodo(idperiodo)
+ALTER TABLE invent.Inventario ADD CONSTRAINT FK_idempresa FOREIGN KEY(id_empresa)REFERENCES manto.Empresa(id_empresa)
+GO

@@ -37,6 +37,7 @@ namespace CapaPresentacion.Vista
             this.Btn_entrar = new Guna.UI2.WinForms.Guna2Button();
             this.label3 = new System.Windows.Forms.Label();
             this.panel_boton = new System.Windows.Forms.Panel();
+            this.Pict_minimizar = new System.Windows.Forms.PictureBox();
             this.lblcerrar = new System.Windows.Forms.PictureBox();
             this.Panel_contenedor = new Guna.UI2.WinForms.Guna2Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -51,16 +52,15 @@ namespace CapaPresentacion.Vista
             this.Num_periodo = new System.Windows.Forms.NumericUpDown();
             this.Panel_lineaEmpresa = new System.Windows.Forms.Panel();
             this.Cboempresa = new System.Windows.Forms.ComboBox();
-            this.Pict_minimizar = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.panel_boton.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Pict_minimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblcerrar)).BeginInit();
             this.Panel_contenedor.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Num_periodo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pict_minimizar)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Elipse1
@@ -155,6 +155,19 @@ namespace CapaPresentacion.Vista
             this.panel_boton.Size = new System.Drawing.Size(450, 28);
             this.panel_boton.TabIndex = 15;
             this.panel_boton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel_boton_MouseDown);
+            // 
+            // Pict_minimizar
+            // 
+            this.Pict_minimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Pict_minimizar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Pict_minimizar.Image = ((System.Drawing.Image)(resources.GetObject("Pict_minimizar.Image")));
+            this.Pict_minimizar.Location = new System.Drawing.Point(400, 0);
+            this.Pict_minimizar.Name = "Pict_minimizar";
+            this.Pict_minimizar.Size = new System.Drawing.Size(25, 28);
+            this.Pict_minimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.Pict_minimizar.TabIndex = 13;
+            this.Pict_minimizar.TabStop = false;
+            this.Pict_minimizar.Click += new System.EventHandler(this.Pict_minimizar_Click);
             // 
             // lblcerrar
             // 
@@ -346,19 +359,6 @@ namespace CapaPresentacion.Vista
             this.Cboempresa.Leave += new System.EventHandler(this.Cboempresa_Leave);
             this.Cboempresa.Validating += new System.ComponentModel.CancelEventHandler(this.Cboempresa_Validating);
             // 
-            // Pict_minimizar
-            // 
-            this.Pict_minimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Pict_minimizar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Pict_minimizar.Image = ((System.Drawing.Image)(resources.GetObject("Pict_minimizar.Image")));
-            this.Pict_minimizar.Location = new System.Drawing.Point(400, 0);
-            this.Pict_minimizar.Name = "Pict_minimizar";
-            this.Pict_minimizar.Size = new System.Drawing.Size(25, 28);
-            this.Pict_minimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.Pict_minimizar.TabIndex = 13;
-            this.Pict_minimizar.TabStop = false;
-            this.Pict_minimizar.Click += new System.EventHandler(this.Pict_minimizar_Click);
-            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -373,6 +373,7 @@ namespace CapaPresentacion.Vista
             this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.panel_boton.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Pict_minimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblcerrar)).EndInit();
             this.Panel_contenedor.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -380,7 +381,6 @@ namespace CapaPresentacion.Vista
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Num_periodo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pict_minimizar)).EndInit();
             this.ResumeLayout(false);
 
         }

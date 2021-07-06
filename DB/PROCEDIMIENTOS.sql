@@ -279,3 +279,89 @@ as begin
 select idmes, nombre_mes from manto.Mes
 end
 go
+
+--   PROCEDIMIENTO PARA REGISTRAR INVENTARIO MASIVO 1
+CREATE TYPE invent.Detail AS TABLE(
+id int,
+cod_catalogo varchar(2), 
+tipo_existencia varchar(4), 
+cod_existencia varchar(30), 
+fecha_emision date,
+tipo_documento char(2),
+serie varchar(30),
+num_documento varchar(30),
+tipo_operacion char(2),
+existencia varchar(100),
+unida_medida varchar(4),
+entradas decimal(14,2),
+salidas decimal (14,2),
+id_empresa int, 
+idperiodo smallint,
+idmes tinyint
+primary key(id)
+)
+GO
+
+ALTER PROC invent.SP_GUARDAR_INV
+@ListInventario invent.Detail READONLY
+AS BEGIN
+
+INSERT INTO invent.Inventario(id_inventario, cod_catalogo, tipo_existencia,cod_existencia, 
+fecha_emision, tipo_documento, serie, num_documento, tipo_operacion, existencia, 
+unida_medida, entradas, salidas, id_empresa, idperiodo, idmes)
+
+SELECT @id_inventario, cod_catalogo, tipo_existencia,cod_existencia, 
+fecha_emision, tipo_documento, serie, num_documento, tipo_operacion, existencia,
+unida_medida, entradas, salidas, id_empresa, idperiodo, idmes FROM @ListInventario
+END
+GO
+
+-- PROCEDIMIENTO PARA REGISTRAR INVENTARIO MASIVO 2 PERO CON FOREACH EN C#
+CREATE PROC invent.SP_RegistrarInv
+@cod_catalogo varchar(2), 
+@tipo_existencia varchar(4), 
+@cod_existencia varchar(30), 
+@fecha_emision date,
+@tipo_documento char(2),
+@serie varchar(30),
+@num_documento varchar(30),
+@tipo_operacion char(2),
+@existencia varchar(100),
+@unida_medida varchar(4),
+@entradas decimal(14,2),
+@salidas decimal (14,2),
+@id_empresa int, 
+@idperiodo smallint,
+@idmes tinyint
+AS BEGIN
+DECLARE @id_inventario bigint
+SET @id_inventario = (SELECT ISNULL(MAX(i.id_inventario), 0) + 1 FROM invent.Inventario i)
+
+INSERT INTO invent.Inventario(id_inventario, cod_catalogo, tipo_existencia,cod_existencia, 
+fecha_emision, tipo_documento, serie, num_documento, tipo_operacion, existencia, 
+unida_medida, entradas, salidas, id_empresa, idperiodo, idmes)
+VALUES (@id_inventario, @cod_catalogo, @tipo_existencia, @cod_existencia, 
+@fecha_emision, @tipo_documento, @serie, @num_documento, @tipo_operacion, @existencia, 
+@unida_medida, @entradas, @salidas, @id_empresa, @idperiodo, @idmes)
+END
+GO
+
+-- PROCEDIMIENTO PARA VALIDAR INVENTARIO
+
+
+@idempresa int,
+@idmes tinyint,
+@idperiodo smallint,
+@output bit output
+AS BEGIN
+IF(EXISTS(SELECT  i.id_inventario FROM invent.Inventario i WHERE i.id_empresa = @idempresa AND i.idmes = @idmes AND i.idperiodo = @idperiodo))
+SET @output = 0 --false
+ELSE
+SET @output = 1 --true
+END
+GO
+
+
+select * from invent.Inventario
+delete from invent.Inventario
+GO

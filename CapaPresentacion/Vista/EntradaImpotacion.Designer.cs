@@ -30,18 +30,37 @@ namespace CapaPresentacion.Vista
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEntradaImpotacion));
-            this.Btnprueba = new System.Windows.Forms.Button();
             this.tableLayout_botones = new System.Windows.Forms.TableLayoutPanel();
             this.Btn_limpiar = new Guna.UI2.WinForms.Guna2Button();
             this.Btn_procesaSalida = new Guna.UI2.WinForms.Guna2Button();
             this.Btn_procesaEntrada = new Guna.UI2.WinForms.Guna2Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.Panel_excel = new Guna.UI2.WinForms.Guna2Panel();
+            this.Lbl_ruc = new System.Windows.Forms.Label();
+            this.Lbl_mes = new System.Windows.Forms.Label();
+            this.Lbl_ano = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.Lbl_menTres = new System.Windows.Forms.Label();
+            this.Lbl_menDos = new System.Windows.Forms.Label();
+            this.Lbl_menUno = new System.Windows.Forms.Label();
+            this.Pict_error = new System.Windows.Forms.PictureBox();
+            this.Pict_check = new System.Windows.Forms.PictureBox();
+            this.Lbl_nombrefile = new System.Windows.Forms.Label();
+            this.Btn_cancelar = new Guna.UI2.WinForms.Guna2Button();
+            this.Btn_entrar = new Guna.UI2.WinForms.Guna2Button();
+            this.Num_periodo = new System.Windows.Forms.NumericUpDown();
+            this.Txt_ruta = new System.Windows.Forms.TextBox();
+            this.BtnExaminar = new Guna.UI2.WinForms.Guna2Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.Cbomes = new System.Windows.Forms.ComboBox();
             this.Lbl_correlativo = new System.Windows.Forms.Label();
             this.Dgv_Importar = new System.Windows.Forms.DataGridView();
             this.inv_1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,16 +82,6 @@ namespace CapaPresentacion.Vista
             this.inv_17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.inv_18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbl_idmes = new System.Windows.Forms.Label();
-            this.Panel_excel = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.Btn_entrar = new Guna.UI2.WinForms.Guna2Button();
-            this.Num_periodo = new System.Windows.Forms.NumericUpDown();
-            this.Txt_ruta = new System.Windows.Forms.TextBox();
-            this.BtnExaminar = new Guna.UI2.WinForms.Guna2Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.Cbomes = new System.Windows.Forms.ComboBox();
             this.Lbl_cantidad = new System.Windows.Forms.Label();
             this.Btn_importExcel = new Guna.UI2.WinForms.Guna2Button();
             this.Group_calculo = new System.Windows.Forms.GroupBox();
@@ -88,24 +97,15 @@ namespace CapaPresentacion.Vista
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tableLayout_botones.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Dgv_Importar)).BeginInit();
             this.Panel_excel.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Pict_error)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pict_check)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Num_periodo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_Importar)).BeginInit();
             this.Group_calculo.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // Btnprueba
-            // 
-            this.Btnprueba.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Btnprueba.Location = new System.Drawing.Point(887, 335);
-            this.Btnprueba.Name = "Btnprueba";
-            this.Btnprueba.Size = new System.Drawing.Size(47, 23);
-            this.Btnprueba.TabIndex = 8;
-            this.Btnprueba.Text = "button1";
-            this.Btnprueba.UseVisualStyleBackColor = true;
-            this.Btnprueba.Visible = false;
-            this.Btnprueba.Click += new System.EventHandler(this.Btnprueba_Click);
             // 
             // tableLayout_botones
             // 
@@ -196,10 +196,10 @@ namespace CapaPresentacion.Vista
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(233)))), ((int)(((byte)(236)))));
-            this.panel2.Controls.Add(this.Lbl_correlativo);
             this.panel2.Controls.Add(this.Dgv_Importar);
-            this.panel2.Controls.Add(this.lbl_idmes);
             this.panel2.Controls.Add(this.Panel_excel);
+            this.panel2.Controls.Add(this.Lbl_correlativo);
+            this.panel2.Controls.Add(this.lbl_idmes);
             this.panel2.Controls.Add(this.Lbl_cantidad);
             this.panel2.Controls.Add(this.Btn_importExcel);
             this.panel2.Controls.Add(this.Group_calculo);
@@ -207,6 +207,293 @@ namespace CapaPresentacion.Vista
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(841, 450);
             this.panel2.TabIndex = 0;
+            // 
+            // Panel_excel
+            // 
+            this.Panel_excel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Panel_excel.BackColor = System.Drawing.Color.Transparent;
+            this.Panel_excel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
+            this.Panel_excel.BorderRadius = 3;
+            this.Panel_excel.BorderThickness = 1;
+            this.Panel_excel.Controls.Add(this.Lbl_ruc);
+            this.Panel_excel.Controls.Add(this.Lbl_mes);
+            this.Panel_excel.Controls.Add(this.Lbl_ano);
+            this.Panel_excel.Controls.Add(this.panel1);
+            this.Panel_excel.Controls.Add(this.Pict_error);
+            this.Panel_excel.Controls.Add(this.Pict_check);
+            this.Panel_excel.Controls.Add(this.Lbl_nombrefile);
+            this.Panel_excel.Controls.Add(this.Btn_cancelar);
+            this.Panel_excel.Controls.Add(this.Btn_entrar);
+            this.Panel_excel.Controls.Add(this.Num_periodo);
+            this.Panel_excel.Controls.Add(this.Txt_ruta);
+            this.Panel_excel.Controls.Add(this.BtnExaminar);
+            this.Panel_excel.Controls.Add(this.label4);
+            this.Panel_excel.Controls.Add(this.label5);
+            this.Panel_excel.Controls.Add(this.label6);
+            this.Panel_excel.Controls.Add(this.Cbomes);
+            this.Panel_excel.Location = new System.Drawing.Point(199, 71);
+            this.Panel_excel.Name = "Panel_excel";
+            this.Panel_excel.ShadowDecoration.Color = System.Drawing.Color.DimGray;
+            this.Panel_excel.ShadowDecoration.Depth = 20;
+            this.Panel_excel.ShadowDecoration.Enabled = true;
+            this.Panel_excel.ShadowDecoration.Parent = this.Panel_excel;
+            this.Panel_excel.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.Panel_excel.Size = new System.Drawing.Size(622, 306);
+            this.Panel_excel.TabIndex = 8;
+            this.Panel_excel.Visible = false;
+            // 
+            // Lbl_ruc
+            // 
+            this.Lbl_ruc.AutoSize = true;
+            this.Lbl_ruc.Location = new System.Drawing.Point(37, 235);
+            this.Lbl_ruc.Name = "Lbl_ruc";
+            this.Lbl_ruc.Size = new System.Drawing.Size(22, 13);
+            this.Lbl_ruc.TabIndex = 26;
+            this.Lbl_ruc.Text = "ruc";
+            this.Lbl_ruc.Visible = false;
+            // 
+            // Lbl_mes
+            // 
+            this.Lbl_mes.AutoSize = true;
+            this.Lbl_mes.Location = new System.Drawing.Point(37, 273);
+            this.Lbl_mes.Name = "Lbl_mes";
+            this.Lbl_mes.Size = new System.Drawing.Size(26, 13);
+            this.Lbl_mes.TabIndex = 25;
+            this.Lbl_mes.Text = "mes";
+            this.Lbl_mes.Visible = false;
+            // 
+            // Lbl_ano
+            // 
+            this.Lbl_ano.AutoSize = true;
+            this.Lbl_ano.Location = new System.Drawing.Point(37, 255);
+            this.Lbl_ano.Name = "Lbl_ano";
+            this.Lbl_ano.Size = new System.Drawing.Size(25, 13);
+            this.Lbl_ano.TabIndex = 25;
+            this.Lbl_ano.Text = "año";
+            this.Lbl_ano.Visible = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.Lbl_menTres);
+            this.panel1.Controls.Add(this.Lbl_menDos);
+            this.panel1.Controls.Add(this.Lbl_menUno);
+            this.panel1.Location = new System.Drawing.Point(74, 135);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(532, 70);
+            this.panel1.TabIndex = 24;
+            // 
+            // Lbl_menTres
+            // 
+            this.Lbl_menTres.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Lbl_menTres.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_menTres.ForeColor = System.Drawing.Color.Crimson;
+            this.Lbl_menTres.Location = new System.Drawing.Point(0, 36);
+            this.Lbl_menTres.Name = "Lbl_menTres";
+            this.Lbl_menTres.Size = new System.Drawing.Size(532, 18);
+            this.Lbl_menTres.TabIndex = 21;
+            this.Lbl_menTres.Text = "3";
+            // 
+            // Lbl_menDos
+            // 
+            this.Lbl_menDos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Lbl_menDos.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_menDos.ForeColor = System.Drawing.Color.Crimson;
+            this.Lbl_menDos.Location = new System.Drawing.Point(0, 18);
+            this.Lbl_menDos.Name = "Lbl_menDos";
+            this.Lbl_menDos.Size = new System.Drawing.Size(532, 18);
+            this.Lbl_menDos.TabIndex = 21;
+            this.Lbl_menDos.Text = "2";
+            // 
+            // Lbl_menUno
+            // 
+            this.Lbl_menUno.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Lbl_menUno.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_menUno.ForeColor = System.Drawing.Color.Crimson;
+            this.Lbl_menUno.Location = new System.Drawing.Point(0, 0);
+            this.Lbl_menUno.Name = "Lbl_menUno";
+            this.Lbl_menUno.Size = new System.Drawing.Size(532, 18);
+            this.Lbl_menUno.TabIndex = 21;
+            this.Lbl_menUno.Text = "1";
+            // 
+            // Pict_error
+            // 
+            this.Pict_error.Image = ((System.Drawing.Image)(resources.GetObject("Pict_error.Image")));
+            this.Pict_error.Location = new System.Drawing.Point(581, 105);
+            this.Pict_error.Name = "Pict_error";
+            this.Pict_error.Size = new System.Drawing.Size(25, 25);
+            this.Pict_error.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.Pict_error.TabIndex = 23;
+            this.Pict_error.TabStop = false;
+            this.toolTip1.SetToolTip(this.Pict_error, "Error de archivo TXt");
+            this.Pict_error.Visible = false;
+            // 
+            // Pict_check
+            // 
+            this.Pict_check.Image = ((System.Drawing.Image)(resources.GetObject("Pict_check.Image")));
+            this.Pict_check.Location = new System.Drawing.Point(581, 105);
+            this.Pict_check.Name = "Pict_check";
+            this.Pict_check.Size = new System.Drawing.Size(25, 25);
+            this.Pict_check.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.Pict_check.TabIndex = 22;
+            this.Pict_check.TabStop = false;
+            this.toolTip1.SetToolTip(this.Pict_check, "Excelente!");
+            this.Pict_check.Visible = false;
+            // 
+            // Lbl_nombrefile
+            // 
+            this.Lbl_nombrefile.AutoSize = true;
+            this.Lbl_nombrefile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_nombrefile.ForeColor = System.Drawing.Color.Black;
+            this.Lbl_nombrefile.Location = new System.Drawing.Point(140, 271);
+            this.Lbl_nombrefile.Name = "Lbl_nombrefile";
+            this.Lbl_nombrefile.Size = new System.Drawing.Size(56, 15);
+            this.Lbl_nombrefile.TabIndex = 21;
+            this.Lbl_nombrefile.Text = "nombre";
+            this.Lbl_nombrefile.Visible = false;
+            // 
+            // Btn_cancelar
+            // 
+            this.Btn_cancelar.BorderColor = System.Drawing.Color.DimGray;
+            this.Btn_cancelar.BorderRadius = 3;
+            this.Btn_cancelar.BorderThickness = 1;
+            this.Btn_cancelar.CheckedState.Parent = this.Btn_cancelar;
+            this.Btn_cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_cancelar.CustomImages.Parent = this.Btn_cancelar;
+            this.Btn_cancelar.FillColor = System.Drawing.Color.Firebrick;
+            this.Btn_cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_cancelar.ForeColor = System.Drawing.Color.White;
+            this.Btn_cancelar.HoverState.Parent = this.Btn_cancelar;
+            this.Btn_cancelar.Location = new System.Drawing.Point(327, 221);
+            this.Btn_cancelar.Name = "Btn_cancelar";
+            this.Btn_cancelar.ShadowDecoration.Parent = this.Btn_cancelar;
+            this.Btn_cancelar.Size = new System.Drawing.Size(152, 27);
+            this.Btn_cancelar.TabIndex = 20;
+            this.Btn_cancelar.Text = "Cancelar";
+            this.Btn_cancelar.Click += new System.EventHandler(this.Btn_cancelar_Click);
+            // 
+            // Btn_entrar
+            // 
+            this.Btn_entrar.BorderColor = System.Drawing.Color.CadetBlue;
+            this.Btn_entrar.BorderRadius = 3;
+            this.Btn_entrar.BorderThickness = 1;
+            this.Btn_entrar.CheckedState.Parent = this.Btn_entrar;
+            this.Btn_entrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_entrar.CustomImages.Parent = this.Btn_entrar;
+            this.Btn_entrar.Enabled = false;
+            this.Btn_entrar.FillColor = System.Drawing.Color.LightSkyBlue;
+            this.Btn_entrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_entrar.ForeColor = System.Drawing.Color.White;
+            this.Btn_entrar.HoverState.Parent = this.Btn_entrar;
+            this.Btn_entrar.Location = new System.Drawing.Point(143, 221);
+            this.Btn_entrar.Name = "Btn_entrar";
+            this.Btn_entrar.ShadowDecoration.Parent = this.Btn_entrar;
+            this.Btn_entrar.Size = new System.Drawing.Size(152, 27);
+            this.Btn_entrar.TabIndex = 20;
+            this.Btn_entrar.Text = "Importar";
+            this.Btn_entrar.Click += new System.EventHandler(this.Btn_entrar_Click);
+            // 
+            // Num_periodo
+            // 
+            this.Num_periodo.BackColor = System.Drawing.Color.White;
+            this.Num_periodo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Num_periodo.Enabled = false;
+            this.Num_periodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Num_periodo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Num_periodo.Location = new System.Drawing.Point(158, 35);
+            this.Num_periodo.Maximum = new decimal(new int[] {
+            2032,
+            0,
+            0,
+            0});
+            this.Num_periodo.Minimum = new decimal(new int[] {
+            2021,
+            0,
+            0,
+            0});
+            this.Num_periodo.Name = "Num_periodo";
+            this.Num_periodo.ReadOnly = true;
+            this.Num_periodo.Size = new System.Drawing.Size(107, 20);
+            this.Num_periodo.TabIndex = 19;
+            this.Num_periodo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Num_periodo.Value = new decimal(new int[] {
+            2021,
+            0,
+            0,
+            0});
+            // 
+            // Txt_ruta
+            // 
+            this.Txt_ruta.BackColor = System.Drawing.Color.White;
+            this.Txt_ruta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Txt_ruta.Location = new System.Drawing.Point(74, 110);
+            this.Txt_ruta.Name = "Txt_ruta";
+            this.Txt_ruta.ReadOnly = true;
+            this.Txt_ruta.Size = new System.Drawing.Size(464, 20);
+            this.Txt_ruta.TabIndex = 18;
+            // 
+            // BtnExaminar
+            // 
+            this.BtnExaminar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.BtnExaminar.BorderRadius = 3;
+            this.BtnExaminar.BorderThickness = 1;
+            this.BtnExaminar.CheckedState.Parent = this.BtnExaminar;
+            this.BtnExaminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnExaminar.CustomImages.Parent = this.BtnExaminar;
+            this.BtnExaminar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.BtnExaminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.BtnExaminar.ForeColor = System.Drawing.Color.White;
+            this.BtnExaminar.HoverState.Parent = this.BtnExaminar;
+            this.BtnExaminar.Image = ((System.Drawing.Image)(resources.GetObject("BtnExaminar.Image")));
+            this.BtnExaminar.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.BtnExaminar.ImageSize = new System.Drawing.Size(21, 21);
+            this.BtnExaminar.Location = new System.Drawing.Point(544, 103);
+            this.BtnExaminar.Name = "BtnExaminar";
+            this.BtnExaminar.ShadowDecoration.Parent = this.BtnExaminar;
+            this.BtnExaminar.Size = new System.Drawing.Size(35, 27);
+            this.BtnExaminar.TabIndex = 17;
+            this.BtnExaminar.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.BtnExaminar.Click += new System.EventHandler(this.BtnExaminar_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(43, 111);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(29, 15);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "Url :";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(43, 36);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(59, 15);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Periodo : ";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(43, 72);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(110, 15);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Selecciones Mes : ";
+            // 
+            // Cbomes
+            // 
+            this.Cbomes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Cbomes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cbomes.FormattingEnabled = true;
+            this.Cbomes.Location = new System.Drawing.Point(158, 69);
+            this.Cbomes.Name = "Cbomes";
+            this.Cbomes.Size = new System.Drawing.Size(127, 23);
+            this.Cbomes.TabIndex = 13;
+            this.Cbomes.SelectedIndexChanged += new System.EventHandler(this.Cbomes_SelectedIndexChanged);
             // 
             // Lbl_correlativo
             // 
@@ -227,8 +514,8 @@ namespace CapaPresentacion.Vista
             this.Dgv_Importar.AllowUserToDeleteRows = false;
             this.Dgv_Importar.AllowUserToResizeColumns = false;
             this.Dgv_Importar.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.Dgv_Importar.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle41.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.Dgv_Importar.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle41;
             this.Dgv_Importar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -237,14 +524,14 @@ namespace CapaPresentacion.Vista
             this.Dgv_Importar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Dgv_Importar.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.Dgv_Importar.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Dgv_Importar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle42.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle42.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle42.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            dataGridViewCellStyle42.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle42.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle42.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_Importar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle42;
             this.Dgv_Importar.ColumnHeadersHeight = 40;
             this.Dgv_Importar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.Dgv_Importar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -266,15 +553,15 @@ namespace CapaPresentacion.Vista
             this.inv_16,
             this.inv_17,
             this.inv_18});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(0, 1, 0, 1);
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Dgv_Importar.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle44.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle44.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle44.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle44.Padding = new System.Windows.Forms.Padding(0, 1, 0, 1);
+            dataGridViewCellStyle44.SelectionBackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle44.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle44.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_Importar.DefaultCellStyle = dataGridViewCellStyle44;
             this.Dgv_Importar.EnableHeadersVisualStyles = false;
             this.Dgv_Importar.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(234)))), ((int)(((byte)(234)))));
             this.Dgv_Importar.Location = new System.Drawing.Point(3, 69);
@@ -282,15 +569,15 @@ namespace CapaPresentacion.Vista
             this.Dgv_Importar.Name = "Dgv_Importar";
             this.Dgv_Importar.ReadOnly = true;
             this.Dgv_Importar.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(0, 0, 1, 0);
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Dgv_Importar.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle45.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle45.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle45.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle45.Padding = new System.Windows.Forms.Padding(0, 0, 1, 0);
+            dataGridViewCellStyle45.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle45.SelectionForeColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle45.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_Importar.RowHeadersDefaultCellStyle = dataGridViewCellStyle45;
             this.Dgv_Importar.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.Dgv_Importar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Dgv_Importar.Size = new System.Drawing.Size(835, 378);
@@ -399,8 +686,8 @@ namespace CapaPresentacion.Vista
             // inv_15
             // 
             this.inv_15.DataPropertyName = "invt_15";
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.inv_15.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle43.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.inv_15.DefaultCellStyle = dataGridViewCellStyle43;
             this.inv_15.HeaderText = "15";
             this.inv_15.Name = "inv_15";
             this.inv_15.ReadOnly = true;
@@ -436,175 +723,7 @@ namespace CapaPresentacion.Vista
             this.lbl_idmes.Size = new System.Drawing.Size(37, 13);
             this.lbl_idmes.TabIndex = 9;
             this.lbl_idmes.Text = "id mes";
-            // 
-            // Panel_excel
-            // 
-            this.Panel_excel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Panel_excel.BackColor = System.Drawing.Color.Transparent;
-            this.Panel_excel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
-            this.Panel_excel.BorderRadius = 3;
-            this.Panel_excel.BorderThickness = 1;
-            this.Panel_excel.Controls.Add(this.guna2Button1);
-            this.Panel_excel.Controls.Add(this.Btn_entrar);
-            this.Panel_excel.Controls.Add(this.Num_periodo);
-            this.Panel_excel.Controls.Add(this.Txt_ruta);
-            this.Panel_excel.Controls.Add(this.BtnExaminar);
-            this.Panel_excel.Controls.Add(this.label4);
-            this.Panel_excel.Controls.Add(this.label5);
-            this.Panel_excel.Controls.Add(this.label6);
-            this.Panel_excel.Controls.Add(this.Cbomes);
-            this.Panel_excel.Location = new System.Drawing.Point(199, 72);
-            this.Panel_excel.Name = "Panel_excel";
-            this.Panel_excel.ShadowDecoration.Color = System.Drawing.Color.DimGray;
-            this.Panel_excel.ShadowDecoration.Depth = 20;
-            this.Panel_excel.ShadowDecoration.Enabled = true;
-            this.Panel_excel.ShadowDecoration.Parent = this.Panel_excel;
-            this.Panel_excel.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.Panel_excel.Size = new System.Drawing.Size(612, 306);
-            this.Panel_excel.TabIndex = 8;
-            this.Panel_excel.Visible = false;
-            // 
-            // guna2Button1
-            // 
-            this.guna2Button1.BorderColor = System.Drawing.Color.DimGray;
-            this.guna2Button1.BorderRadius = 3;
-            this.guna2Button1.BorderThickness = 1;
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.FillColor = System.Drawing.Color.Firebrick;
-            this.guna2Button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(322, 179);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(152, 27);
-            this.guna2Button1.TabIndex = 20;
-            this.guna2Button1.Text = "Cancelar";
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
-            // 
-            // Btn_entrar
-            // 
-            this.Btn_entrar.BorderColor = System.Drawing.Color.CadetBlue;
-            this.Btn_entrar.BorderRadius = 3;
-            this.Btn_entrar.BorderThickness = 1;
-            this.Btn_entrar.CheckedState.Parent = this.Btn_entrar;
-            this.Btn_entrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Btn_entrar.CustomImages.Parent = this.Btn_entrar;
-            this.Btn_entrar.FillColor = System.Drawing.Color.LightSkyBlue;
-            this.Btn_entrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_entrar.ForeColor = System.Drawing.Color.White;
-            this.Btn_entrar.HoverState.Parent = this.Btn_entrar;
-            this.Btn_entrar.Location = new System.Drawing.Point(138, 179);
-            this.Btn_entrar.Name = "Btn_entrar";
-            this.Btn_entrar.ShadowDecoration.Parent = this.Btn_entrar;
-            this.Btn_entrar.Size = new System.Drawing.Size(152, 27);
-            this.Btn_entrar.TabIndex = 20;
-            this.Btn_entrar.Text = "Importar";
-            this.Btn_entrar.Click += new System.EventHandler(this.Btn_entrar_Click);
-            // 
-            // Num_periodo
-            // 
-            this.Num_periodo.BackColor = System.Drawing.Color.White;
-            this.Num_periodo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Num_periodo.Enabled = false;
-            this.Num_periodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Num_periodo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Num_periodo.Location = new System.Drawing.Point(155, 35);
-            this.Num_periodo.Maximum = new decimal(new int[] {
-            2032,
-            0,
-            0,
-            0});
-            this.Num_periodo.Minimum = new decimal(new int[] {
-            2021,
-            0,
-            0,
-            0});
-            this.Num_periodo.Name = "Num_periodo";
-            this.Num_periodo.ReadOnly = true;
-            this.Num_periodo.Size = new System.Drawing.Size(107, 20);
-            this.Num_periodo.TabIndex = 19;
-            this.Num_periodo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.Num_periodo.Value = new decimal(new int[] {
-            2021,
-            0,
-            0,
-            0});
-            // 
-            // Txt_ruta
-            // 
-            this.Txt_ruta.BackColor = System.Drawing.Color.White;
-            this.Txt_ruta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Txt_ruta.Location = new System.Drawing.Point(69, 110);
-            this.Txt_ruta.Name = "Txt_ruta";
-            this.Txt_ruta.ReadOnly = true;
-            this.Txt_ruta.Size = new System.Drawing.Size(464, 20);
-            this.Txt_ruta.TabIndex = 18;
-            // 
-            // BtnExaminar
-            // 
-            this.BtnExaminar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.BtnExaminar.BorderRadius = 3;
-            this.BtnExaminar.BorderThickness = 1;
-            this.BtnExaminar.CheckedState.Parent = this.BtnExaminar;
-            this.BtnExaminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnExaminar.CustomImages.Parent = this.BtnExaminar;
-            this.BtnExaminar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            this.BtnExaminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.BtnExaminar.ForeColor = System.Drawing.Color.White;
-            this.BtnExaminar.HoverState.Parent = this.BtnExaminar;
-            this.BtnExaminar.Image = ((System.Drawing.Image)(resources.GetObject("BtnExaminar.Image")));
-            this.BtnExaminar.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.BtnExaminar.ImageSize = new System.Drawing.Size(21, 21);
-            this.BtnExaminar.Location = new System.Drawing.Point(539, 103);
-            this.BtnExaminar.Name = "BtnExaminar";
-            this.BtnExaminar.ShadowDecoration.Parent = this.BtnExaminar;
-            this.BtnExaminar.Size = new System.Drawing.Size(35, 27);
-            this.BtnExaminar.TabIndex = 17;
-            this.BtnExaminar.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.BtnExaminar.Click += new System.EventHandler(this.BtnExaminar_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(38, 111);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(29, 15);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "Url :";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(38, 36);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(59, 15);
-            this.label5.TabIndex = 15;
-            this.label5.Text = "Periodo : ";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(38, 72);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(110, 15);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "Selecciones Mes : ";
-            // 
-            // Cbomes
-            // 
-            this.Cbomes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Cbomes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cbomes.FormattingEnabled = true;
-            this.Cbomes.Location = new System.Drawing.Point(155, 69);
-            this.Cbomes.Name = "Cbomes";
-            this.Cbomes.Size = new System.Drawing.Size(127, 23);
-            this.Cbomes.TabIndex = 13;
+            this.lbl_idmes.Visible = false;
             // 
             // Lbl_cantidad
             // 
@@ -732,7 +851,6 @@ namespace CapaPresentacion.Vista
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(233)))), ((int)(((byte)(236)))));
             this.guna2Panel1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
             this.guna2Panel1.BorderThickness = 1;
-            this.guna2Panel1.Controls.Add(this.Btnprueba);
             this.guna2Panel1.Controls.Add(this.panel2);
             this.guna2Panel1.Controls.Add(this.tableLayout_botones);
             this.guna2Panel1.Controls.Add(this.shapeContainer1);
@@ -778,10 +896,13 @@ namespace CapaPresentacion.Vista
             this.tableLayout_botones.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Dgv_Importar)).EndInit();
             this.Panel_excel.ResumeLayout(false);
             this.Panel_excel.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Pict_error)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pict_check)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Num_periodo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_Importar)).EndInit();
             this.Group_calculo.ResumeLayout(false);
             this.Group_calculo.PerformLayout();
             this.guna2Panel1.ResumeLayout(false);
@@ -795,7 +916,6 @@ namespace CapaPresentacion.Vista
         private System.Windows.Forms.DataGridView Dgv_Importar;
         private Guna.UI2.WinForms.Guna2Button Btn_importExcel;
         private System.Windows.Forms.Label Lbl_cantidad;
-        private System.Windows.Forms.Button Btnprueba;
         private Guna.UI2.WinForms.Guna2Button Btn_limpiar;
         private Guna.UI2.WinForms.Guna2Button Btn_procesaSalida;
         private Guna.UI2.WinForms.Guna2Button Btn_procesaEntrada;
@@ -817,7 +937,7 @@ namespace CapaPresentacion.Vista
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox Cbomes;
         private System.Windows.Forms.NumericUpDown Num_periodo;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button Btn_cancelar;
         private Guna.UI2.WinForms.Guna2Button Btn_entrar;
         private System.Windows.Forms.Label lbl_idmes;
         private System.Windows.Forms.ToolTip toolTip1;
@@ -840,5 +960,15 @@ namespace CapaPresentacion.Vista
         private System.Windows.Forms.DataGridViewTextBoxColumn inv_17;
         private System.Windows.Forms.DataGridViewTextBoxColumn inv_18;
         private System.Windows.Forms.Label Lbl_correlativo;
+        private System.Windows.Forms.Label Lbl_menUno;
+        private System.Windows.Forms.PictureBox Pict_check;
+        private System.Windows.Forms.Label Lbl_nombrefile;
+        private System.Windows.Forms.PictureBox Pict_error;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label Lbl_menTres;
+        private System.Windows.Forms.Label Lbl_menDos;
+        private System.Windows.Forms.Label Lbl_mes;
+        private System.Windows.Forms.Label Lbl_ano;
+        private System.Windows.Forms.Label Lbl_ruc;
     }
 }
