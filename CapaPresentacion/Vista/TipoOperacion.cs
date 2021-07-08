@@ -23,7 +23,7 @@ namespace CapaPresentacion.Vista
             InitializeComponent();
             dtipoOper = new DTipoOperacion();
             rtipoOper = new RTipoOperacion();
-            //Show_TipoOper();
+            Show_TipoOper();
             //Tabla();
         }
 
@@ -36,12 +36,13 @@ namespace CapaPresentacion.Vista
                 tipoOper.btnmodificar.Visible = false;
                 tipoOper.ShowDialog();
                 Show_TipoOper();
+
             }
         }
 
         private void Show_TipoOper()
         {
-            Dgv_tipoOper.DataSource = rtipoOper.Getdata(dtipoOper);
+            Dgv_tipoOper.DataSource = rtipoOper.Getdata(null);
             
         }
 
@@ -106,7 +107,7 @@ namespace CapaPresentacion.Vista
                         dtipoOper.Descripcion = Dgv_tipoOper.CurrentRow.Cells[3].Value.ToString();
                         result = rtipoOper.Delete(dtipoOper);
 
-                        if (result.Contains("¡Eliminar"))
+                        if (result.Contains("Se Elimino"))
                         {
                             Msg.M_info(result);
                             Show_TipoOper();

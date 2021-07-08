@@ -11,11 +11,7 @@ alter PROC manto.SP_AddEmpresa
 @regimen varchar(80),
 @estado varchar(15)
 AS BEGIN
-	SET @id_empresa = (SELECT count(e.id_empresa) FROM manto.Empresa e)
-	IF(@id_empresa = 0)
-		SET @id_empresa = 1	
-	ELSE
-		SET @id_empresa = (SELECT MAX(e.id_empresa)+1 FROM manto.Empresa e)
+	set @id_empresa = (SELECT isnull(MAX(e.id_empresa), 0 )+1 FROM  manto.Empresa e)
 
 INSERT INTO manto.Empresa(id_empresa, ruc, razon_social, nombre_comercial, direccion, domicilio_fiscal, regimen, estado)
 VALUES(@id_empresa, @ruc, @razon_social, @nombre_comercial, @direccion, @domicilio_fiscal, @regimen, @estado)
@@ -55,17 +51,15 @@ e.domicilio_fiscal, e.regimen FROM manto.Empresa e WHERE e.estado = @estado
 END
 GO
 
+exec manto.SP_ShowEmpresa 'ACTIVO'
+
 --	PROCEDIMIENTO PARA CLIENTE PROVEEDOR
-CREATE PROC manto.SP_AddCliProv
+ALTER PROC manto.SP_AddCliProv
 @idcliprov int = null,
 @nom_prov varchar(60), 
 @ruc char(11)
 AS BEGIN
-	SET @idcliprov = (SELECT count(c.idcliprov) FROM manto.clienteProv c)
-	IF(@idcliprov = 0)
-		SET @idcliprov = 1	
-	ELSE
-		SET @idcliprov = (SELECT MAX(c.idcliprov)+1 FROM manto.clienteProv c)
+	set @idcliprov = (SELECT isnull(MAX(c.idcliprov), 0 )+1 FROM manto.clienteProv c)
 
 INSERT INTO manto.clienteProv(idcliprov, nom_prov, ruc)
 VALUES(@idcliprov, @nom_prov, @ruc)
@@ -98,16 +92,12 @@ END
 GO
 
 -- PROCEDIMIENTO PARA TIPO DE OPERACION
-CREATE PROC manto.SP_AddTipoOper
+ALTER PROC manto.SP_AddTipoOper
 @idtipOper int = null,
 @codigo char(11), 
 @descripcion varchar(100)
 AS BEGIN
-	SET @idtipOper = (SELECT count(t.idTipoOper) FROM manto.TipoOperacion t)
-	IF(@idtipOper = 0)
-		SET @idtipOper = 1	
-	ELSE
-		SET @idtipOper = (SELECT MAX(t.idTipoOper)+1 FROM manto.TipoOperacion t)
+	set @idtipOper = (SELECT isnull(MAX(t.idTipoOper), 0 )+1 FROM manto.TipoOperacion t)
 
 INSERT INTO manto.TipoOperacion(idTipoOper, codigo, descripcion)
 VALUES(@idtipOper, @codigo, @descripcion)
@@ -139,7 +129,7 @@ END
 GO
 
 -- PROCEDIMIENTO PARA MONEDA
-CREATE PROC manto.SP_AddMoneda
+ALTER PROC manto.SP_AddMoneda
 @idmoneda int = null,
 @codigo char(11),
 @nom_moneda varchar(10),
@@ -147,12 +137,7 @@ CREATE PROC manto.SP_AddMoneda
 @simbolo varchar(3),
 @descripcion varchar(100)
 AS BEGIN
-	SET @idmoneda = (SELECT count(m.idMoneda) FROM manto.Moneda m)
-	IF(@idmoneda = 0)
-		SET @idmoneda = 1	
-	ELSE
-		SET @idmoneda = (SELECT MAX(m.idMoneda)+1 FROM manto.Moneda m)
-
+	set @idmoneda = (SELECT isnull(MAX(m.idMoneda), 0 )+1 FROM manto.Moneda m)
 INSERT INTO manto.Moneda(idMoneda, codigo, nom_moneda, abrev, simbolo, descripcion)
 VALUES(@idmoneda, @codigo, @nom_moneda,@abrev,@simbolo,@descripcion)
 END
@@ -188,17 +173,12 @@ END
 GO
 
 -- PROCEDIMIENTO PARA DOCUMENTO
-CREATE PROC manto.SP_AddDocumento
+ALTER PROC manto.SP_AddDocumento
 @iddoc int = null,
 @codigo char(11), 
 @descripcion varchar(100)
 AS BEGIN
-	SET @iddoc = (SELECT count(d.idTipoDoc) FROM manto.TipoDocumento d)
-	IF(@iddoc = 0)
-		SET @iddoc = 1	
-	ELSE
-		SET @iddoc = (SELECT MAX(d.idTipoDoc)+1 FROM manto.TipoDocumento d)
-
+	set @iddoc = (SELECT isnull(MAX(d.idTipoDoc), 0 )+1 FROM manto.TipoDocumento d)
 INSERT INTO manto.TipoDocumento(idTipoDoc, codigo, descripcion)
 VALUES(@iddoc, @codigo, @descripcion)
 END
@@ -223,17 +203,13 @@ END
 GO
 
 -- PROCEDIMIENTO PARA UNIDAD DE MEDIDA
-CREATE PROC manto.sp_AddUnidadMedida
+ALTER PROC manto.sp_AddUnidadMedida
 @idUnidadMedida int = null,
 @codigo char(11), 
 @abrev varchar(5),
 @descripcion varchar(60)
 AS BEGIN
-	SET @idUnidadMedida = (SELECT count(um.idUnidadMedida) FROM manto.UnidadMedida um)
-	IF(@idUnidadMedida = 0)
-		SET @idUnidadMedida = 1	
-	ELSE
-		SET @idUnidadMedida = (SELECT MAX(um.idUnidadMedida)+1 FROM manto.UnidadMedida um)
+	set @idUnidadMedida = (SELECT isnull(MAX(um.idUnidadMedida), 0 )+1 FROM manto.UnidadMedida um)
 
 INSERT INTO manto.UnidadMedida(idUnidadMedida, codigo, abrev, descripcion)
 VALUES(@idUnidadMedida, @codigo, @abrev, @descripcion)
@@ -259,6 +235,14 @@ AS BEGIN
 SELECT  u.idUnidadMedida,u.codigo,u.abrev,u.descripcion FROM manto.UnidadMedida u
 END
 GO
+
+--PROCEDIMIENTO PARA ELIMINAR UNIDAD MEDIDA
+CREATE PROC manto.SP_DeleteUnidMed
+@idUnidadMedida int
+AS BEGIN
+	DELETE from UnidadMedida where idUnidadMedida=@idUnidadMedida
+END
+go
 
 
 /*  PROCEDIMIENTO DE INICIO DE SESION  */
@@ -347,7 +331,11 @@ END
 GO
 
 -- PROCEDIMIENTO PARA VALIDAR INVENTARIO
+<<<<<<< HEAD
 ALTER PROC invent.SP_ValidarInventario
+=======
+alter proc invent.SP_ValidarInventario
+>>>>>>> dc9706ddddac1ea927540600f1d60f7639738ba0
 @idempresa int,
 @idmes tinyint,
 @idperiodo smallint,

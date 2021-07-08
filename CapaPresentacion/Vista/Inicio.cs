@@ -117,5 +117,10 @@ namespace CapaPresentacion.Vista
             string hora = DateTime.Now.ToLongTimeString();
             tlblhora.Text = fecha + "   |   " + hora;
         }
+
+        private void BtnUnidMed_Click(object sender, EventArgs e)
+        {
+            OpenFormFill<FrmUnidadMedida>();
+        }
     }
 }

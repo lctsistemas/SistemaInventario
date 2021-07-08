@@ -53,12 +53,14 @@ namespace CapaPresentacion.Vista
             this.Btn_cliente_pro = new System.Windows.Forms.Button();
             this.Btn_tipooperacion = new System.Windows.Forms.Button();
             this.Btn_moneda = new System.Windows.Forms.Button();
-            this.Btn_tipdocumento = new System.Windows.Forms.Button();
             this.Panel_titulo = new System.Windows.Forms.Panel();
             this.lbluser = new System.Windows.Forms.Label();
             this.Lblempresa = new System.Windows.Forms.Label();
             this.Picture_user = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.Btn_tipdocumento = new System.Windows.Forms.Button();
+            this.BtnUnidMed = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.PanelMenu.SuspendLayout();
             this.Panel_contenedor.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -171,25 +173,27 @@ namespace CapaPresentacion.Vista
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 6;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66543F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66543F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66543F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66543F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66543F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.67286F));
+            this.tableLayoutPanel1.ColumnCount = 7;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.24396F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.24396F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.24396F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.24396F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.24396F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.25031F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.52991F));
             this.tableLayoutPanel1.Controls.Add(this.Btn_entrada, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.button6, 5, 0);
             this.tableLayoutPanel1.Controls.Add(this.Btn_mante, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.Btn_iv_fisico, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.Btn_iv_valorizado, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.button5, 4, 0);
+            this.tableLayoutPanel1.Controls.Add(this.button2, 6, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(542, 59);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(657, 59);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // Btn_entrada
@@ -201,7 +205,7 @@ namespace CapaPresentacion.Vista
             this.Btn_entrada.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Btn_entrada.Location = new System.Drawing.Point(3, 3);
             this.Btn_entrada.Name = "Btn_entrada";
-            this.Btn_entrada.Size = new System.Drawing.Size(84, 53);
+            this.Btn_entrada.Size = new System.Drawing.Size(87, 53);
             this.Btn_entrada.TabIndex = 1;
             this.Btn_entrada.Text = "Importar";
             this.Btn_entrada.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -213,9 +217,9 @@ namespace CapaPresentacion.Vista
             // 
             this.button6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(453, 3);
+            this.button6.Location = new System.Drawing.Point(468, 3);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(86, 53);
+            this.button6.Size = new System.Drawing.Size(87, 53);
             this.button6.TabIndex = 4;
             this.button6.Text = "Costo de Venta";
             this.button6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -228,9 +232,9 @@ namespace CapaPresentacion.Vista
             this.Btn_mante.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_mante.Image = ((System.Drawing.Image)(resources.GetObject("Btn_mante.Image")));
             this.Btn_mante.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Btn_mante.Location = new System.Drawing.Point(93, 3);
+            this.Btn_mante.Location = new System.Drawing.Point(96, 3);
             this.Btn_mante.Name = "Btn_mante";
-            this.Btn_mante.Size = new System.Drawing.Size(84, 53);
+            this.Btn_mante.Size = new System.Drawing.Size(87, 53);
             this.Btn_mante.TabIndex = 2;
             this.Btn_mante.Text = "Mantenimiento Inventario";
             this.Btn_mante.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -243,9 +247,9 @@ namespace CapaPresentacion.Vista
             this.Btn_iv_fisico.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_iv_fisico.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Btn_iv_fisico.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_iv_fisico.Location = new System.Drawing.Point(183, 3);
+            this.Btn_iv_fisico.Location = new System.Drawing.Point(189, 3);
             this.Btn_iv_fisico.Name = "Btn_iv_fisico";
-            this.Btn_iv_fisico.Size = new System.Drawing.Size(84, 53);
+            this.Btn_iv_fisico.Size = new System.Drawing.Size(87, 53);
             this.Btn_iv_fisico.TabIndex = 2;
             this.Btn_iv_fisico.Text = "Inv. Unidades Fisica";
             this.Btn_iv_fisico.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -257,9 +261,9 @@ namespace CapaPresentacion.Vista
             this.Btn_iv_valorizado.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_iv_valorizado.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Btn_iv_valorizado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_iv_valorizado.Location = new System.Drawing.Point(273, 3);
+            this.Btn_iv_valorizado.Location = new System.Drawing.Point(282, 3);
             this.Btn_iv_valorizado.Name = "Btn_iv_valorizado";
-            this.Btn_iv_valorizado.Size = new System.Drawing.Size(84, 53);
+            this.Btn_iv_valorizado.Size = new System.Drawing.Size(87, 53);
             this.Btn_iv_valorizado.TabIndex = 2;
             this.Btn_iv_valorizado.Text = "Inv. Unidades Permanetes";
             this.Btn_iv_valorizado.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -270,9 +274,9 @@ namespace CapaPresentacion.Vista
             // 
             this.button5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(363, 3);
+            this.button5.Location = new System.Drawing.Point(375, 3);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(84, 53);
+            this.button5.Size = new System.Drawing.Size(87, 53);
             this.button5.TabIndex = 3;
             this.button5.Text = "Stock Final a Fecha";
             this.button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -291,23 +295,25 @@ namespace CapaPresentacion.Vista
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.ColumnCount = 5;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel2.ColumnCount = 6;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel2.Controls.Add(this.Btn_empresa, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.Btn_cliente_pro, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.Btn_tipooperacion, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.Btn_moneda, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.Btn_tipdocumento, 4, 0);
+            this.tableLayoutPanel2.Controls.Add(this.BtnUnidMed, 5, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(390, 59);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(445, 59);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // Btn_empresa
@@ -316,7 +322,7 @@ namespace CapaPresentacion.Vista
             this.Btn_empresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_empresa.Location = new System.Drawing.Point(3, 3);
             this.Btn_empresa.Name = "Btn_empresa";
-            this.Btn_empresa.Size = new System.Drawing.Size(72, 53);
+            this.Btn_empresa.Size = new System.Drawing.Size(68, 53);
             this.Btn_empresa.TabIndex = 2;
             this.Btn_empresa.Text = "Empresa";
             this.Btn_empresa.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -327,9 +333,9 @@ namespace CapaPresentacion.Vista
             // 
             this.Btn_cliente_pro.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Btn_cliente_pro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_cliente_pro.Location = new System.Drawing.Point(81, 3);
+            this.Btn_cliente_pro.Location = new System.Drawing.Point(77, 3);
             this.Btn_cliente_pro.Name = "Btn_cliente_pro";
-            this.Btn_cliente_pro.Size = new System.Drawing.Size(72, 53);
+            this.Btn_cliente_pro.Size = new System.Drawing.Size(68, 53);
             this.Btn_cliente_pro.TabIndex = 2;
             this.Btn_cliente_pro.Text = "Cliente y Proveedor";
             this.Btn_cliente_pro.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -340,9 +346,9 @@ namespace CapaPresentacion.Vista
             // 
             this.Btn_tipooperacion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Btn_tipooperacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_tipooperacion.Location = new System.Drawing.Point(159, 3);
+            this.Btn_tipooperacion.Location = new System.Drawing.Point(151, 3);
             this.Btn_tipooperacion.Name = "Btn_tipooperacion";
-            this.Btn_tipooperacion.Size = new System.Drawing.Size(72, 53);
+            this.Btn_tipooperacion.Size = new System.Drawing.Size(68, 53);
             this.Btn_tipooperacion.TabIndex = 2;
             this.Btn_tipooperacion.Text = "Tipo de Operación";
             this.Btn_tipooperacion.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -353,27 +359,14 @@ namespace CapaPresentacion.Vista
             // 
             this.Btn_moneda.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Btn_moneda.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_moneda.Location = new System.Drawing.Point(237, 3);
+            this.Btn_moneda.Location = new System.Drawing.Point(225, 3);
             this.Btn_moneda.Name = "Btn_moneda";
-            this.Btn_moneda.Size = new System.Drawing.Size(72, 53);
+            this.Btn_moneda.Size = new System.Drawing.Size(68, 53);
             this.Btn_moneda.TabIndex = 2;
             this.Btn_moneda.Text = "Moneda";
             this.Btn_moneda.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_moneda.UseVisualStyleBackColor = true;
             this.Btn_moneda.Click += new System.EventHandler(this.Btn_moneda_Click);
-            // 
-            // Btn_tipdocumento
-            // 
-            this.Btn_tipdocumento.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Btn_tipdocumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_tipdocumento.Location = new System.Drawing.Point(315, 3);
-            this.Btn_tipdocumento.Name = "Btn_tipdocumento";
-            this.Btn_tipdocumento.Size = new System.Drawing.Size(72, 53);
-            this.Btn_tipdocumento.TabIndex = 2;
-            this.Btn_tipdocumento.Text = "Tipo Documento";
-            this.Btn_tipdocumento.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Btn_tipdocumento.UseVisualStyleBackColor = true;
-            this.Btn_tipdocumento.Click += new System.EventHandler(this.Btn_tipdocumento_Click);
             // 
             // Panel_titulo
             // 
@@ -423,6 +416,40 @@ namespace CapaPresentacion.Vista
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // Btn_tipdocumento
+            // 
+            this.Btn_tipdocumento.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Btn_tipdocumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_tipdocumento.Location = new System.Drawing.Point(299, 3);
+            this.Btn_tipdocumento.Name = "Btn_tipdocumento";
+            this.Btn_tipdocumento.Size = new System.Drawing.Size(68, 53);
+            this.Btn_tipdocumento.TabIndex = 2;
+            this.Btn_tipdocumento.Text = "Tipo Documento";
+            this.Btn_tipdocumento.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Btn_tipdocumento.UseVisualStyleBackColor = true;
+            this.Btn_tipdocumento.Click += new System.EventHandler(this.Btn_tipdocumento_Click);
+            // 
+            // BtnUnidMed
+            // 
+            this.BtnUnidMed.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnUnidMed.Location = new System.Drawing.Point(373, 3);
+            this.BtnUnidMed.Name = "BtnUnidMed";
+            this.BtnUnidMed.Size = new System.Drawing.Size(68, 53);
+            this.BtnUnidMed.TabIndex = 2;
+            this.BtnUnidMed.Text = "Unidad Medida";
+            this.BtnUnidMed.UseVisualStyleBackColor = true;
+            this.BtnUnidMed.Click += new System.EventHandler(this.BtnUnidMed_Click);
+            // 
+            // button2
+            // 
+            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button2.Location = new System.Drawing.Point(561, 3);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(93, 53);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // FrmInicio
             // 
@@ -475,7 +502,6 @@ namespace CapaPresentacion.Vista
         private System.Windows.Forms.Button Btn_cliente_pro;
         private System.Windows.Forms.Button Btn_tipooperacion;
         private System.Windows.Forms.Button Btn_moneda;
-        private System.Windows.Forms.Button Btn_tipdocumento;
         private System.Windows.Forms.Panel Panel_titulo;
         private System.Windows.Forms.Label lbluser;
         private System.Windows.Forms.Label Lblempresa;
@@ -483,5 +509,8 @@ namespace CapaPresentacion.Vista
         private System.Windows.Forms.Label Lbl_idperiodo;
         private System.Windows.Forms.ToolStripStatusLabel tlblhora;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button Btn_tipdocumento;
+        private System.Windows.Forms.Button BtnUnidMed;
+        private System.Windows.Forms.Button button2;
     }
 }

@@ -23,7 +23,7 @@ namespace CapaPresentacion.Vista
             InitializeComponent();
             dunidMed = new DUnidadMedida();
             runidMed = new RUnidadMedida();
-
+            Show_UnidadMed();
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -70,8 +70,8 @@ namespace CapaPresentacion.Vista
 
             if (dialog.ShowDialog() == DialogResult.OK)
             {
+                Lbl_ruta.Visible = true;
                 Lbl_ruta.Text = dialog.FileName;
-                Lbl_nameFile.Text = dialog.SafeFileName;
                 Dgv_Unidadmedida.DataSource = runidMed.ImportarAchivoExcel(dialog.FileName);
                 Tabla();
 
@@ -96,7 +96,7 @@ namespace CapaPresentacion.Vista
                         dunidMed.Descripcion = Dgv_Unidadmedida.CurrentRow.Cells[4].Value.ToString();
                         result = runidMed.Delete(dunidMed);
 
-                        if (result.Contains("¡Se Eliminar"))
+                        if (result.Contains("Se Elimino"))
                         {
                             Msg.M_info(result);
                             Show_UnidadMed();
