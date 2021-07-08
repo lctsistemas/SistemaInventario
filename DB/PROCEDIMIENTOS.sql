@@ -347,8 +347,7 @@ END
 GO
 
 -- PROCEDIMIENTO PARA VALIDAR INVENTARIO
-
-
+ALTER PROC invent.SP_ValidarInventario
 @idempresa int,
 @idmes tinyint,
 @idperiodo smallint,
@@ -361,10 +360,18 @@ SET @output = 1 --true
 END
 GO
 
-select * from invent.Inventario  where  existencia = 'CHOCOLATE NESTLE BOLSA (12u+15u)'
-delete from invent.Inventario where existencia = 'CHOCOLATE NESTLE BOLSA (12u+15u)'
+select * from invent.Inventario
+delete from invent.Inventario
 GO
-CREATE PROC invent.SP_ 
+
+CREATE PROC invent.SP_GrupoInventario
+@idempresa int,
+@idmes tinyint,
+@idperiodo smallint
+AS BEGIN
 select COUNT(i.id_inventario) as Nro,i.cod_existencia, i.existencia, SUM(i.entradas)as entradas, SUM(i.salidas) as salidas, 
 (SUM(i.entradas) - SUM(i.salidas)) as final from invent.Inventario i
-group by i.cod_existencia, i.existencia
+group by i.cod_existencia, i.existencia, id_empresa, i.idmes, i.idperiodo
+Having i.id_empresa = @idempresa AND i.idmes = @idmes AND i.idperiodo= @idperiodo
+END
+GO

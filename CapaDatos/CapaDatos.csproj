@@ -49,6 +49,7 @@
     <Compile Include="Entities\DconexionOffice.cs" />
     <Compile Include="Entities\Dempresa.cs" />
     <Compile Include="Entities\DEntrada.cs" />
+    <Compile Include="Entities\DMantenimientoInventario.cs" />
     <Compile Include="Entities\DMoneda.cs" />
     <Compile Include="Entities\DTipoDocumento.cs" />
     <Compile Include="Entities\DTipoOperacion.cs" />

@@ -55,6 +55,7 @@ namespace CapaNegocio.Repositories
             return result;
         }
 
+
         //ELIMINAR ANULAR
         public string Delete(Dempresa Entity)
         {
@@ -159,7 +160,6 @@ namespace CapaNegocio.Repositories
                         }
                     }
                 }
-
                 
             }
 
