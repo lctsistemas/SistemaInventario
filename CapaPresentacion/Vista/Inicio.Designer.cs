@@ -43,7 +43,7 @@ namespace CapaPresentacion.Vista
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.Btn_entrada = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.Btn_salida = new System.Windows.Forms.Button();
+            this.Btn_mante = new System.Windows.Forms.Button();
             this.Btn_iv_fisico = new System.Windows.Forms.Button();
             this.Btn_iv_valorizado = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -91,9 +91,9 @@ namespace CapaPresentacion.Vista
             this.Panel_contenedor.Controls.Add(this.Lbl_idempresa);
             this.Panel_contenedor.Controls.Add(this.statusStrip1);
             this.Panel_contenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Panel_contenedor.Location = new System.Drawing.Point(0, 131);
+            this.Panel_contenedor.Location = new System.Drawing.Point(0, 136);
             this.Panel_contenedor.Name = "Panel_contenedor";
-            this.Panel_contenedor.Size = new System.Drawing.Size(912, 427);
+            this.Panel_contenedor.Size = new System.Drawing.Size(912, 422);
             this.Panel_contenedor.TabIndex = 3;
             // 
             // Lbl_idperiodo
@@ -122,7 +122,7 @@ namespace CapaPresentacion.Vista
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
             this.tlblhora});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 403);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 398);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(912, 24);
             this.statusStrip1.SizingGrip = false;
@@ -155,7 +155,7 @@ namespace CapaPresentacion.Vista
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.Padding = new System.Drawing.Point(15, 3);
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(912, 96);
+            this.tabControl1.Size = new System.Drawing.Size(912, 101);
             this.tabControl1.TabIndex = 2;
             // 
             // tabPage1
@@ -165,7 +165,7 @@ namespace CapaPresentacion.Vista
             this.tabPage1.Location = new System.Drawing.Point(4, 32);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(904, 60);
+            this.tabPage1.Size = new System.Drawing.Size(904, 65);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Control de Inventarios";
             // 
@@ -180,7 +180,7 @@ namespace CapaPresentacion.Vista
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.67286F));
             this.tableLayoutPanel1.Controls.Add(this.Btn_entrada, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.button6, 5, 0);
-            this.tableLayoutPanel1.Controls.Add(this.Btn_salida, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.Btn_mante, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.Btn_iv_fisico, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.Btn_iv_valorizado, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.button5, 4, 0);
@@ -189,7 +189,7 @@ namespace CapaPresentacion.Vista
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(470, 54);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(542, 59);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // Btn_entrada
@@ -201,7 +201,7 @@ namespace CapaPresentacion.Vista
             this.Btn_entrada.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Btn_entrada.Location = new System.Drawing.Point(3, 3);
             this.Btn_entrada.Name = "Btn_entrada";
-            this.Btn_entrada.Size = new System.Drawing.Size(72, 48);
+            this.Btn_entrada.Size = new System.Drawing.Size(84, 53);
             this.Btn_entrada.TabIndex = 1;
             this.Btn_entrada.Text = "Importar";
             this.Btn_entrada.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -211,39 +211,41 @@ namespace CapaPresentacion.Vista
             // 
             // button6
             // 
+            this.button6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(393, 3);
+            this.button6.Location = new System.Drawing.Point(453, 3);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(74, 48);
+            this.button6.Size = new System.Drawing.Size(86, 53);
             this.button6.TabIndex = 4;
             this.button6.Text = "Costo de Venta";
             this.button6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button6.UseVisualStyleBackColor = true;
             // 
-            // Btn_salida
+            // Btn_mante
             // 
-            this.Btn_salida.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Btn_salida.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Btn_salida.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_salida.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Btn_salida.Location = new System.Drawing.Point(81, 3);
-            this.Btn_salida.Name = "Btn_salida";
-            this.Btn_salida.Size = new System.Drawing.Size(72, 48);
-            this.Btn_salida.TabIndex = 2;
-            this.Btn_salida.Text = "Salida";
-            this.Btn_salida.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Btn_salida.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.Btn_salida.UseVisualStyleBackColor = true;
-            this.Btn_salida.Click += new System.EventHandler(this.Btn_salida_Click);
+            this.Btn_mante.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_mante.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Btn_mante.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_mante.Image = ((System.Drawing.Image)(resources.GetObject("Btn_mante.Image")));
+            this.Btn_mante.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Btn_mante.Location = new System.Drawing.Point(93, 3);
+            this.Btn_mante.Name = "Btn_mante";
+            this.Btn_mante.Size = new System.Drawing.Size(84, 53);
+            this.Btn_mante.TabIndex = 2;
+            this.Btn_mante.Text = "Mantenimiento Inventario";
+            this.Btn_mante.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Btn_mante.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.Btn_mante.UseVisualStyleBackColor = true;
+            this.Btn_mante.Click += new System.EventHandler(this.Btn_mante_Click);
             // 
             // Btn_iv_fisico
             // 
             this.Btn_iv_fisico.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_iv_fisico.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Btn_iv_fisico.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_iv_fisico.Location = new System.Drawing.Point(159, 3);
+            this.Btn_iv_fisico.Location = new System.Drawing.Point(183, 3);
             this.Btn_iv_fisico.Name = "Btn_iv_fisico";
-            this.Btn_iv_fisico.Size = new System.Drawing.Size(72, 48);
+            this.Btn_iv_fisico.Size = new System.Drawing.Size(84, 53);
             this.Btn_iv_fisico.TabIndex = 2;
             this.Btn_iv_fisico.Text = "Inv. Unidades Fisica";
             this.Btn_iv_fisico.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -255,9 +257,9 @@ namespace CapaPresentacion.Vista
             this.Btn_iv_valorizado.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_iv_valorizado.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Btn_iv_valorizado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_iv_valorizado.Location = new System.Drawing.Point(237, 3);
+            this.Btn_iv_valorizado.Location = new System.Drawing.Point(273, 3);
             this.Btn_iv_valorizado.Name = "Btn_iv_valorizado";
-            this.Btn_iv_valorizado.Size = new System.Drawing.Size(72, 48);
+            this.Btn_iv_valorizado.Size = new System.Drawing.Size(84, 53);
             this.Btn_iv_valorizado.TabIndex = 2;
             this.Btn_iv_valorizado.Text = "Inv. Unidades Permanetes";
             this.Btn_iv_valorizado.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -268,9 +270,9 @@ namespace CapaPresentacion.Vista
             // 
             this.button5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(315, 3);
+            this.button5.Location = new System.Drawing.Point(363, 3);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(72, 48);
+            this.button5.Size = new System.Drawing.Size(84, 53);
             this.button5.TabIndex = 3;
             this.button5.Text = "Stock Final a Fecha";
             this.button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -283,7 +285,7 @@ namespace CapaPresentacion.Vista
             this.tabPage2.Location = new System.Drawing.Point(4, 32);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(904, 66);
+            this.tabPage2.Size = new System.Drawing.Size(904, 65);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Mantenimiento";
             // 
@@ -305,7 +307,7 @@ namespace CapaPresentacion.Vista
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(390, 60);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(390, 59);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // Btn_empresa
@@ -314,7 +316,7 @@ namespace CapaPresentacion.Vista
             this.Btn_empresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_empresa.Location = new System.Drawing.Point(3, 3);
             this.Btn_empresa.Name = "Btn_empresa";
-            this.Btn_empresa.Size = new System.Drawing.Size(72, 54);
+            this.Btn_empresa.Size = new System.Drawing.Size(72, 53);
             this.Btn_empresa.TabIndex = 2;
             this.Btn_empresa.Text = "Empresa";
             this.Btn_empresa.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -327,7 +329,7 @@ namespace CapaPresentacion.Vista
             this.Btn_cliente_pro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_cliente_pro.Location = new System.Drawing.Point(81, 3);
             this.Btn_cliente_pro.Name = "Btn_cliente_pro";
-            this.Btn_cliente_pro.Size = new System.Drawing.Size(72, 54);
+            this.Btn_cliente_pro.Size = new System.Drawing.Size(72, 53);
             this.Btn_cliente_pro.TabIndex = 2;
             this.Btn_cliente_pro.Text = "Cliente y Proveedor";
             this.Btn_cliente_pro.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -340,7 +342,7 @@ namespace CapaPresentacion.Vista
             this.Btn_tipooperacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_tipooperacion.Location = new System.Drawing.Point(159, 3);
             this.Btn_tipooperacion.Name = "Btn_tipooperacion";
-            this.Btn_tipooperacion.Size = new System.Drawing.Size(72, 54);
+            this.Btn_tipooperacion.Size = new System.Drawing.Size(72, 53);
             this.Btn_tipooperacion.TabIndex = 2;
             this.Btn_tipooperacion.Text = "Tipo de Operación";
             this.Btn_tipooperacion.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -353,7 +355,7 @@ namespace CapaPresentacion.Vista
             this.Btn_moneda.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_moneda.Location = new System.Drawing.Point(237, 3);
             this.Btn_moneda.Name = "Btn_moneda";
-            this.Btn_moneda.Size = new System.Drawing.Size(72, 54);
+            this.Btn_moneda.Size = new System.Drawing.Size(72, 53);
             this.Btn_moneda.TabIndex = 2;
             this.Btn_moneda.Text = "Moneda";
             this.Btn_moneda.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -366,7 +368,7 @@ namespace CapaPresentacion.Vista
             this.Btn_tipdocumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_tipdocumento.Location = new System.Drawing.Point(315, 3);
             this.Btn_tipdocumento.Name = "Btn_tipdocumento";
-            this.Btn_tipdocumento.Size = new System.Drawing.Size(72, 54);
+            this.Btn_tipdocumento.Size = new System.Drawing.Size(72, 53);
             this.Btn_tipdocumento.TabIndex = 2;
             this.Btn_tipdocumento.Text = "Tipo Documento";
             this.Btn_tipdocumento.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -462,7 +464,7 @@ namespace CapaPresentacion.Vista
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button Btn_entrada;
-        private System.Windows.Forms.Button Btn_salida;
+        private System.Windows.Forms.Button Btn_mante;
         private System.Windows.Forms.Button Btn_iv_fisico;
         private System.Windows.Forms.Button Btn_iv_valorizado;
         private System.Windows.Forms.Button button5;

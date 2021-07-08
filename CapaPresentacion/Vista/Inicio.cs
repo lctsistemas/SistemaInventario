@@ -33,9 +33,9 @@ namespace CapaPresentacion.Vista
             OpenFormFill<FrmEntradaImpotacion>();
         }
 
-        private void Btn_salida_Click(object sender, EventArgs e)
+        private void Btn_mante_Click(object sender, EventArgs e)
         {
-            OpenFormFill<FrmSalida>();
+            OpenFormFill<FrmMantenimiento>();
         }
 
         //METODO PARA ABRIR FORMULARIO DENTRO DE PANEL PERO TODO EL ANCHO FILL

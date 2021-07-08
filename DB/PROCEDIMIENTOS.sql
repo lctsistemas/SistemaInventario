@@ -361,7 +361,10 @@ SET @output = 1 --true
 END
 GO
 
-
-select * from invent.Inventario
-delete from invent.Inventario
+select * from invent.Inventario  where  existencia = 'CHOCOLATE NESTLE BOLSA (12u+15u)'
+delete from invent.Inventario where existencia = 'CHOCOLATE NESTLE BOLSA (12u+15u)'
 GO
+CREATE PROC invent.SP_ 
+select COUNT(i.id_inventario) as Nro,i.cod_existencia, i.existencia, SUM(i.entradas)as entradas, SUM(i.salidas) as salidas, 
+(SUM(i.entradas) - SUM(i.salidas)) as final from invent.Inventario i
+group by i.cod_existencia, i.existencia

@@ -20,7 +20,7 @@ namespace CapaPresentacion.SubVista
             
         }
 
-       private void ShowMes()
+       /*private void ShowMes()
         {
             using (REntrada re = new REntrada())
             {
@@ -28,11 +28,11 @@ namespace CapaPresentacion.SubVista
                 Cbomes.DisplayMember = "nombre_mes";
                 Cbomes.ValueMember = "idmes";
             }
-        }
+        }*/
 
         private void UserControl_mes_Load(object sender, EventArgs e)
         {
-            ShowMes();
+            //ShowMes();
         }
     }
 }
