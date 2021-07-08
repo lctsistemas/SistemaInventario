@@ -1,7 +1,7 @@
 ﻿
 namespace CapaPresentacion.SubVista
 {
-    partial class V_UnidadMedida
+    partial class FrmV_UnidadMedida
     {
         /// <summary>
         /// Required designer variable.
@@ -29,14 +29,14 @@ namespace CapaPresentacion.SubVista
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(V_UnidadMedida));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmV_UnidadMedida));
             this.panelregistro = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtidUnidMed = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnmodificar = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnguardar = new Guna.UI2.WinForms.Guna2Button();
             this.txtAbrev = new Guna.UI2.WinForms.Guna2TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtDesc = new Guna.UI2.WinForms.Guna2TextBox();
@@ -72,6 +72,7 @@ namespace CapaPresentacion.SubVista
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 103;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // panel2
             // 
@@ -101,7 +102,7 @@ namespace CapaPresentacion.SubVista
             // panel3
             // 
             this.panel3.Controls.Add(this.btnmodificar);
-            this.panel3.Controls.Add(this.guna2Button1);
+            this.panel3.Controls.Add(this.btnguardar);
             this.panel3.Location = new System.Drawing.Point(230, 214);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(151, 54);
@@ -125,23 +126,23 @@ namespace CapaPresentacion.SubVista
             this.btnmodificar.Text = "Modificar";
             this.btnmodificar.Click += new System.EventHandler(this.btnmodificar_Click);
             // 
-            // guna2Button1
+            // btnguardar
             // 
-            this.guna2Button1.BorderRadius = 3;
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.FillColor = System.Drawing.Color.IndianRed;
-            this.guna2Button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(27, 3);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(89, 45);
-            this.guna2Button1.TabIndex = 33;
-            this.guna2Button1.Text = "Guardar";
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            this.btnguardar.BorderRadius = 3;
+            this.btnguardar.CheckedState.Parent = this.btnguardar;
+            this.btnguardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnguardar.CustomImages.Parent = this.btnguardar;
+            this.btnguardar.FillColor = System.Drawing.Color.IndianRed;
+            this.btnguardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.btnguardar.ForeColor = System.Drawing.Color.White;
+            this.btnguardar.HoverState.Parent = this.btnguardar;
+            this.btnguardar.Location = new System.Drawing.Point(27, 3);
+            this.btnguardar.Name = "btnguardar";
+            this.btnguardar.ShadowDecoration.Parent = this.btnguardar;
+            this.btnguardar.Size = new System.Drawing.Size(89, 45);
+            this.btnguardar.TabIndex = 33;
+            this.btnguardar.Text = "Guardar";
+            this.btnguardar.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // txtAbrev
             // 
@@ -173,7 +174,7 @@ namespace CapaPresentacion.SubVista
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(81, 105);
+            this.label3.Location = new System.Drawing.Point(81, 94);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(77, 16);
             this.label3.TabIndex = 36;
@@ -263,14 +264,14 @@ namespace CapaPresentacion.SubVista
             this.label1.TabIndex = 28;
             this.label1.Text = "UNIDAD DE MEDIDA";
             // 
-            // V_UnidadMedida
+            // FrmV_UnidadMedida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(687, 332);
             this.Controls.Add(this.panelregistro);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "V_UnidadMedida";
+            this.Name = "FrmV_UnidadMedida";
             this.Text = "V_UnidadMedida";
             this.panelregistro.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -285,7 +286,6 @@ namespace CapaPresentacion.SubVista
 
         private System.Windows.Forms.Panel panelregistro;
         private System.Windows.Forms.Panel panel2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
         public Guna.UI2.WinForms.Guna2TextBox txtDesc;
         public Guna.UI2.WinForms.Guna2TextBox txtcodUM;
         private System.Windows.Forms.Label label2;
@@ -295,7 +295,8 @@ namespace CapaPresentacion.SubVista
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel3;
-        private Guna.UI2.WinForms.Guna2Button btnmodificar;
         public System.Windows.Forms.TextBox txtidUnidMed;
+        public Guna.UI2.WinForms.Guna2Button btnmodificar;
+        public Guna.UI2.WinForms.Guna2Button btnguardar;
     }
 }

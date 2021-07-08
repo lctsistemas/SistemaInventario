@@ -23,8 +23,8 @@ namespace CapaPresentacion.Vista
             InitializeComponent();
             dtipoOper = new DTipoOperacion();
             rtipoOper = new RTipoOperacion();
-            Show_TipoOper();
-            Tabla();
+            //Show_TipoOper();
+            //Tabla();
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -48,9 +48,12 @@ namespace CapaPresentacion.Vista
         //TABLA
         private void Tabla()
         {
-            Dgv_tipoOper.Columns[0].Visible = true;
-            Dgv_tipoOper.Columns[1].HeaderText = "CODIGO";
-            Dgv_tipoOper.Columns[2].HeaderText = "DESCRIPCION";
+            Dgv_tipoOper.Columns[0].Visible = true; //ELIMINAR
+            Dgv_tipoOper.Columns[1].HeaderText = "ID";
+            Dgv_tipoOper.Columns[1].Visible = false;
+
+            Dgv_tipoOper.Columns[2].HeaderText = "CODIGO";
+            Dgv_tipoOper.Columns[3].HeaderText = "DESCRIPCION";
         }
 
         private void btneditar_Click(object sender, EventArgs e)
@@ -103,7 +106,7 @@ namespace CapaPresentacion.Vista
                         dtipoOper.Descripcion = Dgv_tipoOper.CurrentRow.Cells[3].Value.ToString();
                         result = rtipoOper.Delete(dtipoOper);
 
-                        if (result.Contains("¡Se Eliminar"))
+                        if (result.Contains("¡Eliminar"))
                         {
                             Msg.M_info(result);
                             Show_TipoOper();
@@ -115,6 +118,25 @@ namespace CapaPresentacion.Vista
                 }
 
             }
+        }
+
+        private void Btn_excel_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "Excel Files | *.xls;*.xlsx;*.xlsm;";
+            dialog.Title = "Importar";
+
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                Lbl_ruta.Text = dialog.FileName;
+                Lbl_nameFile.Text = dialog.SafeFileName;
+                Dgv_tipoOper.DataSource = rtipoOper.ImportarAchivoExcel(dialog.FileName);
+                Tabla();
+
+                // Dgv_Importar.Columns[0].HeaderText = "CODIGO";
+                //ImportarAchivoExcel(dialog.FileName);
+            }
+            dialog.Dispose();
         }
     }
 }

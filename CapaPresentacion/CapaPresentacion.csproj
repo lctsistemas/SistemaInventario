@@ -34,7 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Guna.UI2">
-      <HintPath>..\..\..\..\Downloads\Hotel Management\Guna.UI2.dll</HintPath>
+      <HintPath>..\..\..\..\Desktop\Guna.UI2.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -200,6 +200,12 @@
     <Compile Include="Vista\UnidadFisica.Designer.cs">
       <DependentUpon>UnidadFisica.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\UnidadMedida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\UnidadMedida.Designer.cs">
+      <DependentUpon>UnidadMedida.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\UnidadValorizado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -283,6 +289,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\UnidadFisica.resx">
       <DependentUpon>UnidadFisica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\UnidadMedida.resx">
+      <DependentUpon>UnidadMedida.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\UnidadValorizado.resx">
       <DependentUpon>UnidadValorizado.cs</DependentUpon>

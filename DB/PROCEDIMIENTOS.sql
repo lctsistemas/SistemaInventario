@@ -47,7 +47,7 @@ END
 GO
 
 
-CREATE PROC manto.SP_ShowEmpresa
+ALTER PROC manto.SP_ShowEmpresa
 @estado varchar(15)
 AS BEGIN
 SELECT  e.id_empresa, e.ruc, e.razon_social, e.nombre_comercial, e.direccion, 
@@ -125,7 +125,7 @@ WHERE idTipoOper = @idtipOper
 END
 GO
 
-ALTER PROC manto.SP_DeleteTipoOpera
+CREATE PROC manto.SP_DeleteTipoOpera
 @idtipOper int
 AS BEGIN
 	DELETE from TipoOperacion where idTipoOper=@idtipOper
