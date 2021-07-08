@@ -13,11 +13,11 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion.SubVista
 {
-    public partial class V_UnidadMedida : Form
+    public partial class FrmV_UnidadMedida : Form
     {
         readonly DUnidadMedida dUnidadMedida;
         readonly RUnidadMedida rUnidadMedida;
-        public V_UnidadMedida()
+        public FrmV_UnidadMedida()
         {
             InitializeComponent();
             dUnidadMedida = new DUnidadMedida();
@@ -95,6 +95,11 @@ namespace CapaPresentacion.SubVista
         private void txtDesc_Validating(object sender, CancelEventArgs e)
         {
             ValidateError.Validate_text(txtDesc, "¡Campo Requerido!");
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

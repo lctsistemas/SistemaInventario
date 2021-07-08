@@ -33,12 +33,12 @@ namespace CapaPresentacion.SubVista
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmV_Cargar));
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Btn_importExcel = new Guna.UI2.WinForms.Guna2Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.Cbomes = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.Btn_importExcel = new Guna.UI2.WinForms.Guna2Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,45 +63,12 @@ namespace CapaPresentacion.SubVista
             this.guna2Panel1.Size = new System.Drawing.Size(682, 332);
             this.guna2Panel1.TabIndex = 0;
             // 
-            // label1
+            // textBox1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(35, 83);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 15);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Selecciones Mes : ";
-            // 
-            // Cbomes
-            // 
-            this.Cbomes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Cbomes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cbomes.FormattingEnabled = true;
-            this.Cbomes.Location = new System.Drawing.Point(151, 80);
-            this.Cbomes.Name = "Cbomes";
-            this.Cbomes.Size = new System.Drawing.Size(127, 23);
-            this.Cbomes.TabIndex = 9;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(35, 54);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 15);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Periodo : ";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(38, 127);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(23, 15);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Url";
+            this.textBox1.Location = new System.Drawing.Point(66, 126);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(440, 20);
+            this.textBox1.TabIndex = 12;
             // 
             // Btn_importExcel
             // 
@@ -124,13 +91,47 @@ namespace CapaPresentacion.SubVista
             this.Btn_importExcel.Size = new System.Drawing.Size(35, 27);
             this.Btn_importExcel.TabIndex = 11;
             this.Btn_importExcel.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.Btn_importExcel.Click += new System.EventHandler(this.Btn_importExcel_Click);
             // 
-            // textBox1
+            // label3
             // 
-            this.textBox1.Location = new System.Drawing.Point(66, 126);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(440, 20);
-            this.textBox1.TabIndex = 12;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(38, 127);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(23, 15);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Url";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(35, 54);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(59, 15);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Periodo : ";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(35, 83);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(110, 15);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Selecciones Mes : ";
+            // 
+            // Cbomes
+            // 
+            this.Cbomes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Cbomes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cbomes.FormattingEnabled = true;
+            this.Cbomes.Location = new System.Drawing.Point(151, 80);
+            this.Cbomes.Name = "Cbomes";
+            this.Cbomes.Size = new System.Drawing.Size(127, 23);
+            this.Cbomes.TabIndex = 9;
             // 
             // FrmV_Cargar
             // 

@@ -6,14 +6,17 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
+using System.Data.OleDb;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CapaNegocio.Repositories
 {
-    public class RUnidadMedida : IUnidMoneda
+    public class RUnidadMedida : IUnidMedida
     {
         private SqlCommand cmd;
         private string result = "";
+        private List<DUnidadMedida> listUnidMed;
         public string Add(DUnidadMedida Entity)
         {
             using (SqlConnection connect = Dconexion.Getconectar())
@@ -90,9 +93,94 @@ namespace CapaNegocio.Repositories
             return result;
         }
 
+        #region : METODO IMPORTAR EXCEL
+        public List<DUnidadMedida> ImportarAchivoExcel(string url)
+        {
+            //double sumaEntradas = 0;
+            //double sumaSalidas = 0;
+            using (OleDbConnection conector = DconexionOffice.GetConectarOffice(url))
+            {
+                try
+                {
+                    conector.Open();
+                    using (OleDbCommand cmd = new OleDbCommand())
+                    {
+                        string sql = "select ABREVIATURA, DESCRIPCION from [UNIDAD_MEDIDA$]";
+                        cmd.Connection = conector;
+                        cmd.CommandText = sql;
+
+                        OleDbDataAdapter da = new OleDbDataAdapter();
+                        da.SelectCommand = cmd;
+                        using (DataTable dt = new DataTable())
+                        {
+                            da.Fill(dt);
+                            da.Dispose();
+
+                            listUnidMed = new List<DUnidadMedida>();
+                            foreach (DataRow item in dt.Rows)
+                            {
+                                listUnidMed.Add(new DUnidadMedida()
+                                {
+                                    Abrev = item["ABREVIATURA"].ToString(),
+                                    Descripcion = item["DESCRIPCION"].ToString()
+
+                                });
+
+                            }
+
+
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Detalle de Error : " + ex.ToString(), "Error al Importar Excel", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    conector.Close();
+                }
+            }
+            return listUnidMed;
+        }
+        #endregion : FIN IMPORTAR EXCEL
         public List<DUnidadMedida> Getdata(DUnidadMedida Entity)
         {
-            throw new NotImplementedException();
+            using (SqlConnection connect = Dconexion.Getconectar())
+            {
+                connect.Open();
+                using (cmd = new SqlCommand())
+                {
+                    cmd.Connection = connect;
+                    cmd.CommandText = "manto.SP_ShowUnidadMed";
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    SqlDataReader dtr = cmd.ExecuteReader();
+                    using (DataTable dt = new DataTable())
+                    {
+                        dt.Load(dtr);
+                        dtr.Dispose();
+
+                        listUnidMed = new List<DUnidadMedida>();
+                        foreach (DataRow item in dt.Rows)
+                        {
+                            listUnidMed.Add(new DUnidadMedida()
+                            {
+                                IdUnidadMedida = Convert.ToInt32(item[0]),
+                                Codigo = item[1].ToString(),
+                                Abrev = item[2].ToString(),
+                                Descripcion = item[3].ToString()
+                            });
+                        }
+                    }
+                }
+
+
+            }
+
+            return listUnidMed;
+        }
+
+        public IEnumerable<DUnidadMedida> Search(string filter)
+        {
+            return listUnidMed.FindAll(e => e.Codigo.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0);
         }
     }
 }

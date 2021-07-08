@@ -40,7 +40,7 @@ namespace CapaDatos.Contracts
 
     }
 
-    public interface IUnidMoneda : IGeneral<DUnidadMedida>
+    public interface IUnidMedida : IGeneral<DUnidadMedida>
     {
 
     }

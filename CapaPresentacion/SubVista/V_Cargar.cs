@@ -29,5 +29,9 @@ namespace CapaPresentacion.SubVista
             }
         }
 
+        private void Btn_importExcel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

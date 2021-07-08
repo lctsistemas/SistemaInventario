@@ -7,6 +7,8 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.OleDb;
+using System.Windows.Forms;
 
 namespace CapaNegocio.Repositories
 {
@@ -143,6 +145,55 @@ namespace CapaNegocio.Repositories
 
             return listTipoOper;
         }
+
+        #region : METODO IMPORTAR EXCEL
+        public List<DTipoOperacion> ImportarAchivoExcel(string url)
+        {
+            //double sumaEntradas = 0;
+            //double sumaSalidas = 0;
+            using (OleDbConnection conector = DconexionOffice.GetConectarOffice(url))
+            {
+                try
+                {
+                    conector.Open();
+                    using (OleDbCommand cmd = new OleDbCommand())
+                    {
+                        string sql = "select CODIGO, DESCRIPCION from [TIPO_DE_OPERACION$]";
+                        cmd.Connection = conector;
+                        cmd.CommandText = sql;
+
+                        OleDbDataAdapter da = new OleDbDataAdapter();
+                        da.SelectCommand = cmd;
+                        using (DataTable dt = new DataTable())
+                        {
+                            da.Fill(dt);
+                            da.Dispose();
+
+                            listTipoOper = new List<DTipoOperacion>();
+                            foreach (DataRow item in dt.Rows)
+                            {
+                                listTipoOper.Add(new DTipoOperacion()
+                                {
+                                    Codigo=item["CODIGO"].ToString(),
+                                    Descripcion=item["DESCRIPCION"].ToString()
+
+                                });
+                                
+                            }
+
+                            
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Detalle de Error : " + ex.ToString(), "Error al Importar Excel", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    conector.Close();
+                }
+            }
+            return listTipoOper;
+        }
+        #endregion : FIN IMPORTAR EXCEL
 
         public IEnumerable<DTipoOperacion> Search(string filter)
         {
