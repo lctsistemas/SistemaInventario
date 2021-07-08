@@ -55,6 +55,8 @@ e.domicilio_fiscal, e.regimen FROM manto.Empresa e WHERE e.estado = @estado
 END
 GO
 
+exec manto.SP_ShowEmpresa 'ACTIVO'
+
 --	PROCEDIMIENTO PARA CLIENTE PROVEEDOR
 CREATE PROC manto.SP_AddCliProv
 @idcliprov int = null,
@@ -347,8 +349,7 @@ END
 GO
 
 -- PROCEDIMIENTO PARA VALIDAR INVENTARIO
-
-
+alter proc invent.SP_ValidarInventario
 @idempresa int,
 @idmes tinyint,
 @idperiodo smallint,
