@@ -96,7 +96,7 @@ namespace CapaPresentacion.Vista
                         dunidMed.Descripcion = Dgv_Unidadmedida.CurrentRow.Cells[4].Value.ToString();
                         result = runidMed.Delete(dunidMed);
 
-                        if (result.Contains("¡Se Eliminar"))
+                        if (result.Contains("Se Elimino"))
                         {
                             Msg.M_info(result);
                             Show_UnidadMed();

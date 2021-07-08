@@ -262,6 +262,14 @@ SELECT  u.idUnidadMedida,u.codigo,u.abrev,u.descripcion FROM manto.UnidadMedida 
 END
 GO
 
+--PROCEDIMIENTO PARA ELIMINAR UNIDAD MEDIDA
+CREATE PROC manto.SP_DeleteUnidMed
+@idUnidadMedida int
+AS BEGIN
+	DELETE from UnidadMedida where idUnidadMedida=@idUnidadMedida
+END
+go
+
 
 /*  PROCEDIMIENTO DE INICIO DE SESION  */
 
