@@ -3,10 +3,12 @@ using CapaDatos.Entities;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.OleDb;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CapaNegocio.Repositories
 {
@@ -121,6 +123,55 @@ namespace CapaNegocio.Repositories
             }
             return listTipoDoc;
         }
+
+        #region : METODO IMPORTAR EXCEL
+        public List<DTipoDocumento> ImportarAchivoExcel(string url)
+        {
+            //double sumaEntradas = 0;
+            //double sumaSalidas = 0;
+            using (OleDbConnection conector = DconexionOffice.GetConectarOffice(url))
+            {
+                try
+                {
+                    conector.Open();
+                    using (OleDbCommand cmd = new OleDbCommand())
+                    {
+                        string sql = "select CODIGO, DESCRIPCION from [TIPO_DOCUMENTO$]";
+                        cmd.Connection = conector;
+                        cmd.CommandText = sql;
+
+                        OleDbDataAdapter da = new OleDbDataAdapter();
+                        da.SelectCommand = cmd;
+                        using (DataTable dt = new DataTable())
+                        {
+                            da.Fill(dt);
+                            da.Dispose();
+
+                            listTipoDoc = new List<DTipoDocumento>();
+                            foreach (DataRow item in dt.Rows)
+                            {
+                                listTipoDoc.Add(new DTipoDocumento()
+                                {
+                                    Codigo = item["CODIGO"].ToString(),
+                                    Descripcion = item["DESCRIPCION"].ToString()
+
+                                });
+
+                            }
+
+
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Detalle de Error : " + ex.ToString(), "Error al Importar Excel", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    conector.Close();
+                }
+            }
+            return listTipoDoc;
+        }
+        #endregion : FIN IMPORTAR EXCEL
         public IEnumerable<DTipoDocumento> Search(string filter)
         {
             return listTipoDoc.FindAll(e => e.Codigo.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0);
