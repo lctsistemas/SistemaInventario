@@ -29,12 +29,13 @@ namespace CapaPresentacion.Vista
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTipoOperacion));
             this.Panel_operacion = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.Lbl_ruta = new System.Windows.Forms.Label();
             this.Dgv_tipoOper = new System.Windows.Forms.DataGridView();
             this.dgv_txtdelete = new System.Windows.Forms.DataGridViewImageColumn();
             this.Txtbuscar = new Guna.UI2.WinForms.Guna2TextBox();
@@ -44,8 +45,6 @@ namespace CapaPresentacion.Vista
             this.btneditar = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.btncerrar = new System.Windows.Forms.PictureBox();
-            this.Lbl_ruta = new System.Windows.Forms.Label();
-            this.Lbl_nameFile = new System.Windows.Forms.Label();
             this.Panel_operacion.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_tipoOper)).BeginInit();
@@ -61,20 +60,29 @@ namespace CapaPresentacion.Vista
             this.Panel_operacion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Panel_operacion.Location = new System.Drawing.Point(0, 0);
             this.Panel_operacion.Name = "Panel_operacion";
-            this.Panel_operacion.Size = new System.Drawing.Size(758, 508);
+            this.Panel_operacion.Size = new System.Drawing.Size(758, 483);
             this.Panel_operacion.TabIndex = 1;
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.Lbl_nameFile);
             this.panel2.Controls.Add(this.Lbl_ruta);
             this.panel2.Controls.Add(this.Dgv_tipoOper);
             this.panel2.Controls.Add(this.Txtbuscar);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(635, 508);
+            this.panel2.Size = new System.Drawing.Size(635, 483);
             this.panel2.TabIndex = 108;
+            // 
+            // Lbl_ruta
+            // 
+            this.Lbl_ruta.AutoSize = true;
+            this.Lbl_ruta.Location = new System.Drawing.Point(22, 60);
+            this.Lbl_ruta.Name = "Lbl_ruta";
+            this.Lbl_ruta.Size = new System.Drawing.Size(35, 13);
+            this.Lbl_ruta.TabIndex = 109;
+            this.Lbl_ruta.Text = "label1";
+            this.Lbl_ruta.Visible = false;
             // 
             // Dgv_tipoOper
             // 
@@ -82,8 +90,8 @@ namespace CapaPresentacion.Vista
             this.Dgv_tipoOper.AllowUserToDeleteRows = false;
             this.Dgv_tipoOper.AllowUserToResizeColumns = false;
             this.Dgv_tipoOper.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.Dgv_tipoOper.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.Dgv_tipoOper.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.Dgv_tipoOper.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -93,29 +101,29 @@ namespace CapaPresentacion.Vista
             this.Dgv_tipoOper.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Dgv_tipoOper.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.Dgv_tipoOper.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Dgv_tipoOper.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_tipoOper.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.Dgv_tipoOper.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Dgv_tipoOper.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgv_txtdelete});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 1, 0, 1);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Dgv_tipoOper.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(0, 1, 0, 1);
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_tipoOper.DefaultCellStyle = dataGridViewCellStyle9;
             this.Dgv_tipoOper.EnableHeadersVisualStyles = false;
             this.Dgv_tipoOper.GridColor = System.Drawing.Color.Silver;
-            this.Dgv_tipoOper.Location = new System.Drawing.Point(3, 101);
+            this.Dgv_tipoOper.Location = new System.Drawing.Point(3, 80);
             this.Dgv_tipoOper.MultiSelect = false;
             this.Dgv_tipoOper.Name = "Dgv_tipoOper";
             this.Dgv_tipoOper.ReadOnly = true;
@@ -124,7 +132,7 @@ namespace CapaPresentacion.Vista
             this.Dgv_tipoOper.RowHeadersWidth = 25;
             this.Dgv_tipoOper.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.Dgv_tipoOper.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Dgv_tipoOper.Size = new System.Drawing.Size(619, 392);
+            this.Dgv_tipoOper.Size = new System.Drawing.Size(619, 400);
             this.Dgv_tipoOper.TabIndex = 9;
             this.Dgv_tipoOper.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_tipoOper_CellContentClick);
             // 
@@ -269,29 +277,11 @@ namespace CapaPresentacion.Vista
             this.btncerrar.TabStop = false;
             this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click);
             // 
-            // Lbl_ruta
-            // 
-            this.Lbl_ruta.AutoSize = true;
-            this.Lbl_ruta.Location = new System.Drawing.Point(22, 60);
-            this.Lbl_ruta.Name = "Lbl_ruta";
-            this.Lbl_ruta.Size = new System.Drawing.Size(35, 13);
-            this.Lbl_ruta.TabIndex = 109;
-            this.Lbl_ruta.Text = "label1";
-            // 
-            // Lbl_nameFile
-            // 
-            this.Lbl_nameFile.AutoSize = true;
-            this.Lbl_nameFile.Location = new System.Drawing.Point(22, 83);
-            this.Lbl_nameFile.Name = "Lbl_nameFile";
-            this.Lbl_nameFile.Size = new System.Drawing.Size(35, 13);
-            this.Lbl_nameFile.TabIndex = 109;
-            this.Lbl_nameFile.Text = "label1";
-            // 
             // FrmTipoOperacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(758, 508);
+            this.ClientSize = new System.Drawing.Size(758, 483);
             this.Controls.Add(this.Panel_operacion);
             this.Name = "FrmTipoOperacion";
             this.Text = "TipoOperacion";
@@ -318,7 +308,6 @@ namespace CapaPresentacion.Vista
         private System.Windows.Forms.DataGridView Dgv_tipoOper;
         private System.Windows.Forms.DataGridViewImageColumn dgv_txtdelete;
         private Guna.UI2.WinForms.Guna2TextBox Txtbuscar;
-        private System.Windows.Forms.Label Lbl_nameFile;
-        private System.Windows.Forms.Label Lbl_ruta;
+        public System.Windows.Forms.Label Lbl_ruta;
     }
 }

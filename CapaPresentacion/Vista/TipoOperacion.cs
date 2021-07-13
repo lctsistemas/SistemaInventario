@@ -129,8 +129,8 @@ namespace CapaPresentacion.Vista
 
             if (dialog.ShowDialog() == DialogResult.OK)
             {
+                Lbl_ruta.Visible = true;
                 Lbl_ruta.Text = dialog.FileName;
-                Lbl_nameFile.Text = dialog.SafeFileName;
                 Dgv_tipoOper.DataSource = rtipoOper.ImportarAchivoExcel(dialog.FileName);
                 Tabla();
 

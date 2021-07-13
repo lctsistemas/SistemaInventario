@@ -48,8 +48,9 @@ namespace CapaPresentacion.Vista
         private void Tabla()
         {
             dgvTipoDoc.Columns[0].Visible = false;
-            dgvTipoDoc.Columns[1].HeaderText = "CODIGO";
-            dgvTipoDoc.Columns[2].HeaderText = "DESCRIPCION";
+            dgvTipoDoc.Columns[1].Visible = false;
+            dgvTipoDoc.Columns[2].HeaderText = "CODIGO";
+            dgvTipoDoc.Columns[3].HeaderText = "DESCRIPCION";
         }
 
         private void Show_Documento()
@@ -88,6 +89,25 @@ namespace CapaPresentacion.Vista
         private void btncerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Btnexcel_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "Excel Files | *.xls;*.xlsx;*.xlsm;";
+            dialog.Title = "Importar";
+
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                Lbl_ruta.Visible = true;
+                Lbl_ruta.Text = dialog.FileName;
+                dgvTipoDoc.DataSource = rtipoDoc.ImportarAchivoExcel(dialog.FileName);
+                Tabla();
+
+                // Dgv_Importar.Columns[0].HeaderText = "CODIGO";
+                //ImportarAchivoExcel(dialog.FileName);
+            }
+            dialog.Dispose();
         }
     }
 }
