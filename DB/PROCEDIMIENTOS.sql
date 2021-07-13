@@ -42,7 +42,6 @@ UPDATE manto.Empresa SET estado = @estado
 END
 GO
 
-
 ALTER PROC manto.SP_ShowEmpresa
 @estado varchar(15)
 AS BEGIN
@@ -331,11 +330,8 @@ END
 GO
 
 -- PROCEDIMIENTO PARA VALIDAR INVENTARIO
-<<<<<<< HEAD
-ALTER PROC invent.SP_ValidarInventario
-=======
+
 alter proc invent.SP_ValidarInventario
->>>>>>> dc9706ddddac1ea927540600f1d60f7639738ba0
 @idempresa int,
 @idmes tinyint,
 @idperiodo smallint,
@@ -363,3 +359,26 @@ group by i.cod_existencia, i.existencia, id_empresa, i.idmes, i.idperiodo
 Having i.id_empresa = @idempresa AND i.idmes = @idmes AND i.idperiodo= @idperiodo
 END
 GO
+
+ALTER PROC invent.SP_totalSalida
+@idempresa int,
+@idmes tinyint,
+@idperiodo smallint,
+@outSalida int OUTPUT
+AS BEGIN
+SET @outSalida = (select count(i.id_inventario) FROM invent.Inventario i
+	where (i.id_empresa = @idempresa AND i.idmes = @idmes AND i.idperiodo= @idperiodo) AND i.salidas > 0)
+END
+GO
+
+ALTER PROC invent.SP_totalEntrada
+@idempresa int,
+@idmes tinyint,
+@idperiodo smallint,
+@outEntrada int OUTPUT
+AS BEGIN
+SET @outEntrada = (select count(i.id_inventario) FROM invent.Inventario i
+	where (i.id_empresa = @idempresa AND i.idmes = @idmes AND i.idperiodo= @idperiodo) AND i.entradas > 0)
+END
+GO
+

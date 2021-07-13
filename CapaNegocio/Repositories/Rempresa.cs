@@ -159,8 +159,7 @@ namespace CapaNegocio.Repositories
                             });
                         }
                     }
-                }
-                
+                }                
             }
 
             return listemp;
