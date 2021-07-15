@@ -10,6 +10,7 @@ using System.Data.OleDb;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
+
 namespace CapaNegocio.Repositories
 {
     public class REntrada : IDisposable

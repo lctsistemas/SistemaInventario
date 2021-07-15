@@ -42,7 +42,6 @@ UPDATE manto.Empresa SET estado = @estado
 END
 GO
 
-
 ALTER PROC manto.SP_ShowEmpresa
 @estado varchar(15)
 AS BEGIN
@@ -378,6 +377,7 @@ END
 GO
 
 -- PROCEDIMIENTO PARA VALIDAR INVENTARIO
+
 alter proc invent.SP_ValidarInventario
 @idempresa int,
 @idmes tinyint,
@@ -391,10 +391,41 @@ SET @output = 1 --true
 END
 GO
 
-select * from invent.Inventario  where  existencia = 'CHOCOLATE NESTLE BOLSA (12u+15u)'
-delete from invent.Inventario where existencia = 'CHOCOLATE NESTLE BOLSA (12u+15u)'
+select * from invent.Inventario
+delete from invent.Inventario
 GO
-CREATE PROC invent.SP_ 
+
+CREATE PROC invent.SP_GrupoInventario
+@idempresa int,
+@idmes tinyint,
+@idperiodo smallint
+AS BEGIN
 select COUNT(i.id_inventario) as Nro,i.cod_existencia, i.existencia, SUM(i.entradas)as entradas, SUM(i.salidas) as salidas, 
 (SUM(i.entradas) - SUM(i.salidas)) as final from invent.Inventario i
-group by i.cod_existencia, i.existencia
+group by i.cod_existencia, i.existencia, id_empresa, i.idmes, i.idperiodo
+Having i.id_empresa = @idempresa AND i.idmes = @idmes AND i.idperiodo= @idperiodo
+END
+GO
+
+ALTER PROC invent.SP_totalSalida
+@idempresa int,
+@idmes tinyint,
+@idperiodo smallint,
+@outSalida int OUTPUT
+AS BEGIN
+SET @outSalida = (select count(i.id_inventario) FROM invent.Inventario i
+	where (i.id_empresa = @idempresa AND i.idmes = @idmes AND i.idperiodo= @idperiodo) AND i.salidas > 0)
+END
+GO
+
+ALTER PROC invent.SP_totalEntrada
+@idempresa int,
+@idmes tinyint,
+@idperiodo smallint,
+@outEntrada int OUTPUT
+AS BEGIN
+SET @outEntrada = (select count(i.id_inventario) FROM invent.Inventario i
+	where (i.id_empresa = @idempresa AND i.idmes = @idmes AND i.idperiodo= @idperiodo) AND i.entradas > 0)
+END
+GO
+
