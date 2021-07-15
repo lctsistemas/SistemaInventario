@@ -25,6 +25,7 @@ namespace CapaPresentacion.Vista
             rMoneda = new RMoneda();
             Show_moneda();
             Tabla();
+            Dgv_moneda.AutoGenerateColumns = false;
         }
 
         private void btnnuevo_Click(object sender, EventArgs e)
@@ -35,6 +36,7 @@ namespace CapaPresentacion.Vista
                 vmon.btnmodificar.Visible = false;
                 vmon.btnguardar.Visible = true;
                 vmon.ShowDialog();
+
                 //Show_business("ACTIVO");
             }
         }
@@ -49,11 +51,7 @@ namespace CapaPresentacion.Vista
         private void Tabla()
         {
             Dgv_moneda.Columns[0].Visible = true;
-            Dgv_moneda.Columns[1].HeaderText = "CODIGO";
-            Dgv_moneda.Columns[2].HeaderText = "MONEDA";
-            Dgv_moneda.Columns[3].HeaderText = "ABREVIATURA";
-            Dgv_moneda.Columns[4].HeaderText = "SIMBOLO";
-            Dgv_moneda.Columns[4].HeaderText = "DESCRIPCION";
+            Dgv_moneda.Columns[1].Visible = false;
         }
 
         private void btneditar_Click(object sender, EventArgs e)
@@ -68,12 +66,12 @@ namespace CapaPresentacion.Vista
             using (FrmV_Moneda mon = new FrmV_Moneda())
             {
                 mon.StartPosition = FormStartPosition.CenterParent;
-                mon.Txt_idmon.Text = Dgv_moneda.CurrentRow.Cells[0].Value.ToString();
-                mon.txtcodMon.Text= Dgv_moneda.CurrentRow.Cells[1].Value.ToString();
-                mon.txtmoneda.Text = Dgv_moneda.CurrentRow.Cells[2].Value.ToString();
-                mon.txtabrev.Text = Dgv_moneda.CurrentRow.Cells[3].Value.ToString();
-                mon.txtsimbolo.Text = Dgv_moneda.CurrentRow.Cells[4].Value.ToString();
-                mon.txtDesc.Text = Dgv_moneda.CurrentRow.Cells[5].Value.ToString();
+                mon.Txt_idmon.Text = Dgv_moneda.CurrentRow.Cells[1].Value.ToString();
+                mon.txtcodMon.Text= Dgv_moneda.CurrentRow.Cells[2].Value.ToString();
+                mon.txtmoneda.Text = Dgv_moneda.CurrentRow.Cells[3].Value.ToString();
+                mon.txtabrev.Text = Dgv_moneda.CurrentRow.Cells[4].Value.ToString();
+                mon.txtsimbolo.Text = Dgv_moneda.CurrentRow.Cells[5].Value.ToString();
+                mon.txtDesc.Text = Dgv_moneda.CurrentRow.Cells[6].Value.ToString();
 
                 mon.btnmodificar.Visible = true;
                 mon.btnguardar.Visible = false;
@@ -88,7 +86,7 @@ namespace CapaPresentacion.Vista
             string result = "";
             if (e.RowIndex > -1)
             {
-                if (e.ColumnIndex == this.Dgv_moneda.Columns["dgvtxteliminar"].Index)
+                if (e.ColumnIndex == this.Dgv_moneda.Columns["dgv_txtdelete"].Index)
                 {
                     if (Msg.M_question("¿Desea Eliminar la moneda?") == DialogResult.Yes)
                     {
@@ -96,9 +94,14 @@ namespace CapaPresentacion.Vista
                         dMoneda.Idmoneda = Convert.ToInt32(Dgv_moneda.CurrentRow.Cells[1].Value);
                         result = rMoneda.Delete(dMoneda);
 
-                       
+
+                        if (result.Contains("Se Elimino"))
+                        {
                             Msg.M_info(result);
                             Show_moneda();
+                        }
+                        else
+                            Msg.M_error(result);
 
                     }
                 }

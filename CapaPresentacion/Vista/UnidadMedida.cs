@@ -18,12 +18,17 @@ namespace CapaPresentacion.Vista
     {
         readonly DUnidadMedida dunidMed;
         readonly RUnidadMedida runidMed;
+        string result;
+        List<DUnidadMedida> lst;
+
         public FrmUnidadMedida()
         {
             InitializeComponent();
             dunidMed = new DUnidadMedida();
             runidMed = new RUnidadMedida();
+            Dgv_Unidadmedida.AutoGenerateColumns = false;
             Show_UnidadMed();
+           //Tabla();
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -47,14 +52,10 @@ namespace CapaPresentacion.Vista
         //TABLA
         private void Tabla()
         {
-            Dgv_Unidadmedida.Columns[0].Visible = true; //ELIMINAR
-            Dgv_Unidadmedida.Columns[1].HeaderText = "ID";
-            Dgv_Unidadmedida.Columns[1].Visible = false;
 
-            Dgv_Unidadmedida.Columns[2].HeaderText = "CODIGO";
-            Dgv_Unidadmedida.Columns[2].Visible = false;
-            Dgv_Unidadmedida.Columns[3].HeaderText = "ABREVIATURA";
-            Dgv_Unidadmedida.Columns[4].HeaderText = "DESCRIPCION";
+           // Dgv_Unidadmedida.Columns[0].Visible = false;
+            Dgv_Unidadmedida.Columns[1].HeaderText = "CODIGO";
+            Dgv_Unidadmedida.Columns[2].HeaderText = "DESCRIPCION" ;
         }
 
         private void btncerrar_Click(object sender, EventArgs e)
@@ -74,7 +75,7 @@ namespace CapaPresentacion.Vista
                 Lbl_ruta.Text = dialog.FileName;
                 Dgv_Unidadmedida.DataSource = runidMed.ImportarAchivoExcel(dialog.FileName);
                 Tabla();
-
+                BtnGuardar.Visible = true;
             }
             dialog.Dispose();
         }
@@ -90,10 +91,8 @@ namespace CapaPresentacion.Vista
                     {
 
                         dunidMed.IdUnidadMedida = Convert.ToInt32(Dgv_Unidadmedida.CurrentRow.Cells[1].Value);
-
-                        dunidMed.Codigo = Dgv_Unidadmedida.CurrentRow.Cells[2].Value.ToString();
-                        dunidMed.Abrev = Dgv_Unidadmedida.CurrentRow.Cells[3].Value.ToString();
-                        dunidMed.Descripcion = Dgv_Unidadmedida.CurrentRow.Cells[4].Value.ToString();
+                        //dunidMed.Abrev = Dgv_Unidadmedida.CurrentRow.Cells[1].Value.ToString();
+                        //dunidMed.Descripcion = Dgv_Unidadmedida.CurrentRow.Cells[2].Value.ToString();
                         result = runidMed.Delete(dunidMed);
 
                         if (result.Contains("Se Elimino"))
@@ -123,9 +122,8 @@ namespace CapaPresentacion.Vista
             {
                 unidadMedida.StartPosition = FormStartPosition.CenterParent;
                 unidadMedida.txtidUnidMed.Text = Dgv_Unidadmedida.CurrentRow.Cells[0].Value.ToString();
-                unidadMedida.txtcodUM.Text = Dgv_Unidadmedida.CurrentRow.Cells[1].Value.ToString();
-                unidadMedida.txtAbrev.Text = Dgv_Unidadmedida.CurrentRow.Cells[2].Value.ToString();
-                unidadMedida.txtDesc.Text = Dgv_Unidadmedida.CurrentRow.Cells[3].Value.ToString();
+                unidadMedida.txtAbrev.Text = Dgv_Unidadmedida.CurrentRow.Cells[1].Value.ToString();
+                unidadMedida.txtDesc.Text = Dgv_Unidadmedida.CurrentRow.Cells[2].Value.ToString();
 
                 unidadMedida.btnmodificar.Visible = true;
                 unidadMedida.btnguardar.Visible = false;
@@ -139,6 +137,40 @@ namespace CapaPresentacion.Vista
         private void Txtbuscar_TextChanged(object sender, EventArgs e)
         {
             Dgv_Unidadmedida.DataSource = runidMed.Search(Txtbuscar.Text.Trim());
+        }
+
+        private void BtnGuardar_Click(object sender, EventArgs e)
+        {
+            if (!(this.Dgv_Unidadmedida.RowCount > 0))
+                return;
+
+            string men = string.Format("Registrando {0} Filas...", Dgv_Unidadmedida.RowCount.ToString("N0"));
+            using (var frmpro = new FrmProcesoWait(SetInventario, men))
+            {
+                frmpro.StartPosition = FormStartPosition.CenterParent;
+                frmpro.ShowDialog(this);
+
+                if (result.Contains("El Registro"))
+                    Msg.M_info(result);
+                else
+                    Msg.M_error(result);
+            }
+        }
+
+        private void SetInventario()
+        {
+            lst = new List<DUnidadMedida>();
+            foreach (DataGridViewRow item in Dgv_Unidadmedida.Rows)
+            {
+                lst.Add(new DUnidadMedida()
+                {
+                    Abrev=item.Cells[1].Value.ToString(),
+                    Descripcion=item.Cells[2].Value.ToString()
+                    
+
+                });
+            }
+            result = runidMed.Add_Multiple(lst);
         }
     }
 }

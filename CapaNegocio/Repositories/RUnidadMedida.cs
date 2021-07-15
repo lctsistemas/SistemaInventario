@@ -17,6 +17,52 @@ namespace CapaNegocio.Repositories
         private SqlCommand cmd;
         private string result = "";
         private List<DUnidadMedida> listUnidMed;
+
+        public string Add_Multiple(IEnumerable<DUnidadMedida> lst)
+        {
+            string result;
+            using (SqlConnection connect = Dconexion.Getconectar())
+            {
+                connect.Open();
+                using (SqlTransaction sqltra = connect.BeginTransaction())
+                {
+                    using (SqlCommand cmd = new SqlCommand())
+                    {
+                        cmd.Connection = connect;
+                        cmd.Transaction = sqltra;
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.CommandText = "manto.sp_AddUnidadMedida";
+
+                        cmd.Parameters.Add("@abrev", SqlDbType.VarChar,5);
+                        cmd.Parameters.Add("@descripcion", SqlDbType.VarChar,60);
+
+
+                        try
+                        {
+                            foreach (var item in lst)
+                            {
+                                cmd.Parameters["@abrev"].Value = item.Abrev;
+                                cmd.Parameters["@descripcion"].Value = item.Descripcion;
+                                
+                                cmd.ExecuteNonQuery();
+                            }
+                            sqltra.Commit();
+                            result = "El Registro fue Insetados Correctamente";
+
+                        }
+                        catch (Exception ex)
+                        {
+                            sqltra.Rollback();
+                            connect.Close();
+                            result = ex.ToString();
+                        }
+                    }
+                }
+            }
+            return result;
+        }
+
+
         public string Add(DUnidadMedida Entity)
         {
             using (SqlConnection connect = Dconexion.Getconectar())
@@ -30,7 +76,6 @@ namespace CapaNegocio.Repositories
                         cmd.CommandText = "manto.sp_AddUnidadMedida";
                         cmd.CommandType = CommandType.StoredProcedure;
 
-                        cmd.Parameters.AddWithValue("@codigo", Entity.Codigo);
                         cmd.Parameters.AddWithValue("@abrev", Entity.Abrev);
                         cmd.Parameters.AddWithValue("@descripcion", Entity.Descripcion);
 
@@ -94,8 +139,7 @@ namespace CapaNegocio.Repositories
                         cmd.CommandType = CommandType.StoredProcedure;
 
                         cmd.Parameters.AddWithValue("@idtipOper", Entity.IdUnidadMedida);
-                        cmd.Parameters.AddWithValue("@codigo", Entity.Codigo);
-                        cmd.Parameters.AddWithValue("@abrev", Entity.Descripcion);
+                        cmd.Parameters.AddWithValue("@abrev", Entity.Abrev);
                         cmd.Parameters.AddWithValue("@descripcion", Entity.Descripcion);
 
 
@@ -126,6 +170,7 @@ namespace CapaNegocio.Repositories
                     {
                         string sql = "select ABREVIATURA, DESCRIPCION from [UNIDAD_MEDIDA$]";
                         cmd.Connection = conector;
+                        cmd.CommandType = CommandType.Text;
                         cmd.CommandText = sql;
 
                         OleDbDataAdapter da = new OleDbDataAdapter();
@@ -183,9 +228,8 @@ namespace CapaNegocio.Repositories
                             listUnidMed.Add(new DUnidadMedida()
                             {
                                 IdUnidadMedida = Convert.ToInt32(item[0]),
-                                Codigo = item[1].ToString(),
-                                Abrev = item[2].ToString(),
-                                Descripcion = item[3].ToString()
+                                Abrev = item[1].ToString(),
+                                Descripcion = item[2].ToString()
                             });
                         }
                     }
@@ -199,7 +243,7 @@ namespace CapaNegocio.Repositories
 
         public IEnumerable<DUnidadMedida> Search(string filter)
         {
-            return listUnidMed.FindAll(e => e.Codigo.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0);
+            return listUnidMed.FindAll(e => e.Descripcion.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0);
         }
     }
 }

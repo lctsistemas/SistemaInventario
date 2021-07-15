@@ -46,5 +46,11 @@ namespace CapaDatos.Contracts
     }
 
 
+    public interface ITipoExistencia : IGeneral<DTipoExistencia>
+    {
+
+    }
+
+
 
 }

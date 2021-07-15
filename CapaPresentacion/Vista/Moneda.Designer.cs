@@ -29,26 +29,31 @@ namespace CapaPresentacion.Vista
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMoneda));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.Dgv_moneda = new System.Windows.Forms.DataGridView();
+            this.Txtbuscar = new Guna.UI2.WinForms.Guna2TextBox();
             this.Panel_boton = new System.Windows.Forms.Panel();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.btneditar = new Guna.UI2.WinForms.Guna2Button();
             this.btnnuevo = new Guna.UI2.WinForms.Guna2Button();
             this.btncerrar = new System.Windows.Forms.PictureBox();
-            this.Dgv_moneda = new System.Windows.Forms.DataGridView();
             this.dgv_txtdelete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Txtbuscar = new Guna.UI2.WinForms.Guna2TextBox();
+            this.CODIGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MONEDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ABREVIATURA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SIMBOLO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DESC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_moneda)).BeginInit();
             this.Panel_boton.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Dgv_moneda)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -71,6 +76,93 @@ namespace CapaPresentacion.Vista
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(688, 522);
             this.panel2.TabIndex = 114;
+            // 
+            // Dgv_moneda
+            // 
+            this.Dgv_moneda.AllowUserToAddRows = false;
+            this.Dgv_moneda.AllowUserToDeleteRows = false;
+            this.Dgv_moneda.AllowUserToResizeColumns = false;
+            this.Dgv_moneda.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.Dgv_moneda.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.Dgv_moneda.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Dgv_moneda.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.Dgv_moneda.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
+            this.Dgv_moneda.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(233)))), ((int)(((byte)(236)))));
+            this.Dgv_moneda.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Dgv_moneda.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.Dgv_moneda.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_moneda.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.Dgv_moneda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Dgv_moneda.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgv_txtdelete,
+            this.CODIGO,
+            this.MONEDA,
+            this.ABREVIATURA,
+            this.SIMBOLO,
+            this.DESC});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 1, 0, 1);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_moneda.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Dgv_moneda.EnableHeadersVisualStyles = false;
+            this.Dgv_moneda.GridColor = System.Drawing.Color.Silver;
+            this.Dgv_moneda.Location = new System.Drawing.Point(3, 56);
+            this.Dgv_moneda.MultiSelect = false;
+            this.Dgv_moneda.Name = "Dgv_moneda";
+            this.Dgv_moneda.ReadOnly = true;
+            this.Dgv_moneda.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.Dgv_moneda.RowHeadersVisible = false;
+            this.Dgv_moneda.RowHeadersWidth = 25;
+            this.Dgv_moneda.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.Dgv_moneda.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.Dgv_moneda.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.Dgv_moneda.Size = new System.Drawing.Size(666, 454);
+            this.Dgv_moneda.TabIndex = 5;
+            this.Dgv_moneda.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_moneda_CellContentClick);
+            // 
+            // Txtbuscar
+            // 
+            this.Txtbuscar.Animated = true;
+            this.Txtbuscar.BorderColor = System.Drawing.Color.Silver;
+            this.Txtbuscar.BorderRadius = 3;
+            this.Txtbuscar.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Txtbuscar.DefaultText = "";
+            this.Txtbuscar.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.Txtbuscar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.Txtbuscar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Txtbuscar.DisabledState.Parent = this.Txtbuscar;
+            this.Txtbuscar.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Txtbuscar.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Txtbuscar.FocusedState.Parent = this.Txtbuscar;
+            this.Txtbuscar.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.Txtbuscar.ForeColor = System.Drawing.Color.Black;
+            this.Txtbuscar.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Txtbuscar.HoverState.Parent = this.Txtbuscar;
+            this.Txtbuscar.Location = new System.Drawing.Point(12, 20);
+            this.Txtbuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Txtbuscar.Name = "Txtbuscar";
+            this.Txtbuscar.PasswordChar = '\0';
+            this.Txtbuscar.PlaceholderText = "Buscar";
+            this.Txtbuscar.SelectedText = "";
+            this.Txtbuscar.ShadowDecoration.Parent = this.Txtbuscar;
+            this.Txtbuscar.Size = new System.Drawing.Size(578, 28);
+            this.Txtbuscar.TabIndex = 4;
+            this.Txtbuscar.TextChanged += new System.EventHandler(this.Txtbuscar_TextChanged);
             // 
             // Panel_boton
             // 
@@ -170,59 +262,6 @@ namespace CapaPresentacion.Vista
             this.btncerrar.TabIndex = 112;
             this.btncerrar.TabStop = false;
             // 
-            // Dgv_moneda
-            // 
-            this.Dgv_moneda.AllowUserToAddRows = false;
-            this.Dgv_moneda.AllowUserToDeleteRows = false;
-            this.Dgv_moneda.AllowUserToResizeColumns = false;
-            this.Dgv_moneda.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.Dgv_moneda.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.Dgv_moneda.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Dgv_moneda.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.Dgv_moneda.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
-            this.Dgv_moneda.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(233)))), ((int)(((byte)(236)))));
-            this.Dgv_moneda.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Dgv_moneda.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.Dgv_moneda.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Dgv_moneda.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.Dgv_moneda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Dgv_moneda.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dgv_txtdelete});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(0, 1, 0, 1);
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Dgv_moneda.DefaultCellStyle = dataGridViewCellStyle6;
-            this.Dgv_moneda.EnableHeadersVisualStyles = false;
-            this.Dgv_moneda.GridColor = System.Drawing.Color.Silver;
-            this.Dgv_moneda.Location = new System.Drawing.Point(3, 56);
-            this.Dgv_moneda.MultiSelect = false;
-            this.Dgv_moneda.Name = "Dgv_moneda";
-            this.Dgv_moneda.ReadOnly = true;
-            this.Dgv_moneda.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.Dgv_moneda.RowHeadersVisible = false;
-            this.Dgv_moneda.RowHeadersWidth = 25;
-            this.Dgv_moneda.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.Dgv_moneda.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.Dgv_moneda.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Dgv_moneda.Size = new System.Drawing.Size(666, 454);
-            this.Dgv_moneda.TabIndex = 5;
-            this.Dgv_moneda.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_moneda_CellContentClick);
-            // 
             // dgv_txtdelete
             // 
             this.dgv_txtdelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
@@ -235,34 +274,40 @@ namespace CapaPresentacion.Vista
             this.dgv_txtdelete.ToolTipText = "Eliminar";
             this.dgv_txtdelete.Width = 63;
             // 
-            // Txtbuscar
+            // CODIGO
             // 
-            this.Txtbuscar.Animated = true;
-            this.Txtbuscar.BorderColor = System.Drawing.Color.Silver;
-            this.Txtbuscar.BorderRadius = 3;
-            this.Txtbuscar.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.Txtbuscar.DefaultText = "";
-            this.Txtbuscar.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.Txtbuscar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.Txtbuscar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Txtbuscar.DisabledState.Parent = this.Txtbuscar;
-            this.Txtbuscar.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Txtbuscar.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Txtbuscar.FocusedState.Parent = this.Txtbuscar;
-            this.Txtbuscar.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.Txtbuscar.ForeColor = System.Drawing.Color.Black;
-            this.Txtbuscar.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Txtbuscar.HoverState.Parent = this.Txtbuscar;
-            this.Txtbuscar.Location = new System.Drawing.Point(12, 20);
-            this.Txtbuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Txtbuscar.Name = "Txtbuscar";
-            this.Txtbuscar.PasswordChar = '\0';
-            this.Txtbuscar.PlaceholderText = "Buscar";
-            this.Txtbuscar.SelectedText = "";
-            this.Txtbuscar.ShadowDecoration.Parent = this.Txtbuscar;
-            this.Txtbuscar.Size = new System.Drawing.Size(578, 28);
-            this.Txtbuscar.TabIndex = 4;
-            this.Txtbuscar.TextChanged += new System.EventHandler(this.Txtbuscar_TextChanged);
+            this.CODIGO.DataPropertyName = "Codigo";
+            this.CODIGO.HeaderText = "CODIGO";
+            this.CODIGO.Name = "CODIGO";
+            this.CODIGO.ReadOnly = true;
+            // 
+            // MONEDA
+            // 
+            this.MONEDA.DataPropertyName = "Nom_moneda";
+            this.MONEDA.HeaderText = "MONEDA";
+            this.MONEDA.Name = "MONEDA";
+            this.MONEDA.ReadOnly = true;
+            // 
+            // ABREVIATURA
+            // 
+            this.ABREVIATURA.DataPropertyName = "Abrev";
+            this.ABREVIATURA.HeaderText = "ABREV";
+            this.ABREVIATURA.Name = "ABREVIATURA";
+            this.ABREVIATURA.ReadOnly = true;
+            // 
+            // SIMBOLO
+            // 
+            this.SIMBOLO.DataPropertyName = "Simbolo";
+            this.SIMBOLO.HeaderText = "SIMBOLO";
+            this.SIMBOLO.Name = "SIMBOLO";
+            this.SIMBOLO.ReadOnly = true;
+            // 
+            // DESC
+            // 
+            this.DESC.DataPropertyName = "Descripcion";
+            this.DESC.HeaderText = "DESC";
+            this.DESC.Name = "DESC";
+            this.DESC.ReadOnly = true;
             // 
             // FrmMoneda
             // 
@@ -274,9 +319,9 @@ namespace CapaPresentacion.Vista
             this.Text = "Moneda";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_moneda)).EndInit();
             this.Panel_boton.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Dgv_moneda)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -292,7 +337,12 @@ namespace CapaPresentacion.Vista
         private Guna.UI2.WinForms.Guna2Button btnnuevo;
         public System.Windows.Forms.PictureBox btncerrar;
         private System.Windows.Forms.DataGridView Dgv_moneda;
-        private System.Windows.Forms.DataGridViewImageColumn dgv_txtdelete;
         private Guna.UI2.WinForms.Guna2TextBox Txtbuscar;
+        private System.Windows.Forms.DataGridViewImageColumn dgv_txtdelete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CODIGO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MONEDA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ABREVIATURA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SIMBOLO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DESC;
     }
 }

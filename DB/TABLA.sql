@@ -21,6 +21,23 @@ estado varchar(15) not null,
 )
 GO
 
+--TABLA TIPO DE EXISTENCIA
+CREATE TABLE manto.TipoExistencia(
+idTipoExist int not null,
+codigo char(2) not null,
+descripcion varchar(100) not null
+)
+
+-- TABLA EXISTENCIA
+CREATE TABLE manto.Existencia(
+id_existencia int not null,
+nombre varchar(50) null,
+id_tipo_existencia int not null,
+id_tipo_op int not null,
+id_tipo_doc int not null,
+)
+GO
+
 CREATE TABLE manto.clienteProv(
 idcliprov int not null,
 nom_prov varchar(60) not null,
@@ -47,14 +64,13 @@ GO
 
 CREATE TABLE manto.TipoDocumento(
 idTipoDoc int not null,
-codigo char(11) not null CONSTRAINT UNQ_cod_doc UNIQUE,
+codigo char(11) CONSTRAINT UNQ_cod_doc UNIQUE,
 descripcion varchar(50)
 )
 GO
 
 CREATE TABLE manto.UnidadMedida(
 idUnidadMedida int not null,
-codigo char(11) not null CONSTRAINT UNQ_cod_um UNIQUE,
 abrev varchar(5) CONSTRAINT UNQ_abrev_um UNIQUE,
 descripcion varchar(60),
 )

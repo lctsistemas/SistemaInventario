@@ -35,6 +35,7 @@ namespace CapaPresentacion.Vista
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTipoDocumento));
             this.Panel_documento = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.Lbl_ruta = new System.Windows.Forms.Label();
             this.dgvTipoDoc = new System.Windows.Forms.DataGridView();
             this.dgv_txtdelete = new System.Windows.Forms.DataGridViewImageColumn();
             this.Txtbuscar = new Guna.UI2.WinForms.Guna2TextBox();
@@ -44,7 +45,7 @@ namespace CapaPresentacion.Vista
             this.btneditar = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.btncerrar = new System.Windows.Forms.PictureBox();
-            this.Lbl_ruta = new System.Windows.Forms.Label();
+            this.BtnGuardar = new Guna.UI2.WinForms.Guna2Button();
             this.Panel_documento.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTipoDoc)).BeginInit();
@@ -73,6 +74,16 @@ namespace CapaPresentacion.Vista
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(635, 505);
             this.panel2.TabIndex = 111;
+            // 
+            // Lbl_ruta
+            // 
+            this.Lbl_ruta.AutoSize = true;
+            this.Lbl_ruta.Location = new System.Drawing.Point(12, 61);
+            this.Lbl_ruta.Name = "Lbl_ruta";
+            this.Lbl_ruta.Size = new System.Drawing.Size(35, 13);
+            this.Lbl_ruta.TabIndex = 110;
+            this.Lbl_ruta.Text = "label1";
+            this.Lbl_ruta.Visible = false;
             // 
             // dgvTipoDoc
             // 
@@ -125,6 +136,7 @@ namespace CapaPresentacion.Vista
             this.dgvTipoDoc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTipoDoc.Size = new System.Drawing.Size(619, 405);
             this.dgvTipoDoc.TabIndex = 7;
+            this.dgvTipoDoc.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTipoDoc_CellContentClick);
             // 
             // dgv_txtdelete
             // 
@@ -170,6 +182,7 @@ namespace CapaPresentacion.Vista
             // Panel_boton
             // 
             this.Panel_boton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Panel_boton.Controls.Add(this.BtnGuardar);
             this.Panel_boton.Controls.Add(this.Btnexcel);
             this.Panel_boton.Controls.Add(this.btneliminar);
             this.Panel_boton.Controls.Add(this.btneditar);
@@ -267,15 +280,26 @@ namespace CapaPresentacion.Vista
             this.btncerrar.TabStop = false;
             this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click);
             // 
-            // Lbl_ruta
+            // BtnGuardar
             // 
-            this.Lbl_ruta.AutoSize = true;
-            this.Lbl_ruta.Location = new System.Drawing.Point(12, 61);
-            this.Lbl_ruta.Name = "Lbl_ruta";
-            this.Lbl_ruta.Size = new System.Drawing.Size(35, 13);
-            this.Lbl_ruta.TabIndex = 110;
-            this.Lbl_ruta.Text = "label1";
-            this.Lbl_ruta.Visible = false;
+            this.BtnGuardar.BackColor = System.Drawing.Color.Transparent;
+            this.BtnGuardar.BorderRadius = 3;
+            this.BtnGuardar.CheckedState.Parent = this.BtnGuardar;
+            this.BtnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnGuardar.CustomImages.Parent = this.BtnGuardar;
+            this.BtnGuardar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnGuardar.FillColor = System.Drawing.Color.Green;
+            this.BtnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.BtnGuardar.ForeColor = System.Drawing.Color.White;
+            this.BtnGuardar.HoverState.Parent = this.BtnGuardar;
+            this.BtnGuardar.Location = new System.Drawing.Point(0, 180);
+            this.BtnGuardar.Name = "BtnGuardar";
+            this.BtnGuardar.ShadowDecoration.Parent = this.BtnGuardar;
+            this.BtnGuardar.Size = new System.Drawing.Size(89, 45);
+            this.BtnGuardar.TabIndex = 112;
+            this.BtnGuardar.Text = "Guardar";
+            this.BtnGuardar.Visible = false;
+            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
             // FrmTipoDocumento
             // 
@@ -309,5 +333,6 @@ namespace CapaPresentacion.Vista
         private System.Windows.Forms.DataGridViewImageColumn dgv_txtdelete;
         private Guna.UI2.WinForms.Guna2TextBox Txtbuscar;
         public System.Windows.Forms.Label Lbl_ruta;
+        private Guna.UI2.WinForms.Guna2Button BtnGuardar;
     }
 }

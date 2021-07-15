@@ -47,20 +47,20 @@ namespace CapaPresentacion.Vista
             this.Btn_iv_fisico = new System.Windows.Forms.Button();
             this.Btn_iv_valorizado = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.Btn_empresa = new System.Windows.Forms.Button();
             this.Btn_cliente_pro = new System.Windows.Forms.Button();
             this.Btn_tipooperacion = new System.Windows.Forms.Button();
             this.Btn_moneda = new System.Windows.Forms.Button();
+            this.Btn_tipdocumento = new System.Windows.Forms.Button();
+            this.BtnUnidMed = new System.Windows.Forms.Button();
             this.Panel_titulo = new System.Windows.Forms.Panel();
             this.lbluser = new System.Windows.Forms.Label();
             this.Lblempresa = new System.Windows.Forms.Label();
             this.Picture_user = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.Btn_tipdocumento = new System.Windows.Forms.Button();
-            this.BtnUnidMed = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.PanelMenu.SuspendLayout();
             this.Panel_contenedor.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -282,6 +282,16 @@ namespace CapaPresentacion.Vista
             this.button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button5.UseVisualStyleBackColor = true;
             // 
+            // button2
+            // 
+            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button2.Location = new System.Drawing.Point(561, 3);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(93, 53);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
@@ -313,7 +323,7 @@ namespace CapaPresentacion.Vista
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(445, 59);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(446, 59);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // Btn_empresa
@@ -325,7 +335,6 @@ namespace CapaPresentacion.Vista
             this.Btn_empresa.Size = new System.Drawing.Size(68, 53);
             this.Btn_empresa.TabIndex = 2;
             this.Btn_empresa.Text = "Empresa";
-            this.Btn_empresa.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_empresa.UseVisualStyleBackColor = true;
             this.Btn_empresa.Click += new System.EventHandler(this.Btn_empresa_Click);
             // 
@@ -338,7 +347,6 @@ namespace CapaPresentacion.Vista
             this.Btn_cliente_pro.Size = new System.Drawing.Size(68, 53);
             this.Btn_cliente_pro.TabIndex = 2;
             this.Btn_cliente_pro.Text = "Cliente y Proveedor";
-            this.Btn_cliente_pro.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_cliente_pro.UseVisualStyleBackColor = true;
             this.Btn_cliente_pro.Click += new System.EventHandler(this.Btn_cliente_pro_Click);
             // 
@@ -351,7 +359,6 @@ namespace CapaPresentacion.Vista
             this.Btn_tipooperacion.Size = new System.Drawing.Size(68, 53);
             this.Btn_tipooperacion.TabIndex = 2;
             this.Btn_tipooperacion.Text = "Tipo de Operación";
-            this.Btn_tipooperacion.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_tipooperacion.UseVisualStyleBackColor = true;
             this.Btn_tipooperacion.Click += new System.EventHandler(this.Btn_tipooperacion_Click);
             // 
@@ -364,9 +371,31 @@ namespace CapaPresentacion.Vista
             this.Btn_moneda.Size = new System.Drawing.Size(68, 53);
             this.Btn_moneda.TabIndex = 2;
             this.Btn_moneda.Text = "Moneda";
-            this.Btn_moneda.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_moneda.UseVisualStyleBackColor = true;
             this.Btn_moneda.Click += new System.EventHandler(this.Btn_moneda_Click);
+            // 
+            // Btn_tipdocumento
+            // 
+            this.Btn_tipdocumento.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Btn_tipdocumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_tipdocumento.Location = new System.Drawing.Point(299, 3);
+            this.Btn_tipdocumento.Name = "Btn_tipdocumento";
+            this.Btn_tipdocumento.Size = new System.Drawing.Size(70, 53);
+            this.Btn_tipdocumento.TabIndex = 2;
+            this.Btn_tipdocumento.Text = "Tipo Documento";
+            this.Btn_tipdocumento.UseVisualStyleBackColor = true;
+            this.Btn_tipdocumento.Click += new System.EventHandler(this.Btn_tipdocumento_Click);
+            // 
+            // BtnUnidMed
+            // 
+            this.BtnUnidMed.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnUnidMed.Location = new System.Drawing.Point(373, 3);
+            this.BtnUnidMed.Name = "BtnUnidMed";
+            this.BtnUnidMed.Size = new System.Drawing.Size(69, 53);
+            this.BtnUnidMed.TabIndex = 2;
+            this.BtnUnidMed.Text = "Unidad Medida";
+            this.BtnUnidMed.UseVisualStyleBackColor = true;
+            this.BtnUnidMed.Click += new System.EventHandler(this.BtnUnidMed_Click);
             // 
             // Panel_titulo
             // 
@@ -416,40 +445,6 @@ namespace CapaPresentacion.Vista
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // Btn_tipdocumento
-            // 
-            this.Btn_tipdocumento.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Btn_tipdocumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_tipdocumento.Location = new System.Drawing.Point(299, 3);
-            this.Btn_tipdocumento.Name = "Btn_tipdocumento";
-            this.Btn_tipdocumento.Size = new System.Drawing.Size(68, 53);
-            this.Btn_tipdocumento.TabIndex = 2;
-            this.Btn_tipdocumento.Text = "Tipo Documento";
-            this.Btn_tipdocumento.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Btn_tipdocumento.UseVisualStyleBackColor = true;
-            this.Btn_tipdocumento.Click += new System.EventHandler(this.Btn_tipdocumento_Click);
-            // 
-            // BtnUnidMed
-            // 
-            this.BtnUnidMed.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnUnidMed.Location = new System.Drawing.Point(373, 3);
-            this.BtnUnidMed.Name = "BtnUnidMed";
-            this.BtnUnidMed.Size = new System.Drawing.Size(68, 53);
-            this.BtnUnidMed.TabIndex = 2;
-            this.BtnUnidMed.Text = "Unidad Medida";
-            this.BtnUnidMed.UseVisualStyleBackColor = true;
-            this.BtnUnidMed.Click += new System.EventHandler(this.BtnUnidMed_Click);
-            // 
-            // button2
-            // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.Location = new System.Drawing.Point(561, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(93, 53);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // FrmInicio
             // 

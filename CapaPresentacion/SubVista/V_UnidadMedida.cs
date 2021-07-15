@@ -27,13 +27,11 @@ namespace CapaPresentacion.SubVista
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             string result = "";
-            dUnidadMedida.Codigo = txtcodUM.Text.Trim();
             dUnidadMedida.Abrev = txtAbrev.Text.Trim();
             dUnidadMedida.Descripcion = txtDesc.Text.Trim();
 
             result = rUnidadMedida.Add(dUnidadMedida);
 
-            txtcodUM.Text = string.Empty;
             txtAbrev.Text = string.Empty;
             txtDesc.Text = string.Empty;
 
@@ -42,7 +40,7 @@ namespace CapaPresentacion.SubVista
 
         private void btnmodificar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtcodUM.Text) || string.IsNullOrWhiteSpace(txtAbrev.Text) || 
+            if (string.IsNullOrWhiteSpace(txtAbrev.Text) || 
                 string.IsNullOrWhiteSpace(txtDesc.Text))
             {
                 ValidateChildren();
@@ -51,7 +49,6 @@ namespace CapaPresentacion.SubVista
 
             string result = "";
             dUnidadMedida.IdUnidadMedida = int.Parse(txtidUnidMed.Text.Trim());
-            dUnidadMedida.Codigo = txtcodUM.Text.Trim();
             dUnidadMedida.Abrev = txtAbrev.Text.Trim();
             dUnidadMedida.Descripcion = txtDesc.Text.Trim();
 
@@ -78,15 +75,11 @@ namespace CapaPresentacion.SubVista
                 }
 
             }
-            txtcodUM.Focus();
+            txtAbrev.Focus();
 
         }
 
-        private void txtcodUM_Validating(object sender, CancelEventArgs e)
-        {
-            ValidateError.Validate_text(txtcodUM, "¡Campo Requerido!");
-        }
-
+    
         private void txtAbrev_Validating(object sender, CancelEventArgs e)
         {
             ValidateError.Validate_text(txtAbrev, "¡Campo Requerido!");
