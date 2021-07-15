@@ -86,6 +86,12 @@
     <Compile Include="SubVista\VTipo_Documento.Designer.cs">
       <DependentUpon>VTipo_Documento.cs</DependentUpon>
     </Compile>
+    <Compile Include="SubVista\VTipo_Existencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubVista\VTipo_Existencia.Designer.cs">
+      <DependentUpon>VTipo_Existencia.cs</DependentUpon>
+    </Compile>
     <Compile Include="SubVista\V_Cargar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +151,12 @@
     </Compile>
     <Compile Include="Vista\Mantenimiento.Designer.cs">
       <DependentUpon>Mantenimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\TipoExistencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\TipoExistencia.Designer.cs">
+      <DependentUpon>TipoExistencia.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\TipoOperacion.cs">
       <SubType>Form</SubType>
@@ -233,6 +245,9 @@
     <EmbeddedResource Include="SubVista\VTipo_Documento.resx">
       <DependentUpon>VTipo_Documento.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SubVista\VTipo_Existencia.resx">
+      <DependentUpon>VTipo_Existencia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SubVista\V_Cargar.resx">
       <DependentUpon>V_Cargar.cs</DependentUpon>
     </EmbeddedResource>
@@ -262,6 +277,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Mantenimiento.resx">
       <DependentUpon>Mantenimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\TipoExistencia.resx">
+      <DependentUpon>TipoExistencia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\TipoOperacion.resx">
       <DependentUpon>TipoOperacion.cs</DependentUpon>

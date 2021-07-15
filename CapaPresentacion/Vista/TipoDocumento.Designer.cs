@@ -40,12 +40,12 @@ namespace CapaPresentacion.Vista
             this.dgv_txtdelete = new System.Windows.Forms.DataGridViewImageColumn();
             this.Txtbuscar = new Guna.UI2.WinForms.Guna2TextBox();
             this.Panel_boton = new System.Windows.Forms.Panel();
+            this.BtnGuardar = new Guna.UI2.WinForms.Guna2Button();
             this.Btnexcel = new Guna.UI2.WinForms.Guna2Button();
             this.btneliminar = new Guna.UI2.WinForms.Guna2Button();
             this.btneditar = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.btncerrar = new System.Windows.Forms.PictureBox();
-            this.BtnGuardar = new Guna.UI2.WinForms.Guna2Button();
             this.Panel_documento.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTipoDoc)).BeginInit();
@@ -132,7 +132,7 @@ namespace CapaPresentacion.Vista
             this.dgvTipoDoc.RowHeadersVisible = false;
             this.dgvTipoDoc.RowHeadersWidth = 25;
             this.dgvTipoDoc.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgvTipoDoc.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dgvTipoDoc.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvTipoDoc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTipoDoc.Size = new System.Drawing.Size(619, 405);
             this.dgvTipoDoc.TabIndex = 7;
@@ -191,6 +191,27 @@ namespace CapaPresentacion.Vista
             this.Panel_boton.Name = "Panel_boton";
             this.Panel_boton.Size = new System.Drawing.Size(89, 270);
             this.Panel_boton.TabIndex = 110;
+            // 
+            // BtnGuardar
+            // 
+            this.BtnGuardar.BackColor = System.Drawing.Color.Transparent;
+            this.BtnGuardar.BorderRadius = 3;
+            this.BtnGuardar.CheckedState.Parent = this.BtnGuardar;
+            this.BtnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnGuardar.CustomImages.Parent = this.BtnGuardar;
+            this.BtnGuardar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnGuardar.FillColor = System.Drawing.Color.Green;
+            this.BtnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.BtnGuardar.ForeColor = System.Drawing.Color.White;
+            this.BtnGuardar.HoverState.Parent = this.BtnGuardar;
+            this.BtnGuardar.Location = new System.Drawing.Point(0, 180);
+            this.BtnGuardar.Name = "BtnGuardar";
+            this.BtnGuardar.ShadowDecoration.Parent = this.BtnGuardar;
+            this.BtnGuardar.Size = new System.Drawing.Size(89, 45);
+            this.BtnGuardar.TabIndex = 112;
+            this.BtnGuardar.Text = "Guardar";
+            this.BtnGuardar.Visible = false;
+            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
             // Btnexcel
             // 
@@ -279,27 +300,6 @@ namespace CapaPresentacion.Vista
             this.btncerrar.TabIndex = 109;
             this.btncerrar.TabStop = false;
             this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click);
-            // 
-            // BtnGuardar
-            // 
-            this.BtnGuardar.BackColor = System.Drawing.Color.Transparent;
-            this.BtnGuardar.BorderRadius = 3;
-            this.BtnGuardar.CheckedState.Parent = this.BtnGuardar;
-            this.BtnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnGuardar.CustomImages.Parent = this.BtnGuardar;
-            this.BtnGuardar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnGuardar.FillColor = System.Drawing.Color.Green;
-            this.BtnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.BtnGuardar.ForeColor = System.Drawing.Color.White;
-            this.BtnGuardar.HoverState.Parent = this.BtnGuardar;
-            this.BtnGuardar.Location = new System.Drawing.Point(0, 180);
-            this.BtnGuardar.Name = "BtnGuardar";
-            this.BtnGuardar.ShadowDecoration.Parent = this.BtnGuardar;
-            this.BtnGuardar.Size = new System.Drawing.Size(89, 45);
-            this.BtnGuardar.TabIndex = 112;
-            this.BtnGuardar.Text = "Guardar";
-            this.BtnGuardar.Visible = false;
-            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
             // FrmTipoDocumento
             // 
