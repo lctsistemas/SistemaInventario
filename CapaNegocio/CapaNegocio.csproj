@@ -50,6 +50,7 @@
     <Compile Include="Repositories\RLogin.cs" />
     <Compile Include="Repositories\RMoneda.cs" />
     <Compile Include="Repositories\RTipoDocumento.cs" />
+    <Compile Include="Repositories\RTipoExistencia.cs" />
     <Compile Include="Repositories\RTipoOperacion.cs" />
     <Compile Include="Repositories\RUnidadMedida.cs" />
   </ItemGroup>
