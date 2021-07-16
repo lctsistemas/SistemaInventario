@@ -133,3 +133,6 @@ ALTER TABLE invent.Inventario ADD CONSTRAINT FK_idmes FOREIGN KEY(idmes)REFERENC
 ALTER TABLE invent.Inventario ADD CONSTRAINT FK_idperiodo FOREIGN KEY(idperiodo)REFERENCES manto.Periodo(idperiodo)
 ALTER TABLE invent.Inventario ADD CONSTRAINT FK_idempresa FOREIGN KEY(id_empresa)REFERENCES manto.Empresa(id_empresa)
 GO
+
+--autorization diagram
+--alter authorization on database::Dbinventario to[SA]

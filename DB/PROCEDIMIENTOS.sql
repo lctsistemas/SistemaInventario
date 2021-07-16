@@ -347,7 +347,7 @@ END
 GO
 
 -- PROCEDIMIENTO PARA REGISTRAR INVENTARIO MASIVO 2 PERO CON FOREACH EN C#
-CREATE PROC invent.SP_RegistrarInv
+alter PROC invent.SP_RegistrarInv
 @cod_catalogo varchar(2), 
 @tipo_existencia varchar(4), 
 @cod_existencia varchar(30), 
@@ -407,7 +407,7 @@ Having i.id_empresa = @idempresa AND i.idmes = @idmes AND i.idperiodo= @idperiod
 END
 GO
 
-ALTER PROC invent.SP_totalSalida
+create PROC invent.SP_totalSalida
 @idempresa int,
 @idmes tinyint,
 @idperiodo smallint,
@@ -418,7 +418,7 @@ SET @outSalida = (select count(i.id_inventario) FROM invent.Inventario i
 END
 GO
 
-ALTER PROC invent.SP_totalEntrada
+create PROC invent.SP_totalEntrada
 @idempresa int,
 @idmes tinyint,
 @idperiodo smallint,
