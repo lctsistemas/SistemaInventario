@@ -27,7 +27,7 @@ namespace CapaPresentacion.Vista
             rTipoExist = new RTipoExistencia();
             Dgv_tipoExist.AutoGenerateColumns = false;
             Show_TipoExist();
-            Tabla();
+            //Tabla();
         }
 
         private void btnnuevo_Click(object sender, EventArgs e)
@@ -125,9 +125,37 @@ namespace CapaPresentacion.Vista
                 Lbl_ruta.Text = dialog.FileName;
                 Dgv_tipoExist.DataSource = rTipoExist.ImportarAchivoExcel(dialog.FileName);
                 BtnGuardar.Visible = true;
-                Tabla();
+               // Tabla();
             }
             dialog.Dispose();
+        }
+
+        private void Dgv_tipoExist_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string result = "";
+            if (e.RowIndex > -1)
+            {
+                if (e.ColumnIndex == this.Dgv_tipoExist.Columns["dgv_txtdelete"].Index)
+                {
+                    if (Msg.M_question("¿Desea Eliminar la Operacion?") == DialogResult.Yes)
+                    {
+
+                        dTipoExist.IdTipoExist = Convert.ToInt32(Dgv_tipoExist.CurrentRow.Cells[1].Value);
+                        //dunidMed.Abrev = Dgv_Unidadmedida.CurrentRow.Cells[1].Value.ToString();
+                        //dunidMed.Descripcion = Dgv_Unidadmedida.CurrentRow.Cells[2].Value.ToString();
+                        result = rTipoExist.Delete(dTipoExist);
+
+                        if (result.Contains("Se Elimino"))
+                        {
+                            Msg.M_info(result);
+                            Show_TipoExist();
+                        }
+                        else
+                            Msg.M_error(result);
+
+                    }
+                }
+            }
         }
     }
 }

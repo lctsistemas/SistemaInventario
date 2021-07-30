@@ -29,23 +29,24 @@ namespace CapaPresentacion.Vista
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmUnidadMedida));
             this.Panel_operacion = new System.Windows.Forms.Panel();
-            this.BtnGuardar = new Guna.UI2.WinForms.Guna2Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Lbl_ruta = new System.Windows.Forms.Label();
             this.Dgv_Unidadmedida = new System.Windows.Forms.DataGridView();
             this.Txtbuscar = new Guna.UI2.WinForms.Guna2TextBox();
             this.Panel_boton = new System.Windows.Forms.Panel();
+            this.BtnGuardar = new Guna.UI2.WinForms.Guna2Button();
             this.Btn_excel = new Guna.UI2.WinForms.Guna2Button();
             this.btneliminar = new Guna.UI2.WinForms.Guna2Button();
             this.btneditar = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.btncerrar = new System.Windows.Forms.PictureBox();
             this.dgv_txtdelete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.UNIDAD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtcod = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgv_txtdes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Panel_operacion.SuspendLayout();
@@ -65,27 +66,6 @@ namespace CapaPresentacion.Vista
             this.Panel_operacion.Name = "Panel_operacion";
             this.Panel_operacion.Size = new System.Drawing.Size(758, 475);
             this.Panel_operacion.TabIndex = 2;
-            // 
-            // BtnGuardar
-            // 
-            this.BtnGuardar.BackColor = System.Drawing.Color.Transparent;
-            this.BtnGuardar.BorderRadius = 3;
-            this.BtnGuardar.CheckedState.Parent = this.BtnGuardar;
-            this.BtnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnGuardar.CustomImages.Parent = this.BtnGuardar;
-            this.BtnGuardar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnGuardar.FillColor = System.Drawing.Color.Green;
-            this.BtnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.BtnGuardar.ForeColor = System.Drawing.Color.White;
-            this.BtnGuardar.HoverState.Parent = this.BtnGuardar;
-            this.BtnGuardar.Location = new System.Drawing.Point(0, 180);
-            this.BtnGuardar.Name = "BtnGuardar";
-            this.BtnGuardar.ShadowDecoration.Parent = this.BtnGuardar;
-            this.BtnGuardar.Size = new System.Drawing.Size(89, 45);
-            this.BtnGuardar.TabIndex = 2;
-            this.BtnGuardar.Text = "Guardar";
-            this.BtnGuardar.Visible = false;
-            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
             // panel2
             // 
@@ -114,8 +94,8 @@ namespace CapaPresentacion.Vista
             this.Dgv_Unidadmedida.AllowUserToDeleteRows = false;
             this.Dgv_Unidadmedida.AllowUserToResizeColumns = false;
             this.Dgv_Unidadmedida.AllowUserToResizeRows = false;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.Dgv_Unidadmedida.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.Dgv_Unidadmedida.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.Dgv_Unidadmedida.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -125,28 +105,29 @@ namespace CapaPresentacion.Vista
             this.Dgv_Unidadmedida.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Dgv_Unidadmedida.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.Dgv_Unidadmedida.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Dgv_Unidadmedida.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_Unidadmedida.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.Dgv_Unidadmedida.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Dgv_Unidadmedida.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgv_txtdelete,
+            this.UNIDAD,
             this.txtcod,
             this.dgv_txtdes});
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle18.Padding = new System.Windows.Forms.Padding(0, 1, 0, 1);
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Dgv_Unidadmedida.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 1, 0, 1);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_Unidadmedida.DefaultCellStyle = dataGridViewCellStyle3;
             this.Dgv_Unidadmedida.EnableHeadersVisualStyles = false;
             this.Dgv_Unidadmedida.GridColor = System.Drawing.Color.Silver;
             this.Dgv_Unidadmedida.Location = new System.Drawing.Point(3, 76);
@@ -203,6 +184,27 @@ namespace CapaPresentacion.Vista
             this.Panel_boton.Name = "Panel_boton";
             this.Panel_boton.Size = new System.Drawing.Size(89, 270);
             this.Panel_boton.TabIndex = 107;
+            // 
+            // BtnGuardar
+            // 
+            this.BtnGuardar.BackColor = System.Drawing.Color.Transparent;
+            this.BtnGuardar.BorderRadius = 3;
+            this.BtnGuardar.CheckedState.Parent = this.BtnGuardar;
+            this.BtnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnGuardar.CustomImages.Parent = this.BtnGuardar;
+            this.BtnGuardar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnGuardar.FillColor = System.Drawing.Color.Green;
+            this.BtnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.BtnGuardar.ForeColor = System.Drawing.Color.White;
+            this.BtnGuardar.HoverState.Parent = this.BtnGuardar;
+            this.BtnGuardar.Location = new System.Drawing.Point(0, 180);
+            this.BtnGuardar.Name = "BtnGuardar";
+            this.BtnGuardar.ShadowDecoration.Parent = this.BtnGuardar;
+            this.BtnGuardar.Size = new System.Drawing.Size(89, 45);
+            this.BtnGuardar.TabIndex = 2;
+            this.BtnGuardar.Text = "Guardar";
+            this.BtnGuardar.Visible = false;
+            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
             // Btn_excel
             // 
@@ -304,6 +306,14 @@ namespace CapaPresentacion.Vista
             this.dgv_txtdelete.ToolTipText = "Eliminar";
             this.dgv_txtdelete.Width = 63;
             // 
+            // UNIDAD
+            // 
+            this.UNIDAD.DataPropertyName = "IdUnidadMedida";
+            this.UNIDAD.HeaderText = "ID";
+            this.UNIDAD.Name = "UNIDAD";
+            this.UNIDAD.ReadOnly = true;
+            this.UNIDAD.Visible = false;
+            // 
             // txtcod
             // 
             this.txtcod.DataPropertyName = "Abrev";
@@ -351,6 +361,7 @@ namespace CapaPresentacion.Vista
         public System.Windows.Forms.PictureBox btncerrar;
         private Guna.UI2.WinForms.Guna2Button BtnGuardar;
         private System.Windows.Forms.DataGridViewImageColumn dgv_txtdelete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UNIDAD;
         private System.Windows.Forms.DataGridViewTextBoxColumn txtcod;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgv_txtdes;
     }

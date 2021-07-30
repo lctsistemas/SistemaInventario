@@ -53,9 +53,11 @@ namespace CapaPresentacion.Vista
         private void Tabla()
         {
 
-           // Dgv_Unidadmedida.Columns[0].Visible = false;
-            Dgv_Unidadmedida.Columns[1].HeaderText = "CODIGO";
-            Dgv_Unidadmedida.Columns[2].HeaderText = "DESCRIPCION" ;
+            // Dgv_Unidadmedida.Columns[0].Visible = false;
+            Dgv_Unidadmedida.Columns[1].HeaderText = "ID";
+            Dgv_Unidadmedida.Columns[1].Visible = false;
+            Dgv_Unidadmedida.Columns[2].HeaderText = "CODIGO";
+            Dgv_Unidadmedida.Columns[3].HeaderText = "DESCRIPCION" ;
         }
 
         private void btncerrar_Click(object sender, EventArgs e)
@@ -91,8 +93,8 @@ namespace CapaPresentacion.Vista
                     {
 
                         dunidMed.IdUnidadMedida = Convert.ToInt32(Dgv_Unidadmedida.CurrentRow.Cells[1].Value);
-                        //dunidMed.Abrev = Dgv_Unidadmedida.CurrentRow.Cells[1].Value.ToString();
-                        //dunidMed.Descripcion = Dgv_Unidadmedida.CurrentRow.Cells[2].Value.ToString();
+                        dunidMed.Abrev = Dgv_Unidadmedida.CurrentRow.Cells[2].Value.ToString();
+                        dunidMed.Descripcion = Dgv_Unidadmedida.CurrentRow.Cells[3].Value.ToString();
                         result = runidMed.Delete(dunidMed);
 
                         if (result.Contains("Se Elimino"))

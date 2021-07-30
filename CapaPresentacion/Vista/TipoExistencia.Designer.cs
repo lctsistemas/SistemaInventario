@@ -34,20 +34,20 @@ namespace CapaPresentacion.Vista
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTipoExistencia));
             this.Dgv_tipoExist = new System.Windows.Forms.DataGridView();
+            this.dgv_txtdelete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.CODIGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DESCRIPCION = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Txtbuscar = new Guna.UI2.WinForms.Guna2TextBox();
             this.Btn_excel = new Guna.UI2.WinForms.Guna2Button();
             this.btneliminar = new Guna.UI2.WinForms.Guna2Button();
             this.btneditar = new Guna.UI2.WinForms.Guna2Button();
             this.btnnuevo = new Guna.UI2.WinForms.Guna2Button();
             this.Panel_boton = new System.Windows.Forms.Panel();
+            this.BtnGuardar = new Guna.UI2.WinForms.Guna2Button();
             this.Panel_operacion = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Lbl_ruta = new System.Windows.Forms.Label();
             this.btncerrar = new System.Windows.Forms.PictureBox();
-            this.BtnGuardar = new Guna.UI2.WinForms.Guna2Button();
-            this.dgv_txtdelete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.CODIGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DESCRIPCION = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_tipoExist)).BeginInit();
             this.Panel_boton.SuspendLayout();
             this.Panel_operacion.SuspendLayout();
@@ -104,9 +104,37 @@ namespace CapaPresentacion.Vista
             this.Dgv_tipoExist.RowHeadersVisible = false;
             this.Dgv_tipoExist.RowHeadersWidth = 25;
             this.Dgv_tipoExist.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.Dgv_tipoExist.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.Dgv_tipoExist.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Dgv_tipoExist.Size = new System.Drawing.Size(619, 400);
             this.Dgv_tipoExist.TabIndex = 9;
+            this.Dgv_tipoExist.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_tipoExist_CellContentClick);
+            // 
+            // dgv_txtdelete
+            // 
+            this.dgv_txtdelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dgv_txtdelete.FillWeight = 40F;
+            this.dgv_txtdelete.Frozen = true;
+            this.dgv_txtdelete.HeaderText = "             ";
+            this.dgv_txtdelete.Image = ((System.Drawing.Image)(resources.GetObject("dgv_txtdelete.Image")));
+            this.dgv_txtdelete.Name = "dgv_txtdelete";
+            this.dgv_txtdelete.ReadOnly = true;
+            this.dgv_txtdelete.ToolTipText = "Eliminar";
+            this.dgv_txtdelete.Width = 63;
+            // 
+            // CODIGO
+            // 
+            this.CODIGO.DataPropertyName = "Codigo";
+            this.CODIGO.HeaderText = "CODIGO";
+            this.CODIGO.Name = "CODIGO";
+            this.CODIGO.ReadOnly = true;
+            // 
+            // DESCRIPCION
+            // 
+            this.DESCRIPCION.DataPropertyName = "Descripcion";
+            this.DESCRIPCION.HeaderText = "DESCRIPCION";
+            this.DESCRIPCION.Name = "DESCRIPCION";
+            this.DESCRIPCION.ReadOnly = true;
             // 
             // Txtbuscar
             // 
@@ -224,6 +252,27 @@ namespace CapaPresentacion.Vista
             this.Panel_boton.Size = new System.Drawing.Size(89, 270);
             this.Panel_boton.TabIndex = 107;
             // 
+            // BtnGuardar
+            // 
+            this.BtnGuardar.BackColor = System.Drawing.Color.Transparent;
+            this.BtnGuardar.BorderRadius = 3;
+            this.BtnGuardar.CheckedState.Parent = this.BtnGuardar;
+            this.BtnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnGuardar.CustomImages.Parent = this.BtnGuardar;
+            this.BtnGuardar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnGuardar.FillColor = System.Drawing.Color.Green;
+            this.BtnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.BtnGuardar.ForeColor = System.Drawing.Color.White;
+            this.BtnGuardar.HoverState.Parent = this.BtnGuardar;
+            this.BtnGuardar.Location = new System.Drawing.Point(0, 180);
+            this.BtnGuardar.Name = "BtnGuardar";
+            this.BtnGuardar.ShadowDecoration.Parent = this.BtnGuardar;
+            this.BtnGuardar.Size = new System.Drawing.Size(89, 45);
+            this.BtnGuardar.TabIndex = 3;
+            this.BtnGuardar.Text = "Guardar";
+            this.BtnGuardar.Visible = false;
+            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
+            // 
             // Panel_operacion
             // 
             this.Panel_operacion.Controls.Add(this.panel2);
@@ -267,51 +316,6 @@ namespace CapaPresentacion.Vista
             this.btncerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.btncerrar.TabIndex = 106;
             this.btncerrar.TabStop = false;
-            // 
-            // BtnGuardar
-            // 
-            this.BtnGuardar.BackColor = System.Drawing.Color.Transparent;
-            this.BtnGuardar.BorderRadius = 3;
-            this.BtnGuardar.CheckedState.Parent = this.BtnGuardar;
-            this.BtnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnGuardar.CustomImages.Parent = this.BtnGuardar;
-            this.BtnGuardar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnGuardar.FillColor = System.Drawing.Color.Green;
-            this.BtnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.BtnGuardar.ForeColor = System.Drawing.Color.White;
-            this.BtnGuardar.HoverState.Parent = this.BtnGuardar;
-            this.BtnGuardar.Location = new System.Drawing.Point(0, 180);
-            this.BtnGuardar.Name = "BtnGuardar";
-            this.BtnGuardar.ShadowDecoration.Parent = this.BtnGuardar;
-            this.BtnGuardar.Size = new System.Drawing.Size(89, 45);
-            this.BtnGuardar.TabIndex = 3;
-            this.BtnGuardar.Text = "Guardar";
-            this.BtnGuardar.Visible = false;
-            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
-            // 
-            // dgv_txtdelete
-            // 
-            this.dgv_txtdelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.dgv_txtdelete.FillWeight = 40F;
-            this.dgv_txtdelete.Frozen = true;
-            this.dgv_txtdelete.HeaderText = "             ";
-            this.dgv_txtdelete.Image = ((System.Drawing.Image)(resources.GetObject("dgv_txtdelete.Image")));
-            this.dgv_txtdelete.Name = "dgv_txtdelete";
-            this.dgv_txtdelete.ReadOnly = true;
-            this.dgv_txtdelete.ToolTipText = "Eliminar";
-            this.dgv_txtdelete.Width = 63;
-            // 
-            // CODIGO
-            // 
-            this.CODIGO.HeaderText = "CODIGO";
-            this.CODIGO.Name = "CODIGO";
-            this.CODIGO.ReadOnly = true;
-            // 
-            // DESCRIPCION
-            // 
-            this.DESCRIPCION.HeaderText = "DESCRIPCION";
-            this.DESCRIPCION.Name = "DESCRIPCION";
-            this.DESCRIPCION.ReadOnly = true;
             // 
             // FrmTipoExistencia
             // 
