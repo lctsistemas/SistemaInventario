@@ -268,8 +268,7 @@ namespace CapaPresentacion.Vista
 
         //METODO PARA MOVER VENTANA
         private void MoverVentana()
-        {
-            WindowsMove.ReleaseCapture();
+        {          
             WindowsMove.Move(this.Handle);
         }
 

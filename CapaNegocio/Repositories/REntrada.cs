@@ -33,7 +33,7 @@ namespace CapaNegocio.Repositories
                     {
                         string sql = "select cod_catalogo, tipo_existencia, cod_existencia, fecha_emision, tipo_documento, serie, num_documento, tipo_operacion," +
                                      "existencia, unida_medida, entradas, salidas from [Inv_uni_fisica$]";
-                        cmd.Connection = conector;                      
+                        cmd.Connection = conector;
                         cmd.CommandText = sql;
 
                         OleDbDataAdapter da = new OleDbDataAdapter();
@@ -171,9 +171,15 @@ namespace CapaNegocio.Repositories
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.CommandText = "invent.SP_RegistrarInv";
 
-                        cmd.Parameters.Add("@cod_catalogo", SqlDbType.VarChar, 2);
+                        cmd.Parameters.Add("@invperiodo", SqlDbType.VarChar, 8);                       
+                        cmd.Parameters.Add("@inv_cou", SqlDbType.VarChar, 50);                       
+                        cmd.Parameters.Add("@numero_asiento", SqlDbType.VarChar, 15);
+                        cmd.Parameters.Add("@cod_anexo", SqlDbType.VarChar, 10);                        
+                        cmd.Parameters.Add("@cod_catalogo", SqlDbType.VarChar, 2);                       
                         cmd.Parameters.Add("@tipo_existencia", SqlDbType.VarChar, 4);
-                        cmd.Parameters.Add("@cod_existencia", SqlDbType.VarChar, 30);
+                        cmd.Parameters.Add("@cod_existencia", SqlDbType.VarChar, 30);                        
+                        cmd.Parameters.Add("@cod_ctl", SqlDbType.VarChar, 30);
+                        cmd.Parameters.Add("@cod_ext_ctl", SqlDbType.VarChar, 150);
                         cmd.Parameters.Add("@fecha_emision", SqlDbType.Date);
                         cmd.Parameters.Add("@tipo_documento", SqlDbType.Char, 2);
                         cmd.Parameters.Add("@serie", SqlDbType.VarChar, 30);
@@ -183,6 +189,7 @@ namespace CapaNegocio.Repositories
                         cmd.Parameters.Add("@unida_medida", SqlDbType.VarChar, 4);
                         cmd.Parameters.Add("@entradas", SqlDbType.Decimal);
                         cmd.Parameters.Add("@salidas", SqlDbType.Decimal);
+                        cmd.Parameters.Add("@estado_operacion", SqlDbType.Char, 1);
                         cmd.Parameters.Add("@id_empresa", SqlDbType.Int);
                         cmd.Parameters.Add("@idperiodo", SqlDbType.SmallInt);
                         cmd.Parameters.Add("@idmes", SqlDbType.TinyInt);
@@ -191,9 +198,15 @@ namespace CapaNegocio.Repositories
                         {
                             foreach (var item in lst)
                             {
+                                cmd.Parameters["@invperiodo"].Value = item.periodo;
+                                cmd.Parameters["@inv_cou"].Value = item.COU;
+                                cmd.Parameters["@numero_asiento"].Value = item.numero_asiento;
+                                cmd.Parameters["@cod_anexo"].Value = item.cod_anexo;                                
                                 cmd.Parameters["@cod_catalogo"].Value = item.cod_catalogo;
                                 cmd.Parameters["@tipo_existencia"].Value = item.tipo_existencia;
                                 cmd.Parameters["@cod_existencia"].Value = item.cod_existencia;
+                                cmd.Parameters["@cod_ctl"].Value = item.cod_ctl;
+                                cmd.Parameters["@cod_ext_ctl"].Value = item.cod_ext_ctl;
                                 cmd.Parameters["@fecha_emision"].Value = item.fecha_emision;
                                 cmd.Parameters["@tipo_documento"].Value = item.tipo_documento;
                                 cmd.Parameters["@serie"].Value = item.serie;
@@ -203,6 +216,7 @@ namespace CapaNegocio.Repositories
                                 cmd.Parameters["@unida_medida"].Value = item.unida_medida;
                                 cmd.Parameters["@entradas"].Value = item.entradas;
                                 cmd.Parameters["@salidas"].Value = item.salidas;
+                                cmd.Parameters["@estado_operacion"].Value = item.estado_operacion;
                                 cmd.Parameters["@id_empresa"].Value = item.Id_empresa;
                                 cmd.Parameters["@idperiodo"].Value = item.Id_periodo;
                                 cmd.Parameters["@idmes"].Value = item.Id_mes;

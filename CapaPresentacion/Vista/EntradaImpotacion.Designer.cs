@@ -30,36 +30,18 @@ namespace CapaPresentacion.Vista
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEntradaImpotacion));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEntradaImpotacion));
             this.tableLayout_botones = new System.Windows.Forms.TableLayoutPanel();
             this.Btn_limpiar = new Guna.UI2.WinForms.Guna2Button();
             this.Btn_procesaSalida = new Guna.UI2.WinForms.Guna2Button();
             this.Btn_procesaEntrada = new Guna.UI2.WinForms.Guna2Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.Dgv_Importar = new System.Windows.Forms.DataGridView();
-            this.inv_1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.inv_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.inv_3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.inv_4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.inv_5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.inv_6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.inv_7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.inv_8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.inv_9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.inv_10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.inv_11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.inv_12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.inv_13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.inv_14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.inv_15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.inv_16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.inv_17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.inv_18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Chk_column = new System.Windows.Forms.CheckBox();
             this.Panel_excel = new Guna.UI2.WinForms.Guna2Panel();
             this.Lbl_ruc = new System.Windows.Forms.Label();
             this.Lbl_mes = new System.Windows.Forms.Label();
@@ -80,6 +62,26 @@ namespace CapaPresentacion.Vista
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.Cbomes = new System.Windows.Forms.ComboBox();
+            this.Dgv_Importar = new System.Windows.Forms.DataGridView();
+            this.inv_1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inv_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inv_3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inv_4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inv_5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inv_6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inv_7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inv_8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inv_9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inv_10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inv_11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inv_12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inv_13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inv_14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inv_15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inv_16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inv_17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inv_18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inv_19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Lbl_correlativo = new System.Windows.Forms.Label();
             this.lbl_idmes = new System.Windows.Forms.Label();
             this.Lbl_cantidad = new System.Windows.Forms.Label();
@@ -97,12 +99,12 @@ namespace CapaPresentacion.Vista
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tableLayout_botones.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Dgv_Importar)).BeginInit();
             this.Panel_excel.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Pict_error)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pict_check)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Num_periodo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_Importar)).BeginInit();
             this.Group_calculo.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
@@ -196,6 +198,7 @@ namespace CapaPresentacion.Vista
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(233)))), ((int)(((byte)(236)))));
+            this.panel2.Controls.Add(this.Chk_column);
             this.panel2.Controls.Add(this.Panel_excel);
             this.panel2.Controls.Add(this.Dgv_Importar);
             this.panel2.Controls.Add(this.Lbl_correlativo);
@@ -208,212 +211,16 @@ namespace CapaPresentacion.Vista
             this.panel2.Size = new System.Drawing.Size(850, 450);
             this.panel2.TabIndex = 0;
             // 
-            // Dgv_Importar
+            // Chk_column
             // 
-            this.Dgv_Importar.AllowUserToAddRows = false;
-            this.Dgv_Importar.AllowUserToDeleteRows = false;
-            this.Dgv_Importar.AllowUserToResizeColumns = false;
-            this.Dgv_Importar.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.Dgv_Importar.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.Dgv_Importar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Dgv_Importar.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
-            this.Dgv_Importar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(233)))), ((int)(((byte)(236)))));
-            this.Dgv_Importar.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Dgv_Importar.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.Dgv_Importar.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Dgv_Importar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.Dgv_Importar.ColumnHeadersHeight = 40;
-            this.Dgv_Importar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.Dgv_Importar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.inv_1,
-            this.inv_2,
-            this.inv_3,
-            this.inv_4,
-            this.inv_5,
-            this.inv_6,
-            this.inv_7,
-            this.inv_8,
-            this.inv_9,
-            this.inv_10,
-            this.inv_11,
-            this.inv_12,
-            this.inv_13,
-            this.inv_14,
-            this.inv_15,
-            this.inv_16,
-            this.inv_17,
-            this.inv_18});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(0, 1, 0, 1);
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Dgv_Importar.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Dgv_Importar.EnableHeadersVisualStyles = false;
-            this.Dgv_Importar.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(234)))), ((int)(((byte)(234)))));
-            this.Dgv_Importar.Location = new System.Drawing.Point(3, 69);
-            this.Dgv_Importar.MultiSelect = false;
-            this.Dgv_Importar.Name = "Dgv_Importar";
-            this.Dgv_Importar.ReadOnly = true;
-            this.Dgv_Importar.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(0, 0, 1, 0);
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Dgv_Importar.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.Dgv_Importar.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
-            this.Dgv_Importar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Dgv_Importar.Size = new System.Drawing.Size(844, 378);
-            this.Dgv_Importar.TabIndex = 4;
-            this.Dgv_Importar.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.Dgv_Importar_RowPostPaint);
-            // 
-            // inv_1
-            // 
-            this.inv_1.DataPropertyName = "invt_1";
-            this.inv_1.HeaderText = "1";
-            this.inv_1.Name = "inv_1";
-            this.inv_1.ReadOnly = true;
-            this.inv_1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // inv_2
-            // 
-            this.inv_2.DataPropertyName = "invt_2";
-            this.inv_2.HeaderText = "2";
-            this.inv_2.Name = "inv_2";
-            this.inv_2.ReadOnly = true;
-            // 
-            // inv_3
-            // 
-            this.inv_3.DataPropertyName = "invt_3";
-            this.inv_3.HeaderText = "3";
-            this.inv_3.Name = "inv_3";
-            this.inv_3.ReadOnly = true;
-            // 
-            // inv_4
-            // 
-            this.inv_4.DataPropertyName = "invt_4";
-            this.inv_4.HeaderText = "4";
-            this.inv_4.Name = "inv_4";
-            this.inv_4.ReadOnly = true;
-            // 
-            // inv_5
-            // 
-            this.inv_5.DataPropertyName = "invt_5";
-            this.inv_5.HeaderText = "5";
-            this.inv_5.Name = "inv_5";
-            this.inv_5.ReadOnly = true;
-            // 
-            // inv_6
-            // 
-            this.inv_6.DataPropertyName = "invt_6";
-            this.inv_6.HeaderText = "6";
-            this.inv_6.Name = "inv_6";
-            this.inv_6.ReadOnly = true;
-            // 
-            // inv_7
-            // 
-            this.inv_7.DataPropertyName = "invt_7";
-            this.inv_7.HeaderText = "7";
-            this.inv_7.Name = "inv_7";
-            this.inv_7.ReadOnly = true;
-            // 
-            // inv_8
-            // 
-            this.inv_8.DataPropertyName = "invt_8";
-            this.inv_8.HeaderText = "8";
-            this.inv_8.Name = "inv_8";
-            this.inv_8.ReadOnly = true;
-            // 
-            // inv_9
-            // 
-            this.inv_9.DataPropertyName = "invt_9";
-            this.inv_9.HeaderText = "9";
-            this.inv_9.Name = "inv_9";
-            this.inv_9.ReadOnly = true;
-            // 
-            // inv_10
-            // 
-            this.inv_10.DataPropertyName = "invt_10";
-            this.inv_10.HeaderText = "10";
-            this.inv_10.Name = "inv_10";
-            this.inv_10.ReadOnly = true;
-            // 
-            // inv_11
-            // 
-            this.inv_11.DataPropertyName = "invt_11";
-            this.inv_11.HeaderText = "11";
-            this.inv_11.Name = "inv_11";
-            this.inv_11.ReadOnly = true;
-            // 
-            // inv_12
-            // 
-            this.inv_12.DataPropertyName = "invt_12";
-            this.inv_12.HeaderText = "12";
-            this.inv_12.Name = "inv_12";
-            this.inv_12.ReadOnly = true;
-            // 
-            // inv_13
-            // 
-            this.inv_13.DataPropertyName = "invt_13";
-            this.inv_13.HeaderText = "13";
-            this.inv_13.Name = "inv_13";
-            this.inv_13.ReadOnly = true;
-            // 
-            // inv_14
-            // 
-            this.inv_14.DataPropertyName = "invt_14";
-            this.inv_14.HeaderText = "14";
-            this.inv_14.Name = "inv_14";
-            this.inv_14.ReadOnly = true;
-            // 
-            // inv_15
-            // 
-            this.inv_15.DataPropertyName = "invt_15";
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.inv_15.DefaultCellStyle = dataGridViewCellStyle3;
-            this.inv_15.HeaderText = "15";
-            this.inv_15.Name = "inv_15";
-            this.inv_15.ReadOnly = true;
-            this.inv_15.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // inv_16
-            // 
-            this.inv_16.DataPropertyName = "invt_16";
-            this.inv_16.HeaderText = "16";
-            this.inv_16.Name = "inv_16";
-            this.inv_16.ReadOnly = true;
-            this.inv_16.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // inv_17
-            // 
-            this.inv_17.DataPropertyName = "invt_17";
-            this.inv_17.HeaderText = "17";
-            this.inv_17.Name = "inv_17";
-            this.inv_17.ReadOnly = true;
-            // 
-            // inv_18
-            // 
-            this.inv_18.DataPropertyName = "invt_18";
-            this.inv_18.HeaderText = "18";
-            this.inv_18.Name = "inv_18";
-            this.inv_18.ReadOnly = true;
+            this.Chk_column.AutoSize = true;
+            this.Chk_column.Location = new System.Drawing.Point(10, 85);
+            this.Chk_column.Name = "Chk_column";
+            this.Chk_column.Size = new System.Drawing.Size(15, 14);
+            this.Chk_column.TabIndex = 11;
+            this.toolTip1.SetToolTip(this.Chk_column, "Mostrar Todas las Columnas");
+            this.Chk_column.UseVisualStyleBackColor = true;
+            this.Chk_column.CheckedChanged += new System.EventHandler(this.Chk_column_CheckedChanged);
             // 
             // Panel_excel
             // 
@@ -640,13 +447,13 @@ namespace CapaPresentacion.Vista
             // 
             // BtnExaminar
             // 
-            this.BtnExaminar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.BtnExaminar.BorderRadius = 3;
+            this.BtnExaminar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.BtnExaminar.BorderRadius = 2;
             this.BtnExaminar.BorderThickness = 1;
             this.BtnExaminar.CheckedState.Parent = this.BtnExaminar;
             this.BtnExaminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnExaminar.CustomImages.Parent = this.BtnExaminar;
-            this.BtnExaminar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.BtnExaminar.FillColor = System.Drawing.Color.Gray;
             this.BtnExaminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.BtnExaminar.ForeColor = System.Drawing.Color.White;
             this.BtnExaminar.HoverState.Parent = this.BtnExaminar;
@@ -702,6 +509,222 @@ namespace CapaPresentacion.Vista
             this.Cbomes.TabIndex = 13;
             this.Cbomes.SelectedIndexChanged += new System.EventHandler(this.Cbomes_SelectedIndexChanged);
             // 
+            // Dgv_Importar
+            // 
+            this.Dgv_Importar.AllowUserToAddRows = false;
+            this.Dgv_Importar.AllowUserToDeleteRows = false;
+            this.Dgv_Importar.AllowUserToResizeColumns = false;
+            this.Dgv_Importar.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.Dgv_Importar.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.Dgv_Importar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Dgv_Importar.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
+            this.Dgv_Importar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(233)))), ((int)(((byte)(236)))));
+            this.Dgv_Importar.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Dgv_Importar.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.Dgv_Importar.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_Importar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.Dgv_Importar.ColumnHeadersHeight = 40;
+            this.Dgv_Importar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.Dgv_Importar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.inv_1,
+            this.inv_2,
+            this.inv_3,
+            this.inv_4,
+            this.inv_5,
+            this.inv_6,
+            this.inv_7,
+            this.inv_8,
+            this.inv_9,
+            this.inv_10,
+            this.inv_11,
+            this.inv_12,
+            this.inv_13,
+            this.inv_14,
+            this.inv_15,
+            this.inv_16,
+            this.inv_17,
+            this.inv_18,
+            this.inv_19});
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(0, 1, 0, 1);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_Importar.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Dgv_Importar.EnableHeadersVisualStyles = false;
+            this.Dgv_Importar.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            this.Dgv_Importar.Location = new System.Drawing.Point(3, 69);
+            this.Dgv_Importar.MultiSelect = false;
+            this.Dgv_Importar.Name = "Dgv_Importar";
+            this.Dgv_Importar.ReadOnly = true;
+            this.Dgv_Importar.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(0, 0, 1, 0);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_Importar.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.Dgv_Importar.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            this.Dgv_Importar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.Dgv_Importar.Size = new System.Drawing.Size(844, 378);
+            this.Dgv_Importar.TabIndex = 4;
+            this.Dgv_Importar.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.Dgv_Importar_RowPostPaint);
+            // 
+            // inv_1
+            // 
+            this.inv_1.DataPropertyName = "invt_1";
+            this.inv_1.HeaderText = "1";
+            this.inv_1.Name = "inv_1";
+            this.inv_1.ReadOnly = true;
+            this.inv_1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // inv_2
+            // 
+            this.inv_2.DataPropertyName = "invt_2";
+            this.inv_2.HeaderText = "2";
+            this.inv_2.Name = "inv_2";
+            this.inv_2.ReadOnly = true;
+            // 
+            // inv_3
+            // 
+            this.inv_3.DataPropertyName = "invt_3";
+            this.inv_3.HeaderText = "3";
+            this.inv_3.Name = "inv_3";
+            this.inv_3.ReadOnly = true;
+            // 
+            // inv_4
+            // 
+            this.inv_4.DataPropertyName = "invt_4";
+            this.inv_4.HeaderText = "4";
+            this.inv_4.Name = "inv_4";
+            this.inv_4.ReadOnly = true;
+            // 
+            // inv_5
+            // 
+            this.inv_5.DataPropertyName = "invt_5";
+            this.inv_5.HeaderText = "5";
+            this.inv_5.Name = "inv_5";
+            this.inv_5.ReadOnly = true;
+            // 
+            // inv_6
+            // 
+            this.inv_6.DataPropertyName = "invt_6";
+            this.inv_6.HeaderText = "6";
+            this.inv_6.Name = "inv_6";
+            this.inv_6.ReadOnly = true;
+            // 
+            // inv_7
+            // 
+            this.inv_7.DataPropertyName = "invt_7";
+            this.inv_7.HeaderText = "7";
+            this.inv_7.Name = "inv_7";
+            this.inv_7.ReadOnly = true;
+            // 
+            // inv_8
+            // 
+            this.inv_8.DataPropertyName = "invt_8";
+            this.inv_8.HeaderText = "8";
+            this.inv_8.Name = "inv_8";
+            this.inv_8.ReadOnly = true;
+            // 
+            // inv_9
+            // 
+            this.inv_9.DataPropertyName = "invt_9";
+            this.inv_9.HeaderText = "9";
+            this.inv_9.Name = "inv_9";
+            this.inv_9.ReadOnly = true;
+            // 
+            // inv_10
+            // 
+            this.inv_10.DataPropertyName = "invt_10";
+            this.inv_10.HeaderText = "10";
+            this.inv_10.Name = "inv_10";
+            this.inv_10.ReadOnly = true;
+            // 
+            // inv_11
+            // 
+            this.inv_11.DataPropertyName = "invt_11";
+            this.inv_11.HeaderText = "11";
+            this.inv_11.Name = "inv_11";
+            this.inv_11.ReadOnly = true;
+            // 
+            // inv_12
+            // 
+            this.inv_12.DataPropertyName = "invt_12";
+            this.inv_12.HeaderText = "12";
+            this.inv_12.Name = "inv_12";
+            this.inv_12.ReadOnly = true;
+            // 
+            // inv_13
+            // 
+            this.inv_13.DataPropertyName = "invt_13";
+            this.inv_13.HeaderText = "13";
+            this.inv_13.Name = "inv_13";
+            this.inv_13.ReadOnly = true;
+            // 
+            // inv_14
+            // 
+            this.inv_14.DataPropertyName = "invt_14";
+            this.inv_14.HeaderText = "14";
+            this.inv_14.Name = "inv_14";
+            this.inv_14.ReadOnly = true;
+            // 
+            // inv_15
+            // 
+            this.inv_15.DataPropertyName = "invt_15";
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.inv_15.DefaultCellStyle = dataGridViewCellStyle3;
+            this.inv_15.HeaderText = "15";
+            this.inv_15.Name = "inv_15";
+            this.inv_15.ReadOnly = true;
+            this.inv_15.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // inv_16
+            // 
+            this.inv_16.DataPropertyName = "invt_16";
+            this.inv_16.HeaderText = "16";
+            this.inv_16.Name = "inv_16";
+            this.inv_16.ReadOnly = true;
+            this.inv_16.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // inv_17
+            // 
+            this.inv_17.DataPropertyName = "invt_17";
+            this.inv_17.HeaderText = "17";
+            this.inv_17.Name = "inv_17";
+            this.inv_17.ReadOnly = true;
+            // 
+            // inv_18
+            // 
+            this.inv_18.DataPropertyName = "invt_18";
+            this.inv_18.HeaderText = "18";
+            this.inv_18.Name = "inv_18";
+            this.inv_18.ReadOnly = true;
+            // 
+            // inv_19
+            // 
+            this.inv_19.DataPropertyName = "invt_19";
+            this.inv_19.HeaderText = "19";
+            this.inv_19.Name = "inv_19";
+            this.inv_19.ReadOnly = true;
+            this.inv_19.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
             // Lbl_correlativo
             // 
             this.Lbl_correlativo.AutoSize = true;
@@ -739,15 +762,15 @@ namespace CapaPresentacion.Vista
             // 
             // Btn_importExcel
             // 
-            this.Btn_importExcel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.Btn_importExcel.BorderRadius = 3;
+            this.Btn_importExcel.BorderColor = System.Drawing.Color.Silver;
+            this.Btn_importExcel.BorderRadius = 2;
             this.Btn_importExcel.BorderThickness = 1;
             this.Btn_importExcel.CheckedState.Parent = this.Btn_importExcel;
             this.Btn_importExcel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_importExcel.CustomImages.Parent = this.Btn_importExcel;
-            this.Btn_importExcel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.Btn_importExcel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(235)))), ((int)(((byte)(245)))));
             this.Btn_importExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.Btn_importExcel.ForeColor = System.Drawing.Color.White;
+            this.Btn_importExcel.ForeColor = System.Drawing.Color.Black;
             this.Btn_importExcel.HoverState.Parent = this.Btn_importExcel;
             this.Btn_importExcel.Image = ((System.Drawing.Image)(resources.GetObject("Btn_importExcel.Image")));
             this.Btn_importExcel.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -781,11 +804,11 @@ namespace CapaPresentacion.Vista
             // 
             this.Txt_salidas.BackColor = System.Drawing.Color.White;
             this.Txt_salidas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Txt_salidas.Enabled = false;
             this.Txt_salidas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_salidas.ForeColor = System.Drawing.Color.Black;
             this.Txt_salidas.Location = new System.Drawing.Point(117, 34);
             this.Txt_salidas.Name = "Txt_salidas";
+            this.Txt_salidas.ReadOnly = true;
             this.Txt_salidas.Size = new System.Drawing.Size(80, 21);
             this.Txt_salidas.TabIndex = 1;
             this.Txt_salidas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -794,11 +817,11 @@ namespace CapaPresentacion.Vista
             // 
             this.Txt_entradas.BackColor = System.Drawing.Color.White;
             this.Txt_entradas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Txt_entradas.Enabled = false;
             this.Txt_entradas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_entradas.ForeColor = System.Drawing.Color.Black;
             this.Txt_entradas.Location = new System.Drawing.Point(27, 34);
             this.Txt_entradas.Name = "Txt_entradas";
+            this.Txt_entradas.ReadOnly = true;
             this.Txt_entradas.Size = new System.Drawing.Size(80, 21);
             this.Txt_entradas.TabIndex = 1;
             this.Txt_entradas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -807,11 +830,11 @@ namespace CapaPresentacion.Vista
             // 
             this.Txt_invFinal.BackColor = System.Drawing.Color.White;
             this.Txt_invFinal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Txt_invFinal.Enabled = false;
             this.Txt_invFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_invFinal.ForeColor = System.Drawing.Color.Black;
             this.Txt_invFinal.Location = new System.Drawing.Point(207, 34);
             this.Txt_invFinal.Name = "Txt_invFinal";
+            this.Txt_invFinal.ReadOnly = true;
             this.Txt_invFinal.Size = new System.Drawing.Size(80, 21);
             this.Txt_invFinal.TabIndex = 1;
             this.Txt_invFinal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -896,13 +919,13 @@ namespace CapaPresentacion.Vista
             this.tableLayout_botones.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Dgv_Importar)).EndInit();
             this.Panel_excel.ResumeLayout(false);
             this.Panel_excel.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Pict_error)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pict_check)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Num_periodo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_Importar)).EndInit();
             this.Group_calculo.ResumeLayout(false);
             this.Group_calculo.PerformLayout();
             this.guna2Panel1.ResumeLayout(false);
@@ -941,6 +964,17 @@ namespace CapaPresentacion.Vista
         private Guna.UI2.WinForms.Guna2Button Btn_entrar;
         private System.Windows.Forms.Label lbl_idmes;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Label Lbl_correlativo;
+        private System.Windows.Forms.Label Lbl_menUno;
+        private System.Windows.Forms.PictureBox Pict_check;
+        private System.Windows.Forms.Label Lbl_nombrefile;
+        private System.Windows.Forms.PictureBox Pict_error;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label Lbl_menTres;
+        private System.Windows.Forms.Label Lbl_menDos;
+        private System.Windows.Forms.Label Lbl_mes;
+        private System.Windows.Forms.Label Lbl_ano;
+        private System.Windows.Forms.Label Lbl_ruc;
         private System.Windows.Forms.DataGridViewTextBoxColumn inv_1;
         private System.Windows.Forms.DataGridViewTextBoxColumn inv_2;
         private System.Windows.Forms.DataGridViewTextBoxColumn inv_3;
@@ -959,16 +993,7 @@ namespace CapaPresentacion.Vista
         private System.Windows.Forms.DataGridViewTextBoxColumn inv_16;
         private System.Windows.Forms.DataGridViewTextBoxColumn inv_17;
         private System.Windows.Forms.DataGridViewTextBoxColumn inv_18;
-        private System.Windows.Forms.Label Lbl_correlativo;
-        private System.Windows.Forms.Label Lbl_menUno;
-        private System.Windows.Forms.PictureBox Pict_check;
-        private System.Windows.Forms.Label Lbl_nombrefile;
-        private System.Windows.Forms.PictureBox Pict_error;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label Lbl_menTres;
-        private System.Windows.Forms.Label Lbl_menDos;
-        private System.Windows.Forms.Label Lbl_mes;
-        private System.Windows.Forms.Label Lbl_ano;
-        private System.Windows.Forms.Label Lbl_ruc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn inv_19;
+        private System.Windows.Forms.CheckBox Chk_column;
     }
 }

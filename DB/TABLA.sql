@@ -82,9 +82,15 @@ GO
 
 CREATE TABLE invent.Inventario(
 id_inventario bigint not null,
+invperiodo varchar(8) not null,
+inv_cou varchar(50) not null,
+numero_asiento varchar(15) not null,
+cod_anexo varchar(10) not null,
 cod_catalogo varchar(2), --1 dig
 tipo_existencia varchar(4), -- 2 dig
 cod_existencia varchar(30), --hasta 24 dig
+cod_ctl varchar(30) null,--
+cod_ext_ctl varchar(150) null,--
 fecha_emision date not null,
 tipo_documento char(2) not null,
 serie varchar(30) not null, --hasta 20 dig
@@ -94,12 +100,17 @@ existencia varchar(100) not null, -- hasta 80 dig
 unida_medida varchar(4) not null, -- hasta 3 dig
 entradas decimal(14,2)not null,
 salidas decimal (14,2)not null,
+estado_operacion char(1) not null,
 id_empresa int not null,
 idperiodo smallint not null,
 idmes tinyint not null
 )
 GO
 
+select * from [invent].[Inventario]
+
+
+GO
 --PRIMARY KEY
 ALTER TABLE manto.Empresa ADD CONSTRAINT PK_idempresa PRIMARY KEY(id_empresa)
 ALTER TABLE manto.clienteProv ADD CONSTRAINT PK_idclipro PRIMARY KEY(idcliprov)

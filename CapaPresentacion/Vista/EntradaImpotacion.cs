@@ -117,56 +117,47 @@ namespace CapaPresentacion.Vista
        
         private void Tabla()
         {
-            /*Dgv_Importar.Columns[0].HeaderText = "PERIODO";
-            Dgv_Importar.Columns[0].Width = 150;*/
-            Dgv_Importar.Columns[0].Visible = false;
+            Dgv_Importar.Columns[0].HeaderText = "PERIODO";
+            //Dgv_Importar.Columns[0].Width = 150;
+            //Dgv_Importar.Columns[0].Visible = false;
 
-            /*Dgv_Importar.Columns[1].HeaderText = "COU";
-            Dgv_Importar.Columns[1].Width = 300;*/
-            Dgv_Importar.Columns[1].Visible = false;
-
-            //Dgv_Importar.Columns[2].HeaderText = "NUM ASIENTO";
-            Dgv_Importar.Columns[2].Visible = false;
-
-            //Dgv_Importar.Columns[3].HeaderText = "COD. ANEXO";
-            Dgv_Importar.Columns[3].Visible = false;
-
-            Dgv_Importar.Columns[4].HeaderText = "COD. CATALOGO";
-            
-            Dgv_Importar.Columns[5].HeaderText = "TIPO EXISTENCIA";
-            
+            Dgv_Importar.Columns[1].HeaderText = "CUO";
+            Dgv_Importar.Columns[1].Width = 200;            
+            Dgv_Importar.Columns[2].HeaderText = "NUM ASIENTO";           
+            Dgv_Importar.Columns[3].HeaderText = "COD. ANEXO";           
+            Dgv_Importar.Columns[4].HeaderText = "COD. CATALOGO";           
+            Dgv_Importar.Columns[5].HeaderText = "TIPO EXISTENCIA";            
             Dgv_Importar.Columns[6].HeaderText = "COD. EXISTENCIA";
-
-            //Dgv_Importar.Columns[7].HeaderText = "COD CTL";
-            Dgv_Importar.Columns[7].Visible = false;
-
-            //Dgv_Importar.Columns[8].HeaderText = "COD. EXITENCIA CTL";
-            Dgv_Importar.Columns[8].Visible = false;
-
-            Dgv_Importar.Columns[9].HeaderText = "FECHA EMISION";
-            
-            Dgv_Importar.Columns[10].HeaderText = "TIPO DOCUMENTO";
-            
-            Dgv_Importar.Columns[11].HeaderText = "SERIE";
-            
-            Dgv_Importar.Columns[12].HeaderText = "NUMERO DOCUMENTO";
-            
+            Dgv_Importar.Columns[7].HeaderText = "COD CTL";           
+            Dgv_Importar.Columns[8].HeaderText = "COD. EXITENCIA CTL";           
+            Dgv_Importar.Columns[9].HeaderText = "FECHA EMISION";            
+            Dgv_Importar.Columns[10].HeaderText = "TIPO DOCUMENTO";            
+            Dgv_Importar.Columns[11].HeaderText = "SERIE";            
+            Dgv_Importar.Columns[12].HeaderText = "NUMERO DOCUMENTO";            
             Dgv_Importar.Columns[13].HeaderText = "TIPO OPERACION";            
-            
             Dgv_Importar.Columns[14].HeaderText = "EXISTENCIA";
-            Dgv_Importar.Columns[14].Width = 270;
-            
-            Dgv_Importar.Columns[15].HeaderText = "UNIDAD MEDIDA";
-            
-            Dgv_Importar.Columns[16].HeaderText = "ENTRADAS";
-            
+            Dgv_Importar.Columns[14].Width = 270;            
+            Dgv_Importar.Columns[15].HeaderText = "UNIDAD MEDIDA";            
+            Dgv_Importar.Columns[16].HeaderText = "ENTRADAS";            
             Dgv_Importar.Columns[17].HeaderText = "SALIDAS";
+            Dgv_Importar.Columns[18].HeaderText = "ESTADO DE OPERACION";
+            OcultarColumasTabla(false);
 
             /*this.Dgv_Importar.Rows[Dgv_Importar.Rows.Count - 1].DefaultCellStyle.BackColor = Color.Beige;
             this.Dgv_Importar.Rows[Dgv_Importar.Rows.Count - 1].DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9, FontStyle.Bold);*/
 
         }
-        
+
+        private void OcultarColumasTabla(bool v)
+        {
+            Dgv_Importar.Columns[1].Visible = v;
+            Dgv_Importar.Columns[2].Visible = v;
+            Dgv_Importar.Columns[3].Visible = v;
+            Dgv_Importar.Columns[4].Visible = v;
+            Dgv_Importar.Columns[7].Visible = v;
+            Dgv_Importar.Columns[8].Visible = v;
+            Dgv_Importar.Columns[18].Visible = v;
+        }
 
         //GUARDAR INVENTARIO.
         private void Btn_procesaEntrada_Click(object sender, EventArgs e)
@@ -195,9 +186,15 @@ namespace CapaPresentacion.Vista
             {
                 lst.Add(new DEntrada()
                 {
+                    periodo = item.Cells["inv_1"].Value.ToString(),
+                    COU = item.Cells["inv_2"].Value.ToString(),
+                    numero_asiento = item.Cells["inv_3"].Value.ToString(),
+                    cod_anexo = item.Cells["inv_4"].Value.ToString(),
                     cod_catalogo = item.Cells["inv_5"].Value.ToString(),
                     tipo_existencia = item.Cells["inv_6"].Value.ToString(),
                     cod_existencia = item.Cells["inv_7"].Value.ToString(),
+                    cod_ctl = item.Cells["inv_8"].Value.ToString(),// == "" ? null : item.Cells["inv_8"].Value.ToString(),
+                    cod_ext_ctl = item.Cells["inv_9"].Value.ToString(),
                     fecha_emision = Convert.ToDateTime(item.Cells["inv_10"].Value),
                     tipo_documento = item.Cells["inv_11"].Value.ToString(),
                     serie = item.Cells["inv_12"].Value.ToString(),
@@ -207,6 +204,7 @@ namespace CapaPresentacion.Vista
                     unida_medida = item.Cells["inv_16"].Value.ToString(),
                     entradas = Convert.ToDouble(item.Cells["inv_17"].Value),
                     salidas = Convert.ToDouble(item.Cells["inv_18"].Value),
+                    estado_operacion = item.Cells["inv_19"].Value.ToString(),
                     Id_empresa = UserCache.C_idempresa,
                     Id_periodo = UserCache.C_idperiodo,
                     Id_mes = Convert.ToInt32(lbl_idmes.Text.Trim())
@@ -444,7 +442,6 @@ namespace CapaPresentacion.Vista
         {
             using (dt = new System.Data.DataTable())
             {
-
                 dt.Columns.Add("invt_1", typeof(string));
                 dt.Columns.Add("invt_2", typeof(string));
                 dt.Columns.Add("invt_3", typeof(string));
@@ -463,6 +460,7 @@ namespace CapaPresentacion.Vista
                 dt.Columns.Add("invt_16", typeof(string));
                 dt.Columns.Add("invt_17", typeof(double));
                 dt.Columns.Add("invt_18", typeof(double));
+                dt.Columns.Add("invt_19", typeof(string));
 
                 string[] lines = File.ReadAllLines(Txt_ruta.Text.Trim());
                 string[] data;
@@ -470,18 +468,16 @@ namespace CapaPresentacion.Vista
                 for (int i = 0; i < lines.Length; i++)
                 {
                     data = lines[i].ToString().Split('|');
-                    string[] row = new string[data.Length - 2]; // MENOS 2 COLUMAS DEL FINAL 
+                    string[] row = new string[data.Length - 1]; // MENOS 1 COLUMAS DEL FINAL 
 
-                    for (int j = 0; j < data.Length - 2; j++) // j=1 ignoro la fila 1
+                    for (int j = 0; j < data.Length -1; j++) // j=1 ignoro la fila 1 del final de la derecha
                     {
                         row[j] = data[j].Trim();
                         if (row[j].Contains("-"))
-                        {
-                            //MessageBox.Show("nega " + row[j]);
+                        {                           
                             row[j] = row[j].Replace("-", "+");
                         }
-                    }
-                    //MessageBox.Show("data " + data.Length);
+                    }                  
                     dt.Rows.Add(row);
                 }
             }
@@ -522,6 +518,14 @@ namespace CapaPresentacion.Vista
                 }
             }
             
+        }
+
+        private void Chk_column_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Chk_column.Checked)
+                OcultarColumasTabla(true);
+            else
+                OcultarColumasTabla(false);
         }
     }
 }

@@ -299,11 +299,21 @@ unida_medida, entradas, salidas, id_empresa, idperiodo, idmes FROM @ListInventar
 END
 GO
 
+
 -- PROCEDIMIENTO PARA REGISTRAR INVENTARIO MASIVO 2 PERO CON FOREACH EN C#
-CREATE PROC invent.SP_RegistrarInv
+ALTER PROC invent.SP_RegistrarInv
+@invperiodo varchar(8),
+@inv_cou varchar(50),
+@numero_asiento varchar(15),
+@cod_anexo varchar(10),
+
 @cod_catalogo varchar(2), 
 @tipo_existencia varchar(4), 
-@cod_existencia varchar(30), 
+@cod_existencia varchar(30),
+
+@cod_ctl varchar(30), 
+@cod_ext_ctl varchar(150),
+
 @fecha_emision date,
 @tipo_documento char(2),
 @serie varchar(30),
@@ -313,6 +323,7 @@ CREATE PROC invent.SP_RegistrarInv
 @unida_medida varchar(4),
 @entradas decimal(14,2),
 @salidas decimal (14,2),
+@estado_operacion char(1),
 @id_empresa int, 
 @idperiodo smallint,
 @idmes tinyint
@@ -320,12 +331,12 @@ AS BEGIN
 DECLARE @id_inventario bigint
 SET @id_inventario = (SELECT ISNULL(MAX(i.id_inventario), 0) + 1 FROM invent.Inventario i)
 
-INSERT INTO invent.Inventario(id_inventario, cod_catalogo, tipo_existencia,cod_existencia, 
-fecha_emision, tipo_documento, serie, num_documento, tipo_operacion, existencia, 
-unida_medida, entradas, salidas, id_empresa, idperiodo, idmes)
-VALUES (@id_inventario, @cod_catalogo, @tipo_existencia, @cod_existencia, 
-@fecha_emision, @tipo_documento, @serie, @num_documento, @tipo_operacion, @existencia, 
-@unida_medida, @entradas, @salidas, @id_empresa, @idperiodo, @idmes)
+INSERT INTO invent.Inventario(id_inventario, invperiodo, inv_cou, numero_asiento, cod_anexo, cod_catalogo, tipo_existencia, cod_existencia, 
+cod_ctl, cod_ext_ctl, fecha_emision, tipo_documento, serie, num_documento, tipo_operacion, existencia, 
+unida_medida, entradas, salidas, estado_operacion, id_empresa, idperiodo, idmes)
+VALUES (@id_inventario, @invperiodo, @inv_cou, @numero_asiento, @cod_anexo, @cod_catalogo, @tipo_existencia, @cod_existencia, 
+@cod_ctl, @cod_ext_ctl, @fecha_emision, @tipo_documento, @serie, @num_documento, @tipo_operacion, @existencia, 
+@unida_medida, @entradas, @salidas, @estado_operacion, @id_empresa, @idperiodo, @idmes)
 END
 GO
 
@@ -344,9 +355,6 @@ SET @output = 1 --true
 END
 GO
 
-select * from invent.Inventario
-delete from invent.Inventario
-GO
 
 CREATE PROC invent.SP_GrupoInventario
 @idempresa int,
@@ -382,3 +390,4 @@ SET @outEntrada = (select count(i.id_inventario) FROM invent.Inventario i
 END
 GO
 
+select * from [invent].[Inventario]
