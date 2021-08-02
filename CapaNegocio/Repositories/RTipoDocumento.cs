@@ -56,7 +56,26 @@ namespace CapaNegocio.Repositories
 
         public string Delete(DTipoDocumento Entity)
         {
-            throw new NotImplementedException();
+            using (SqlConnection conn = Dconexion.Getconectar())
+            {
+                conn.Open();
+                cmd = null;
+                using (cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = "manto.SP_DeleteDocumento";
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@iddocumento", Entity.Iddocumento);
+
+
+                    result = cmd.ExecuteNonQuery() == 1 ? "Se Elimino Correctamente!" : "Error al Eliminar";
+
+                    cmd.Parameters.Clear();
+
+                }
+            }
+            return result;
         }
 
         public string Edit(DTipoDocumento Entity)
@@ -175,6 +194,51 @@ namespace CapaNegocio.Repositories
         public IEnumerable<DTipoDocumento> Search(string filter)
         {
             return listTipoDoc.FindAll(e => e.Codigo.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0);
+        }
+
+        public string Add_Multiple(IEnumerable<DTipoDocumento> lst)
+        {
+            string result;
+            using (SqlConnection connect = Dconexion.Getconectar())
+            {
+                connect.Open();
+                using (SqlTransaction sqltra = connect.BeginTransaction())
+                {
+                    using (SqlCommand cmd = new SqlCommand())
+                    {
+                        cmd.Connection = connect;
+                        cmd.Transaction = sqltra;
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.CommandText = "manto.SP_AddDocumento";
+
+                        cmd.Parameters.Add("@codigo", SqlDbType.Char,11);
+                        cmd.Parameters.Add("@descripcion", SqlDbType.VarChar,100);
+
+
+                        try
+                        {
+                            foreach (var item in lst)
+                            {
+                                cmd.Parameters["@codigo"].Value = item.Codigo;
+                                cmd.Parameters["@descripcion"].Value = item.Descripcion;
+                         
+                                cmd.ExecuteNonQuery();
+                            }
+                            sqltra.Commit();
+                            result = "El Registro fue Insetados Correctamente";
+
+                        }
+                        catch (Exception ex)
+                        {
+                            sqltra.Rollback();
+                            connect.Close();
+                            result = ex.ToString();
+                            //throw;
+                        }
+                    }
+                }
+            }
+            return result;
         }
     }
 }

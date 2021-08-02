@@ -52,6 +52,7 @@
     <Compile Include="Entities\DMantenimientoInventario.cs" />
     <Compile Include="Entities\DMoneda.cs" />
     <Compile Include="Entities\DTipoDocumento.cs" />
+    <Compile Include="Entities\DTipoExistencia.cs" />
     <Compile Include="Entities\DTipoOperacion.cs" />
     <Compile Include="Entities\DUnidadMedida.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

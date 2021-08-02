@@ -183,6 +183,9 @@ VALUES(@iddoc, @codigo, @descripcion)
 END
 GO
 
+ exec manto.SP_AddDocumento 1,'00','dsds'
+
+
 --PROCEDIMIENTO PARA EDITAR DOCUMENTO
 CREATE PROC manto.SP_EditDocumento
 @iddoc int,
@@ -194,6 +197,14 @@ WHERE idTipoDoc=@iddoc
 END
 GO
 
+--PROCEDIMIENTO PARA ELIMINAR DOCUMENTO
+CREATE PROC manto.SP_DeleteDocumento
+@iddocumento int
+AS BEGIN
+	DELETE from TipoDocumento where idTipoDoc=@iddocumento
+END
+go
+
 --PROCEDIMIENTO PARA MOSTRAR DOCUMENTO
 CREATE PROC manto.SP_ShowDoc
 AS BEGIN
@@ -202,36 +213,33 @@ END
 GO
 
 -- PROCEDIMIENTO PARA UNIDAD DE MEDIDA
-ALTER PROC manto.sp_AddUnidadMedida
+CREATE PROC manto.sp_AddUnidadMedida
 @idUnidadMedida int = null,
-@codigo char(11), 
 @abrev varchar(5),
 @descripcion varchar(60)
 AS BEGIN
 	set @idUnidadMedida = (SELECT isnull(MAX(um.idUnidadMedida), 0 )+1 FROM manto.UnidadMedida um)
 
-INSERT INTO manto.UnidadMedida(idUnidadMedida, codigo, abrev, descripcion)
-VALUES(@idUnidadMedida, @codigo, @abrev, @descripcion)
+INSERT INTO manto.UnidadMedida(idUnidadMedida, abrev, descripcion)
+VALUES(@idUnidadMedida, @abrev, @descripcion)
 END
-
 GO
 
 --PROCEDIMIENTO PARA EDITAR UNIDAD MEDIDA
-CREATE PROC manto.SP_EditUnidMedida
+ALTER PROC manto.SP_EditUnidMedida
 @idUnidadMedida int,
-@codigo char(11), 
 @abrev varchar(5),
 @descripcion varchar(60)
 AS BEGIN
-UPDATE manto.UnidadMedida SET codigo=@codigo, abrev=@abrev, descripcion=@descripcion
+UPDATE manto.UnidadMedida SET abrev=@abrev, descripcion=@descripcion
 WHERE idUnidadMedida=@idUnidadMedida
 END
 GO
 
 --PROCEDIMIENTO PARA MOSTRAR UNIDAD MEDIDA
-CREATE PROC manto.SP_ShowUnidadMed
+ALTER PROC manto.SP_ShowUnidadMed
 AS BEGIN
-SELECT  u.idUnidadMedida,u.codigo,u.abrev,u.descripcion FROM manto.UnidadMedida u
+SELECT  u.idUnidadMedida,u.abrev,u.descripcion FROM manto.UnidadMedida u
 END
 GO
 
@@ -243,6 +251,45 @@ AS BEGIN
 END
 go
 
+--PROCEDIMIENTO PARA AGREGAR TIPO EXISTENCIA
+CREATE PROC manto.SP_AddTipoExist
+@idtip_exist int = null,
+@codigo char(2), 
+@descripcion varchar(100)
+AS BEGIN
+	set @idtip_exist = (SELECT isnull(MAX(te.idTipoExist), 0 )+1 FROM manto.TipoExistencia te)
+INSERT INTO manto.TipoExistencia(idTipoExist, codigo, descripcion)
+VALUES(@idtip_exist, @codigo, @descripcion)
+END
+GO
+
+--PROCEDIMIENTO PARA EDITAR TIPO EXISTENCIA
+CREATE PROC manto.SP_EditTipoExist
+@idtip_exist int,
+@codigo char(2),
+@descripcion varchar(60)
+AS BEGIN
+UPDATE manto.TipoExistencia SET codigo=@codigo, descripcion=@descripcion
+WHERE idTipoExist=@idtip_exist
+END
+GO
+
+--PROCEDIMIENTO PARA MOSTRAR TIPO EXISTENCIA
+CREATE PROC manto.SP_ShowTipoExist
+AS BEGIN
+SELECT  t.idTipoExist,t.codigo,t.descripcion FROM manto.TipoExistencia t
+END
+GO
+
+EXEC manto.SP_ShowTipoExist
+
+--PROCEDIMIENTO PARA ELIMINAR TIPO EXISTENCIA
+CREATE PROC manto.SP_DeleteTipoExist
+@idtip_exist int
+AS BEGIN
+	DELETE from TipoExistencia where idTipoExist=@idtip_exist
+END
+go
 
 /*  PROCEDIMIENTO DE INICIO DE SESION  */
 
@@ -301,12 +348,16 @@ GO
 
 
 -- PROCEDIMIENTO PARA REGISTRAR INVENTARIO MASIVO 2 PERO CON FOREACH EN C#
+<<<<<<< HEAD
 ALTER PROC invent.SP_RegistrarInv
 @invperiodo varchar(8),
 @inv_cou varchar(50),
 @numero_asiento varchar(15),
 @cod_anexo varchar(10),
 
+=======
+alter PROC invent.SP_RegistrarInv
+>>>>>>> 0d874b92c20ad48dbc59e0f7d5a2a4e13b56fe29
 @cod_catalogo varchar(2), 
 @tipo_existencia varchar(4), 
 @cod_existencia varchar(30),
@@ -368,7 +419,7 @@ Having i.id_empresa = @idempresa AND i.idmes = @idmes AND i.idperiodo= @idperiod
 END
 GO
 
-ALTER PROC invent.SP_totalSalida
+create PROC invent.SP_totalSalida
 @idempresa int,
 @idmes tinyint,
 @idperiodo smallint,
@@ -379,7 +430,7 @@ SET @outSalida = (select count(i.id_inventario) FROM invent.Inventario i
 END
 GO
 
-ALTER PROC invent.SP_totalEntrada
+create PROC invent.SP_totalEntrada
 @idempresa int,
 @idmes tinyint,
 @idperiodo smallint,

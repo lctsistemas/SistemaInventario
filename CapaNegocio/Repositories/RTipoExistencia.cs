@@ -3,67 +3,22 @@ using CapaDatos.Entities;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.OleDb;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
-using System.Data.OleDb;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CapaNegocio.Repositories
 {
-    public class RUnidadMedida : IUnidMedida
+    public class RTipoExistencia : ITipoExistencia
     {
         private SqlCommand cmd;
         private string result = "";
-        private List<DUnidadMedida> listUnidMed;
+        private List<DTipoExistencia> listTipoExist;
 
-        public string Add_Multiple(IEnumerable<DUnidadMedida> lst)
-        {
-            string result;
-            using (SqlConnection connect = Dconexion.Getconectar())
-            {
-                connect.Open();
-                using (SqlTransaction sqltra = connect.BeginTransaction())
-                {
-                    using (SqlCommand cmd = new SqlCommand())
-                    {
-                        cmd.Connection = connect;
-                        cmd.Transaction = sqltra;
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.CommandText = "manto.sp_AddUnidadMedida";
-
-                        cmd.Parameters.Add("@abrev", SqlDbType.VarChar,5);
-                        cmd.Parameters.Add("@descripcion", SqlDbType.VarChar,60);
-
-
-                        try
-                        {
-                            foreach (var item in lst)
-                            {
-                                cmd.Parameters["@abrev"].Value = item.Abrev;
-                                cmd.Parameters["@descripcion"].Value = item.Descripcion;
-                                
-                                cmd.ExecuteNonQuery();
-                            }
-                            sqltra.Commit();
-                            result = "El Registro fue Insetados Correctamente";
-
-                        }
-                        catch (Exception ex)
-                        {
-                            sqltra.Rollback();
-                            connect.Close();
-                            result = ex.ToString();
-                        }
-                    }
-                }
-            }
-            return result;
-        }
-
-
-        public string Add(DUnidadMedida Entity)
+        public string Add(DTipoExistencia Entity)
         {
             using (SqlConnection connect = Dconexion.Getconectar())
             {
@@ -73,10 +28,10 @@ namespace CapaNegocio.Repositories
                     using (cmd = new SqlCommand())
                     {
                         cmd.Connection = connect;
-                        cmd.CommandText = "manto.sp_AddUnidadMedida";
+                        cmd.CommandText = "manto.SP_AddTipoExist";
                         cmd.CommandType = CommandType.StoredProcedure;
 
-                        cmd.Parameters.AddWithValue("@abrev", Entity.Abrev);
+                        cmd.Parameters.AddWithValue("@codigo", Entity.Codigo);
                         cmd.Parameters.AddWithValue("@descripcion", Entity.Descripcion);
 
                         result = cmd.ExecuteNonQuery() == 1 ? "Registrado Correctamente!" : "Error al Regsitrar";
@@ -100,7 +55,7 @@ namespace CapaNegocio.Repositories
             return result;
         }
 
-        public string Delete(DUnidadMedida Entity)
+        public string Delete(DTipoExistencia Entity)
         {
             using (SqlConnection conn = Dconexion.Getconectar())
             {
@@ -109,10 +64,10 @@ namespace CapaNegocio.Repositories
                 using (cmd = new SqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = "manto.SP_DeleteUnidMed";
+                    cmd.CommandText = "manto.SP_DeleteTipoExist";
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.AddWithValue("@idUnidadMedida", Entity.IdUnidadMedida);
+                    cmd.Parameters.AddWithValue("@idtip_exist", Entity.IdTipoExist);
 
 
                     result = cmd.ExecuteNonQuery() == 1 ? "Se Elimino Correctamente!" : "Error al Eliminar";
@@ -124,7 +79,7 @@ namespace CapaNegocio.Repositories
             return result;
         }
 
-        public string Edit(DUnidadMedida Entity)
+        public string Edit(DTipoExistencia Entity)
         {
             result = "";
             using (SqlConnection connect = Dconexion.Getconectar())
@@ -135,11 +90,11 @@ namespace CapaNegocio.Repositories
                     using (cmd = new SqlCommand())
                     {
                         cmd.Connection = connect;
-                        cmd.CommandText = "manto.SP_EditUnidMedida";
+                        cmd.CommandText = "manto.SP_AddTipoExist";
                         cmd.CommandType = CommandType.StoredProcedure;
 
-                        cmd.Parameters.AddWithValue("@idtipOper", Entity.IdUnidadMedida);
-                        cmd.Parameters.AddWithValue("@abrev", Entity.Abrev);
+                        cmd.Parameters.AddWithValue("@idtip_exist", Entity.IdTipoExist);
+                        cmd.Parameters.AddWithValue("@codigo", Entity.Codigo);
                         cmd.Parameters.AddWithValue("@descripcion", Entity.Descripcion);
 
 
@@ -157,7 +112,7 @@ namespace CapaNegocio.Repositories
         }
 
         #region : METODO IMPORTAR EXCEL
-        public List<DUnidadMedida> ImportarAchivoExcel(string url)
+        public List<DTipoExistencia> ImportarAchivoExcel(string url)
         {
             //double sumaEntradas = 0;
             //double sumaSalidas = 0;
@@ -168,7 +123,7 @@ namespace CapaNegocio.Repositories
                     conector.Open();
                     using (OleDbCommand cmd = new OleDbCommand())
                     {
-                        string sql = "select ABREVIATURA, DESCRIPCION from [UNIDAD_MEDIDA$]";
+                        string sql = "select CODIGO, DESCRIPCION from [TIPO_EXISTENCIA$]";
                         cmd.Connection = conector;
                         cmd.CommandType = CommandType.Text;
                         cmd.CommandText = sql;
@@ -180,12 +135,12 @@ namespace CapaNegocio.Repositories
                             da.Fill(dt);
                             da.Dispose();
 
-                            listUnidMed = new List<DUnidadMedida>();
+                            listTipoExist = new List<DTipoExistencia>();
                             foreach (DataRow item in dt.Rows)
                             {
-                                listUnidMed.Add(new DUnidadMedida()
+                                listTipoExist.Add(new DTipoExistencia()
                                 {
-                                    Abrev = item["ABREVIATURA"].ToString(),
+                                    Codigo = item["CODIGO"].ToString(),
                                     Descripcion = item["DESCRIPCION"].ToString()
 
                                 });
@@ -202,10 +157,11 @@ namespace CapaNegocio.Repositories
                     conector.Close();
                 }
             }
-            return listUnidMed;
+            return listTipoExist;
         }
         #endregion : FIN IMPORTAR EXCEL
-        public List<DUnidadMedida> Getdata(DUnidadMedida Entity)
+
+        public List<DTipoExistencia> Getdata(DTipoExistencia Entity)
         {
             using (SqlConnection connect = Dconexion.Getconectar())
             {
@@ -213,7 +169,7 @@ namespace CapaNegocio.Repositories
                 using (cmd = new SqlCommand())
                 {
                     cmd.Connection = connect;
-                    cmd.CommandText = "manto.SP_ShowUnidadMed";
+                    cmd.CommandText = "manto.SP_ShowTipoExist";
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     SqlDataReader dtr = cmd.ExecuteReader();
@@ -222,13 +178,13 @@ namespace CapaNegocio.Repositories
                         dt.Load(dtr);
                         dtr.Dispose();
 
-                        listUnidMed = new List<DUnidadMedida>();
+                        listTipoExist = new List<DTipoExistencia>();
                         foreach (DataRow item in dt.Rows)
                         {
-                            listUnidMed.Add(new DUnidadMedida()
+                            listTipoExist.Add(new DTipoExistencia()
                             {
-                                IdUnidadMedida = Convert.ToInt32(item[0]),
-                                Abrev = item[1].ToString(),
+                                IdTipoExist = Convert.ToInt32(item[0]),
+                                Codigo = item[1].ToString(),
                                 Descripcion = item[2].ToString()
                             });
                         }
@@ -238,12 +194,51 @@ namespace CapaNegocio.Repositories
 
             }
 
-            return listUnidMed;
+            return listTipoExist;
         }
 
-        public IEnumerable<DUnidadMedida> Search(string filter)
+        public string Add_Multiple(IEnumerable<DTipoExistencia> lst)
         {
-            return listUnidMed.FindAll(e => e.Descripcion.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0);
+            string result;
+            using (SqlConnection connect = Dconexion.Getconectar())
+            {
+                connect.Open();
+                using (SqlTransaction sqltra = connect.BeginTransaction())
+                {
+                    using (SqlCommand cmd = new SqlCommand())
+                    {
+                        cmd.Connection = connect;
+                        cmd.Transaction = sqltra;
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.CommandText = "manto.SP_AddTipoExist";
+
+                        cmd.Parameters.Add("@codigo", SqlDbType.VarChar, 2);
+                        cmd.Parameters.Add("@descripcion", SqlDbType.VarChar, 100);
+
+
+                        try
+                        {
+                            foreach (var item in lst)
+                            {
+                                cmd.Parameters["@codigo"].Value = item.Codigo;
+                                cmd.Parameters["@descripcion"].Value = item.Descripcion;
+
+                                cmd.ExecuteNonQuery();
+                            }
+                            sqltra.Commit();
+                            result = "El Registro fue Insetados Correctamente";
+
+                        }
+                        catch (Exception ex)
+                        {
+                            sqltra.Rollback();
+                            connect.Close();
+                            result = ex.ToString();
+                        }
+                    }
+                }
+            }
+            return result;
         }
     }
 }
