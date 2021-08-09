@@ -50,7 +50,6 @@ e.domicilio_fiscal, e.regimen FROM manto.Empresa e WHERE e.estado = @estado
 END
 GO
 
-exec manto.SP_ShowEmpresa 'ACTIVO'
 
 --	PROCEDIMIENTO PARA CLIENTE PROVEEDOR
 ALTER PROC manto.SP_AddCliProv
@@ -82,7 +81,6 @@ AS BEGIN
 	DELETE from clienteProv where idcliprov=@idcliprov
 END
 GO
-
 
 CREATE PROC manto.SP_ShowCliProv
 AS BEGIN
@@ -183,8 +181,6 @@ VALUES(@iddoc, @codigo, @descripcion)
 END
 GO
 
- exec manto.SP_AddDocumento 1,'00','dsds'
-
 
 --PROCEDIMIENTO PARA EDITAR DOCUMENTO
 CREATE PROC manto.SP_EditDocumento
@@ -252,7 +248,7 @@ END
 go
 
 --PROCEDIMIENTO PARA AGREGAR TIPO EXISTENCIA
-CREATE PROC manto.SP_AddTipoExist
+alter PROC manto.SP_AddTipoExist
 @idtip_exist int = null,
 @codigo char(2), 
 @descripcion varchar(100)
@@ -264,7 +260,7 @@ END
 GO
 
 --PROCEDIMIENTO PARA EDITAR TIPO EXISTENCIA
-CREATE PROC manto.SP_EditTipoExist
+alter PROC manto.SP_EditTipoExist
 @idtip_exist int,
 @codigo char(2),
 @descripcion varchar(60)
@@ -275,16 +271,15 @@ END
 GO
 
 --PROCEDIMIENTO PARA MOSTRAR TIPO EXISTENCIA
-CREATE PROC manto.SP_ShowTipoExist
+alter PROC manto.SP_ShowTipoExist
 AS BEGIN
 SELECT  t.idTipoExist,t.codigo,t.descripcion FROM manto.TipoExistencia t
 END
 GO
 
-EXEC manto.SP_ShowTipoExist
 
 --PROCEDIMIENTO PARA ELIMINAR TIPO EXISTENCIA
-CREATE PROC manto.SP_DeleteTipoExist
+alter PROC manto.SP_DeleteTipoExist
 @idtip_exist int
 AS BEGIN
 	DELETE from TipoExistencia where idTipoExist=@idtip_exist
@@ -348,23 +343,17 @@ GO
 
 
 -- PROCEDIMIENTO PARA REGISTRAR INVENTARIO MASIVO 2 PERO CON FOREACH EN C#
-<<<<<<< HEAD
+
 ALTER PROC invent.SP_RegistrarInv
 @invperiodo varchar(8),
 @inv_cou varchar(50),
 @numero_asiento varchar(15),
 @cod_anexo varchar(10),
-
-=======
-alter PROC invent.SP_RegistrarInv
->>>>>>> 0d874b92c20ad48dbc59e0f7d5a2a4e13b56fe29
 @cod_catalogo varchar(2), 
 @tipo_existencia varchar(4), 
 @cod_existencia varchar(30),
-
 @cod_ctl varchar(30), 
 @cod_ext_ctl varchar(150),
-
 @fecha_emision date,
 @tipo_documento char(2),
 @serie varchar(30),
@@ -375,7 +364,7 @@ alter PROC invent.SP_RegistrarInv
 @entradas decimal(14,2),
 @salidas decimal (14,2),
 @estado_operacion char(1),
-@id_empresa int, 
+@id_empresa int,
 @idperiodo smallint,
 @idmes tinyint
 AS BEGIN

@@ -29,23 +29,24 @@ namespace CapaPresentacion.Vista
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMantenimiento));
             this.Panel_content = new Guna.UI2.WinForms.Guna2Panel();
             this.Panel_entradaT = new Guna.UI2.WinForms.Guna2Panel();
             this.Lbl_cantiEntrada = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.Panel_salidaT = new Guna.UI2.WinForms.Guna2Panel();
+            this.Lbl_cantiSalida = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.Txt_totalStock = new Guna.UI2.WinForms.Guna2TextBox();
             this.Txt_totalSalida = new Guna.UI2.WinForms.Guna2TextBox();
+            this.Txt_cantidad = new Guna.UI2.WinForms.Guna2TextBox();
             this.Txt_Total_entrada = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.Btn_buscar = new Guna.UI2.WinForms.Guna2Button();
             this.label6 = new System.Windows.Forms.Label();
             this.Cbomes = new System.Windows.Forms.ComboBox();
@@ -59,8 +60,6 @@ namespace CapaPresentacion.Vista
             this.Dgv_btndetalle = new System.Windows.Forms.DataGridViewImageColumn();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.Lbl_cantiSalida = new System.Windows.Forms.Label();
-            this.Txt_cantidad = new Guna.UI2.WinForms.Guna2TextBox();
             this.Panel_content.SuspendLayout();
             this.Panel_entradaT.SuspendLayout();
             this.Panel_salidaT.SuspendLayout();
@@ -74,7 +73,6 @@ namespace CapaPresentacion.Vista
             this.Panel_content.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(233)))), ((int)(((byte)(236)))));
             this.Panel_content.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
             this.Panel_content.BorderThickness = 1;
-            this.Panel_content.Controls.Add(this.guna2Button1);
             this.Panel_content.Controls.Add(this.Panel_entradaT);
             this.Panel_content.Controls.Add(this.Panel_salidaT);
             this.Panel_content.Controls.Add(this.guna2Panel2);
@@ -138,6 +136,18 @@ namespace CapaPresentacion.Vista
             this.Panel_salidaT.ShadowDecoration.Parent = this.Panel_salidaT;
             this.Panel_salidaT.Size = new System.Drawing.Size(117, 63);
             this.Panel_salidaT.TabIndex = 20;
+            // 
+            // Lbl_cantiSalida
+            // 
+            this.Lbl_cantiSalida.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Lbl_cantiSalida.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_cantiSalida.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.Lbl_cantiSalida.Location = new System.Drawing.Point(8, 44);
+            this.Lbl_cantiSalida.Name = "Lbl_cantiSalida";
+            this.Lbl_cantiSalida.Size = new System.Drawing.Size(97, 15);
+            this.Lbl_cantiSalida.TabIndex = 1;
+            this.Lbl_cantiSalida.Text = "0";
+            this.Lbl_cantiSalida.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label2
             // 
@@ -219,6 +229,32 @@ namespace CapaPresentacion.Vista
             this.Txt_totalSalida.TabIndex = 20;
             this.Txt_totalSalida.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // Txt_cantidad
+            // 
+            this.Txt_cantidad.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Txt_cantidad.DefaultText = "";
+            this.Txt_cantidad.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.Txt_cantidad.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.Txt_cantidad.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Txt_cantidad.DisabledState.Parent = this.Txt_cantidad;
+            this.Txt_cantidad.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Txt_cantidad.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Txt_cantidad.FocusedState.Parent = this.Txt_cantidad;
+            this.Txt_cantidad.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_cantidad.ForeColor = System.Drawing.Color.Black;
+            this.Txt_cantidad.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Txt_cantidad.HoverState.Parent = this.Txt_cantidad;
+            this.Txt_cantidad.Location = new System.Drawing.Point(37, 5);
+            this.Txt_cantidad.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Txt_cantidad.Name = "Txt_cantidad";
+            this.Txt_cantidad.PasswordChar = '\0';
+            this.Txt_cantidad.PlaceholderText = "";
+            this.Txt_cantidad.ReadOnly = true;
+            this.Txt_cantidad.SelectedText = "";
+            this.Txt_cantidad.ShadowDecoration.Parent = this.Txt_cantidad;
+            this.Txt_cantidad.Size = new System.Drawing.Size(85, 26);
+            this.Txt_cantidad.TabIndex = 20;
+            // 
             // Txt_Total_entrada
             // 
             this.Txt_Total_entrada.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -260,33 +296,16 @@ namespace CapaPresentacion.Vista
             this.guna2Panel1.Size = new System.Drawing.Size(437, 63);
             this.guna2Panel1.TabIndex = 12;
             // 
-            // guna2Button1
-            // 
-            this.guna2Button1.BorderColor = System.Drawing.Color.Gray;
-            this.guna2Button1.BorderRadius = 3;
-            this.guna2Button1.BorderThickness = 1;
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(834, 16);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(102, 32);
-            this.guna2Button1.TabIndex = 11;
-            this.guna2Button1.Text = "Vista Previa ";
-            // 
             // Btn_buscar
             // 
-            this.Btn_buscar.BorderColor = System.Drawing.Color.CadetBlue;
+            this.Btn_buscar.BorderColor = System.Drawing.Color.Silver;
             this.Btn_buscar.BorderRadius = 2;
             this.Btn_buscar.BorderThickness = 1;
             this.Btn_buscar.CheckedState.Parent = this.Btn_buscar;
             this.Btn_buscar.CustomImages.Parent = this.Btn_buscar;
-            this.Btn_buscar.FillColor = System.Drawing.Color.LightSkyBlue;
+            this.Btn_buscar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(235)))), ((int)(((byte)(245)))));
             this.Btn_buscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_buscar.ForeColor = System.Drawing.Color.White;
+            this.Btn_buscar.ForeColor = System.Drawing.Color.Black;
             this.Btn_buscar.HoverState.Parent = this.Btn_buscar;
             this.Btn_buscar.Location = new System.Drawing.Point(183, 15);
             this.Btn_buscar.Name = "Btn_buscar";
@@ -322,8 +341,8 @@ namespace CapaPresentacion.Vista
             this.Dgv_grupo_.AllowUserToDeleteRows = false;
             this.Dgv_grupo_.AllowUserToResizeColumns = false;
             this.Dgv_grupo_.AllowUserToResizeRows = false;
-            dataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.Dgv_grupo_.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.Dgv_grupo_.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.Dgv_grupo_.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -332,14 +351,14 @@ namespace CapaPresentacion.Vista
             this.Dgv_grupo_.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Dgv_grupo_.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.Dgv_grupo_.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Dgv_grupo_.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_grupo_.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.Dgv_grupo_.ColumnHeadersHeight = 40;
             this.Dgv_grupo_.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.Dgv_grupo_.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -350,15 +369,15 @@ namespace CapaPresentacion.Vista
             this.invgrupo_5,
             this.invgrupo_6,
             this.Dgv_btndetalle});
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle23.Padding = new System.Windows.Forms.Padding(0, 1, 0, 1);
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Dgv_grupo_.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 1, 0, 1);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_grupo_.DefaultCellStyle = dataGridViewCellStyle3;
             this.Dgv_grupo_.EnableHeadersVisualStyles = false;
             this.Dgv_grupo_.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(234)))), ((int)(((byte)(234)))));
             this.Dgv_grupo_.Location = new System.Drawing.Point(4, 81);
@@ -366,15 +385,15 @@ namespace CapaPresentacion.Vista
             this.Dgv_grupo_.Name = "Dgv_grupo_";
             this.Dgv_grupo_.ReadOnly = true;
             this.Dgv_grupo_.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle24.Padding = new System.Windows.Forms.Padding(0, 0, 1, 0);
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Dgv_grupo_.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(0, 0, 1, 0);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_grupo_.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.Dgv_grupo_.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.Dgv_grupo_.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Dgv_grupo_.Size = new System.Drawing.Size(944, 395);
@@ -458,44 +477,6 @@ namespace CapaPresentacion.Vista
             this.lineShape1.Y1 = 50;
             this.lineShape1.Y2 = 496;
             // 
-            // Lbl_cantiSalida
-            // 
-            this.Lbl_cantiSalida.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.Lbl_cantiSalida.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_cantiSalida.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.Lbl_cantiSalida.Location = new System.Drawing.Point(8, 44);
-            this.Lbl_cantiSalida.Name = "Lbl_cantiSalida";
-            this.Lbl_cantiSalida.Size = new System.Drawing.Size(97, 15);
-            this.Lbl_cantiSalida.TabIndex = 1;
-            this.Lbl_cantiSalida.Text = "0";
-            this.Lbl_cantiSalida.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // Txt_cantidad
-            // 
-            this.Txt_cantidad.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.Txt_cantidad.DefaultText = "";
-            this.Txt_cantidad.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.Txt_cantidad.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.Txt_cantidad.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Txt_cantidad.DisabledState.Parent = this.Txt_cantidad;
-            this.Txt_cantidad.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Txt_cantidad.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Txt_cantidad.FocusedState.Parent = this.Txt_cantidad;
-            this.Txt_cantidad.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_cantidad.ForeColor = System.Drawing.Color.Black;
-            this.Txt_cantidad.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Txt_cantidad.HoverState.Parent = this.Txt_cantidad;
-            this.Txt_cantidad.Location = new System.Drawing.Point(37, 5);
-            this.Txt_cantidad.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Txt_cantidad.Name = "Txt_cantidad";
-            this.Txt_cantidad.PasswordChar = '\0';
-            this.Txt_cantidad.PlaceholderText = "";
-            this.Txt_cantidad.ReadOnly = true;
-            this.Txt_cantidad.SelectedText = "";
-            this.Txt_cantidad.ShadowDecoration.Parent = this.Txt_cantidad;
-            this.Txt_cantidad.Size = new System.Drawing.Size(85, 26);
-            this.Txt_cantidad.TabIndex = 20;
-            // 
             // FrmMantenimiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -525,7 +506,6 @@ namespace CapaPresentacion.Vista
         private System.Windows.Forms.Label label6;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private System.Windows.Forms.DataGridViewTextBoxColumn invgrupo_1;
         private System.Windows.Forms.DataGridViewTextBoxColumn invgrupo_2;
