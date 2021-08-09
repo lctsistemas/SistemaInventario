@@ -25,8 +25,59 @@ namespace CapaPresentacion.Vista
             InitializeComponent();
             de = new DEntrada();
             rema = new RMantenimientoInventario();
-
+            this.Dgv_grupo_.DoubleBuffered(true);
+            this.Dgv_vistaDetalle.DoubleBuffered(true);
+            this.Dgv_vistaDetalle.AutoGenerateColumns = false;
             ShowMes();
+            Tabla();
+        }
+
+
+        //TABLA
+        private void Tabla()
+        {
+            Dgv_vistaDetalle.Columns[0].HeaderText = "ID";
+            Dgv_vistaDetalle.Columns[0].Visible = false;
+
+            Dgv_vistaDetalle.Columns[1].HeaderText = "PERIODO";
+            //Dgv_Importar.Columns[1].Width = 150;
+            //Dgv_Importar.Columns[1].Visible = false;
+
+            Dgv_vistaDetalle.Columns[2].HeaderText = "CUO";
+            Dgv_vistaDetalle.Columns[2].Width = 200;
+
+            Dgv_vistaDetalle.Columns[3].HeaderText = "NUM ASIENTO";
+            Dgv_vistaDetalle.Columns[4].HeaderText = "COD. ANEXO";
+            Dgv_vistaDetalle.Columns[5].HeaderText = "COD. CATALOGO";
+            Dgv_vistaDetalle.Columns[6].HeaderText = "TIPO EXISTENCIA";
+            Dgv_vistaDetalle.Columns[7].HeaderText = "COD. EXISTENCIA";
+            Dgv_vistaDetalle.Columns[8].HeaderText = "COD CTL";
+            Dgv_vistaDetalle.Columns[9].HeaderText = "COD. EXITENCIA CTL";
+            Dgv_vistaDetalle.Columns[10].HeaderText = "FECHA EMISION";
+            Dgv_vistaDetalle.Columns[11].HeaderText = "TIPO DOCUMENTO";
+            Dgv_vistaDetalle.Columns[12].HeaderText = "SERIE";
+            Dgv_vistaDetalle.Columns[13].HeaderText = "NUMERO DOCUMENTO";
+            Dgv_vistaDetalle.Columns[14].HeaderText = "TIPO OPERACION";
+            Dgv_vistaDetalle.Columns[15].HeaderText = "EXISTENCIA";
+            Dgv_vistaDetalle.Columns[15].Width = 270;
+            Dgv_vistaDetalle.Columns[16].HeaderText = "UNIDAD MEDIDA";
+            Dgv_vistaDetalle.Columns[17].HeaderText = "ENTRADAS";
+            Dgv_vistaDetalle.Columns[18].HeaderText = "SALIDAS";
+            Dgv_vistaDetalle.Columns[19].HeaderText = "ESTADO DE OPERACION";
+            OcultarColumasTabla(false);
+
+        }
+
+        private void OcultarColumasTabla(bool v)
+        {
+            Dgv_vistaDetalle.Columns[1].Visible = v;
+            Dgv_vistaDetalle.Columns[2].Visible = v;
+            Dgv_vistaDetalle.Columns[3].Visible = v;
+            Dgv_vistaDetalle.Columns[4].Visible = v;
+            Dgv_vistaDetalle.Columns[5].Visible = v;
+            Dgv_vistaDetalle.Columns[8].Visible = v;
+            Dgv_vistaDetalle.Columns[9].Visible = v;
+            Dgv_vistaDetalle.Columns[19].Visible = v;
         }
 
         private void ShowMes()
@@ -49,25 +100,24 @@ namespace CapaPresentacion.Vista
             Txt_cantidad.Text = sumaStock.ToString("N0");
         }
 
-        private void SumaEntradas()
+        private double SumaEntradas(DataGridView dgv, string celda)
         {
             double sumaEntrada = 0;
-            for (int i = 0; i < Dgv_grupo_.RowCount; i++)
+            for (int i = 0; i < dgv.RowCount; i++)
             {
-                sumaEntrada += Convert.ToDouble(Dgv_grupo_.Rows[i].Cells["invgrupo_4"].Value);
-            }
-            Txt_Total_entrada.Text = sumaEntrada.ToString("N2");
-
+                sumaEntrada += Convert.ToDouble(dgv.Rows[i].Cells[celda].Value);
+            }       
+            return sumaEntrada;
         }
 
-        private void SumaSalidas()
+        private double SumaSalidas(DataGridView dgv, string celda)
         {
             double sumaSalida = 0;
-            for (int i = 0; i < Dgv_grupo_.RowCount; i++)
+            for (int i = 0; i < dgv.RowCount; i++)
             {
-                sumaSalida += Convert.ToDouble(Dgv_grupo_.Rows[i].Cells["invgrupo_5"].Value);
+                sumaSalida += Convert.ToDouble(dgv.Rows[i].Cells[celda].Value);
             }
-            Txt_totalSalida.Text = sumaSalida.ToString("N2");
+            return sumaSalida;
         }
 
         private void SumaStock()
@@ -91,16 +141,84 @@ namespace CapaPresentacion.Vista
             Lbl_cantiSalida.Text = rema.GetCantidadSalida(de).ToString("N0");
         }
 
+
+        private void ShowDetalleInventario(string cod_exist)
+        {
+            de.Id_empresa = UserCache.C_idempresa;
+            de.Id_mes = (int)Cbomes.SelectedValue;
+            de.Id_periodo = UserCache.C_idperiodo;
+            de.cod_existencia = cod_exist;
+
+            Dgv_vistaDetalle.DataSource = rema.GetDetalleInventario(de);
+        }
+
+
         private void Btn_buscar_Click(object sender, EventArgs e)
         {
             ShowGrupoInventario();
-            SumaEntradas();
-            SumaSalidas();
+            Txt_Total_entrada.Text = SumaEntradas(Dgv_grupo_, "invgrupo_4").ToString("N2");
+            Txt_totalSalida.Text = SumaSalidas(Dgv_grupo_, "invgrupo_5").ToString("N2");
             SumaStock();
             SumaCantidad();
             
         }
 
-      
+        private void btncerrar_Click(object sender, EventArgs e)
+        {
+            this.Panel_detalleInventario.Visible = false;
+        }
+
+        private void Dgv_grupo__CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                string cod_exi = "";
+                double tstock = 0, saldo_ini = 0;
+                if (e.ColumnIndex == this.Dgv_grupo_.Columns["Dgv_btndetalle"].Index)
+                {
+                    this.Panel_detalleInventario.Visible = true;
+                    Lbl_existencia.Text = Dgv_grupo_.CurrentRow.Cells["invgrupo_3"].Value.ToString(); // Existencia.
+                    cod_exi = Dgv_grupo_.CurrentRow.Cells["invgrupo_2"].Value.ToString(); // codigo existencia clave unica.
+                    ShowDetalleInventario(cod_exi);
+
+                    //establecer datos
+                    Lbl_cantiRegistro.Text = Dgv_vistaDetalle.RowCount.ToString("N0");
+                    Lbl_totaEntradadetalle.Text = SumaEntradas(Dgv_vistaDetalle, "inv_17").ToString("N2");
+                    Lbl_totaSalidadetalle.Text = SumaSalidas(Dgv_vistaDetalle, "inv_18").ToString("N2");
+                    tstock = (Convert.ToDouble(Lbl_totaEntradadetalle.Text) - Convert.ToDouble(Lbl_totaSalidadetalle.Text));
+                    Lbl_totaStockdetalle.Text = tstock.ToString("N2");
+
+                    
+
+                    foreach (DataGridViewRow item in Dgv_vistaDetalle.Rows)
+                    {
+                        if (item.Cells["inv_14"].Value.ToString() == "16")
+                        {
+                            saldo_ini = Convert.ToDouble(item.Cells["inv_17"].Value.ToString());
+                            break;
+                        }
+                       
+                    }
+
+                    Lbl_saldoIniciodetalle.Text = saldo_ini.ToString();
+                }
+            }
+        }
+
+        private void Dgv_vistaDetalle_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            using (SolidBrush b = new SolidBrush(Dgv_vistaDetalle.RowHeadersDefaultCellStyle.ForeColor))
+            {
+                e.Graphics.DrawString((e.RowIndex + 1).ToString(), e.InheritedRowStyle.Font, b, e.RowBounds.Location.X + 1, e.RowBounds.Location.Y + 3);
+            }
+        }
+
+        private void Dgv_grupo__RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            using (SolidBrush b = new SolidBrush(Dgv_grupo_.RowHeadersDefaultCellStyle.ForeColor))
+            {
+                e.Graphics.DrawString((e.RowIndex + 1).ToString(), e.InheritedRowStyle.Font, b, e.RowBounds.Location.X + 1, e.RowBounds.Location.Y + 3);
+            }
+        }
     }
 }

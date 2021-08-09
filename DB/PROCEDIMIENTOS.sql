@@ -430,4 +430,19 @@ SET @outEntrada = (select count(i.id_inventario) FROM invent.Inventario i
 END
 GO
 
-select * from [invent].[Inventario]
+
+ALTER PROC invent.SP_DetalleInventario
+@idempresa int,
+@idmes tinyint,
+@idperiodo smallint,
+@cod_existen varchar(30)
+AS BEGIN
+select 
+i.id_inventario,i.invperiodo ,i.inv_cou, i.numero_asiento,i.cod_anexo,i.cod_catalogo,
+i.tipo_existencia,i.cod_existencia,i.cod_ctl,i.cod_ext_ctl,i.fecha_emision,i.tipo_documento,
+i.serie,i.num_documento,i.tipo_operacion,i.existencia,i.unida_medida,i.entradas,i.salidas,i.estado_operacion
+from invent.Inventario i
+where (i.id_empresa = @idempresa AND i.idmes = @idmes AND i.idperiodo= @idperiodo) and cod_existencia = @cod_existen
+order by i.tipo_operacion desc
+END
+GO

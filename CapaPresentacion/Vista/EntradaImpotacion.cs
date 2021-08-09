@@ -482,7 +482,6 @@ namespace CapaPresentacion.Vista
                 }
             }
         }
-
         #endregion
 
         private void FrmEntradaImpotacion_Load(object sender, EventArgs e)
@@ -491,7 +490,6 @@ namespace CapaPresentacion.Vista
             Tabla();
             Mensaje("");
             this.toolTip1.SetToolTip(BtnExaminar,"Examinar archivos .TXT");
-
         }
 
         private void Dgv_Importar_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)

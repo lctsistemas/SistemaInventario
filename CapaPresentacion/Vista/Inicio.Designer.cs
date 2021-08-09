@@ -47,7 +47,6 @@ namespace CapaPresentacion.Vista
             this.Btn_iv_fisico = new System.Windows.Forms.Button();
             this.Btn_iv_valorizado = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.Btn_empresa = new System.Windows.Forms.Button();
@@ -56,12 +55,12 @@ namespace CapaPresentacion.Vista
             this.Btn_moneda = new System.Windows.Forms.Button();
             this.Btn_tipdocumento = new System.Windows.Forms.Button();
             this.BtnUnidMed = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.Panel_titulo = new System.Windows.Forms.Panel();
             this.lbluser = new System.Windows.Forms.Label();
             this.Lblempresa = new System.Windows.Forms.Label();
             this.Picture_user = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.button1 = new System.Windows.Forms.Button();
             this.PanelMenu.SuspendLayout();
             this.Panel_contenedor.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -76,7 +75,7 @@ namespace CapaPresentacion.Vista
             // 
             // PanelMenu
             // 
-            this.PanelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(233)))), ((int)(((byte)(236)))));
+            this.PanelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(223)))), ((int)(((byte)(226)))));
             this.PanelMenu.Controls.Add(this.Panel_contenedor);
             this.PanelMenu.Controls.Add(this.tabControl1);
             this.PanelMenu.Controls.Add(this.Panel_titulo);
@@ -89,7 +88,7 @@ namespace CapaPresentacion.Vista
             // Panel_contenedor
             // 
             this.Panel_contenedor.AutoScroll = true;
-            this.Panel_contenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(233)))), ((int)(((byte)(236)))));
+            this.Panel_contenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(223)))), ((int)(((byte)(226)))));
             this.Panel_contenedor.Controls.Add(this.Lbl_idperiodo);
             this.Panel_contenedor.Controls.Add(this.Lbl_idempresa);
             this.Panel_contenedor.Controls.Add(this.statusStrip1);
@@ -174,27 +173,25 @@ namespace CapaPresentacion.Vista
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 7;
+            this.tableLayoutPanel1.ColumnCount = 6;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.24396F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.24396F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.24396F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.24396F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.24396F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.25031F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.52991F));
             this.tableLayoutPanel1.Controls.Add(this.Btn_entrada, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.button6, 5, 0);
             this.tableLayoutPanel1.Controls.Add(this.Btn_mante, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.Btn_iv_fisico, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.Btn_iv_valorizado, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.button5, 4, 0);
-            this.tableLayoutPanel1.Controls.Add(this.button2, 6, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(657, 59);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(544, 59);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // Btn_entrada
@@ -206,7 +203,7 @@ namespace CapaPresentacion.Vista
             this.Btn_entrada.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Btn_entrada.Location = new System.Drawing.Point(3, 3);
             this.Btn_entrada.Name = "Btn_entrada";
-            this.Btn_entrada.Size = new System.Drawing.Size(87, 53);
+            this.Btn_entrada.Size = new System.Drawing.Size(84, 53);
             this.Btn_entrada.TabIndex = 1;
             this.Btn_entrada.Text = "Importar";
             this.Btn_entrada.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -216,11 +213,12 @@ namespace CapaPresentacion.Vista
             // 
             // button6
             // 
+            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(241)))), ((int)(((byte)(251)))));
             this.button6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(468, 3);
+            this.button6.Location = new System.Drawing.Point(453, 3);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(87, 53);
+            this.button6.Size = new System.Drawing.Size(88, 53);
             this.button6.TabIndex = 4;
             this.button6.Text = "Costo de Venta";
             this.button6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -228,14 +226,15 @@ namespace CapaPresentacion.Vista
             // 
             // Btn_mante
             // 
+            this.Btn_mante.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(241)))), ((int)(((byte)(251)))));
             this.Btn_mante.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_mante.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Btn_mante.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_mante.Image = ((System.Drawing.Image)(resources.GetObject("Btn_mante.Image")));
             this.Btn_mante.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Btn_mante.Location = new System.Drawing.Point(96, 3);
+            this.Btn_mante.Location = new System.Drawing.Point(93, 3);
             this.Btn_mante.Name = "Btn_mante";
-            this.Btn_mante.Size = new System.Drawing.Size(87, 53);
+            this.Btn_mante.Size = new System.Drawing.Size(84, 53);
             this.Btn_mante.TabIndex = 2;
             this.Btn_mante.Text = "Mantenimiento Inventario";
             this.Btn_mante.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -245,12 +244,13 @@ namespace CapaPresentacion.Vista
             // 
             // Btn_iv_fisico
             // 
+            this.Btn_iv_fisico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(241)))), ((int)(((byte)(251)))));
             this.Btn_iv_fisico.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_iv_fisico.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Btn_iv_fisico.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_iv_fisico.Location = new System.Drawing.Point(189, 3);
+            this.Btn_iv_fisico.Location = new System.Drawing.Point(183, 3);
             this.Btn_iv_fisico.Name = "Btn_iv_fisico";
-            this.Btn_iv_fisico.Size = new System.Drawing.Size(87, 53);
+            this.Btn_iv_fisico.Size = new System.Drawing.Size(84, 53);
             this.Btn_iv_fisico.TabIndex = 2;
             this.Btn_iv_fisico.Text = "Inv. Unidades Fisica";
             this.Btn_iv_fisico.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -259,12 +259,13 @@ namespace CapaPresentacion.Vista
             // 
             // Btn_iv_valorizado
             // 
+            this.Btn_iv_valorizado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(241)))), ((int)(((byte)(251)))));
             this.Btn_iv_valorizado.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_iv_valorizado.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Btn_iv_valorizado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_iv_valorizado.Location = new System.Drawing.Point(282, 3);
+            this.Btn_iv_valorizado.Location = new System.Drawing.Point(273, 3);
             this.Btn_iv_valorizado.Name = "Btn_iv_valorizado";
-            this.Btn_iv_valorizado.Size = new System.Drawing.Size(87, 53);
+            this.Btn_iv_valorizado.Size = new System.Drawing.Size(84, 53);
             this.Btn_iv_valorizado.TabIndex = 2;
             this.Btn_iv_valorizado.Text = "Inv. Unidades Permanetes";
             this.Btn_iv_valorizado.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -273,25 +274,16 @@ namespace CapaPresentacion.Vista
             // 
             // button5
             // 
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(241)))), ((int)(((byte)(251)))));
             this.button5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(375, 3);
+            this.button5.Location = new System.Drawing.Point(363, 3);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(87, 53);
+            this.button5.Size = new System.Drawing.Size(84, 53);
             this.button5.TabIndex = 3;
             this.button5.Text = "Stock Final a Fecha";
             this.button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.Location = new System.Drawing.Point(561, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(93, 53);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
@@ -392,6 +384,7 @@ namespace CapaPresentacion.Vista
             // BtnUnidMed
             // 
             this.BtnUnidMed.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnUnidMed.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnUnidMed.Location = new System.Drawing.Point(398, 3);
             this.BtnUnidMed.Name = "BtnUnidMed";
             this.BtnUnidMed.Size = new System.Drawing.Size(73, 53);
@@ -399,6 +392,18 @@ namespace CapaPresentacion.Vista
             this.BtnUnidMed.Text = "Unidad Medida";
             this.BtnUnidMed.UseVisualStyleBackColor = true;
             this.BtnUnidMed.Click += new System.EventHandler(this.BtnUnidMed_Click);
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(477, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(77, 53);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Tipo Existencia";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Panel_titulo
             // 
@@ -448,17 +453,6 @@ namespace CapaPresentacion.Vista
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // button1
-            // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.Location = new System.Drawing.Point(477, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(77, 53);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Tipo Existencia";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FrmInicio
             // 
@@ -520,7 +514,6 @@ namespace CapaPresentacion.Vista
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button Btn_tipdocumento;
         private System.Windows.Forms.Button BtnUnidMed;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
     }
 }

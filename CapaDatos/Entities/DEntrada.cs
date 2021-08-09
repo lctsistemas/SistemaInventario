@@ -8,6 +8,7 @@ namespace CapaDatos.Entities
 {
     public class DEntrada
     {
+       public int id_inventario { get; set; }
         public string periodo { get; set; } //1
         public string COU { get; set; } //2
         public string numero_asiento { get; set; } //3
