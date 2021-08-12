@@ -343,7 +343,7 @@ namespace CapaPresentacion.Vista
         }
         private void EstructuraLEinventario()
         {
-            string le = string.Format("LE{0}{1}{2}120100001111", Txt_ruc.Text, Num_periodo.Value, Txt_numeroMes.Text);
+            string le = string.Format("LE{0}{1}{2}00120100001111", Txt_ruc.Text, Num_periodo.Value, Txt_numeroMes.Text);
             Txt_nombreArchivo.Text = le.Trim();
         }
 

@@ -485,10 +485,11 @@ namespace CapaPresentacion.Vista
             this.Panel_detalleInventario.Controls.Add(this.guna2Panel3);
             this.Panel_detalleInventario.Controls.Add(this.btncerrar);
             this.Panel_detalleInventario.Controls.Add(this.Dgv_vistaDetalle);
-            this.Panel_detalleInventario.Location = new System.Drawing.Point(0, 210);
+            this.Panel_detalleInventario.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Panel_detalleInventario.Location = new System.Drawing.Point(0, 0);
             this.Panel_detalleInventario.Name = "Panel_detalleInventario";
             this.Panel_detalleInventario.ShadowDecoration.Parent = this.Panel_detalleInventario;
-            this.Panel_detalleInventario.Size = new System.Drawing.Size(647, 307);
+            this.Panel_detalleInventario.Size = new System.Drawing.Size(1033, 517);
             this.Panel_detalleInventario.TabIndex = 103;
             this.Panel_detalleInventario.Visible = false;
             // 
@@ -665,7 +666,7 @@ namespace CapaPresentacion.Vista
             this.btncerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btncerrar.Image = ((System.Drawing.Image)(resources.GetObject("btncerrar.Image")));
-            this.btncerrar.Location = new System.Drawing.Point(612, 1);
+            this.btncerrar.Location = new System.Drawing.Point(998, 1);
             this.btncerrar.Name = "btncerrar";
             this.btncerrar.Size = new System.Drawing.Size(35, 35);
             this.btncerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -747,7 +748,7 @@ namespace CapaPresentacion.Vista
             this.Dgv_vistaDetalle.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.Dgv_vistaDetalle.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.Dgv_vistaDetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Dgv_vistaDetalle.Size = new System.Drawing.Size(633, 192);
+            this.Dgv_vistaDetalle.Size = new System.Drawing.Size(1019, 402);
             this.Dgv_vistaDetalle.TabIndex = 102;
             this.Dgv_vistaDetalle.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.Dgv_vistaDetalle_RowPostPaint);
             // 
