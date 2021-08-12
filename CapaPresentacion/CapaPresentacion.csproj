@@ -122,6 +122,12 @@
     <Compile Include="SubVista\V_TipoOperacion.Designer.cs">
       <DependentUpon>V_TipoOperacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="SubVista\V_txtUnidadFisica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubVista\V_txtUnidadFisica.Designer.cs">
+      <DependentUpon>V_txtUnidadFisica.cs</DependentUpon>
+    </Compile>
     <Compile Include="SubVista\V_UnidadMedida.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +157,12 @@
     </Compile>
     <Compile Include="Vista\Mantenimiento.Designer.cs">
       <DependentUpon>Mantenimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\MDIParent1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\MDIParent1.Designer.cs">
+      <DependentUpon>MDIParent1.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\TipoExistencia.cs">
       <SubType>Form</SubType>
@@ -263,6 +275,9 @@
     <EmbeddedResource Include="SubVista\V_TipoOperacion.resx">
       <DependentUpon>V_TipoOperacion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SubVista\V_txtUnidadFisica.resx">
+      <DependentUpon>V_txtUnidadFisica.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SubVista\V_UnidadMedida.resx">
       <DependentUpon>V_UnidadMedida.cs</DependentUpon>
     </EmbeddedResource>
@@ -277,6 +292,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Mantenimiento.resx">
       <DependentUpon>Mantenimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\MDIParent1.resx">
+      <DependentUpon>MDIParent1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\TipoExistencia.resx">
       <DependentUpon>TipoExistencia.cs</DependentUpon>

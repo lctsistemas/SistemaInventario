@@ -120,7 +120,7 @@ namespace CapaPresentacion.Vista
             // 
             // statusStrip1
             // 
-            this.statusStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.statusStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
             this.tlblhora});
@@ -461,11 +461,12 @@ namespace CapaPresentacion.Vista
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(233)))), ((int)(((byte)(236)))));
             this.ClientSize = new System.Drawing.Size(912, 558);
             this.Controls.Add(this.PanelMenu);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmInicio";
-            this.ShowIcon = false;
             this.Text = "  Sistema Inventario v1.0.0";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmInicio_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmInicio_FormClosed);
             this.Load += new System.EventHandler(this.FrmInicio_Load);
             this.PanelMenu.ResumeLayout(false);
             this.Panel_contenedor.ResumeLayout(false);

@@ -446,3 +446,20 @@ where (i.id_empresa = @idempresa AND i.idmes = @idmes AND i.idperiodo= @idperiod
 order by i.tipo_operacion desc
 END
 GO
+
+
+alter PROC invent.SP_InventarioTxt
+@idempresa int,
+@idmes tinyint,
+@idperiodo smallint
+AS BEGIN
+select 
+i.invperiodo ,i.inv_cou, i.numero_asiento,i.cod_anexo,i.cod_catalogo,
+i.tipo_existencia,i.cod_existencia,i.cod_ctl,i.cod_ext_ctl, CONVERT(varchar,i.fecha_emision,103)as fecha,i.tipo_documento,
+i.serie,i.num_documento,i.tipo_operacion,i.existencia,i.unida_medida,i.entradas,i.salidas,i.estado_operacion
+from invent.Inventario i
+where (i.id_empresa = @idempresa AND i.idmes = @idmes AND i.idperiodo= @idperiodo)
+
+END
+GO
+select * from invent.Inventario

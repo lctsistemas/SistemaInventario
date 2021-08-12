@@ -12,6 +12,8 @@ using CapaNegocio.Repositories;
 using CapaDatos.Entities;
 using CapaDatos.Cache;
 using CapaPresentacion.Helps;
+using System.IO;
+using CapaPresentacion.SubVista;
 
 namespace CapaPresentacion.Vista
 {
@@ -19,7 +21,7 @@ namespace CapaPresentacion.Vista
     {
 
         readonly DEntrada de;
-        readonly RMantenimientoInventario rema;
+        readonly RMantenimientoInventario rema;  
         public FrmMantenimiento()
         {
             InitializeComponent();
@@ -90,6 +92,13 @@ namespace CapaPresentacion.Vista
             }
         }
 
+        private void GetMes_Exportacion()
+        {
+            string[] dmes = { "ENERO", "FEBRERO", "MARZO", "ABRIL", "MAYO", "JUNIO", "JULIO", "AGOSTO", "SETIEMBRE", "OCTUBRE", "NOVIEMBRE", "DICIEMBRE" };
+            Cbo_mes_export.Items.AddRange(dmes);
+
+        }
+
         private void SumaCantidad()
         {
             double sumaStock = 0;
@@ -130,6 +139,7 @@ namespace CapaPresentacion.Vista
             Txt_totalStock.Text = sumaStock.ToString("N2");
         }
 
+        //MOSTRAR PRODUCTOS AGRUPADOS
         private void ShowGrupoInventario()
         {
             de.Id_empresa = UserCache.C_idempresa;
@@ -139,6 +149,15 @@ namespace CapaPresentacion.Vista
             Dgv_grupo_.DataSource = rema.Get_showGrupo(de);
             Lbl_cantiEntrada.Text = rema.GetCantidadEntrada(de).ToString("N0");
             Lbl_cantiSalida.Text = rema.GetCantidadSalida(de).ToString("N0");
+        }
+
+        // SHOW PARA TXT
+        private void ShowInventarioTxt()
+        {
+            de.Id_empresa = UserCache.C_idempresa;
+            de.Id_mes = (Cbo_mes_export.SelectedIndex + 1);
+            de.Id_periodo = UserCache.C_idperiodo;
+            Dgv_txtList.DataSource = rema.Get_InventarioTxt(de);
         }
 
 
@@ -155,6 +174,8 @@ namespace CapaPresentacion.Vista
 
         private void Btn_buscar_Click(object sender, EventArgs e)
         {
+            if (Panel_exportarTXT.Visible == true)
+                return;
             ShowGrupoInventario();
             Txt_Total_entrada.Text = SumaEntradas(Dgv_grupo_, "invgrupo_4").ToString("N2");
             Txt_totalSalida.Text = SumaSalidas(Dgv_grupo_, "invgrupo_5").ToString("N2");
@@ -170,6 +191,9 @@ namespace CapaPresentacion.Vista
 
         private void Dgv_grupo__CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (this.Panel_exportarTXT.Visible == true)
+                return;
+            
             if (e.RowIndex > -1)
             {
                 string cod_exi = "";
@@ -220,5 +244,185 @@ namespace CapaPresentacion.Vista
                 e.Graphics.DrawString((e.RowIndex + 1).ToString(), e.InheritedRowStyle.Font, b, e.RowBounds.Location.X + 1, e.RowBounds.Location.Y + 3);
             }
         }
+
+        #region PANEL EXPORTAR TXT DE INVENTARIO UNID. FISICAS
+        private void BtnExaminar_Click(object sender, EventArgs e)
+        {
+            string url = "";
+            FolderBrowserDialog fbd = new FolderBrowserDialog();            
+            if (fbd.ShowDialog() == DialogResult.OK)
+            {
+                url = fbd.SelectedPath;
+            }
+
+            Txt_ruta.Text = url;
+            fbd.Dispose();
+        }
+
+        private void Btn_procesaEntrada_Click(object sender, EventArgs e)
+        {
+            this.Panel_exportarTXT.Visible = true;          
+            int mact = DateTime.Now.Month; //numeo de mes
+            Cbo_mes_export.SelectedIndex = (mact -1);
+            CargarDatos();
+            EstructuraLEinventario();
+        }
+
+        private void lblcerrar_Click(object sender, EventArgs e)
+        {
+            this.Panel_exportarTXT.Visible = false;
+            Limpiar();
+        }
+
+        private void FrmMantenimiento_Load(object sender, EventArgs e)
+        {
+            GetMes_Exportacion();
+        }
+
+        private void Cbo_mes_export_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string num_mes = "";
+            switch (Cbo_mes_export.SelectedItem)
+            {
+                case "ENERO":
+                    num_mes = "01";
+                    break;
+                case "FEBRERO":
+                    num_mes = "02";
+                    break;
+                case "MARZO":
+                    num_mes = "03";
+                    break;
+                case "ABRIL":
+                    num_mes = "04";
+                    break;
+                case "MAYO":
+                    num_mes = "05";
+                    break;
+                case "JUNIO":
+                    num_mes = "06";
+                    break;
+                case "JULIO":
+                    num_mes = "07";
+                    break;
+                case "AGOSTO":
+                    num_mes = "08";
+                    break;
+                case "SETIEMBRE":
+                    num_mes = "09";
+                    break;
+                case "OCTUBRE":
+                    num_mes = "10";
+                    break;
+                case "NOVIEMBRE":
+                    num_mes = "11";
+                    break;
+                case "DICIEMBRE":
+                    num_mes = "12";
+                    break;                
+
+            }
+            Txt_numeroMes.Text = num_mes;            
+            EstructuraLEinventario();
+            ShowInventarioTxt();
+            Txt_cantiFilas.Text = Dgv_txtList.RowCount.ToString("N0");
+
+        }
+
+        //METODO PARA INICIAR DATOS AL EXPORTAR TXT
+        private void CargarDatos()
+        {
+            Num_periodo.Value = Convert.ToInt32(UserCache.C_periodo);
+            Txt_ruc.Text = UserCache.C_ruc;
+        }
+
+        //LIMPIAR CAJAS
+        private void Limpiar()
+        {
+            Txt_ruta.Text = "";
+        }
+        private void EstructuraLEinventario()
+        {
+            string le = string.Format("LE{0}{1}{2}120100001111", Txt_ruc.Text, Num_periodo.Value, Txt_numeroMes.Text);
+            Txt_nombreArchivo.Text = le.Trim();
+        }
+
+        private void lblcerrar_MouseLeave(object sender, EventArgs e)
+        {
+            lblcerrar.BackColor = Color.Empty;
+        }
+
+        private void lblcerrar_MouseMove(object sender, MouseEventArgs e)
+        {
+            lblcerrar.BackColor = Color.FromArgb(238, 238, 238);
+        }
+
+
+       
+
+        private void Btn_cancelar_Click(object sender, EventArgs e)
+        {
+            this.Panel_exportarTXT.Visible = false;
+            Limpiar();
+        }
+
+        private void Cbomes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //if (Dgv_grupo_.RowCount > 0)
+                
+        }
+
+        private void Btn_entrar_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(Txt_ruta.Text.Trim()))
+                return;
+
+            using (var frmpro = new FrmProcesoWait(ExportarTxt, "Exportando Archivo .txt"))
+            {
+                frmpro.StartPosition = FormStartPosition.CenterParent;
+                frmpro.ShowDialog(this);
+                Msg.M_info("¡Archivo Exportado Correctamente!");
+            }
+
+        }
+
+        private void ExportarTxt()
+        {
+            try
+            {
+                string rutarelativa = Txt_ruta.Text.Trim();
+                string nombrefile = @"\" + Txt_nombreArchivo.Text.Trim();
+                string ruta = string.Format("{0}{1}.txt", rutarelativa, nombrefile);
+
+                //MessageBox.Show("ruta:  " + ruta);
+                TextWriter writer = new StreamWriter(ruta);
+
+                for (int i = 0; i < Dgv_txtList.Rows.Count; i++)
+                {
+                    for (int j = 0; j < Dgv_txtList.Columns.Count; j++)
+                    {
+                        if (j == Dgv_txtList.Columns.Count - 3 && Convert.ToDouble(Dgv_txtList.Rows[i].Cells[Dgv_txtList.Columns.Count - 2].Value) > 0.00)
+                        {
+                            writer.Write(Dgv_txtList.Rows[i].Cells[j].Value.ToString().Trim() + "|-");
+                        }
+                        else
+                            writer.Write(Dgv_txtList.Rows[i].Cells[j].Value.ToString().Trim() + "|");
+                    }
+
+                    if (i < Dgv_txtList.Rows.Count - 1)
+                        writer.WriteLine("");
+
+                }
+                writer.Close();
+            }
+            catch (Exception ex)
+            {
+                Msg.M_error(ex.Message);
+            }
+        }
+
+        #endregion
+
+
     }
 }

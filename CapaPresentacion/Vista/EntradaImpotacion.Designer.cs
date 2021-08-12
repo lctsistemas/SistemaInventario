@@ -31,11 +31,11 @@ namespace CapaPresentacion.Vista
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEntradaImpotacion));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayout_botones = new System.Windows.Forms.TableLayoutPanel();
             this.Btn_limpiar = new Guna.UI2.WinForms.Guna2Button();
             this.Btn_procesaSalida = new Guna.UI2.WinForms.Guna2Button();
@@ -129,7 +129,7 @@ namespace CapaPresentacion.Vista
             // Btn_limpiar
             // 
             this.Btn_limpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.Btn_limpiar.BorderColor = System.Drawing.Color.Silver;
+            this.Btn_limpiar.BorderColor = System.Drawing.Color.DarkGray;
             this.Btn_limpiar.BorderRadius = 2;
             this.Btn_limpiar.BorderThickness = 1;
             this.Btn_limpiar.CheckedState.Parent = this.Btn_limpiar;
@@ -151,7 +151,7 @@ namespace CapaPresentacion.Vista
             // Btn_procesaSalida
             // 
             this.Btn_procesaSalida.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.Btn_procesaSalida.BorderColor = System.Drawing.Color.Silver;
+            this.Btn_procesaSalida.BorderColor = System.Drawing.Color.DarkGray;
             this.Btn_procesaSalida.BorderRadius = 2;
             this.Btn_procesaSalida.BorderThickness = 1;
             this.Btn_procesaSalida.CheckedState.Parent = this.Btn_procesaSalida;
@@ -173,7 +173,7 @@ namespace CapaPresentacion.Vista
             // Btn_procesaEntrada
             // 
             this.Btn_procesaEntrada.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.Btn_procesaEntrada.BorderColor = System.Drawing.Color.Silver;
+            this.Btn_procesaEntrada.BorderColor = System.Drawing.Color.DarkGray;
             this.Btn_procesaEntrada.BorderRadius = 2;
             this.Btn_procesaEntrada.BorderThickness = 1;
             this.Btn_procesaEntrada.CheckedState.Parent = this.Btn_procesaEntrada;
@@ -226,8 +226,8 @@ namespace CapaPresentacion.Vista
             // 
             this.Panel_excel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Panel_excel.BackColor = System.Drawing.Color.Transparent;
-            this.Panel_excel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
-            this.Panel_excel.BorderRadius = 3;
+            this.Panel_excel.BorderColor = System.Drawing.Color.DarkGray;
+            this.Panel_excel.BorderRadius = 2;
             this.Panel_excel.BorderThickness = 1;
             this.Panel_excel.Controls.Add(this.Lbl_ruc);
             this.Panel_excel.Controls.Add(this.Lbl_mes);
@@ -368,8 +368,8 @@ namespace CapaPresentacion.Vista
             // 
             // Btn_cancelar
             // 
-            this.Btn_cancelar.BorderColor = System.Drawing.Color.DimGray;
-            this.Btn_cancelar.BorderRadius = 3;
+            this.Btn_cancelar.BorderColor = System.Drawing.Color.DarkGray;
+            this.Btn_cancelar.BorderRadius = 2;
             this.Btn_cancelar.BorderThickness = 1;
             this.Btn_cancelar.CheckedState.Parent = this.Btn_cancelar;
             this.Btn_cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -388,14 +388,14 @@ namespace CapaPresentacion.Vista
             // 
             // Btn_entrar
             // 
-            this.Btn_entrar.BorderColor = System.Drawing.Color.CadetBlue;
-            this.Btn_entrar.BorderRadius = 3;
+            this.Btn_entrar.BorderColor = System.Drawing.Color.DarkGray;
+            this.Btn_entrar.BorderRadius = 2;
             this.Btn_entrar.BorderThickness = 1;
             this.Btn_entrar.CheckedState.Parent = this.Btn_entrar;
             this.Btn_entrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_entrar.CustomImages.Parent = this.Btn_entrar;
             this.Btn_entrar.Enabled = false;
-            this.Btn_entrar.FillColor = System.Drawing.Color.SkyBlue;
+            this.Btn_entrar.FillColor = System.Drawing.Color.SteelBlue;
             this.Btn_entrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_entrar.ForeColor = System.Drawing.Color.White;
             this.Btn_entrar.HoverState.Parent = this.Btn_entrar;
@@ -413,7 +413,7 @@ namespace CapaPresentacion.Vista
             this.Num_periodo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Num_periodo.Enabled = false;
             this.Num_periodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Num_periodo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Num_periodo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.Num_periodo.Location = new System.Drawing.Point(158, 35);
             this.Num_periodo.Maximum = new decimal(new int[] {
             2032,
@@ -439,7 +439,7 @@ namespace CapaPresentacion.Vista
             // Txt_ruta
             // 
             this.Txt_ruta.BackColor = System.Drawing.Color.White;
-            this.Txt_ruta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Txt_ruta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.Txt_ruta.Location = new System.Drawing.Point(74, 110);
             this.Txt_ruta.Name = "Txt_ruta";
             this.Txt_ruta.ReadOnly = true;
@@ -448,7 +448,7 @@ namespace CapaPresentacion.Vista
             // 
             // BtnExaminar
             // 
-            this.BtnExaminar.BorderColor = System.Drawing.Color.Silver;
+            this.BtnExaminar.BorderColor = System.Drawing.Color.DarkGray;
             this.BtnExaminar.BorderRadius = 2;
             this.BtnExaminar.BorderThickness = 1;
             this.BtnExaminar.CheckedState.Parent = this.BtnExaminar;
@@ -517,8 +517,8 @@ namespace CapaPresentacion.Vista
             this.Dgv_Importar.AllowUserToDeleteRows = false;
             this.Dgv_Importar.AllowUserToResizeColumns = false;
             this.Dgv_Importar.AllowUserToResizeRows = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.Dgv_Importar.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.Dgv_Importar.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.Dgv_Importar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -527,14 +527,14 @@ namespace CapaPresentacion.Vista
             this.Dgv_Importar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Dgv_Importar.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.Dgv_Importar.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Dgv_Importar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_Importar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.Dgv_Importar.ColumnHeadersHeight = 40;
             this.Dgv_Importar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.Dgv_Importar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -557,15 +557,15 @@ namespace CapaPresentacion.Vista
             this.inv_17,
             this.inv_18,
             this.inv_19});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(0, 1, 0, 1);
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Dgv_Importar.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(0, 1, 0, 1);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_Importar.DefaultCellStyle = dataGridViewCellStyle4;
             this.Dgv_Importar.EnableHeadersVisualStyles = false;
             this.Dgv_Importar.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
             this.Dgv_Importar.Location = new System.Drawing.Point(3, 69);
@@ -573,15 +573,15 @@ namespace CapaPresentacion.Vista
             this.Dgv_Importar.Name = "Dgv_Importar";
             this.Dgv_Importar.ReadOnly = true;
             this.Dgv_Importar.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(0, 0, 1, 0);
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Dgv_Importar.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(0, 0, 1, 0);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_Importar.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.Dgv_Importar.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.Dgv_Importar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Dgv_Importar.Size = new System.Drawing.Size(830, 378);
@@ -690,8 +690,8 @@ namespace CapaPresentacion.Vista
             // inv_15
             // 
             this.inv_15.DataPropertyName = "invt_15";
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.inv_15.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.inv_15.DefaultCellStyle = dataGridViewCellStyle3;
             this.inv_15.HeaderText = "15";
             this.inv_15.Name = "inv_15";
             this.inv_15.ReadOnly = true;
@@ -764,7 +764,7 @@ namespace CapaPresentacion.Vista
             // 
             // Btn_importExcel
             // 
-            this.Btn_importExcel.BorderColor = System.Drawing.Color.Silver;
+            this.Btn_importExcel.BorderColor = System.Drawing.Color.DarkGray;
             this.Btn_importExcel.BorderRadius = 2;
             this.Btn_importExcel.BorderThickness = 1;
             this.Btn_importExcel.CheckedState.Parent = this.Btn_importExcel;

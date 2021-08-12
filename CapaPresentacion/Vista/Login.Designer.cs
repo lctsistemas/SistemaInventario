@@ -118,11 +118,11 @@ namespace CapaPresentacion.Vista
             // Btn_entrar
             // 
             this.Btn_entrar.BorderColor = System.Drawing.Color.SlateGray;
-            this.Btn_entrar.BorderRadius = 4;
+            this.Btn_entrar.BorderRadius = 3;
             this.Btn_entrar.BorderThickness = 1;
             this.Btn_entrar.CheckedState.Parent = this.Btn_entrar;
             this.Btn_entrar.CustomImages.Parent = this.Btn_entrar;
-            this.Btn_entrar.FillColor = System.Drawing.Color.SkyBlue;
+            this.Btn_entrar.FillColor = System.Drawing.Color.SteelBlue;
             this.Btn_entrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_entrar.ForeColor = System.Drawing.Color.White;
             this.Btn_entrar.HoverState.Parent = this.Btn_entrar;

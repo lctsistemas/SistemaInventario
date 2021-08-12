@@ -180,9 +180,66 @@ namespace CapaNegocio.Repositories
         }
 
 
+        public DataTable Get_InventarioTxt(DEntrada entity)
+        {
+            DataTable dt = null;
+            using (SqlConnection connect = Dconexion.Getconectar())
+            {
+                connect.Open();
+                SqlDataAdapter da = new SqlDataAdapter();
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = connect;
+                    cmd.CommandText = "invent.SP_InventarioTxt";
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@idempresa", entity.Id_empresa);
+                    cmd.Parameters.AddWithValue("@idmes", entity.Id_mes);
+                    cmd.Parameters.AddWithValue("@idperiodo", entity.Id_periodo);
+                    da.SelectCommand = cmd;
+                   
+                    using (dt = new DataTable())
+                    {
+                        da.Fill(dt);
+                        da.Dispose();
+
+                        /*List_detalle = new List<DEntrada>();
+                        foreach (DataRow item in dt.Rows)
+                        {
+                            List_detalle.Add(new DEntrada()
+                            {                                
+                                periodo = item[0].ToString(),
+                                COU = item[1].ToString(),
+                                numero_asiento = item[2].ToString(),
+                                cod_anexo = item[3].ToString(),
+                                cod_catalogo = item[4].ToString(),
+                                tipo_existencia = item[5].ToString(),
+                                cod_existencia = item[6].ToString(),
+                                cod_ctl = item[7].ToString(),
+                                cod_ext_ctl = item[8].ToString(),
+                                fecha_emision = (DateTime)item[9],
+                                tipo_documento = item[10].ToString(),
+                                serie = item[11].ToString(),
+                                num_documento = item[12].ToString(),
+                                tipo_operacion = item[13].ToString(),
+                                existencia = item[14].ToString(),
+                                unida_medida = item[15].ToString(),
+                                entradas = Convert.ToDouble(item[16].ToString()),
+                                salidas = Convert.ToDouble(item[17].ToString()),
+                                estado_operacion = item[18].ToString()
+
+                            });
+                        }*/
+                    }
+                }
+            }
+            return dt;
+        }
+
+
         public void Dispose()
         {
-            //throw new NotImplementedException();
+        
         }
 
 

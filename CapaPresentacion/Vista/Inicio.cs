@@ -53,14 +53,28 @@ namespace CapaPresentacion.Vista
                 Panel_contenedor.Tag = formulario;
                 formulario.Show();
                 formulario.BringToFront();
+                //formulario.FormClosed += new FormClosedEventHandler(CloseForm);
 
             }
             else
             {
-                //formulario.Close();
+                
+               // formulario.Close();
                 formulario.BringToFront();
             }
         }
+
+       /* private void CloseForm(object sender, FormClosedEventArgs e)
+        {
+            if (Application.OpenForms["FrmEntradaImpotacion"] == null)
+            {
+                Close();
+            }
+            if (Application.OpenForms["FrmMantenimiento"] == null)
+            {
+                Close();
+            }
+        }*/
 
         private void Btn_empresa_Click(object sender, EventArgs e)
         {
@@ -126,6 +140,11 @@ namespace CapaPresentacion.Vista
         private void button1_Click(object sender, EventArgs e)
         {
             OpenFormFill<FrmTipoExistencia>();
+        }
+
+        private void FrmInicio_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //MessageBox.Show("cerrarndo form");
         }
     }
 }
