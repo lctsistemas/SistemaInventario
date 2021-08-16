@@ -182,12 +182,7 @@ namespace CapaPresentacion.Vista
             SumaStock();
             SumaCantidad();
             
-        }
-
-        private void btncerrar_Click(object sender, EventArgs e)
-        {
-            this.Panel_detalleInventario.Visible = false;
-        }
+        }      
 
         private void Dgv_grupo__CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -421,8 +416,25 @@ namespace CapaPresentacion.Vista
             }
         }
 
+
+
         #endregion
 
+        private void Lbl_close_Click(object sender, EventArgs e)
+        {
+            this.Panel_detalleInventario.Visible = false;
+        }
 
+        private void Lbl_close_MouseLeave(object sender, EventArgs e)
+        {
+            Lbl_close.BackColor = Color.Empty;
+            Lbl_close.ForeColor = Color.Empty;
+        }
+
+        private void Lbl_close_MouseMove(object sender, MouseEventArgs e)
+        {
+            Lbl_close.BackColor = Color.Firebrick;
+            Lbl_close.ForeColor = Color.White;
+        }
     }
 }

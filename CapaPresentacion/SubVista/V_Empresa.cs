@@ -150,13 +150,26 @@ namespace CapaPresentacion.SubVista
         }
 
 
+
+
+
         #endregion
 
-        private void btncerrar_Click(object sender, EventArgs e)
+        private void lblcerrar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        
+        private void lblcerrar_MouseLeave(object sender, EventArgs e)
+        {
+            lblcerrar.BackColor = Color.Empty;
+            lblcerrar.ForeColor = Color.Empty;
+        }
+
+        private void lblcerrar_MouseMove(object sender, MouseEventArgs e)
+        {
+            lblcerrar.BackColor = Color.Firebrick;
+            lblcerrar.ForeColor = Color.White;
+        }
     }
 }

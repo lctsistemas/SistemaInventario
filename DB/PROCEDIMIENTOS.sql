@@ -34,13 +34,18 @@ WHERE id_empresa = @id_empresa
 END
 GO
 
-CREATE PROC manto.SP_DelteEmpresa
+alter PROC manto.SP_DelteEmpresa
 @id_empresa int,
 @estado varchar(15)
 AS BEGIN
-UPDATE manto.Empresa SET estado = @estado
+IF(not exists(select i.id_empresa from manto.Empresa e join invent.Inventario i on (e.id_empresa=i.id_empresa)
+where i.id_empresa = @id_empresa))
+	begin
+	UPDATE manto.Empresa SET estado = @estado WHERE id_empresa = @id_empresa
+	end
 END
 GO
+
 
 ALTER PROC manto.SP_ShowEmpresa
 @estado varchar(15)

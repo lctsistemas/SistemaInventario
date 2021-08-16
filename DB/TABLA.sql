@@ -4,8 +4,7 @@
 use Dbinventario
 go
 --create schema manto authorization dbo
-go
---create schema invent authorization dbo
+--create schema inventario authorization dbo
 go
 
 -- TABLA EMPRESA
@@ -20,6 +19,8 @@ regimen varchar(80) not null,
 estado varchar(15) not null,
 )
 GO
+
+
 
 --TABLA TIPO DE EXISTENCIA
 CREATE TABLE manto.TipoExistencia(
@@ -96,7 +97,7 @@ INSERT INTO manto.Mes(nombre_mes) VALUES
 ('OCTUBRE'),('NOVIEMBRE'),('DICIEMBRE')
 GO
 
-CREATE TABLE invent.Inventario(
+CREATE TABLE inventario.almacen(
 id_inventario bigint not null,
 invperiodo varchar(8) not null,
 inv_cou varchar(50) not null,

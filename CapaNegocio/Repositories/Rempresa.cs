@@ -49,7 +49,7 @@ namespace CapaNegocio.Repositories
                     if (sqlex != null && sqlex.Number == 2627)
                         result = "El Número de RUC ya se encuentra Registrado. \n Por favor Ingrese Nuevo Número";
                     else
-                        result = ex.Message;                    
+                        result = ex.Message;                  
                 }
             }
             return result;
@@ -118,7 +118,11 @@ namespace CapaNegocio.Repositories
                 }
                 catch (Exception ex)
                 {
-                    result = ex.Message;
+                    SqlException sqlex = ex as SqlException;
+                    if (sqlex != null && sqlex.Number == 2627)
+                        result = "El Número de RUC ya se encuentra Registrado. \n Por favor Ingrese Nuevo Número";
+                    else
+                        result = ex.Message;
                 }
             }
             return result;

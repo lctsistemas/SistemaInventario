@@ -213,12 +213,7 @@ namespace CapaPresentacion.Vista
             }
             result = ren.Add_Multiple(lst);
         }
-
-
-        private void Btn_procesaSalida_Click(object sender, EventArgs e)
-        {           
-            TotalRegistro();           
-        }
+     
 
         private void Btn_limpiar_Click(object sender, EventArgs e)
         {

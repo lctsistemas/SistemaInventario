@@ -36,10 +36,6 @@ namespace CapaPresentacion.Vista
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.tableLayout_botones = new System.Windows.Forms.TableLayoutPanel();
-            this.Btn_limpiar = new Guna.UI2.WinForms.Guna2Button();
-            this.Btn_procesaSalida = new Guna.UI2.WinForms.Guna2Button();
-            this.Btn_procesaEntrada = new Guna.UI2.WinForms.Guna2Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Chk_column = new System.Windows.Forms.CheckBox();
             this.Panel_excel = new Guna.UI2.WinForms.Guna2Panel();
@@ -97,7 +93,9 @@ namespace CapaPresentacion.Vista
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.tableLayout_botones.SuspendLayout();
+            this.Btn_procesaEntrada = new Guna.UI2.WinForms.Guna2Button();
+            this.Btn_limpiar = new Guna.UI2.WinForms.Guna2Button();
+            this.tableLayout_botones = new System.Windows.Forms.TableLayoutPanel();
             this.panel2.SuspendLayout();
             this.Panel_excel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -107,97 +105,15 @@ namespace CapaPresentacion.Vista
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Importar)).BeginInit();
             this.Group_calculo.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
+            this.tableLayout_botones.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // tableLayout_botones
-            // 
-            this.tableLayout_botones.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayout_botones.ColumnCount = 1;
-            this.tableLayout_botones.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayout_botones.Controls.Add(this.Btn_limpiar, 0, 2);
-            this.tableLayout_botones.Controls.Add(this.Btn_procesaSalida, 0, 1);
-            this.tableLayout_botones.Controls.Add(this.Btn_procesaEntrada, 0, 0);
-            this.tableLayout_botones.Location = new System.Drawing.Point(858, 70);
-            this.tableLayout_botones.Name = "tableLayout_botones";
-            this.tableLayout_botones.RowCount = 3;
-            this.tableLayout_botones.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.48837F));
-            this.tableLayout_botones.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.55814F));
-            this.tableLayout_botones.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayout_botones.Size = new System.Drawing.Size(88, 173);
-            this.tableLayout_botones.TabIndex = 1;
-            // 
-            // Btn_limpiar
-            // 
-            this.Btn_limpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.Btn_limpiar.BorderColor = System.Drawing.Color.DarkGray;
-            this.Btn_limpiar.BorderRadius = 2;
-            this.Btn_limpiar.BorderThickness = 1;
-            this.Btn_limpiar.CheckedState.Parent = this.Btn_limpiar;
-            this.Btn_limpiar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Btn_limpiar.CustomImages.Parent = this.Btn_limpiar;
-            this.Btn_limpiar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Btn_limpiar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(236)))), ((int)(((byte)(246)))));
-            this.Btn_limpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_limpiar.ForeColor = System.Drawing.Color.Black;
-            this.Btn_limpiar.HoverState.Parent = this.Btn_limpiar;
-            this.Btn_limpiar.Location = new System.Drawing.Point(3, 117);
-            this.Btn_limpiar.Name = "Btn_limpiar";
-            this.Btn_limpiar.ShadowDecoration.Parent = this.Btn_limpiar;
-            this.Btn_limpiar.Size = new System.Drawing.Size(82, 53);
-            this.Btn_limpiar.TabIndex = 0;
-            this.Btn_limpiar.Text = "Limpiar Registro";
-            this.Btn_limpiar.Click += new System.EventHandler(this.Btn_limpiar_Click);
-            // 
-            // Btn_procesaSalida
-            // 
-            this.Btn_procesaSalida.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.Btn_procesaSalida.BorderColor = System.Drawing.Color.DarkGray;
-            this.Btn_procesaSalida.BorderRadius = 2;
-            this.Btn_procesaSalida.BorderThickness = 1;
-            this.Btn_procesaSalida.CheckedState.Parent = this.Btn_procesaSalida;
-            this.Btn_procesaSalida.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Btn_procesaSalida.CustomImages.Parent = this.Btn_procesaSalida;
-            this.Btn_procesaSalida.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Btn_procesaSalida.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(236)))), ((int)(((byte)(246)))));
-            this.Btn_procesaSalida.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_procesaSalida.ForeColor = System.Drawing.Color.Black;
-            this.Btn_procesaSalida.HoverState.Parent = this.Btn_procesaSalida;
-            this.Btn_procesaSalida.Location = new System.Drawing.Point(3, 61);
-            this.Btn_procesaSalida.Name = "Btn_procesaSalida";
-            this.Btn_procesaSalida.ShadowDecoration.Parent = this.Btn_procesaSalida;
-            this.Btn_procesaSalida.Size = new System.Drawing.Size(82, 50);
-            this.Btn_procesaSalida.TabIndex = 0;
-            this.Btn_procesaSalida.Text = "Salidas";
-            this.Btn_procesaSalida.Click += new System.EventHandler(this.Btn_procesaSalida_Click);
-            // 
-            // Btn_procesaEntrada
-            // 
-            this.Btn_procesaEntrada.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.Btn_procesaEntrada.BorderColor = System.Drawing.Color.DarkGray;
-            this.Btn_procesaEntrada.BorderRadius = 2;
-            this.Btn_procesaEntrada.BorderThickness = 1;
-            this.Btn_procesaEntrada.CheckedState.Parent = this.Btn_procesaEntrada;
-            this.Btn_procesaEntrada.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Btn_procesaEntrada.CustomImages.Parent = this.Btn_procesaEntrada;
-            this.Btn_procesaEntrada.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Btn_procesaEntrada.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(236)))), ((int)(((byte)(246)))));
-            this.Btn_procesaEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_procesaEntrada.ForeColor = System.Drawing.Color.Black;
-            this.Btn_procesaEntrada.HoverState.Parent = this.Btn_procesaEntrada;
-            this.Btn_procesaEntrada.Location = new System.Drawing.Point(3, 3);
-            this.Btn_procesaEntrada.Name = "Btn_procesaEntrada";
-            this.Btn_procesaEntrada.ShadowDecoration.Parent = this.Btn_procesaEntrada;
-            this.Btn_procesaEntrada.Size = new System.Drawing.Size(82, 52);
-            this.Btn_procesaEntrada.TabIndex = 0;
-            this.Btn_procesaEntrada.Text = "Registrar";
-            this.Btn_procesaEntrada.Click += new System.EventHandler(this.Btn_procesaEntrada_Click);
             // 
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(223)))), ((int)(((byte)(226)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(242)))), ((int)(((byte)(236)))));
             this.panel2.Controls.Add(this.Chk_column);
             this.panel2.Controls.Add(this.Panel_excel);
             this.panel2.Controls.Add(this.Dgv_Importar);
@@ -523,15 +439,15 @@ namespace CapaPresentacion.Vista
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Dgv_Importar.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
-            this.Dgv_Importar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(223)))), ((int)(((byte)(226)))));
+            this.Dgv_Importar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(242)))), ((int)(((byte)(236)))));
             this.Dgv_Importar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Dgv_Importar.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.Dgv_Importar.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.Dgv_Importar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
@@ -567,7 +483,7 @@ namespace CapaPresentacion.Vista
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.Dgv_Importar.DefaultCellStyle = dataGridViewCellStyle4;
             this.Dgv_Importar.EnableHeadersVisualStyles = false;
-            this.Dgv_Importar.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            this.Dgv_Importar.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
             this.Dgv_Importar.Location = new System.Drawing.Point(3, 69);
             this.Dgv_Importar.MultiSelect = false;
             this.Dgv_Importar.Name = "Dgv_Importar";
@@ -873,8 +789,8 @@ namespace CapaPresentacion.Vista
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(223)))), ((int)(((byte)(226)))));
-            this.guna2Panel1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
+            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(242)))), ((int)(((byte)(236)))));
+            this.guna2Panel1.BorderColor = System.Drawing.Color.DarkGray;
             this.guna2Panel1.BorderThickness = 1;
             this.guna2Panel1.Controls.Add(this.panel2);
             this.guna2Panel1.Controls.Add(this.tableLayout_botones);
@@ -904,10 +820,70 @@ namespace CapaPresentacion.Vista
             this.lineShape1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
             this.lineShape1.Enabled = false;
             this.lineShape1.Name = "lineShape1";
-            this.lineShape1.X1 = 849;
-            this.lineShape1.X2 = 849;
+            this.lineShape1.X1 = 845;
+            this.lineShape1.X2 = 845;
             this.lineShape1.Y1 = 3;
             this.lineShape1.Y2 = 449;
+            // 
+            // Btn_procesaEntrada
+            // 
+            this.Btn_procesaEntrada.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.Btn_procesaEntrada.BorderColor = System.Drawing.Color.DarkGray;
+            this.Btn_procesaEntrada.BorderRadius = 2;
+            this.Btn_procesaEntrada.BorderThickness = 1;
+            this.Btn_procesaEntrada.CheckedState.Parent = this.Btn_procesaEntrada;
+            this.Btn_procesaEntrada.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_procesaEntrada.CustomImages.Parent = this.Btn_procesaEntrada;
+            this.Btn_procesaEntrada.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Btn_procesaEntrada.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(236)))), ((int)(((byte)(246)))));
+            this.Btn_procesaEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_procesaEntrada.ForeColor = System.Drawing.Color.Black;
+            this.Btn_procesaEntrada.HoverState.Parent = this.Btn_procesaEntrada;
+            this.Btn_procesaEntrada.Location = new System.Drawing.Point(3, 3);
+            this.Btn_procesaEntrada.Name = "Btn_procesaEntrada";
+            this.Btn_procesaEntrada.ShadowDecoration.Parent = this.Btn_procesaEntrada;
+            this.Btn_procesaEntrada.Size = new System.Drawing.Size(82, 58);
+            this.Btn_procesaEntrada.TabIndex = 0;
+            this.Btn_procesaEntrada.Text = "Registrar";
+            this.Btn_procesaEntrada.Click += new System.EventHandler(this.Btn_procesaEntrada_Click);
+            // 
+            // Btn_limpiar
+            // 
+            this.Btn_limpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.Btn_limpiar.BorderColor = System.Drawing.Color.DarkGray;
+            this.Btn_limpiar.BorderRadius = 2;
+            this.Btn_limpiar.BorderThickness = 1;
+            this.Btn_limpiar.CheckedState.Parent = this.Btn_limpiar;
+            this.Btn_limpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_limpiar.CustomImages.Parent = this.Btn_limpiar;
+            this.Btn_limpiar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Btn_limpiar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(236)))), ((int)(((byte)(246)))));
+            this.Btn_limpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_limpiar.ForeColor = System.Drawing.Color.Black;
+            this.Btn_limpiar.HoverState.Parent = this.Btn_limpiar;
+            this.Btn_limpiar.Location = new System.Drawing.Point(3, 67);
+            this.Btn_limpiar.Name = "Btn_limpiar";
+            this.Btn_limpiar.ShadowDecoration.Parent = this.Btn_limpiar;
+            this.Btn_limpiar.Size = new System.Drawing.Size(82, 58);
+            this.Btn_limpiar.TabIndex = 0;
+            this.Btn_limpiar.Text = "Limpiar Registro";
+            this.Btn_limpiar.Click += new System.EventHandler(this.Btn_limpiar_Click);
+            // 
+            // tableLayout_botones
+            // 
+            this.tableLayout_botones.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayout_botones.ColumnCount = 1;
+            this.tableLayout_botones.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayout_botones.Controls.Add(this.Btn_limpiar, 0, 1);
+            this.tableLayout_botones.Controls.Add(this.Btn_procesaEntrada, 0, 0);
+            this.tableLayout_botones.Location = new System.Drawing.Point(854, 70);
+            this.tableLayout_botones.Name = "tableLayout_botones";
+            this.tableLayout_botones.RowCount = 2;
+            this.tableLayout_botones.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayout_botones.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayout_botones.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayout_botones.Size = new System.Drawing.Size(88, 128);
+            this.tableLayout_botones.TabIndex = 1;
             // 
             // FrmEntradaImpotacion
             // 
@@ -918,7 +894,6 @@ namespace CapaPresentacion.Vista
             this.Name = "FrmEntradaImpotacion";
             this.Text = "EntradaImpotacion";
             this.Load += new System.EventHandler(this.FrmEntradaImpotacion_Load);
-            this.tableLayout_botones.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.Panel_excel.ResumeLayout(false);
@@ -931,19 +906,16 @@ namespace CapaPresentacion.Vista
             this.Group_calculo.ResumeLayout(false);
             this.Group_calculo.PerformLayout();
             this.guna2Panel1.ResumeLayout(false);
+            this.tableLayout_botones.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.TableLayoutPanel tableLayout_botones;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView Dgv_Importar;
         private Guna.UI2.WinForms.Guna2Button Btn_importExcel;
         private System.Windows.Forms.Label Lbl_cantidad;
-        private Guna.UI2.WinForms.Guna2Button Btn_limpiar;
-        private Guna.UI2.WinForms.Guna2Button Btn_procesaSalida;
-        private Guna.UI2.WinForms.Guna2Button Btn_procesaEntrada;
         private System.Windows.Forms.GroupBox Group_calculo;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -997,5 +969,8 @@ namespace CapaPresentacion.Vista
         private System.Windows.Forms.DataGridViewTextBoxColumn inv_18;
         private System.Windows.Forms.DataGridViewTextBoxColumn inv_19;
         private System.Windows.Forms.CheckBox Chk_column;
+        private System.Windows.Forms.TableLayoutPanel tableLayout_botones;
+        private Guna.UI2.WinForms.Guna2Button Btn_limpiar;
+        private Guna.UI2.WinForms.Guna2Button Btn_procesaEntrada;
     }
 }

@@ -60,12 +60,7 @@ namespace CapaPresentacion.Vista
         {
             Dgv_empresa.DataSource = rempresa.Search(Txtbuscar.Text.Trim());
         }
-
-        private void btncerrar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
+       
         private void Btn_guardar_Click(object sender, EventArgs e)
         {
             using (FrmV_Empresa vem= new FrmV_Empresa())
@@ -113,8 +108,9 @@ namespace CapaPresentacion.Vista
                 if (e.ColumnIndex == this.Dgv_empresa.Columns["dgv_txtdelete"].Index)
                 {
                     if (Msg.M_question("¿Desea Anular la Empresa?") == DialogResult.Yes)
-                    {                      
+                    {
 
+                        Msg.M_info(Dgv_empresa.CurrentRow.Cells[1].Value.ToString());
                         dempresa.Id_empresa = Convert.ToInt32(Dgv_empresa.CurrentRow.Cells[1].Value);
                         dempresa.Estado = "ANULADO";
                         result = rempresa.Delete(dempresa);
@@ -132,5 +128,23 @@ namespace CapaPresentacion.Vista
 
             }
         }
+
+        private void lblcerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void lblcerrar_MouseLeave(object sender, EventArgs e)
+        {
+            lblcerrar.BackColor = Color.Empty;
+            lblcerrar.ForeColor = Color.Empty;
+        }
+
+        private void lblcerrar_MouseMove(object sender, MouseEventArgs e)
+        {
+            lblcerrar.BackColor = Color.Firebrick;
+            lblcerrar.ForeColor = Color.White;
+        }
+
+
     }
 }

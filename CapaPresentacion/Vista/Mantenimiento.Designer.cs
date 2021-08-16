@@ -63,6 +63,7 @@ namespace CapaPresentacion.Vista
             this.Lbl_correo = new System.Windows.Forms.Label();
             this.lblcerrar = new System.Windows.Forms.Label();
             this.Panel_detalleInventario = new Guna.UI2.WinForms.Guna2Panel();
+            this.Lbl_close = new System.Windows.Forms.Label();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.Lbl_totaStockdetalle = new System.Windows.Forms.Label();
             this.Lbl_totaEntradadetalle = new System.Windows.Forms.Label();
@@ -76,7 +77,6 @@ namespace CapaPresentacion.Vista
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.btncerrar = new System.Windows.Forms.PictureBox();
             this.Dgv_vistaDetalle = new System.Windows.Forms.DataGridView();
             this.dgv_txtidinvent = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.inv_1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -133,7 +133,6 @@ namespace CapaPresentacion.Vista
             this.Panel_titulo_plame.SuspendLayout();
             this.Panel_detalleInventario.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_vistaDetalle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_grupo_)).BeginInit();
             this.Panel_entradaT.SuspendLayout();
@@ -144,7 +143,7 @@ namespace CapaPresentacion.Vista
             // 
             // Panel_content
             // 
-            this.Panel_content.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(223)))), ((int)(((byte)(226)))));
+            this.Panel_content.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(242)))), ((int)(((byte)(236)))));
             this.Panel_content.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
             this.Panel_content.BorderThickness = 1;
             this.Panel_content.Controls.Add(this.Panel_exportarTXT);
@@ -479,11 +478,11 @@ namespace CapaPresentacion.Vista
             // 
             // Panel_detalleInventario
             // 
-            this.Panel_detalleInventario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(223)))), ((int)(((byte)(226)))));
+            this.Panel_detalleInventario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(242)))), ((int)(((byte)(236)))));
             this.Panel_detalleInventario.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
             this.Panel_detalleInventario.BorderThickness = 1;
+            this.Panel_detalleInventario.Controls.Add(this.Lbl_close);
             this.Panel_detalleInventario.Controls.Add(this.guna2Panel3);
-            this.Panel_detalleInventario.Controls.Add(this.btncerrar);
             this.Panel_detalleInventario.Controls.Add(this.Dgv_vistaDetalle);
             this.Panel_detalleInventario.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Panel_detalleInventario.Location = new System.Drawing.Point(0, 0);
@@ -492,6 +491,22 @@ namespace CapaPresentacion.Vista
             this.Panel_detalleInventario.Size = new System.Drawing.Size(1033, 517);
             this.Panel_detalleInventario.TabIndex = 103;
             this.Panel_detalleInventario.Visible = false;
+            // 
+            // Lbl_close
+            // 
+            this.Lbl_close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Lbl_close.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(242)))), ((int)(((byte)(236)))));
+            this.Lbl_close.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_close.ForeColor = System.Drawing.Color.Black;
+            this.Lbl_close.Location = new System.Drawing.Point(995, 0);
+            this.Lbl_close.Name = "Lbl_close";
+            this.Lbl_close.Size = new System.Drawing.Size(35, 35);
+            this.Lbl_close.TabIndex = 104;
+            this.Lbl_close.Text = " X";
+            this.Lbl_close.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Lbl_close.Click += new System.EventHandler(this.Lbl_close_Click);
+            this.Lbl_close.MouseLeave += new System.EventHandler(this.Lbl_close_MouseLeave);
+            this.Lbl_close.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Lbl_close_MouseMove);
             // 
             // guna2Panel3
             // 
@@ -661,19 +676,6 @@ namespace CapaPresentacion.Vista
             this.label4.Text = "Existencia : ";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btncerrar
-            // 
-            this.btncerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btncerrar.Image = ((System.Drawing.Image)(resources.GetObject("btncerrar.Image")));
-            this.btncerrar.Location = new System.Drawing.Point(998, 1);
-            this.btncerrar.Name = "btncerrar";
-            this.btncerrar.Size = new System.Drawing.Size(35, 35);
-            this.btncerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.btncerrar.TabIndex = 101;
-            this.btncerrar.TabStop = false;
-            this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click);
-            // 
             // Dgv_vistaDetalle
             // 
             this.Dgv_vistaDetalle.AllowUserToAddRows = false;
@@ -686,15 +688,15 @@ namespace CapaPresentacion.Vista
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Dgv_vistaDetalle.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
-            this.Dgv_vistaDetalle.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(223)))), ((int)(((byte)(226)))));
+            this.Dgv_vistaDetalle.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(242)))), ((int)(((byte)(236)))));
             this.Dgv_vistaDetalle.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Dgv_vistaDetalle.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.Dgv_vistaDetalle.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.Dgv_vistaDetalle.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
@@ -731,7 +733,7 @@ namespace CapaPresentacion.Vista
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.Dgv_vistaDetalle.DefaultCellStyle = dataGridViewCellStyle4;
             this.Dgv_vistaDetalle.EnableHeadersVisualStyles = false;
-            this.Dgv_vistaDetalle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            this.Dgv_vistaDetalle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
             this.Dgv_vistaDetalle.Location = new System.Drawing.Point(0, 110);
             this.Dgv_vistaDetalle.MultiSelect = false;
             this.Dgv_vistaDetalle.Name = "Dgv_vistaDetalle";
@@ -931,15 +933,15 @@ namespace CapaPresentacion.Vista
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Dgv_grupo_.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
-            this.Dgv_grupo_.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(223)))), ((int)(((byte)(226)))));
+            this.Dgv_grupo_.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(242)))), ((int)(((byte)(236)))));
             this.Dgv_grupo_.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Dgv_grupo_.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.Dgv_grupo_.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.Dgv_grupo_.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
@@ -963,7 +965,7 @@ namespace CapaPresentacion.Vista
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.Dgv_grupo_.DefaultCellStyle = dataGridViewCellStyle8;
             this.Dgv_grupo_.EnableHeadersVisualStyles = false;
-            this.Dgv_grupo_.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            this.Dgv_grupo_.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
             this.Dgv_grupo_.Location = new System.Drawing.Point(4, 81);
             this.Dgv_grupo_.MultiSelect = false;
             this.Dgv_grupo_.Name = "Dgv_grupo_";
@@ -1059,7 +1061,7 @@ namespace CapaPresentacion.Vista
             this.Btn_procesaEntrada.Location = new System.Drawing.Point(941, 81);
             this.Btn_procesaEntrada.Name = "Btn_procesaEntrada";
             this.Btn_procesaEntrada.ShadowDecoration.Parent = this.Btn_procesaEntrada;
-            this.Btn_procesaEntrada.Size = new System.Drawing.Size(85, 57);
+            this.Btn_procesaEntrada.Size = new System.Drawing.Size(82, 52);
             this.Btn_procesaEntrada.TabIndex = 105;
             this.Btn_procesaEntrada.Text = "TXT";
             this.Btn_procesaEntrada.Click += new System.EventHandler(this.Btn_procesaEntrada_Click);
@@ -1270,7 +1272,7 @@ namespace CapaPresentacion.Vista
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(223)))), ((int)(((byte)(226)))));
+            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(242)))), ((int)(((byte)(236)))));
             this.guna2Panel1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
             this.guna2Panel1.BorderThickness = 1;
             this.guna2Panel1.Controls.Add(this.Btn_buscar);
@@ -1344,7 +1346,6 @@ namespace CapaPresentacion.Vista
             this.Panel_detalleInventario.ResumeLayout(false);
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_vistaDetalle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_grupo_)).EndInit();
             this.Panel_entradaT.ResumeLayout(false);
@@ -1375,7 +1376,6 @@ namespace CapaPresentacion.Vista
         private System.Windows.Forms.Label Lbl_cantiEntrada;
         private System.Windows.Forms.Label Lbl_cantiSalida;
         private Guna.UI2.WinForms.Guna2TextBox Txt_cantidad;
-        public System.Windows.Forms.PictureBox btncerrar;
         private System.Windows.Forms.DataGridView Dgv_vistaDetalle;
         private Guna.UI2.WinForms.Guna2Panel Panel_detalleInventario;
         private System.Windows.Forms.Panel Panel_scroll;
@@ -1443,5 +1443,6 @@ namespace CapaPresentacion.Vista
         private System.Windows.Forms.DataGridView Dgv_txtList;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox Txt_cantiFilas;
+        private System.Windows.Forms.Label Lbl_close;
     }
 }

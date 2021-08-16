@@ -32,12 +32,6 @@ namespace CapaPresentacion.Vista
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmInicio));
             this.PanelMenu = new System.Windows.Forms.Panel();
-            this.Panel_contenedor = new System.Windows.Forms.Panel();
-            this.Lbl_idperiodo = new System.Windows.Forms.Label();
-            this.Lbl_idempresa = new System.Windows.Forms.Label();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.tlblhora = new System.Windows.Forms.ToolStripStatusLabel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -61,9 +55,13 @@ namespace CapaPresentacion.Vista
             this.Lblempresa = new System.Windows.Forms.Label();
             this.Picture_user = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.Panel_contenedor = new System.Windows.Forms.Panel();
+            this.Lbl_idperiodo = new System.Windows.Forms.Label();
+            this.Lbl_idempresa = new System.Windows.Forms.Label();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tlblhora = new System.Windows.Forms.ToolStripStatusLabel();
             this.PanelMenu.SuspendLayout();
-            this.Panel_contenedor.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -71,80 +69,22 @@ namespace CapaPresentacion.Vista
             this.tableLayoutPanel2.SuspendLayout();
             this.Panel_titulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Picture_user)).BeginInit();
+            this.Panel_contenedor.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelMenu
             // 
-            this.PanelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(223)))), ((int)(((byte)(226)))));
+            this.PanelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(242)))), ((int)(((byte)(236)))));
             this.PanelMenu.Controls.Add(this.Panel_contenedor);
             this.PanelMenu.Controls.Add(this.tabControl1);
+            this.PanelMenu.Controls.Add(this.statusStrip1);
             this.PanelMenu.Controls.Add(this.Panel_titulo);
             this.PanelMenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelMenu.Location = new System.Drawing.Point(0, 0);
             this.PanelMenu.Name = "PanelMenu";
             this.PanelMenu.Size = new System.Drawing.Size(912, 558);
             this.PanelMenu.TabIndex = 1;
-            // 
-            // Panel_contenedor
-            // 
-            this.Panel_contenedor.AutoScroll = true;
-            this.Panel_contenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(223)))), ((int)(((byte)(226)))));
-            this.Panel_contenedor.Controls.Add(this.Lbl_idperiodo);
-            this.Panel_contenedor.Controls.Add(this.Lbl_idempresa);
-            this.Panel_contenedor.Controls.Add(this.statusStrip1);
-            this.Panel_contenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Panel_contenedor.Location = new System.Drawing.Point(0, 136);
-            this.Panel_contenedor.Name = "Panel_contenedor";
-            this.Panel_contenedor.Size = new System.Drawing.Size(912, 422);
-            this.Panel_contenedor.TabIndex = 3;
-            // 
-            // Lbl_idperiodo
-            // 
-            this.Lbl_idperiodo.AutoSize = true;
-            this.Lbl_idperiodo.Location = new System.Drawing.Point(24, 45);
-            this.Lbl_idperiodo.Name = "Lbl_idperiodo";
-            this.Lbl_idperiodo.Size = new System.Drawing.Size(53, 13);
-            this.Lbl_idperiodo.TabIndex = 1;
-            this.Lbl_idperiodo.Text = "id periodo";
-            this.Lbl_idperiodo.Visible = false;
-            // 
-            // Lbl_idempresa
-            // 
-            this.Lbl_idempresa.AutoSize = true;
-            this.Lbl_idempresa.Location = new System.Drawing.Point(24, 22);
-            this.Lbl_idempresa.Name = "Lbl_idempresa";
-            this.Lbl_idempresa.Size = new System.Drawing.Size(58, 13);
-            this.Lbl_idempresa.TabIndex = 1;
-            this.Lbl_idempresa.Text = "id empresa";
-            this.Lbl_idempresa.Visible = false;
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1,
-            this.tlblhora});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 398);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(912, 24);
-            this.statusStrip1.SizingGrip = false;
-            this.statusStrip1.TabIndex = 0;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(131, 19);
-            this.toolStripStatusLabel1.Text = "  Tecnología 2050 S.A.C ";
-            // 
-            // tlblhora
-            // 
-            this.tlblhora.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
-            this.tlblhora.Name = "tlblhora";
-            this.tlblhora.Size = new System.Drawing.Size(766, 19);
-            this.tlblhora.Spring = true;
-            this.tlblhora.Text = "HORA";
-            this.tlblhora.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // tabControl1
             // 
@@ -454,6 +394,67 @@ namespace CapaPresentacion.Vista
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // Panel_contenedor
+            // 
+            this.Panel_contenedor.AutoScroll = true;
+            this.Panel_contenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(242)))), ((int)(((byte)(236)))));
+            this.Panel_contenedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Panel_contenedor.Controls.Add(this.Lbl_idperiodo);
+            this.Panel_contenedor.Controls.Add(this.Lbl_idempresa);
+            this.Panel_contenedor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Panel_contenedor.Location = new System.Drawing.Point(0, 136);
+            this.Panel_contenedor.Name = "Panel_contenedor";
+            this.Panel_contenedor.Size = new System.Drawing.Size(912, 398);
+            this.Panel_contenedor.TabIndex = 4;
+            // 
+            // Lbl_idperiodo
+            // 
+            this.Lbl_idperiodo.AutoSize = true;
+            this.Lbl_idperiodo.Location = new System.Drawing.Point(24, 45);
+            this.Lbl_idperiodo.Name = "Lbl_idperiodo";
+            this.Lbl_idperiodo.Size = new System.Drawing.Size(53, 13);
+            this.Lbl_idperiodo.TabIndex = 1;
+            this.Lbl_idperiodo.Text = "id periodo";
+            this.Lbl_idperiodo.Visible = false;
+            // 
+            // Lbl_idempresa
+            // 
+            this.Lbl_idempresa.AutoSize = true;
+            this.Lbl_idempresa.Location = new System.Drawing.Point(24, 22);
+            this.Lbl_idempresa.Name = "Lbl_idempresa";
+            this.Lbl_idempresa.Size = new System.Drawing.Size(58, 13);
+            this.Lbl_idempresa.TabIndex = 1;
+            this.Lbl_idempresa.Text = "id empresa";
+            this.Lbl_idempresa.Visible = false;
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1,
+            this.tlblhora});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 534);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(912, 24);
+            this.statusStrip1.SizingGrip = false;
+            this.statusStrip1.TabIndex = 0;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(131, 19);
+            this.toolStripStatusLabel1.Text = "  Tecnología 2050 S.A.C ";
+            // 
+            // tlblhora
+            // 
+            this.tlblhora.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
+            this.tlblhora.Name = "tlblhora";
+            this.tlblhora.Size = new System.Drawing.Size(714, 19);
+            this.tlblhora.Spring = true;
+            this.tlblhora.Text = "HORA";
+            this.tlblhora.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // FrmInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -461,18 +462,15 @@ namespace CapaPresentacion.Vista
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(233)))), ((int)(((byte)(236)))));
             this.ClientSize = new System.Drawing.Size(912, 558);
             this.Controls.Add(this.PanelMenu);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmInicio";
+            this.ShowIcon = false;
             this.Text = "  Sistema Inventario v1.0.0";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmInicio_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmInicio_FormClosed);
             this.Load += new System.EventHandler(this.FrmInicio_Load);
             this.PanelMenu.ResumeLayout(false);
-            this.Panel_contenedor.ResumeLayout(false);
-            this.Panel_contenedor.PerformLayout();
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
+            this.PanelMenu.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -480,6 +478,10 @@ namespace CapaPresentacion.Vista
             this.tableLayoutPanel2.ResumeLayout(false);
             this.Panel_titulo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Picture_user)).EndInit();
+            this.Panel_contenedor.ResumeLayout(false);
+            this.Panel_contenedor.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -487,10 +489,6 @@ namespace CapaPresentacion.Vista
         #endregion
 
         private System.Windows.Forms.Panel PanelMenu;
-        private System.Windows.Forms.Panel Panel_contenedor;
-        private System.Windows.Forms.Label Lbl_idempresa;
-        private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
@@ -510,11 +508,15 @@ namespace CapaPresentacion.Vista
         private System.Windows.Forms.Label lbluser;
         private System.Windows.Forms.Label Lblempresa;
         private System.Windows.Forms.PictureBox Picture_user;
-        private System.Windows.Forms.Label Lbl_idperiodo;
-        private System.Windows.Forms.ToolStripStatusLabel tlblhora;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button Btn_tipdocumento;
         private System.Windows.Forms.Button BtnUnidMed;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel Panel_contenedor;
+        private System.Windows.Forms.Label Lbl_idperiodo;
+        private System.Windows.Forms.Label Lbl_idempresa;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripStatusLabel tlblhora;
     }
 }

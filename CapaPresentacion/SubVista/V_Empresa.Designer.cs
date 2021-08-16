@@ -29,12 +29,10 @@ namespace CapaPresentacion.SubVista
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmV_Empresa));
             this.Txt_idempresa = new System.Windows.Forms.TextBox();
             this.Panel_boton = new System.Windows.Forms.Panel();
-            this.Btn_guardar = new Guna.UI2.WinForms.Guna2Button();
             this.Btn_modificar = new Guna.UI2.WinForms.Guna2Button();
+            this.Btn_guardar = new Guna.UI2.WinForms.Guna2Button();
             this.Cboregimen = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -47,19 +45,20 @@ namespace CapaPresentacion.SubVista
             this.Txtnombre_comercial = new Guna.UI2.WinForms.Guna2TextBox();
             this.Txtruc = new Guna.UI2.WinForms.Guna2TextBox();
             this.Txtrazon = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btncerrar = new System.Windows.Forms.PictureBox();
             this.Panel_empresa = new System.Windows.Forms.Panel();
             this.Panel_registro = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblcerrar = new System.Windows.Forms.Label();
             this.Panel_boton.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).BeginInit();
             this.Panel_empresa.SuspendLayout();
             this.Panel_registro.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // Txt_idempresa
             // 
-            this.Txt_idempresa.Location = new System.Drawing.Point(205, 19);
+            this.Txt_idempresa.Location = new System.Drawing.Point(197, 19);
             this.Txt_idempresa.Name = "Txt_idempresa";
             this.Txt_idempresa.Size = new System.Drawing.Size(57, 20);
             this.Txt_idempresa.TabIndex = 102;
@@ -70,10 +69,28 @@ namespace CapaPresentacion.SubVista
             this.Panel_boton.BackColor = System.Drawing.Color.Transparent;
             this.Panel_boton.Controls.Add(this.Btn_modificar);
             this.Panel_boton.Controls.Add(this.Btn_guardar);
-            this.Panel_boton.Location = new System.Drawing.Point(205, 281);
+            this.Panel_boton.Location = new System.Drawing.Point(197, 281);
             this.Panel_boton.Name = "Panel_boton";
             this.Panel_boton.Size = new System.Drawing.Size(399, 73);
             this.Panel_boton.TabIndex = 101;
+            // 
+            // Btn_modificar
+            // 
+            this.Btn_modificar.BorderRadius = 3;
+            this.Btn_modificar.CheckedState.Parent = this.Btn_modificar;
+            this.Btn_modificar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_modificar.CustomImages.Parent = this.Btn_modificar;
+            this.Btn_modificar.FillColor = System.Drawing.Color.DarkRed;
+            this.Btn_modificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.Btn_modificar.ForeColor = System.Drawing.Color.White;
+            this.Btn_modificar.HoverState.Parent = this.Btn_modificar;
+            this.Btn_modificar.Location = new System.Drawing.Point(0, 0);
+            this.Btn_modificar.Name = "Btn_modificar";
+            this.Btn_modificar.ShadowDecoration.Parent = this.Btn_modificar;
+            this.Btn_modificar.Size = new System.Drawing.Size(399, 45);
+            this.Btn_modificar.TabIndex = 8;
+            this.Btn_modificar.Text = "Modificar";
+            this.Btn_modificar.Click += new System.EventHandler(this.Btn_modificar_Click);
             // 
             // Btn_guardar
             // 
@@ -94,27 +111,10 @@ namespace CapaPresentacion.SubVista
             this.Btn_guardar.Text = "Guardar";
             this.Btn_guardar.Click += new System.EventHandler(this.Btn_guardar_Click);
             // 
-            // Btn_modificar
-            // 
-            this.Btn_modificar.BorderRadius = 3;
-            this.Btn_modificar.CheckedState.Parent = this.Btn_modificar;
-            this.Btn_modificar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Btn_modificar.CustomImages.Parent = this.Btn_modificar;
-            this.Btn_modificar.FillColor = System.Drawing.Color.DarkRed;
-            this.Btn_modificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.Btn_modificar.ForeColor = System.Drawing.Color.White;
-            this.Btn_modificar.HoverState.Parent = this.Btn_modificar;
-            this.Btn_modificar.Location = new System.Drawing.Point(0, 0);
-            this.Btn_modificar.Name = "Btn_modificar";
-            this.Btn_modificar.ShadowDecoration.Parent = this.Btn_modificar;
-            this.Btn_modificar.Size = new System.Drawing.Size(399, 45);
-            this.Btn_modificar.TabIndex = 8;
-            this.Btn_modificar.Text = "Modificar";
-            this.Btn_modificar.Click += new System.EventHandler(this.Btn_modificar_Click);
-            // 
             // Cboregimen
             // 
             this.Cboregimen.BackColor = System.Drawing.Color.Transparent;
+            this.Cboregimen.BorderColor = System.Drawing.Color.DarkGray;
             this.Cboregimen.BorderRadius = 3;
             this.Cboregimen.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.Cboregimen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -126,7 +126,7 @@ namespace CapaPresentacion.SubVista
             this.Cboregimen.HoverState.Parent = this.Cboregimen;
             this.Cboregimen.ItemHeight = 24;
             this.Cboregimen.ItemsAppearance.Parent = this.Cboregimen;
-            this.Cboregimen.Location = new System.Drawing.Point(205, 215);
+            this.Cboregimen.Location = new System.Drawing.Point(197, 215);
             this.Cboregimen.Name = "Cboregimen";
             this.Cboregimen.ShadowDecoration.Parent = this.Cboregimen;
             this.Cboregimen.Size = new System.Drawing.Size(399, 30);
@@ -136,9 +136,10 @@ namespace CapaPresentacion.SubVista
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(41, 121);
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.label9.Location = new System.Drawing.Point(33, 121);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(163, 16);
             this.label9.TabIndex = 11;
@@ -146,9 +147,10 @@ namespace CapaPresentacion.SubVista
             // 
             // label7
             // 
+            this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(41, 83);
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.label7.Location = new System.Drawing.Point(33, 83);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(158, 38);
             this.label7.TabIndex = 12;
@@ -157,9 +159,10 @@ namespace CapaPresentacion.SubVista
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(41, 154);
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.label5.Location = new System.Drawing.Point(33, 154);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(90, 16);
             this.label5.TabIndex = 13;
@@ -168,9 +171,10 @@ namespace CapaPresentacion.SubVista
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(41, 221);
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.label6.Location = new System.Drawing.Point(33, 221);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(77, 16);
             this.label6.TabIndex = 14;
@@ -179,9 +183,10 @@ namespace CapaPresentacion.SubVista
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(41, 188);
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.label8.Location = new System.Drawing.Point(33, 188);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(138, 16);
             this.label8.TabIndex = 15;
@@ -190,9 +195,10 @@ namespace CapaPresentacion.SubVista
             // label10
             // 
             this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(41, 52);
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.label10.Location = new System.Drawing.Point(33, 52);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(40, 16);
             this.label10.TabIndex = 16;
@@ -200,6 +206,7 @@ namespace CapaPresentacion.SubVista
             // 
             // Txtfiscal
             // 
+            this.Txtfiscal.BorderColor = System.Drawing.Color.DarkGray;
             this.Txtfiscal.BorderRadius = 3;
             this.Txtfiscal.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.Txtfiscal.DefaultText = "";
@@ -213,7 +220,7 @@ namespace CapaPresentacion.SubVista
             this.Txtfiscal.ForeColor = System.Drawing.Color.Black;
             this.Txtfiscal.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Txtfiscal.HoverState.Parent = this.Txtfiscal;
-            this.Txtfiscal.Location = new System.Drawing.Point(205, 181);
+            this.Txtfiscal.Location = new System.Drawing.Point(197, 181);
             this.Txtfiscal.Name = "Txtfiscal";
             this.Txtfiscal.PasswordChar = '\0';
             this.Txtfiscal.PlaceholderText = "";
@@ -224,6 +231,7 @@ namespace CapaPresentacion.SubVista
             // 
             // Txtdireccion
             // 
+            this.Txtdireccion.BorderColor = System.Drawing.Color.DarkGray;
             this.Txtdireccion.BorderRadius = 3;
             this.Txtdireccion.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.Txtdireccion.DefaultText = "";
@@ -237,7 +245,7 @@ namespace CapaPresentacion.SubVista
             this.Txtdireccion.ForeColor = System.Drawing.Color.Black;
             this.Txtdireccion.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Txtdireccion.HoverState.Parent = this.Txtdireccion;
-            this.Txtdireccion.Location = new System.Drawing.Point(205, 147);
+            this.Txtdireccion.Location = new System.Drawing.Point(197, 147);
             this.Txtdireccion.Name = "Txtdireccion";
             this.Txtdireccion.PasswordChar = '\0';
             this.Txtdireccion.PlaceholderText = "";
@@ -249,6 +257,7 @@ namespace CapaPresentacion.SubVista
             // 
             // Txtnombre_comercial
             // 
+            this.Txtnombre_comercial.BorderColor = System.Drawing.Color.DarkGray;
             this.Txtnombre_comercial.BorderRadius = 3;
             this.Txtnombre_comercial.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.Txtnombre_comercial.DefaultText = "";
@@ -262,7 +271,7 @@ namespace CapaPresentacion.SubVista
             this.Txtnombre_comercial.ForeColor = System.Drawing.Color.Black;
             this.Txtnombre_comercial.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Txtnombre_comercial.HoverState.Parent = this.Txtnombre_comercial;
-            this.Txtnombre_comercial.Location = new System.Drawing.Point(205, 113);
+            this.Txtnombre_comercial.Location = new System.Drawing.Point(197, 113);
             this.Txtnombre_comercial.Name = "Txtnombre_comercial";
             this.Txtnombre_comercial.PasswordChar = '\0';
             this.Txtnombre_comercial.PlaceholderText = "";
@@ -273,6 +282,7 @@ namespace CapaPresentacion.SubVista
             // 
             // Txtruc
             // 
+            this.Txtruc.BorderColor = System.Drawing.Color.DarkGray;
             this.Txtruc.BorderRadius = 3;
             this.Txtruc.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.Txtruc.DefaultText = "";
@@ -286,7 +296,7 @@ namespace CapaPresentacion.SubVista
             this.Txtruc.ForeColor = System.Drawing.Color.Black;
             this.Txtruc.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Txtruc.HoverState.Parent = this.Txtruc;
-            this.Txtruc.Location = new System.Drawing.Point(205, 45);
+            this.Txtruc.Location = new System.Drawing.Point(197, 45);
             this.Txtruc.Name = "Txtruc";
             this.Txtruc.PasswordChar = '\0';
             this.Txtruc.PlaceholderText = "INGRESE RUC";
@@ -299,6 +309,7 @@ namespace CapaPresentacion.SubVista
             // 
             // Txtrazon
             // 
+            this.Txtrazon.BorderColor = System.Drawing.Color.DarkGray;
             this.Txtrazon.BorderRadius = 3;
             this.Txtrazon.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.Txtrazon.DefaultText = "";
@@ -312,7 +323,7 @@ namespace CapaPresentacion.SubVista
             this.Txtrazon.ForeColor = System.Drawing.Color.Black;
             this.Txtrazon.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Txtrazon.HoverState.Parent = this.Txtrazon;
-            this.Txtrazon.Location = new System.Drawing.Point(205, 79);
+            this.Txtrazon.Location = new System.Drawing.Point(197, 79);
             this.Txtrazon.Name = "Txtrazon";
             this.Txtrazon.PasswordChar = '\0';
             this.Txtrazon.PlaceholderText = "";
@@ -322,33 +333,21 @@ namespace CapaPresentacion.SubVista
             this.Txtrazon.TabIndex = 2;
             this.Txtrazon.Validating += new System.ComponentModel.CancelEventHandler(this.Txtrazon_Validating);
             // 
-            // btncerrar
-            // 
-            this.btncerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btncerrar.Image = ((System.Drawing.Image)(resources.GetObject("btncerrar.Image")));
-            this.btncerrar.Location = new System.Drawing.Point(956, 0);
-            this.btncerrar.Name = "btncerrar";
-            this.btncerrar.Size = new System.Drawing.Size(38, 35);
-            this.btncerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.btncerrar.TabIndex = 100;
-            this.btncerrar.TabStop = false;
-            this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click);
-            // 
             // Panel_empresa
             // 
-            this.Panel_empresa.BackColor = System.Drawing.Color.DimGray;
+            this.Panel_empresa.BackColor = System.Drawing.Color.White;
+            this.Panel_empresa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Panel_empresa.Controls.Add(this.panel1);
             this.Panel_empresa.Controls.Add(this.Panel_registro);
-            this.Panel_empresa.Controls.Add(this.btncerrar);
             this.Panel_empresa.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Panel_empresa.Location = new System.Drawing.Point(0, 0);
             this.Panel_empresa.Name = "Panel_empresa";
-            this.Panel_empresa.Size = new System.Drawing.Size(995, 454);
+            this.Panel_empresa.Size = new System.Drawing.Size(973, 431);
             this.Panel_empresa.TabIndex = 2;
             // 
             // Panel_registro
             // 
-            this.Panel_registro.BorderColor = System.Drawing.Color.Red;
+            this.Panel_registro.BorderColor = System.Drawing.Color.Gainsboro;
             this.Panel_registro.BorderRadius = 5;
             this.Panel_registro.Controls.Add(this.Txt_idempresa);
             this.Panel_registro.Controls.Add(this.label10);
@@ -364,41 +363,74 @@ namespace CapaPresentacion.SubVista
             this.Panel_registro.Controls.Add(this.Txtfiscal);
             this.Panel_registro.Controls.Add(this.label6);
             this.Panel_registro.Controls.Add(this.label8);
-            this.Panel_registro.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(113)))), ((int)(((byte)(113)))));
-            this.Panel_registro.Location = new System.Drawing.Point(35, 42);
+            this.Panel_registro.FillColor = System.Drawing.Color.White;
+            this.Panel_registro.Location = new System.Drawing.Point(28, 49);
             this.Panel_registro.Name = "Panel_registro";
             this.Panel_registro.ShadowDecoration.Parent = this.Panel_registro;
-            this.Panel_registro.Size = new System.Drawing.Size(925, 371);
+            this.Panel_registro.Size = new System.Drawing.Size(900, 371);
             this.Panel_registro.TabIndex = 101;
             // 
-            // guna2Elipse1
+            // panel1
             // 
-            this.guna2Elipse1.BorderRadius = 5;
-            this.guna2Elipse1.TargetControl = this;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.panel1.Controls.Add(this.lblcerrar);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(971, 35);
+            this.panel1.TabIndex = 102;
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.label1.Size = new System.Drawing.Size(613, 35);
+            this.label1.TabIndex = 100;
+            this.label1.Text = "Gestión de Empresas";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblcerrar
+            // 
+            this.lblcerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.lblcerrar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lblcerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblcerrar.ForeColor = System.Drawing.Color.Black;
+            this.lblcerrar.Location = new System.Drawing.Point(936, 0);
+            this.lblcerrar.Name = "lblcerrar";
+            this.lblcerrar.Size = new System.Drawing.Size(35, 35);
+            this.lblcerrar.TabIndex = 101;
+            this.lblcerrar.Text = " X";
+            this.lblcerrar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblcerrar.Click += new System.EventHandler(this.lblcerrar_Click);
+            this.lblcerrar.MouseLeave += new System.EventHandler(this.lblcerrar_MouseLeave);
+            this.lblcerrar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lblcerrar_MouseMove);
             // 
             // FrmV_Empresa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(995, 454);
+            this.ClientSize = new System.Drawing.Size(973, 431);
             this.Controls.Add(this.Panel_empresa);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmV_Empresa";
-            this.Opacity = 0.9D;
             this.Text = "Empresa";
             this.Load += new System.EventHandler(this.FrmEmpresa_Load);
             this.Panel_boton.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).EndInit();
             this.Panel_empresa.ResumeLayout(false);
             this.Panel_registro.ResumeLayout(false);
             this.Panel_registro.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.Panel Panel_boton;
-        public System.Windows.Forms.PictureBox btncerrar;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
@@ -415,7 +447,9 @@ namespace CapaPresentacion.SubVista
         public Guna.UI2.WinForms.Guna2TextBox Txtrazon;
         public Guna.UI2.WinForms.Guna2TextBox Txtruc;
         public System.Windows.Forms.TextBox Txt_idempresa;
-        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2Panel Panel_registro;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblcerrar;
+        private System.Windows.Forms.Label label1;
     }
 }

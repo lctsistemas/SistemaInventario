@@ -140,16 +140,6 @@
         krlFjR+PAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="btncerrar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        bwAAAG8B8aLcQwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAC/SURBVDhPY/j/
-        /z/DfwcHlv8hDsv/hzqEgPn4MEgNSC1ID5AP07waiP8D8W+8hkA0/4aqXQ3SywBkLIcKwDB2Q1A1//8X
-        ZPfkqZbwPAwJKEY1BE3NH3/rT481hH4/VOEJwaoAiiGGoMn98rX8A9MM0ovTiVAM4sPFfvta/n+CpBnV
-        ANyG4NQMwqgGgDAWQ3BpBmEUDhhTZABFXqAoEHFpBomjyWFGIz7NUFvQ1aAmJIqTMsWZCSQBMYSM7Pyf
-        AQBry4HPUh/zWwAAAABJRU5ErkJggg==
-</value>
-  </data>
   <metadata name="dgv_txtidinvent.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
